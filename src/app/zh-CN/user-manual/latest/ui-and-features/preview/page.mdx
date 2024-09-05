@@ -1,0 +1,49 @@
+export const metadata = {
+	title: "Preview",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"Previewing the sliced file in the slicer is important to ensure that the 3D print is accurate and meets your expectations.",
+	other:{
+		pageId: "/en-US/user-manual/v1.x.x/preview",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# 预览
+
+## 预览窗口
+
+切片完成后，您可以在预览窗口中预览模型。预览窗口分为两部分：左侧为模型预览，右侧为层预览。
+
+预览窗口底部的打印设置面板显示当前模型的打印设置。您可以在此处修改打印设置，然后保存切片文件。
+
+您可以在预览窗口下方查看打印信息。打印信息包括**打印机**、**树脂**、**体积**、**重量**、**价格**和**打印时间**。
+
+## 保存切片
+
+切片完成后，您可以将切片文件保存到计算机上。单击层预览窗口下方的**保存切片**按钮即可保存切片文件。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/011-preview-save.png"}
+/>
+
+<Admonition type="note" title="注意">
+	* 文件保存对话框仅显示打印机支持的文件格式。如果您在下拉菜单中看不到正确的格式，请返回并检查是否选择了正确的打印机。
+	* 当您的打印机在CHITUBOX中没有内置配置文件时，可以添加一个<Link href="/zh-CN/user-manual/latest/ui-and-features/configure-print-parameters#自定义机器">自定义机器</Link>。
+</Admonition>
+
+## 发送至打印机
+
+若打印机支持网络发送，该界面上会有 **发送至打印机** 按钮，此功能可以直接向打印机发送切片数据进行打印。单击此按钮打开<Link href="https://manual.chitubox.com/zh-CN/chitu-manager/latest/ui-and-features/network-sending">网络发送窗口</Link>。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/011-preview-network-sending-01.png"
+	}
+/>
+
+<Admonition type="note" title="注意">
+	需要安装 ChituManager 以使用网络发送功能。若电脑上还未安装 ChituManager，点击**发送至打印机**按钮后，按照提示步骤进行下载与安装。
+</Admonition>

@@ -1,0 +1,64 @@
+{
+	"fieldName": "用户手册",
+	"isVersioned": true,
+	"type": "book",
+	"homeUrl": "/zh-CN/user-manual/latest/basic-vs-dental",
+	"versions": [
+		{
+			"versionCode": "1.0.3",
+			"isLatest": true,
+			"category": [
+				{
+					"pageId": "basic-vs-dental",
+					"label": "Basic vs Dental"
+				},
+				{
+					"pageId": "introduction",
+					"label": "介绍"
+				},
+				{
+					"pageId": "installation",
+					"label": "安装"
+				},
+				{
+					"pageId": "quick-start",
+					"label": "快速入门"
+				},
+				{
+					"pageId": "ui-and-features",
+					"label": "界面和功能",
+					"pages": [
+						{
+							"pageId": "menu",
+							"label": "菜单"
+						},
+						{
+							"pageId": "gadgets",
+							"label": "小工具"
+						},
+						{
+							"pageId": "operations",
+							"label": "操作"
+						},
+						{
+							"pageId": "file-list",
+							"label": "文件列表"
+						},
+						{
+							"pageId": "configure-print-parameters",
+							"label": "设置打印参数"
+						},
+						{
+							"pageId": "configure-support-parameters",
+							"label": "设置支撑参数"
+						},
+						{
+							"pageId": "preview",
+							"label": "预览"
+						}
+					]
+				}
+			]
+		}
+	]
+}

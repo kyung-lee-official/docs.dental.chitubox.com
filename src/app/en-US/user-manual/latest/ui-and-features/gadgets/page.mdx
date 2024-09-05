@@ -1,0 +1,61 @@
+import {
+	ChituboxAddMachine,
+	ChituboxDentalReverseIcon,
+	ChituboxDentalQuickCutIcon,
+	ChituboxPullUpMenuIcon,
+} from "@/components/icons/SoftwareIcons";
+
+export const metadata = {
+	title: "Gadgets",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"Some useful gadgets that can be used in the CHITUBOX software.",
+	other:{
+		pageId: "/en-US/user-manual/v1.x.x/gadgets",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# Gadgets
+
+In this section, we will introduce some useful gadgets that can be used in the CHITUBOX Dental software.
+
+## Toolbar
+
+The toolbar is located at the left of the main window. It contains the select, move, rotate, scale, and mirror options.
+
+## Info Panel
+
+The Info Panel is located at the lower left of the main window. It contains the brief information of current settings.
+
+## Configuration Management Bar
+
+The Configuration Management Bar is located at bottom of the main window. Click <ChituboxPullUpMenuIcon /> icon, Here you can set, rename, and remove configuration.
+
+Click the add machine button <ChituboxAddMachine /> to add a new printer.
+
+## Viewport Gizmos
+
+The Viewport Gizmos is located in the upper right corner of the main window. It provides a quick and intuitive way to operate the view, allowing users to quickly change the angle or perspective of the view, making it easy to check the relative position of objects.
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/005-gadget-viewport_gizmo.svg"
+	}
+/>
+
+## Slider
+
+The slider is located on the right side of the main window and is used to preview the cross-sectional area of the model (pre-slice) and the layers of the model (post-slice). The slider component allows users to preview the individual parts and layers of a 3D model before it is sent to the printer, assess the quality of the model, and then make adjustments as needed.
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/005-gadget-slider.png"}
+/>
+
+The slider starts at the top and can be reversed by clicking <ChituboxDentalReverseIcon />.
+
+Clicking the quick cut button <ChituboxDentalQuickCutIcon /> will slice the selected model along the current Z section.
+
+Clicking the reset button at the bottom will reset the slider position to the default value.

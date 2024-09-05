@@ -1,0 +1,51 @@
+export const metadata = {
+	title: "Preview",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"Previewing the sliced file in the slicer is important to ensure that the 3D print is accurate and meets your expectations.",
+	other:{
+		pageId: "/en-US/user-manual/v1.x.x/preview",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# Preview
+
+## Preview Window
+
+After slicing, you can preview the model in the preview window. The preview window is divided into two parts: the left part is the model preview, and the right part is the layer preview.
+
+The Print Settings panel on the bottom of the preview window displays the print settings of the current model. You can modify the print settings here before saving the sliced file.
+
+You can check out the print info on the bottom of the preview window. The print info includes the **Machine**, **Resin**, **Volume**, **Weight**, **Price**, and **Print Time**.
+
+## Save Sliced file
+
+After slicing, you can save the sliced file to your computer. Click the **Save** button on the bottom of the layer preview window to save the sliced file.
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/011-preview-save.png"}
+/>
+
+<Admonition type="note">
+	* The file saving dialog only shows the file format supported by your
+	printer. If you don't see the correct format from the drop-down menu, please
+	go back and check if you have selected the correct printer. 
+	* If your printer does not have a built-in profile in CHITUBOX, you can add a <Link href="/en-US/user-manual/latest/ui-and-features/configure-print-parameters#custom-machine">custom machine</Link>.
+</Admonition>
+
+## Send To Printer
+
+For printers that support network printing, a **Send To Printer** button will be available on this interface. This feature allows you to directly send sliced data to the printer for printing. Clicking this button will open the <Link href="https://manual.chitubox.com/en-US/chitu-manager/latest/ui-and-features/network-sending">Network Sending window</Link>.
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/user-manual/1.x.x/011-preview-network-sending-01.png"
+	}
+/>
+
+<Admonition type="note">
+	You need to install ChituManager to use the Network Sending function. If ChituManager is not installed on your computer, you can download and install it by following the instructions after clicking the **Send to Printer** button.
+</Admonition>

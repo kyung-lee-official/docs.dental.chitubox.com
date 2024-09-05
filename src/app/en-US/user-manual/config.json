@@ -1,0 +1,64 @@
+{
+	"fieldName": "User Manual",
+	"isVersioned": true,
+	"type": "book",
+	"homeUrl": "/en-US/user-manual/latest/basic-vs-dental",
+	"versions": [
+		{
+			"versionCode": "1.0.3",
+			"isLatest": true,
+			"category": [
+				{
+					"pageId": "basic-vs-dental",
+					"label": "Basic vs Dental"
+				},
+				{
+					"pageId": "introduction",
+					"label": "Introduction"
+				},
+				{
+					"pageId": "installation",
+					"label": "Installation"
+				},
+				{
+					"pageId": "quick-start",
+					"label": "Quick Start"
+				},
+				{
+					"pageId": "ui-and-features",
+					"label": "UI and Features",
+					"pages": [
+						{
+							"pageId": "menu",
+							"label": "Menu"
+						},
+						{
+							"pageId": "gadgets",
+							"label": "Gadgets"
+						},
+						{
+							"pageId": "operations",
+							"label": "Operations"
+						},
+						{
+							"pageId": "file-list",
+							"label": "File List"
+						},
+						{
+							"pageId": "configure-print-parameters",
+							"label": "Configure Print Parameters"
+						},
+						{
+							"pageId": "configure-support-parameters",
+							"label": "Configure Support Parameters"
+						},
+						{
+							"pageId": "preview",
+							"label": "Preview"
+						}
+					]
+				}
+			]
+		}
+	]
+}

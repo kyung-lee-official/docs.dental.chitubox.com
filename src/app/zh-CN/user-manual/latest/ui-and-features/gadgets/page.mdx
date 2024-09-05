@@ -1,0 +1,56 @@
+import {
+	ChituboxAddMachine,
+	ChituboxDentalReverseIcon,
+	ChituboxDentalQuickCutIcon,
+	ChituboxPullUpMenuIcon,
+} from "@/components/icons/SoftwareIcons";
+
+export const metadata = {
+	title: "小工具",
+	authors: [{ name: "CHITUBOX Team" }],
+	description: "一些可以在 CHITUBOX 软件中使用的小工具。",
+	other:{
+		pageId: "/zh-CN/user-manual/v1.x.x/gadgets",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# 小工具
+
+在本节中，我们将介绍一些可以在 CHITUBOX Dental 软件中使用的小工具。
+
+## 信息面板
+
+信息面板位于主窗口左下方，它显示了当前设置的简要信息。
+
+## 配置管理栏
+
+机器管理栏位于主窗口的下方，点击 <ChituboxPullUpMenuIcon/> 图标，将会看到配置设置、修改名称、移除配置选项。
+
+点击添加按钮 <ChituboxAddMachine /> 以添加新的配置。
+
+## 视窗小工具
+
+视窗小工具位于主窗口的右上方，它提供了一种快速操作视图的直观方法，使用户能够快速改变视窗的角度或视角，便于检查对象之间的相对位置。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/005-gadget-viewport_gizmo.svg"
+	}
+/>
+
+## 滑动条
+
+滑动条位于主窗口的右侧，用于预览模型的截面面积（预切片）和模型的层数（后切片）。滑块组件允许用户在 3D 模型被发送到打印机之前预览其各个部分和层，评估模型质量，然后根据需要进行调整。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/005-gadget-slider.png"}
+/>
+
+滑块初始位置在顶部，点击 <ChituboxDentalReverseIcon/> 可以反转滑块方向。
+
+点击快速切割按钮 <ChituboxDentalQuickCutIcon/> 可以沿当前 Z 截面对选中模型进行切割。
+
+点击底部的重置按钮可以把滑块位置重置为默认值。

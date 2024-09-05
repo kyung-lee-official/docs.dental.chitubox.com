@@ -1,0 +1,32 @@
+import {
+	ChituboxCheckboxIcon,
+	ChituboxProfileAddIcon,
+	ChituboxDeleteIcon,
+	ChituboxProfileDeleteIcon
+} from "@/components/icons/SoftwareIcons";
+
+export const metadata = {
+	title: "文件列表",
+	authors: [{ name: "CHITUBOX Team" }],
+	description: "所有加载的文件都显示在文件列表中。",
+	other:{
+		pageId: "/zh-CN/user-manual/v1.x.x/file-list",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# 文件列表
+
+所有加载完成的文件都会显示在文件列表中。你可以同时选择多个文件，还可以通过单击全选按钮来选择所有文件。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/007-file-list-panel.png"}
+/>
+
+复选框图标 <ChituboxCheckboxIcon /> 允许您选择该文件。
+
+添加图标 <ChituboxProfileAddIcon /> 允许您导入文件，也可以通过双击文件列表空白处导入文件。
+
+垃圾桶图标 <ChituboxProfileDeleteIcon /> 允许您删除所选文件。

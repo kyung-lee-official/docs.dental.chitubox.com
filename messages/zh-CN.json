@@ -1,0 +1,142 @@
+{
+	"title": "CHITUBOX Dental 文档",
+	"description": "CHITUBOX Dental 文档",
+	"header": {
+		"title": "CHITUBOX 文档",
+		"placeholder": "占位",
+		"about": "关于",
+		"languages": "语言",
+		"searchResult": "个结果"
+	},
+	"docContent": {
+		"version": "版本",
+		"selectDocs": "选择文档",
+		"selectVersion": "选择版本",
+		"onThisPage": "本页目录",
+		"notLatest": "您正在阅读的不是最新版本的文档。"
+	},
+	"pages": {
+		"learning": {
+			"title": "学习中心",
+			"search-placeholder": "搜索学习中心"
+		}
+	},
+	"footer": {
+		"software": {
+			"title": "软件",
+			"chitubox-pro": {
+				"title": "CHITUBOX Pro",
+				"link": "https://www.chitubox.com/zh-Hans/page/chitubox-pro"
+			},
+			"chitubox-basic": {
+				"title": "CHITUBOX Basic",
+				"link": "https://www.chitubox.com/zh-Hans/download/chitubox-free"
+			},
+			"chitubox-dental": {
+				"title": "CHITUBOX Dental",
+				"link": "https://dental.chitubox.com/zh-Hans"
+			},
+			"chitubox-manager": {
+				"title": "ChituManager",
+				"link": "https://www.chitubox.com/zh-Hans/page/chitubox-manager"
+			}
+		},
+		"customer": {
+			"title": "用户",
+			"refer-and-get": {
+				"title": "推荐有礼",
+				"link": "https://cc.chitubox.com/customer/marketing-share"
+			},
+			"education-price": {
+				"title": "教育专享",
+				"link": "https://www.chitubox.com/zh-Hans/article/law/marketing/education-price"
+			},
+			"affiliate-program": {
+				"title": "营销联盟",
+				"link": "https://www.chitusystems.com/affiliate/"
+			}
+		},
+		"company": {
+			"title": "公司",
+			"about-us": {
+				"title": "关于我们",
+				"link": "https://www.chitubox.com/zh-Hans/page/about"
+			},
+			"chitu-systems": {
+				"title": "Chitu Systems",
+				"link": "https://www.chitusystems.com/"
+			},
+			"contact": {
+				"title": "联系我们",
+				"link": "https://www.chitubox.com/zh-Hans/support/support-center"
+			},
+			"partners": {
+				"title": "合作伙伴",
+				"link": "https://www.chitubox.com/zh-Hans/page/partner"
+			},
+			"cbd-tech": {
+				"title": "CBD Tech",
+				"link": "https://www.cbd-3d.com/"
+			}
+		},
+		"legal": {
+			"title": "法规政策",
+			"privacy-policy": {
+				"title": "隐私政策",
+				"link": "https://www.chitubox.com/zh-Hans/article/law/privacy"
+			},
+			"legal-notice": {
+				"title": "法律声明",
+				"link": "https://www.chitubox.com/zh-Hans/article/law/legal"
+			}
+		},
+		"relevantDocs": "相关文档",
+		"chituboxDocs": "CHITUBOX Dental 文档",
+		"chituboxDocsLink": "https://manual.chitubox.com/zh/",
+		"chituboxBasicDoc": "CHITUBOX Basic",
+		"chituboxProDoc": "CHITUBOX Pro",
+		"chituboxDentalDoc": "CHITUBOX Dental",
+		"faqDoc": "常见问题",
+		"community": "社区",
+		"facebook": "脸书",
+		"facebookLink": "https://www.facebook.com/profile.php?id=61558975455282",
+		"twitter": "X",
+		"twitterLink": "https://x.com/CHITUBOX_Dental",
+		"instagram": "Instagram",
+		"instagramLink": "https://www.instagram.com/chitubox_dental",
+		"youtube": "油管",
+		"youtubeLink": "https://www.youtube.com/@chituboxofficial987",
+		"Discord": "Discord",
+		"DiscordLink": "https://discord.com/invite/E45UFqGPZh",
+		"more": "更多",
+		"chituboxSite": "CHITUBOX Dental 官网",
+		"chituboxSiteLink": "https://www.chitubox.com/",
+		"supportEmail": "技术支持邮箱",
+		"supportEmailLink": "mailto://support@chitubox.com",
+		"copyright": "©",
+		"companyName": "CHITUBOX"
+	},
+	"home": {
+		"readTheDocs": "阅读文档"
+	},
+	"error": {
+		"pageNotFound": "找不到该页面",
+		"backHome": "返回首页"
+	},
+	"docComponents": {
+		"tsmc": {
+			"bld": "底层抬升距离",
+			"ld": "抬升距离",
+			"brd": "底层回程距离",
+			"rd": "回程距离",
+			"bls": "底层抬升速度",
+			"ls": "抬升速度",
+			"brs": "底层回程速度",
+			"rs": "回程速度"
+		},
+		"isPageUseful": {
+			"question": "本页面是否有用？",
+			"thanks": "感谢您的反馈！"
+		}
+	}
+}

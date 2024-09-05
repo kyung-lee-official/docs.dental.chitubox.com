@@ -1,0 +1,330 @@
+import {
+	ChituboxAddMachine,
+	ChituboxProfileDownloadIcon,
+	ChituboxProfileUploadIcon,
+	ChituboxProfileAddIcon,
+	ChituboxProfileImportIcon,
+	ChituboxProfileExportAllIcon,
+	ChituboxProfileMenuIcon,
+	ChituboxProfileRenameIcon,
+	ChituboxProfileExportIcon,
+	ChituboxProfileResetIcon,
+	ChituboxProfileDeleteIcon,
+	ChituboxProfileLinkIcon,
+	ChituboxProfileSettingsIcon,
+} from "@/components/icons/SoftwareIcons";
+import { Tsmc } from "@/docComponents/tsmc/Tsmc";
+
+export const metadata = {
+	title: "设置打印参数",
+	authors: [{ name: "CHITUBOX Team" }],
+	description: "在 CHITUBOX 中设置打印参数。",
+	other:{
+		pageId: "/zh-CN/user-manual/v1.x.x/configure-print-parameters",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# 设置打印参数
+
+在设置打印参数之前，您需要先添加打印机，如果您还没有添加打印机，点击主窗口底部的配置管理栏的添加按钮 <ChituboxAddMachine size={24} />，或从主窗口上方的<Link href="/zh-CN/user-manual/latest/ui-and-features/menu#配置菜单">配置菜单</Link>添加。
+
+选择打印机品牌展开可用打印机，然后选择要添加的机器型号、应用、材料以及层厚，点击**应用**按钮即可应用设定配置。 除了软件内置的机器，您还能添加<Link href="#自定义机器">自定义机器</Link>。
+
+选择好应用之后，可以勾选左下角的启用自动处理流程选项，为您所选的应用设置<Link href="#自动处理流程">自动化处理的流程</Link>。
+
+您可以为机器配置打印参数。一台机器可以有多个配置文件，您可以点击“**高级设置**”按钮打开配置文件面板并管理您的配置文件。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/009-configure-print-parameters-profile-panel.png"
+	}
+/>
+
+## 材料
+
+在这里您可以配置树脂的基本信息，包括树脂的颜色、密度、单价等。CHITUBOX 将使用这些信息来计算树脂的使用量和成本。
+
+## 打印
+
+<Admonition type="note" title="注意">
+	并非所有打印机都支持**静止时间**等待模式。在这里查看
+	<Link href="https://wkhvloo2kw.feishu.cn/docx/W9XedDtuqoHK2IxsicvccQthngf">📃完整的兼容性列表</Link>。
+</Admonition>
+
+| 参数           | 解释                                                                                                                                                                        |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 层厚           | 每层打印的厚度。                                                                                                                                                            |
+| 底层数         | 开始打印的层数。当底层层数为 n 时，前 n 层的曝光时间为底层的曝光时间。                                                                                                      |
+| 底层曝光时间   | 设置底层的曝光时间。增加底层的曝光时间有助于增加打印模型与打印平台之间的粘结强度。                                                                                          |
+| 常规层曝光时间 | 常规打印层的曝光时间。                                                                                                                                                      |
+| 底层光强 PWM   | 底层灯光的 <Link href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2%E5%AE%BD%E5%BA%A6%E8%B0%83%E5%88%B6">PWM</Link>，范围从 `0` 到 `255`，控制底层的 UV 光源功率。     |
+| 常规层光强 PWM | 常规层灯光的 <Link href="https://baike.baidu.com/item/%E8%84%89%E5%86%B2%E5%AE%BD%E5%BA%A6%E8%B0%83%E5%88%B6">PWM</Link>，范围从 `0` 到 `255`，控制常规层的 UV 光源功率。 |
+| 过渡层数       | 打印底层和普通打印层之间的过渡层数。在过渡层打印时，曝光时间会随着打印层数的增加而减少。                                                                                    |
+| 过渡类型       | 设置从底层到常规层的曝光时间的过渡类型。                                                                                                                                    |
+| 打印过程等待模式 | <strong><em>静止时间：</em></strong><ul><li>抬升前的静止时间:打印曝光结束到打印平台开始远离曝光面的间隔时间差</li><li>抬升后静止时间：打印平台抬升到<b>抬升距离</b>并开始回缩之间的时间间隔。</li><li>回程后的静止时间:打印平台运动至打印面开始静止到开始曝光的间隔时间差</li></ul><strong><em>灯灭延迟：</em></strong><br />灯灭延迟等于平台抬升时间，等待时间和回程时间的总时间<ul><li>灯灭延迟: 常规层的灯灭延迟，真正的机器灭灯时间 = max（z 轴上下移动的总时间， 配置的灭灯延迟）</li><li>底层灯灭延迟: 底层的灯灭延迟，真正的机器灭灯时间 =max（z 轴上下移动的总时间， 配置的灭灯延迟）</li></ul> |
+| 底层抬升距离   | 在底层打印过程中，打印平台每次离开打印表面的距离。                                                                                                                          |
+| 常规层抬升距离 | 在常规层打印过程中，打印平台每次离开打印表面的距离。                                                                                                                        |
+| 底层回程距离   | 在底层打印过程中，回程的距离，除非您有充分的理由，否则请不要改动。                                                                                                          |
+| 常规层回程距离 | 在常规层打印过程中，回程的距离，除非您有充分的理由，否则请不要改动。                                                                                                        |
+| 底层抬升速度   | 在底层打印过程中，打印平台每次离开打印表面的速度。                                                                                                                          |
+| 常规层抬升速度 | 在常规层打印过程中，打印平台每次离开打印表面的速度。                                                                                                                        |
+| 底层回程速度   | 在底层打印过程中，打印平台每次回程的速度。                                                                                                                                  |
+| 常规层回程速度 | 在常规层打印过程中，打印平台每次回程的速度。                                                                                                                                |
+
+### TSMC（二段运动控制）
+
+你可能已经注意到打印设置中有两组抬升和回缩参数，这里是设置 TSMC 的地方。
+
+你可能会想 TSMC 是什么，为什么需要它。让我来解释一下。
+
+当打印平台开始抬升时，模型会被打印平台拉起。这就是所谓的 “吸附效应”。当与打印平台的接触面积较大且打印平台迅速拉开时，吸附效应更为明显。吸附效应会导致模型变形，甚至导致模型从打印平台上掉下来。因此，一开始时您必须保持较慢速度。但是一旦模型离开了 FEP 薄膜，吸附效应就会消失。此时，您可以加快抬升速度以提高打印效率。类似原理也适用于回程阶段。
+
+您可以调整以下参数以熟悉 TSMC。
+
+<Tsmc />
+
+### GCode
+
+<Admonition type="warning" title="警告">
+	如果您不知道自己在做什么，请不要在这里编辑任何内容。
+</Admonition>
+
+<Admonition type="note" title="注意">
+	仅 .zip 和其派生格式（例如 .cws）支持 Gcode 编辑。
+</Admonition>
+
+## 切片
+
+### 图像灰度
+
+类似于灯光 PWM，范围从 `0` 到 `255`，但是图像灰度不是控制 UV 光源的功率，而是控制 LCD 屏幕的透光率。值越大，透光率越高。
+
+### 抗锯齿
+
+#### 灰度范围
+
+可用于抗锯齿的灰度范围。可通过拖动滑杆、点击灰度条上方数字、或直接在左右输入框中输入数字来调节灰度范围。
+
+默认灰度范围为`0` ~ `255`。`0` 代表黑色，`255` 代表白色。
+
+#### 边缘模糊
+
+对图像边缘进行模糊处理以实现更好的表面光滑效果。
+
+-   模糊像素（px）: 可用值：`2 ~ 8`。决定图像边缘过渡的像素数，您选择的级别越高，边缘就越柔和。类似于 Photoshop 中的羽化功能。
+
+### 表面效果
+
+-   表面磨砂：实现模型表面磨砂效果。 磨砂等级：低、中、高 三种可选。
+
+### 缩放补偿
+
+对模型在 X，Y，Z 轴方向上按照一定比例进行缩放补偿。百分比是与原始模型相比的大小，默认值为 100%。
+
+百分比数值越大，模型实体越大。
+
+百分比数值越小，模型实体越小。
+
+### 公差补偿
+
+#### 底层
+
+底层的内外直径补偿。
+
+当 a 值较大时，内直径较短，模型体积较大。
+
+当 a 值较小时，内直径较长，模型体积较小。
+
+当 b 值较大时，外直径较长，模型体积较大。
+
+当 b 值较小时，外直径较短，模型体积较小。
+
+#### 常规层
+
+常规层的内外直径补偿。
+
+当 a 值较大时，内直径较短，模型体积较大。
+
+当 a 值较小时，内直径较长，模型体积较小。
+
+当 b 值较大时，外直径较长，模型体积较大。
+
+当 b 值较小时，外直径较短，模型体积较小。
+
+### 蒙版
+
+蒙版是为了解决一个常见的光源问题而设计的：光源在屏幕上不同位置的光强不均匀，这通常是由于使用了不合适的光源所致，蒙版的目的是通过调节屏幕不同区域的透光率从而提供一层修正层，使得原本不均匀的光源变得均匀。
+
+_蒙版文件_： 你可以通过点击 `选择` 按钮来选择现有的文件，或者点击 `生成蒙版` 以使用 CHITUBOX 内置的 <Link href="#蒙版生成器">蒙版生成器</Link> 来生成一张蒙版图片。 <br />
+_过渡像素(px)_：点击 <Link href="#过渡像素">此处</Link> 了解过渡像素。
+
+#### 蒙版生成器
+
+##### 中心辐射
+
+**中心辐射** 生成类似涟漪的图案，圈数由**等分数量**设置。圆圈半径呈等分数列递增，递增量由**等分半径**设置。
+
+**灰度参数** 的范围为 `0` (黑) 到 `255` (白)。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/008-mask-01.png"}
+/>
+
+举个例子，如果 **等分数量** 设为 5，**等分半径**设为 3 毫米，则涟漪图案的半径为
+
+$$ 5 \times 3 = 15 \text{mm}$$
+
+下图为不同**等分半径**的对比图：
+
+<table style={{ width: "100%", maxWidth: 800 }}>
+	<tbody>
+		<tr style={{ width: "100%" }}>
+			<th style={{ width: "50%" }}>
+				<figure style={{ alignContent: "center" }}>
+					<ImageContainer
+						src={
+							"/images/docs/zh-CN/user-manual/1.x.x/configure-print-parameters-equal-radius-1.png"
+						}
+					/>
+					<figcaption>
+						<br />
+						等分数量设为 5, <br />
+						等分半径设为 1mm
+					</figcaption>
+				</figure>
+			</th>
+			<th style={{ width: "50%" }}>
+				<figure style={{ alignContent: "center" }}>
+					<ImageContainer
+						src={
+							"/images/docs/zh-CN/user-manual/1.x.x/configure-print-parameters-equal-radius-3.png"
+						}
+					/>
+					<figcaption>
+						<br />
+						等分数量设为 5, <br />
+						等分半径设为 3mm
+					</figcaption>
+				</figure>
+			</th>
+		</tr>
+	</tbody>
+</table>
+
+##### 矩阵模式
+
+**矩阵模式** 生成一个矩阵形状的图。行和列分别由 `m` 和 `n` 分别设置。
+**灰度参数** 的范围为 `0` (黑) 到 `255` (白)。
+
+举个例子，下图为一个由不同灰度组成的 2 × 3 矩阵。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/008-mask-02.png"}
+/>
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/configure-print-parameters_2x3_matrix.png"
+	}
+/>
+
+#### 过渡像素 (px)
+
+**过渡像素** 的原理是在 X 轴方向上对指定数量像素的灰度取平均值并应用到对应的像素上。
+
+举个例子：
+
+假设打印平台的尺寸是 80mm × 120mm，屏幕的分辨率为 800px × 1200px。
+
+下图为蒙版图，分辨率也是 800px × 1200px。其中所有的小方块的分辨率均为 50px × 50px。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/configure-print-parameters_3.png"
+	}
+/>
+
+如果将 **过渡像素** 设为 51px, 则处理后的图片将如下图所示：
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/configure-print-parameters_4.png"
+	}
+/>
+
+灰度从左到右逐渐变灰，这是因为原图上的每 51 个像素灰度被平均了。
+
+考虑第一行的情况。第一组 51 像素的灰度是 50 个黑像素和 1 个白像素的平均值，因此结果会比黑色略浅一点点，虽然这个改变几乎肉眼不可见。第二组 51 像素的灰度是 49 个白像素和 2 个黑像素的平均值，因此结果会比白色略暗一点点。第三组 51 像素的灰度是 48 个黑像素和 3 个白像素的平均值，依此类推，直到剩下的余数 35 个白像素。
+
+$$\frac{800}{51} = 15$$，余数 35
+
+这个部分则由它们自己取平均值，因此灰度没有变化。
+
+## 自动处理流程
+
+为当前所选应用设置自动化处理流程。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/009-configure-print-parameters-automated-process.png"
+	}
+/>
+
+<Admonition type="note" title="注意">
+	目前仅对部分应用生效，分别为正畸牙模、修复牙模、种植手术导板、颌垫夜磨牙垫、临时牙冠。
+</Admonition>
+
+点击 “**设置>>**” 打开自动处理流程设置窗口，并根据需要选择要自动化的步骤以及相应的参数。
+
+## 自定义机器
+
+展开自定义机器列表，点击添加机器， 然后您可以配置机器的基本信息，包括机器的名称、机器分辨率、尺寸等。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/009-configure-print-parameters-custom-machine.png"
+	}
+/>
+
+如果已经添加了一台自定义打印机，可以点击 <ChituboxProfileSettingsIcon/> 按钮进入机器配置界面对机器参数进行修改。
+
+### 机器名称
+
+机器的名称。默认为 default。
+
+### 机器类型
+
+机器的类型。可选项有：LCD/MSIA, DLP。
+
+### 镜像
+
+曝光图像镜像模式。
+
+### 切片格式
+
+设置打印机支持的切片格式。
+
+### 机器图片
+
+您可自定义当前设备的显示图片，可选。如果没上传图片，则自动按照默认图片显示。支持的图片格式有：.png、.jpg、.svg。
+
+### 分辨率和尺寸
+
+打印屏幕的分辨率和尺寸。
+
+**锁定比例**: 锁定尺寸和分辨率或 XY 的比例。
+
+如果不锁定尺寸与分辨率的比例（分辨率保持不变），屏幕尺寸越小，则实际打印尺寸越大，反之亦然。
+
+<Admonition type="warning" title="警告">
+	分辨率必须与打印机的实际分辨率匹配，否则打印机可能会报错。
+</Admonition>
+
+### 构建偏移区域
+
+构建区域的偏移量。通过启用此选项，您可以调整到打印屏幕边缘的偏移量。偏移区域将不会被打印。如果您的屏幕边缘有坏点，可以设置偏移以避开坏点。
+
+点击“下一步”即可打开配置面板和管理您的配置文件。

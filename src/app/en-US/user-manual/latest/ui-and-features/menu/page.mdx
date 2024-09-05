@@ -1,0 +1,353 @@
+import { ChituboxMenu } from "@/components/icons/SoftwareIcons";
+
+export const metadata = {
+	title: "Menu",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"Five menu options are available at the top of the software main window: File, Edit, View, Configuration, and Settings/Help.",
+	other:{
+		pageId: "/en-US/user-manual/v1.x.x/menu",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# Menu
+
+Five menu options are available at the top of the software main window: File, Edit, View, Configuration, and Settings/Help.
+
+## File
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/004-file-menu.png"}
+/>
+
+To open the file menu, click the "File" option at the top of the main window.
+
+### Open
+
+Open 3D mesh files.
+
+### Open Project
+
+Open an existing project file or load and merge the project file into the current project.
+
+The file extension name of the project file is _.chitubox_, make sure you don't mix them up with 3D mesh files or sliced files.
+
+### New Project
+
+Create a new project in the software.
+
+### Recently Opened
+
+Quickly open projects and 3D model files that you have previously opened in the software. It displays a list of recently opened files and projects, so you can quickly open them without having to search for them again.
+
+### Save Project
+
+Save your current project to a _.chitubox_ file.
+
+### Save As Project
+
+To save all models on the printing platform as a project file.
+
+### Combine Export Selected
+
+Combine the selected files and export to a 3D model file.
+
+Here you can export multiple selected files as a single 3D model file.
+
+_.stl_, _.obj_ and _.3mf_ formats supported.
+
+### Export Selected Separately
+
+Export the selected file sections as separate 3D model files.
+
+Here you can export multiple selected files as separated 3D model files at once.
+
+_.stl_, _.obj_ and _.3mf_ formats supported.
+
+## Edit
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/004-edit-menu.png"}
+/>
+
+To open the edit menu, click the "Edit" option at the top of the main window.
+
+### Undo
+
+Undo the last operation.
+
+### Redo
+
+Redo the last undone operation.
+
+### Function
+
+#### Tagging
+
+Open the <Link href="/en-US/user-manual/latest/ui-and-features/operations#tagging">Tagging</Link> feature panel.
+
+#### Filling
+
+Open the <Link href="/en-US/user-manual/latest/ui-and-features/operations#filling">Filling</Link> feature panel.
+
+#### Hollow Out
+
+Open the <Link href="/en-US/user-manual/latest/ui-and-features/operations#hollow-out">Hollow Out</Link> feature panel.
+
+#### Drill Hole
+
+Open the <Link href="/en-US/user-manual/latest/ui-and-features/operations#drill-hole">Drill Hole</Link> feature panel.
+
+#### Cutting
+
+Open the <Link href="/en-US/user-manual/latest/ui-and-features/operations#cutting">Cutting</Link> feature panel.
+
+#### Bridge Generator
+
+Open the <Link href="/en-US/user-manual/latest/ui-and-features/operations#bridge-generator">Bridge Generator</Link> feature panel.
+
+#### Auto Layout
+
+Open the <Link href="/en-US/user-manual/latest/ui-and-features/operations#auto-layout">Auto Layout</Link> feature panel.
+
+### Select All
+
+Select all objects on the print platform with one click.
+
+### Inverse Select
+
+Reverse select objects on the platform that are not selected.
+
+### Move
+
+Open the move operation panel.
+
+### Rotate
+
+Open the rotate operation panel.
+
+### Quick Orientation
+
+Quickly orient the selected model automatically without opening the rotation panel.
+
+### Quick Layout
+
+Quickly arrange all models automatically without opening the automatic layout panel. The layout parameters follow the settings in the automatic layout panel.
+
+### Duplicate
+
+Duplicate selected models, and add the specified number of copied models to the current project.
+
+### Add Supports
+
+Open the support configuration page. You can also click the support icon at the top of the main window to enter the support configuration page.
+
+### Repair Model
+
+Open the repair function panel and automatically detect the current selected model. This can be done in two ways:
+
+-   Basic Repair: Repair all errors except for intersections and reversed faces.
+-   Advanced Repair: Repair all detected errors.
+
+<Admonition type="warning">
+	The repair function is not always accurate. Especially for complex models or
+	those with numerous errors, such as inverted normals or overlapping faces,
+	the repair results may not be correct. In such cases, it's recommended to
+	use professional 3D modeling software for more precise fixes.
+</Admonition>
+
+### Reset Objects
+
+Remove all operation effects from the currently selected object.
+
+## View
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/004-view-menu.png"}
+/>
+
+This menu allows you to freely switch between views of the model, including front, back, left, right, top, and bottom. The default view is the right-top view.
+
+You can also use the keyboard shortcuts described in the view menu or the Viewport Gizmos in the upper right corner of the software main window to switch views.
+
+## Configuration
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/004-config-menu.png"}
+/>
+
+### Add Configuration
+
+Opens the printer configuration window and selects the corresponding configuration to add. Or open it from the bottom shortcut entrance.
+
+### Modify Current Configuration
+
+Opens the parameter configuration window of the current application configuration.
+
+### Delete Current Configuration
+
+Deletes the configuration of the current application.
+
+## Settings/Help
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/004-settings-menu.png"}
+/>
+
+### Settings/Preferences
+
+#### General
+
+##### Theme
+
+Supports dark and light modes.
+
+##### Language
+
+Users can choose their own language according to their needs. Currently supported languages are: English, Simplified Chinese, Traditional Chinese.
+
+-   Correct translation: correct translation errors in the currently selected language.
+
+##### UI Display Scale
+
+Adjusts the size of the software UI display.
+
+#### Performance
+
+##### Max Undo
+
+Change the maximum number of undo operations that can be performed.
+
+#### File
+
+##### Slice File Thumbnail View
+
+Change the view of the slice file thumbnails. The default view is the Current View.
+
+##### Auto Save Path
+
+Change the location where CHITUBOX will automatically save projects.
+
+#### Function
+
+##### Detect Model Errors When Importing
+
+Automatically detects model errors when importing models into the software.
+
+##### Real-time Collision Detection
+
+Enabling this option will perform real-time collision detection on the model. Collision detection will highlight collisions between models, allowing users to adjust models to avoid collisions.
+
+##### Cavity Detection Before Slicing
+
+Detect cavities in the model before slicing. This will help to identify any cavities that may need to be filled.
+
+##### Remove Small Enclosed Cavities Before Slicing
+
+Automatically fill closed cavities with a minimum edge length of less than 0.5mm in the model before slicing. This will help to prevent small cavities from causing problems during printing.
+
+##### Overhang Detection Before Slicing
+
+Detect overhangs in the model before slicing. This will help to identify any overhangs in the model that may cause printing errors.
+
+#### Update
+
+##### Check For Updates When Starting The Software
+
+Check if there are any new updates available for the software when starting the software. This ensures that you are always running the latest version of CHITUBOX and taking advantage of all the features and improvements it has to offer.
+
+### Import Parameter Package
+
+Import a configuration file to the current machine. This will allow you to import a set of print parameters for a specific printer or application.
+
+### Reset User Parameters
+
+Reset the current parameter configuration to the default settings. If the user has modified the parameters of the software's built-in configuration, they can reset the current parameter configuration with a single click here.
+
+### License
+
+Display your license information.
+
+### Manual
+
+Open the user manual.
+
+### Logs
+
+Access the folder containing the log file.
+
+If you're unable to open the log file path using the software, you can access it directly by navigating to the following location:
+
+-   Windows:
+
+```shell
+C:\Users\{user-name}\AppData\Local\Temp\CHITUBOX Dental\log
+```
+
+-   Mac:
+
+Since macOS generates the log file path randomly, the specific directory varies for each user. However, you can follow these steps to find log files:
+
+1. Open Finder and navigate to this directory:
+
+    ```shell
+    Macintosh HD/private/var/folder/
+    ```
+
+1. Locate the search bar in the top right corner, and type "CHITUBOX_Dental".
+1. Click on the 📁**CHITUBOX_Dental** folder in the search results to open it.
+1. Open "log" folder to find log files.
+
+<Admonition type="tip">
+	If you can't find AppData or private folder, they may be hidden. Here's how to reveal them:<br />
+	Windows: Open File Explorer, go to the View tab, and tick the checkbox for Hidden items. <br />
+	Mac: In Finder, navigate to the desired location, and press Command + Shift + . (period key).
+</Admonition>
+
+### Hotkeys
+
+View keyboard hotkeys for the software.
+
+### Check For Updates
+
+Check if the current version needs to be updated, and display the software update log.
+
+## Right-click Menu
+
+Right-click to open the right-click menu.
+
+### Import Model
+
+Import a 3D model file. This option is only available when you right-click on an empty space.
+
+### Select All
+
+Select all objects on the print platform with a single click.
+
+### Invert Selection
+
+Select all objects on the print platform that are not currently selected.
+
+### Quick Orientation
+
+Automatically orient the selected models without opening the rotate panel.
+
+### Quick Layout
+
+Automatically layout all models without opening the auto layout panel. The layout parameters will follow the settings in the auto layout panel.
+
+### Create A Copy
+
+Copy the selected model. This option is only available when you right-click on a model.
+
+### Delete
+
+Delete the selected model. This option is only available when you right-click on a model.
+
+<Admonition type="note">
+	When the right-click menu is opened in the Add Support interface, Quick
+	Orientation, Quick Layout, and Create A Copy are all unavailable.
+</Admonition>

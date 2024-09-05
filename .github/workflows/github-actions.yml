@@ -1,0 +1,48 @@
+name: NextJS Docker CI CD for China Mainland
+
+on:
+    push:
+        branches: ["main"]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Repo 📦
+              uses: actions/checkout@v4
+              with:
+                  lfs: true
+            - name: Build Docker Image 🐳
+              run: |
+                  docker build -t i-docs.dental.chitubox.com .
+            - name: Check Docker Images 🥽
+              run: |
+                  docker images
+                  docker save i-docs.dental.chitubox.com -o i-docs.dental.chitubox.com.tar
+                  chmod go+rw i-docs.dental.chitubox.com.tar
+                  ls -l
+            - name: Transfer Image tar File to Server 🚢
+              uses: appleboy/scp-action@master
+              with:
+                  host: ${{ vars.HOST }}
+                  username: ${{ vars.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  port: ${{ vars.PORT }}
+                  source: i-docs.dental.chitubox.com.tar
+                  target: /var/www/html/
+            - name: Load the Docker Image and Run Container 🚀
+              uses: appleboy/ssh-action@v1.0.0
+              with:
+                  host: ${{ vars.HOST }}
+                  username: ${{ vars.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  port: ${{ vars.PORT }}
+                  script: |
+                      docker stop c-docs.dental.chitubox.com
+                      docker rm c-docs.dental.chitubox.com
+                      docker rmi i-docs.dental.chitubox.com
+                      cd /var/www/html/
+                      docker load -i i-docs.dental.chitubox.com.tar
+                      rm i-docs.dental.chitubox.com.tar
+                      docker run --name c-docs.dental.chitubox.com -p 3003:3000 -d i-docs.dental.chitubox.com

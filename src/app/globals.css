@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.scrollbar::-webkit-scrollbar {
+		@apply sm:w-2;
+	}
+
+	.scrollbar::-webkit-scrollbar-track {
+		@apply rounded-lg
+		bg-slate-300
+		dark:bg-neutral-700;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb {
+		@apply rounded-lg
+		bg-slate-400
+		dark:bg-neutral-600;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb:hover {
+		@apply bg-slate-500 
+		dark:bg-neutral-500;
+	}
+
+	.horizontal-scrollbar::-webkit-scrollbar {
+		@apply h-2;
+	}
+
+	.horizontal-scrollbar::-webkit-scrollbar-track {
+		@apply rounded-lg
+		bg-slate-200
+		dark:bg-neutral-700;
+	}
+
+	.horizontal-scrollbar::-webkit-scrollbar-thumb {
+		@apply rounded-lg
+		bg-slate-300
+		dark:bg-neutral-600;
+	}
+
+	.horizontal-scrollbar::-webkit-scrollbar-thumb:hover {
+		@apply bg-slate-400 
+		dark:bg-neutral-500;
+	}
+
+	.scrollbar-hide::-webkit-scrollbar {
+		@apply hidden;
+	}
+}
+
+@font-face {
+	font-family: "NotoSansCJKsc-Regular";
+	src: url("/fonts/NotoSansCJKsc-Regular.otf");
+}

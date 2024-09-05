@@ -1,0 +1,224 @@
+import {
+	ChituboxAutoLayoutIcon,
+	ChituboxHollowIcon,
+	ChituboxDigHoleIcon,
+	ChituboxMoveIcon,
+	ChituboxRotateIcon,
+	ChituboxAddTagIcon,
+	ChituboxCutIcon,
+	ChituboxReinforcementsIcon,
+	ChituboxInfillIcon,
+	ChituboxSupport,
+	ChituboxProfileAddIcon,
+} from "@/components/icons/SoftwareIcons";
+
+export const metadata = {
+	title: "Operations",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"The various operation options are located on the left side of the main window. It includes Select, Move, Rotate, Add Tag, Auto Layout, Add Supports, Hollowing, Filling, Drill Hole, Bridge Generator, and Cutting.",
+	other:{
+		pageId: "/en-US/user-manual/v1.x.x/operations",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# Operations
+
+The various operation options are located on the left side of the main window. It includes Select, Move, Rotate, Tagging, Auto Layout, Add Supports, Hollow Out, Filling, Drill Hole, Bridge Generator, and Cutting.
+
+## Select
+
+-   Single Selection: Click the left mouse button to select a model in the viewport.
+-   Box Selection: Hold down the left mouse button and drag the mouse to select multiple models in the viewport.
+
+## Move
+
+<ChituboxMoveIcon /> The move tool is used to move objects in the scene. You can
+also move objects precisely by inputting the coordinates into the move panel.
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/006-operations-move.png"}
+/>
+
+-   Center Align: The object will be centered on the plate, if multiple objects are selected, the center of the objects will be the center of the plate.
+-   Place On Platform: The object will be put on the plate.
+
+## Rotate
+
+<ChituboxRotateIcon /> The rotate tool is used to rotate objects in the scene.
+You can also rotate objects precisely by inputting the angles in the rotate
+panel.
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/006-operations-rotate.png"}
+/>
+
+-   Flatten On Platform: The object will be put on the plate by the face you selected on the object.
+-   Auto Orientation: The object will automatically orient itself based on the current application type.
+
+## Tagging
+
+<ChituboxAddTagIcon /> Add text labels to models.
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/006-operations-add-tags.png"}
+/>
+
+Here you can set the font style and alignment of the text. Click the text input box to enter text.
+
+-   Font Size (mm): The height of the label text. The default value is 5 mm.
+-   Rotation angle: The angle to rotate the label text counterclockwise around its center.
+-   Add Method: Two methods are available: raised and recessed.
+-   Depth (mm): The thickness of the label.
+
+## Auto Layout
+
+<ChituboxAutoLayoutIcon /> This feature allows you to quickly and automatically
+arrange models.
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/user-manual/1.x.x/006-operations-auto-layout.png"
+	}
+/>
+
+-   Model Spacing: The minimum spacing between models.
+-   Layout Orientation: Select an orientation to layout the models. Available options: center, X side, and Y side.
+
+## Add Supports
+
+<ChituboxSupport /> Add supports to the model.
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/user-manual/1.x.x/006-operations-add-support.png"
+	}
+/>
+
+-   Support Settings: There are 3 default support settings: Light, Middle, and Heavy. If they are not suitable for your model, you can click the <ChituboxProfileAddIcon/> button to add custom support settings.
+-   Delete Supports: Delete all supports that have been added to the currently selected model with one click.
+-   Auto Support: Automatically add supports to the selected model according to the specified support configuration.
+
+## Hollow Out
+
+<ChituboxHollowIcon /> The "Hollow Out" option allows you to hollow out models,
+helping users save time and material costs when printing 3D models.
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/006-operations-hollow.png"}
+/>
+
+-   Wall Thickness: wall thickness determines the overall thickness of the walls.
+-   Hollowing Method: Hollow Cavity and Bottom Through.
+
+    **Bottom Through** is pretty much like "Hollow out" but removes the bottom of the chamber.
+
+    **Hollow Cavity** allows users to create 3D models with hollow interiors, while retaining the outer shape of the model. The Hollow option can help users save time and material costs when printing 3D models, as the hollow interior will require less material to print. This feature can also be used to create lightweight models with a complex outer shape.
+
+-   Filling: If this option is enabled, the cavity created during hollowing will be filled. There are 3 types: Frame, Hive, and Grid.
+
+## Filling
+
+<ChituboxInfillIcon /> The "Filling" function can be used to fill in existing
+cavities inside a model.
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/006-operations-filling.png"}
+/>
+
+There are 4 fill types available: Solid, Frame, Hive, and Grid.
+
+### Filling Type Descriptions
+
+#### Solid
+
+Fills the cavity with a solid material.
+
+#### Scaffold
+
+Fills the cavity of the model with a scaffold structure.
+
+-   Infill Density (%): The density of the scaffold.
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/user-manual/1.x.x/006-operations-infill-scaffold.png"
+	}
+/>
+
+#### Hive
+
+The hive structure is perpendicular to the platform, and there are circular through holes in the walls between adjacent hive cells for pressure relief. The diameter of the through holes is one-sixth of the hive cell diameter. For each passing through the center of the through hole, another group of through holes will be added according to the length of the hive hole diameter.
+
+-   Hive Aperture (mm): The diameter of the circumscribed circle of the hexagonal hive cell.
+-   Wall Thickness (mm): The distance between adjacent hive cells.
+-   Through Hole Starting Height (mm): The height of the lowest through holes.
+-   Fixed Height Filling: Fill the bottom layer with a custom height. Only applies to cavities that penetrate the bottom.
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/006-operations-infill-hive.png"}
+/>
+
+#### Grid
+
+-   Grid Edge Length: The edge length of the square grid.
+-   Wall Thickness: The distance between adjacent holes.
+-   Through Hole Starting Height: The height of the lowest through hole.
+-   Bottom Layer Only: Custom height for bottom layer filling. Only applies to cavities that penetrate the bottom.
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/006-operations-infill-grid.png"}
+/>
+
+<Admonition type="note">
+	To ensure proper air circulation and pressure relief, adjacent cavities of the hive and grid structure are connected by small circular holes. The through hole diameter is one-sixth of the hive cell diameter (or grid edge length). The through-holes are positioned based on their center points, and starting from the defined height，a set of through-holes is added at a regular interval, corresponding to the diameter of each hive cell (or grid edge length).
+</Admonition>
+
+## Drill Hole
+
+<ChituboxDigHoleIcon /> The "Drill Hole" feature allows you to manually or
+automatically create holes of a specified size on a model.
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/user-manual/1.x.x/006-operations-drill-hole.png"
+	}
+/>
+
+-   Hole Diameter: The diameter of the hole.
+-   Batch Digging: Automatically drill hole on the model according to the specified parameters.
+
+    **Hole Number**: Set the number of holes to be drilled automatically.
+    **Hole height**: The height of the top of the hole from the platform.
+
+## Bridge Generator
+
+<ChituboxReinforcementsIcon /> Use the left mouse button to click on two points
+on the model to add bridge to the model. The use of bridge is one of the
+important applications of dental 3D printing technology, which can help improve
+the quality and effectiveness of dental restorations.
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/user-manual/1.x.x/006-operations-bridge-generator.png"
+	}
+/>
+
+-   Shape: The shape of bridge.
+-   Size: The size of bridge.
+-   Generate T-shaped structure: When adding bridge, an additional set of bridge structures will be automatically generated and connected to the existing structures in a T-shape. Only works when adding automatically.
+-   Auto-generate: Automatically generate bridge with the specified parameters. Only works for arch dental molds.
+
+## Cutting
+
+<ChituboxCutIcon /> The "Cutting" function can be used to cut the model at
+different heights.
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/006-operations-cut.png"}
+/>
+
+Cutting Plane Height (mm): The height of the cut plane (relative to the printing platform).

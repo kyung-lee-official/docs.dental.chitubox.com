@@ -1,0 +1,138 @@
+import {
+	ChituboxSupport,
+	ChituboxProfileAddIcon,
+	ChituboxProfileSettingsIcon,
+	ChituboxProfileRenameIcon,
+	ChituboxProfileDeleteIcon,
+} from "@/components/icons/SoftwareIcons";
+
+export const metadata = {
+	title: "Configure Support Parameters",
+	authors: [{ name: "CHITUBOX Team" }],
+	description: "Configure support parameters in CHITUBOX.",
+	other:{
+		pageId: "/en-US/user-manual/v1.x.x/configure-support-parameters",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# Configure Support Parameters
+
+Click <ChituboxSupport /> icon on the left side of the main window to open the support panel. We will go through the support parameters one by one.
+
+CHITUBOX Provides 3 default support settings: Light, Medium, and Heavy. If these are not suitable for your model, you can click the <ChituboxProfileAddIcon />"Add configuration" button to add a new support configuration file and customize the support settings. You can also <ChituboxProfileRenameIcon />rename, <ChituboxProfileSettingsIcon />edit, and <ChituboxProfileDeleteIcon />delete support settings here.
+
+## Support Settings
+
+### Basic Settings
+
+Support basic settings.
+
+| Parameters                                   | Description                                                                                            |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Model lift height                            | The distance between the lowest point of the model and the print platform. The default value is 5 mm.  |
+| Maximum triangle angle for automatic support | The maximum angle between the model surface (triangle) and the platform when using automatic support.. |
+| Automatic support point spacing              | The distance between support points when using automatic support.                                      |
+| Automatic support trunk spacing              | The distance between support trunks when using automatic support.                                      |
+
+### Top
+
+-   Tip Part
+
+| Parameters        | Description                                                          |
+| ----------------- | -------------------------------------------------------------------- |
+| Contact Shape     | The shape of the contact point between the support and the model.    |
+| Contact Diameter  | The diameter of the contact point between the support and the model. |
+| Top contact depth | The depth from the tip of the support to the model surface.          |
+
+-   Main Part
+
+| Parameters                               | Description                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------- |
+| Connection Shape                         | The cross-sectional shape of the support top.                    |
+| Upper Diameter                           | The upper diameter of the top part.                              |
+| Lower Diameter                           | The lower diameter of the top part.                              |
+| Connector length                         | The length of the connector bar.                                 |
+| Connector maximum angle with Z direction | The maximum angle between the connector bar and the Z direction. |
+
+### Middle
+
+| Parameters            | Description                                   |
+| --------------------- | --------------------------------------------- |
+| Cross-sectional shape | The shape of the support cross-section.       |
+| Upper diameter        | The diameter of the upper end of the support. |
+| Lower diameter        | The diameter of the lower end of the support. |
+
+### Bottom
+
+| Parameters             | Description                                                           |
+| ---------------------- | --------------------------------------------------------------------- |
+| Lower diameter         | The lower diameter of the support base section.                       |
+| Base height            | The height of the support base section.                               |
+| Platform contact shape | The shape of the support that contacts the platform.                  |
+| Shape diameter         | The diameter of the shape that the support contacts the platform.     |
+| Shape thickness        | The diameter of the thickness that the support contacts the platform. |
+
+### Raft
+
+| Parameters                   | Description                                                                        |
+| ---------------------------- | ---------------------------------------------------------------------------------- |
+| Raft type                    | The shape of the raft.                                                             |
+| Raft area ratio              | The ratio of the bottom plate area to the horizontal projection area of the model. |
+| Raft thickness               | The thickness of the raft.                                                         |
+| Skate edge protrusion height | The height of the protrusion on the edge of the bottom plate.                      |
+| Grid side length             | The side length of the mesh.                                                       |
+| Grid width                   | The width of the mesh.                                                             |
+
+### Small pillar
+
+Smaller pillars are thinner and smaller than regular supports, and are used to support the thinner parts of the model structure.
+
+| Parameters                  | Description                            |
+| --------------------------- | -------------------------------------- |
+| Diameter                    | The diameter of the small pillar.      |
+| Maximum Small Pillar Length | Maximum length of small pillars        |
+| Small Pillar Contact Shape  | Shape of the small pillar contact part |
+| Contact Depth               | The contact depth of the small pillar  |
+
+### Cross
+
+Cross-structures are used to connect different supports to increase the overall strength of the support.
+
+| Parameters                              | Description                                                                                                 |
+| --------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Enable cross-structure                  | Automatically generate cross-structures between support stems when generating supports automatically.       |
+| Diameter                                | Diameter of the cross-structure.                                                                            |
+| Start height (relative to the platform) | Start height for generating cross-structures (relative to the platform).                                    |
+| Minimum spacing (Z)                     | Spacing between two sets of cross-structures in the Z direction.                                            |
+| Maximum spacing (XY)                    | The maximum spacing between two support when generating cross-structures.                                   |
+| Generate bidirectional cross-structures | When manually adding supports, identify supports on both sides and generate bidirectional cross-structures. |
+
+### Advanced
+
+Advanced support parameters
+
+| Parameters                                                  | Description                                                                                                                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Minimum distance between model and support                  | The minimum distance between model and supports trunk                                                                                                       |
+| Maximum horizontal offset between support and contact point | The maximum allowed horizontal offset between the support trunk and the contact point on the XY plane of the model.                                         |
+| Automatic Support Avoids Circular Structures                | Automatically avoid circular structures when supporting                                                                                                     |
+| Enhanced Automatic Support                                  | Enable/Disable enhanced automatic support. There are three modes: Independent Reinforcement (IR), Triangular Reinforcement (TR), Global Reinforcement (GR). |
+
+## Add supports
+
+### Automatically
+
+Click the Auto Support button to automatically add supports to the selected model according to the specified support settings.
+
+### Manually
+
+Move the cursor to the desired location and click the left mouse button to add support.
+
+## Delete supports
+
+Select or frame the support you want to delete, and press the Delete key or the Back key to delete the selected support.
+
+You can also click the "Remove all supports" button to remove all supports added to the selected model with one click.

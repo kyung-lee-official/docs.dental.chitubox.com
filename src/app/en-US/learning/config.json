@@ -1,0 +1,18 @@
+{
+	"fieldName": "Learning",
+	"isVersioned": false,
+	"type": "blog",
+	"homeUrl": "/en-US/learning",
+	"versions": [
+		{
+			"versionCode": null,
+			"isLatest": false,
+			"category": [
+				{
+					"pageId": "parameter-configuration",
+					"label": "Parameter Configuration"
+				}
+			]
+		}
+	]
+}

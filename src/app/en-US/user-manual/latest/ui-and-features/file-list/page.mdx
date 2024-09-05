@@ -1,0 +1,32 @@
+import {
+	ChituboxCheckboxIcon,
+	ChituboxProfileAddIcon,
+	ChituboxDeleteIcon,
+} from "@/components/icons/SoftwareIcons";
+
+export const metadata = {
+	title: "Manage Files",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"All loaded files are displayed in the file list. In this section, we will introduce the file list panel in CHITUBOX.",
+	other:{
+		pageId: "/en-US/user-manual/v1.x.x/file-list",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# File List
+
+All loaded files are displayed in the file list. You can select multiple files at the same time. You can also select all files by clicking the select all button.
+
+<ImageContainer
+	src={"/images/docs/en-US/user-manual/1.x.x/007-file-list-panel.png"}
+/>
+
+The checkbox icon <ChituboxCheckboxIcon /> allows you to select the file.
+
+The add icon <ChituboxProfileAddIcon /> allows you to add files, or double-click a blank space in the file list to add files.
+
+The trash icon <ChituboxDeleteIcon /> allows you to delete the selected files.

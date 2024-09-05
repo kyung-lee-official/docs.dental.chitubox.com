@@ -1,0 +1,217 @@
+import {
+	ChituboxAutoLayoutIcon,
+	ChituboxHollowIcon,
+	ChituboxDigHoleIcon,
+	ChituboxMoveIcon,
+	ChituboxRotateIcon,
+	ChituboxAddTagIcon,
+	ChituboxCutIcon,
+	ChituboxReinforcementsIcon,
+	ChituboxInfillIcon,
+	ChituboxSupport,
+	ChituboxProfileAddIcon,
+} from "@/components/icons/SoftwareIcons";
+
+export const metadata = {
+	title: "操作",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"各类操作选项位于主窗口的左侧。它包括选择、移动、旋转、添加标签、自动排版、镂空、填充、打孔、加强筋和切割。",
+	other:{
+		pageId: "/zh-CN/user-manual/v1.x.x/operations",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# 操作
+
+各类操作选项位于主窗口的左侧。它包括选择、移动、旋转、添加标签、自动排版、镂空、填充、打孔、加强筋和切割。
+
+## 选择
+
+-   单选：点击鼠标左键选择画面中的模型。
+-   框选：按住鼠标左键并拖动鼠标框选画面中的模型。
+
+## 移动
+
+<ChituboxMoveIcon /> 用于移动所选模型。你也可以通过在移动面板中输入坐标来精准移动模型。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/006-operations-move.png"}
+/>
+
+-   居中：将所选模型居中放置在打印平台上。如果多个模型被选择，则以所选多个模型的组合的中心为准进行居中。
+-   放在底板上：以模型的最低点为基准点，将所选模型放在底板上。
+
+## 旋转
+
+<ChituboxRotateIcon /> 用于旋转所选模型。你也可以通过在移动面板中输入角度来精准旋转模型。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/006-operations-rotate.png"}
+/>
+
+-   按面放平：将模型按照你所选择的面放置在打印平台上。
+-   自动定向：模型将按照当前应用类型进行自动定向。
+
+## 添加标签
+
+<ChituboxAddTagIcon /> 为模型添加设定的文字标签。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/006-operations-add-tags.png"}
+/>
+
+您可以在这里设置文本的字体样式、对齐方式。单击文本输入框即可输入文字。
+
+-   字高(mm)：标签文字的高度， 默认值为 5。
+-   旋转角度：围绕文字中心以逆时针方向旋转的角度。
+-   添加模式：有凸起和内凹两种模式可选。
+-   深度(mm)：标签的厚度。
+
+## 自动排版
+
+<ChituboxAutoLayoutIcon /> 可以帮助您快速对模型进行自动排版。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/006-operations-auto-layout.png"
+	}
+/>
+
+-   模型间距：模型之间的最小间距。
+-   排版方位：选择方位对模型进行排版。可选项有：居中、X 侧、和 Y 侧。
+
+## 支撑
+
+<ChituboxSupport /> 为模型添加支撑。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/006-operations-add-support.png"
+	}
+/>
+
+-   支撑配置：有 3 种默认的支撑设置：细、中、粗。如果它们不适合您的模型，您可以点击 <ChituboxProfileAddIcon />按钮添加自定义支撑设置。
+-   移除全部支撑：一键移除当前所选模型上的所有已加支撑。
+-   自动支撑：按照指定支撑配置为所选模型自动添加支撑。
+
+## 镂空
+
+<ChituboxHollowIcon /> 可以对模型进行镂空，帮助用户在打印 3D
+模型时节省时间和材料成本。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/006-operations-hollow.png"}
+/>
+
+-   壁厚(mm): 外壁的厚度。
+-   镂空模式：有底部贯穿和镂空内腔两种模式可选。
+
+    **镂空内腔** 仅镂空模型内部腔体。
+    **底部贯穿** 镂空模型的同时删除室底。
+
+-   填充：启用此选项，将在镂空的同时填充产生的腔体。 有 3 种填充类型：立体框架、蜂窝结构和网格结构。
+
+## 填充
+
+<ChituboxInfillIcon /> “填充”功能可以对模型内部已经存在的腔体进行填充。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/006-operations-infill.png"}
+/>
+
+有 4 种填充类型可选：实体、立体框架、蜂窝结构和网格结构。
+
+### 填充类型说明
+
+#### 实体
+
+将腔体填实。
+
+#### 立体框架
+
+为模型腔体填充立体框架。
+
+-   填充密度(%): 立体框架的密度。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/006-operations-infill-scaffold.png"
+	}
+/>
+
+#### 蜂窝结构
+
+为模型的腔体填充蜂窝结构，蜂窝结构将与平台垂直。
+
+-   蜂窝孔径(mm)：六边形蜂窝孔的外接圆直径尺寸。
+-   壁厚(mm)：相邻蜂窝孔之间的距离。
+-   通孔起始高度(mm)：最低连接孔的高度。
+-   仅填充底层：自定义高度对底层进行填充。仅作用于底部贯穿的腔体。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/006-operations-infill-hive.png"}
+/>
+
+#### 网格结构
+
+为模型的腔体填充网格结构，网格结构将与平台垂直。
+
+-   网格边长：正方形网格的边长。
+-   壁厚：相邻孔洞之间的距离。
+-   通孔起始高度：最低连接孔的高度。
+-   仅填充底层：自定义高度对底层进行填充。仅作用于底部贯穿的腔体。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/006-operations-infill-grid.png"}
+/>
+
+<Admonition type="note" title="提示">
+	为了满足蜂窝结构和网格结构的泄压需求，相邻孔洞之间会自动生成圆形连通孔。直径为蜂窝孔径（或网格结构）的六分之一。
+	通孔位置以圆心为基准，并以定义的高度作为起始高度，每经过一个蜂窝孔径（或网格结构）的长度增加一组连通孔。
+</Admonition>
+
+## 打孔
+
+<ChituboxDigHoleIcon /> “打孔”功能可以在模型上手动或自动创建指定大小的孔。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/006-operations-dig-holes.png"
+	}
+/>
+
+-   孔直径(mm)：孔的直径。
+-   批量打孔：按照指定参数对模型进行自动打孔。
+
+    **孔数量**：设定自动打孔的数量。
+    **孔高度**：孔的顶端距离平台的高度。
+
+## 加强筋
+
+<ChituboxReinforcementsIcon /> 用鼠标左键点击模型上的两点，为模型添加加强筋。加强筋的使用是齿科
+3D 打印技术的重要应用之一，它可以帮助提高牙科修复体的质量和效果。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/006-operations-reinforcements.png"
+	}
+/>
+
+-   形状：加强筋的形状。
+-   大小：加强筋的大小。
+-   自动生成 T 形结构：添加加强筋时，会自动生成一组额外的加强结构并与现有的结构形成 T 字形连接。仅在自动添加时起作用。
+-   自动添加：自动添加指定参数的加强筋。仅对弓形牙模生效。
+
+## 切割
+
+<ChituboxCutIcon /> “切割”功能可以在不同高度对模型进行切割。
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/006-operations-cut.png"}
+/>
+
+切面高度(mm): 切割面的高度（相较于打印平台）。

@@ -1,0 +1,109 @@
+import { ChituboxAddMachine, ChituboxSupport } from "@/components/icons/SoftwareIcons";
+
+export const metadata = {
+	title: "快速入门",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"本节将带您了解 CHITUBOX Dental 最基本的使用方法，让您尽快上手。我们将从加载模型开始，然后给模型添加支撑、对模型进行切片，最后导出可打印文件到您的打印机。",
+	other:{
+		pageId: "/zh-CN/user-manual/v1.x.x/quick-start",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+# 快速入门
+
+本节将带您了解 CHITUBOX Dental 最基本的使用方法，让您尽快上手。 我们将从加载模型开始，然后添加配置，给模型添加支撑、对模型进行切片，最后导出可打印文件到您的打印机。
+
+## 添加机器
+
+首次启动 CHITUBOX Dental 时，您将根据需要添加您的打印机。假设我们想添加 ELEGOO Jupiter。单击机器管理栏上的加号按钮 <ChituboxAddMachine size={24} /> 或点击<Link href="/zh-CN/docs/user-manual/latest/ui-and-features/menu#配置菜单">配置菜单</Link>中的“添加配置”选项，然后从列表中选择 ELEGOO Jupiter。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/003-quick-start-add-machines.png"
+	}
+/>
+
+选择您的应用、材料，以及层厚。如果所选应用属于<Link href="/zh-CN/user-manual/latest/ui-and-features/configure-print-parameters#自动处理流程">自动处理流程</Link>所生效应用其中之一，则可以勾选 “启用···自动处理流程” 选项来简化处理流程。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/003-quick-start-configurations.png"
+	}
+/>
+
+您可以进入**高级设置**进一步设置所需的配置。为方便起见，我们将使用预设参数。单击 “应用”。
+
+## 加载文件
+
+您可以通过对话窗的方式或者拖拽的方式将现有文件加载到 CHITUBOX Dental 中。现在让我们尝试通过对话窗口的方式打开一个文件。
+
+单击主窗口左上角的文件选项。如果要加载现有项目，请单击 “打开项目”。如果您想打开 3D 模型文件，请单击 “导入模型”。 您可以点击 <Link href="/zh-CN/user-manual/latest/introduction#支持的文件">🔗 此链接</Link> 查看支持的 3D 模型文件类型。
+
+从电脑中选择一个想要切片的 3D 模型文件。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/003-quick-start-open-files.png"
+	}
+/>
+
+打开文件。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/003-quick-start-open-files-2.png"
+	}
+/>
+
+## 自动化流程
+
+如果您所选应用支持自动处理流程，您将会在主窗口上方看到一个 **“自动处理”** 按钮，单击此按钮可以一键对模型进行自动定向、修复、镂空、加支撑等操作。
+
+您可以根据自己的使用习惯对自动化处理流程进行详细的配置，本章节为了尽可能保持简单，我们将使用默认设置，点击 “自动处理”。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/003-quick-start-automated-process.png"
+	}
+/>
+
+如果您所选应用不支持自动处理流程，点击主窗口左侧的<ChituboxSupport/>支撑图标打开支撑页面，为方便起见，使用自动加支撑功能，点击 “自动支撑” 按钮。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/003-quick-start-supported.png"
+	}
+/>
+
+不错，现在我们可以继续对文件进行切片了。
+
+## 切片
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/003-quick-start-slice.png"}
+/>
+
+点击右下方的 “切片” 按钮，对文件进行切片。这个过程需要一段时间，具体时间取决于模型的大小和支撑的复杂程度。
+
+## 导出可打印文件
+
+这是最后一步，单击右下方的 “保存切片” 按钮以打开保存切片文件窗口。
+
+<Admonition type="warning" title="警告">
+	请不要将切好的文件直接保存到U盘，这样容易造成文件错误。
+	推荐的工作流程是先将文件保存至您的计算机硬盘上，然后再将文件复制到 U 盘。
+	此外，如果您打算打印较大的模型，强烈建议将切片文件加载回 chitubox
+	并预览文件，检查是否存在任何可以直观发现的错误，这样就不会浪费时间和树脂打印一个损坏的文件。
+</Admonition>
+
+<ImageContainer
+	src={"/images/docs/zh-CN/user-manual/1.x.x/003-quick-start-save-as.png"}
+/>
+
+您可以在此处命名文件并选择文件保存的位置。确保在 “保存类型” 下拉菜单中选择 _.ctb_ 格式。单击 “保存” 以保存文件，之后将文件复制到 U 盘。
+
+恭喜您完成 CHITUBOX Dental 基础入门教程，祝打印一切顺利！ 🎉🎉🎉

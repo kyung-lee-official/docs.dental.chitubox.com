@@ -1,0 +1,18 @@
+{
+	"fieldName": "学习中心",
+	"isVersioned": false,
+	"type": "blog",
+	"homeUrl": "/zh-CN/learning",
+	"versions": [
+		{
+			"versionCode": null,
+			"isLatest": false,
+			"category": [
+				{
+					"pageId": "parameter-configuration",
+					"label": "参数配置"
+				}
+			]
+		}
+	]
+}
