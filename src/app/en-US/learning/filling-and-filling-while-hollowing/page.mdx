@@ -1,0 +1,57 @@
+export const metadata = {
+	title: "Filling and Filling While Hollowing",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"There are two filling paths in CHITUBOX Dental, one is a separate filling function, and the other is a filling option embedded in the hollowing function. This article will explain the difference between the filling functions of these two paths.",
+	keywords: [],
+	other: {
+		pageId: "/en-US/learning/filling-and-filling-while-hollowing",
+	},
+	openGraph: {
+		images: [
+			"/images/docs/en-US/learning/filling-and-filling-while-hollowing/cover.png",
+		],
+	},
+};
+
+# Filling and Filling While Hollowing
+
+There are two filling paths in CHITUBOX Dental, one is a separate filling function, and the other is a filling option embedded in the hollowing function. This article will explain the difference between the filling functions of these two paths.
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/learning/filling-and-filling-while-hollowing/filling.png"
+	}
+	figcaption="Filling"
+/>
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/learning/filling-and-filling-while-hollowing/hollow-with-filling.png"
+	}
+	figcaption="Hollow with Filling"
+/>
+
+The filling functions of these two paths are suitable for processing dental models.
+
+The separate filling function is suitable for models that have been hollowed out when imported. When the model is flattened on the platform to form a closed cavity, it can be filled to enhance the model structure or remedy some printing problems caused during the hollowing-out phase. One thing to note is that the hollowed-out model needs to be detected with the closed cavity then it can be filled, so the model must be flattened on the platform to be successfully filled.
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/learning/filling-and-filling-while-hollowing/seperate-filling-function.png"
+	}
+	figcaption="The separate filling function"
+/>
+
+The function of filling while hollowing is suitable for solid models. These two procedures are done in one step, simplifying the operation, ensuring the stability of the model structure, and reducing material consumption.
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/learning/filling-and-filling-while-hollowing/filling-without-hollowing-function.png"
+	}
+	figcaption="The filling while hollowing function"
+/>
+
+In real scenarios, the models imported may be solid or hollow, depending on whether the dental model designer considers the printing scenario when designing the model. The most common design is the solid type, which CHITUBOX Dental is well-suited to handle. Since most dental model designers are not clear about the requirements of the printing process, the hollow dental models they design may have islands, or the wall thickness may not match the characteristics of the resin materials used in dental clinics or labs, resulting in printing failure. Therefore, at the beginning of the CHITUBOX Dental development, the adverse factors brought by the model design to printing were taken into account, which prompted the creation of the filling function.
+
+In summary, when using CHITUBOX Dental to print models, it is recommended that dental model designers do not hollow out or drill holes. On the one hand, this allows dental model designers to fully devote themselves to the design of treatment plans without having to consider the printing scenario too much, on the other hand, it can also increase the freedom of processing with slicer software in dental clinics or labs. Using solid models, combined with the efficient processing of CHITUBOX Dental, can improve overall work efficiency.
