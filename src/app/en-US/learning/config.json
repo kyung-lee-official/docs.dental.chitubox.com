@@ -11,6 +11,10 @@
 				{
 					"pageId": "parameter-configuration",
 					"label": "Parameter Configuration"
+				},
+				{
+					"pageId": "orientation-strategies-for-dental-items",
+					"label": "Orientation Strategies for Dental Items"
 				}
 			]
 		}

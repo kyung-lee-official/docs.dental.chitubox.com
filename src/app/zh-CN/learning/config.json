@@ -11,6 +11,10 @@
 				{
 					"pageId": "parameter-configuration",
 					"label": "参数配置"
+				},
+				{
+					"pageId": "orientation-strategies-for-dental-items",
+					"label": "齿科模型的定向策略"
 				}
 			]
 		}

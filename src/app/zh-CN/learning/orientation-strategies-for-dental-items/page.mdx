@@ -1,0 +1,81 @@
+export const metadata = {
+	title: "齿科模型的定向策略",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"众所周知，对模型的合理定向是3D打印关键的一步，今天就详细介绍一下各类齿科模型在打印时的定向策略。",
+	keywords: [],
+	other: {
+		pageId: "/zh-CN/learning/orientation-strategies-for-dental-items",
+	},
+	openGraph: {
+		images: [
+			"/images/docs/zh-CN/learning/orientation-strategies-for-dental-items/cover.png",
+		],
+	},
+};
+
+# 齿科模型的定向策略
+
+众所周知，对模型的合理定向是 3D 打印关键的一步，今天就详细介绍一下各类齿科模型在打印时的定向策略。
+
+## 牙模
+
+牙模最重要的作用是还原患者口腔内的牙齿状况，用来检验制作好的义齿产品或其他治具是否可以与患者真实的牙齿完美适配。所以制作牙模这个环节最重要的是对精度的把控，其次是打印的高效性。以正畸牙模为例，我们的目标是在保证精度的情况下，提高效率，并节省材料。由于光固化打印会使支撑区域的精度下降，并且会留下支撑点，所以在定向时需要保证牙模摆放的角度不能使任何牙齿区域添加支撑。常见的方式是将模型贴底平放，这样打印不仅可以避免在牙齿区域生成支撑，也可以降低模型高度，缩短打印时长。
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-the-dental-models-flatten-on-the-platform.png"
+	}
+	figcaption="牙模贴底平放示意"
+/>
+
+还有一种定向方式，是将模型竖起来摆放。原因是隐形正畸一个疗程最短都需要 8 副牙套，上下颌总共需要 16 个牙模。当打印机的幅面不够大时，想减少打印次数就需要尽可能利用空间多排模型。但这种排版方式有一个很大的缺点，牙齿的舌侧面会与平台接近平行，自动添加支撑时很难确保牙齿表面不被添加支撑，往往需要手动干预，会比较耗时。其次与平放的排版方式相比，这种方式能节省的平台空间有限，却成倍增加了打印时长。另外由于此种排版方式会使牙齿多处表面呈现接近平行于平台的角度，这将会导致牙齿表面有较明显的层纹，影响模型精度。基于以上原因，对于所有牙齿模型，我们不建议使用竖直摆放的定向方式。
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-the-tooth-models-placed-vertically.png"
+	}
+	figcaption="牙模竖直摆放示意"
+/>
+
+CHITUBOX Dental 对于牙模的自动定向方式是贴底平放，可以非常快捷地将模型平放在平台上。此外，旋转面板中的“按面放平”功能也能达到一样的效果，便于手动选择模型平面进行平放。
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-dental-models-automatically-oriented-in-chitubox-dental.gif"
+	}
+	figcaption="CHITUBOX Dental牙模自动定向"
+/>
+
+## 种植导板、颌垫及夜磨牙垫
+
+这几种类型的模型一般会采用透明的树脂材料进行打印，共同特点是使用时需要和真正的牙齿进行贴合，并且打印时必须添加支撑。那它们定向的原则就是要避免在牙齿贴合面添加支撑。对于这些模型，CHITUBOX Dental 的自动定向策略是使凹面（即产品与牙齿贴合的那一面）向上，避免在牙印处添加支撑，同时缩短打印时间。
+
+其中，导板的定向情况比较特殊。在调整方向时除了要让凹面向上，同时还要尽可能让导环孔的方向垂直于平台，避免在孔位处生成支撑，这可以使导环孔有更高的尺寸精度。其中原因较为复杂，简单来说就是光固化 3D 打印要求光的穿透深度必须大于一个层厚，否则层间无法有效粘接，就会导致孔倾斜的一侧出现过度固化的情况，降低孔的尺寸精度。当孔的方向与平台越趋近垂直，过度固化的情况就会越少，所以 CHITUBOX Dental 的自动定向会尽可能让导环孔垂直于平台。如果一个导板上有多个导环孔，我们的策略是找到均值，尽可能的保证孔的垂直。同时，由于这些孔需要与金属导环就位，在 CHITUBOX Dental 的支撑设置里面也会有一个“自动支撑规避圆孔结构“的选项，可以令模型在自动添加支撑时规避孔的位置。
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-the-orientation-outcome-of-the-implant-guide.png"
+	}
+	figcaption="导板定向示意"
+/>
+
+## 活动义齿基托
+
+目前 CHITUBOX Dental 对活动义齿基托的自动定向功能还没上线，但我们调研了众多用户实际摆放的一些方法和经验，先与大家分享。由于义齿基托在使用时是吸附口腔粘膜上的，为了保证吸附时的密闭性，在吸附面是绝对不能添加支撑的，否则会降低吸附的密闭性，且影响佩戴感受。所以基托定向的基础原则是吸附面不能添加支撑，在这个基础上还要考虑后处理的便捷性。由于义齿基托一般需要长时间佩戴，所以打印之后需要将模型上残留的支撑点打磨光滑，提高佩戴舒适度。但是目前打磨抛光工序仍然需要人工处理，所以定向时要尽量减少支撑点，减轻后续打磨修整的工作量。我们建议使用齿科领域专家 Rick Ferguson 推荐的定向及添加支撑的方法，将基托模型竖直摆放。
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-vertical-placement-of-base-plate.gif"
+	}
+	figcaption="义齿基托竖直摆放及支撑位置示意"
+/>
+
+这种摆放方式虽然打印时间比较长，但是支撑点非常少，打印完成之后只需少量打磨即可，可以大幅度降低人工成本。不过，这种摆放方式难度稍高，需要自行判断哪些点需要添加支撑，更适合有一定 3D 打印技巧的用户。对于新手用户还是更推荐吸附面朝上的摆放方式，可以直接进行自动支撑，操作难度更低。
+
+<ImageContainer
+	src={
+		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-placing-the-adsorption-surface-upward.png"
+	}
+	figcaption="义齿基托吸附面朝上摆放示意"
+/>

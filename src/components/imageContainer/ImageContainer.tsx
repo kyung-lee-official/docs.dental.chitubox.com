@@ -1,11 +1,21 @@
 export const ImageContainer = (props: any) => {
-	const { src, alt, style } = props;
+	const { src, alt, figcaption, style } = props;
 	return (
 		<div
-			className={`flex items-center w-fit my-4
-            drop-shadow rounded-md overflow-hidden`}
+			className={`flex flex-col items-center w-fit my-4 gap-2
+            drop-shadow`}
 		>
-			<img src={src} alt={alt ?? ""} style={style} />
+			<img
+				src={src}
+				alt={alt ?? ""}
+				style={style}
+				className="rounded-md overflow-hidden"
+			/>
+			{figcaption && (
+				<figcaption className="text-center text-sm text-gray-500">
+					{figcaption}
+				</figcaption>
+			)}
 		</div>
 	);
 };
