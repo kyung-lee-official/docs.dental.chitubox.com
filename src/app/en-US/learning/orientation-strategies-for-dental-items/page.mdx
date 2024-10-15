@@ -22,28 +22,31 @@ As we all know, the reasonable orientation of the model is the key step of 3D pr
 
 The most important function of a dental mold is to reveal the real condition of the teeth in the patient's mouth, and to check whether the prosthesis or other products can perfectly adapt the patient's real teeth. Therefore, the most important thing in printing a dental model is to ensure the accuracy, followed by the efficiency of printing. Taking orthodontic dental models as an example, our goal is to improve efficiency and save materials without sacrificing accuracy. Since light-curing printing will reduce the accuracy of the support area and leave support points, it is necessary to ensure that the angle of the dental mold cannot make any support added to any tooth area during orientation. A common way is to place the model flat against the platform, so that printing can not only avoid generating supports in the tooth area, but also reduce the height of the models and shorten the printing time.
 
-<ImageContainer
+<BlogImageContainer
 	src={
 		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-the-dental-models-flatten-on-the-platform.png"
 	}
+	style={{ width: "540px" }}
 	figcaption="The model is placed flat against the platform"
 />
 
 There is another orientation method, which is to place the model vertically or aslant. The reason is that a course of invisible orthodontic treatment requires at least 8 sets of aligners, and a total of 16 dental models are required for it. When the printer is not large enough, it is necessary to arrange as many models as possible if you want to reduce the times of prints. However, this layout method has a major disadvantage, which is the lingual side of the teeth will be almost parallel to the platform, so when automatically adding supports, it is easy tend to generate supports on the tooth surface, and manual intervention is often required, which is time-consuming. Secondly, compared with the flat layout method, the platform space that saved is limited, but it doubles the printing time. In addition, this layout method will make many surfaces of the teeth present an angle close to parallel to the platform, which will cause obvious laminated striation on the tooth surface, affecting the accuracy of the model. For the above reasons, we do not recommend the vertical or slant orientation method for all tooth models.
 
-<ImageContainer
+<BlogImageContainer
 	src={
 		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-the-tooth-models-placed-vertically.png"
 	}
+	style={{ width: "540px" }}
 	figcaption="The model is placed vertically"
 />
 
 The automatic orientation method of CHITUBOX Dental for dental models is to lay them flat against the bottom, which can quickly lay the model flat on the platform. In addition, the function of "Flatten on Platform" in the rotation panel can also achieve the same effect, which is convenient for manually selecting the model plane for flat laying.
 
-<ImageContainer
+<BlogImageContainer
 	src={
 		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-dental-models-automatically-oriented-in-chitubox-dental.gif"
 	}
+	style={{ width: "540px" }}
 	figcaption="The model is automatically oriented in CHITUBOX Dental"
 />
 
@@ -53,10 +56,11 @@ These types of models are generally printed with transparent resin materials. Th
 
 Among them, the orientation of the implant guide is quite special. When adjusting the direction, besides making the concave surface upward, the direction of the guide ring hole should be made perpendicular to the platform as much as possible to avoid generating supports at the hole position, which can make the printing of the guide ring hole have higher accuracy. The reason is relatively complicated. Simply put, light-curing 3D printing requires that the penetration depth of light must be greater than one layer thickness, otherwise the layers cannot be effectively bonded, which will cause over-curing on the inclined side of the hole and reduce the dimensional accuracy of that area. When the direction of the hole is closer to being perpendicular to the platform, the over-curing will be less, so the automatic orientation of CHITUBOX Dental will make the guide ring hole perpendicular to the platform as much as possible. If there are multiple guide ring holes on an implant guide, our strategy is to find the average and plumb the hole as much as possible. At the same time, since these holes need to be in place with the metal guide ring, there will also be an option of "Auto support excluding round holes" in the support settings of CHITUBOX Dental, which can avoid the position of the hole when automatically adding supports.
 
-<ImageContainer
+<BlogImageContainer
 	src={
 		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-the-orientation-outcome-of-the-implant-guide.png"
 	}
+	style={{ width: "360px" }}
 	figcaption="The orientation outcome of the implant guide"
 />
 
@@ -64,18 +68,20 @@ Among them, the orientation of the implant guide is quite special. When adjustin
 
 At present, CHITUBOX Dental has not yet launched the automatic orientation function for removable denture bases, but we have investigated some methods and experiences of actual placement of many users, and would like to share them with you first. Since the denture base is adsorbed on the oral mucosa during use, in order to ensure the seal during adsorption, support must not be added on the intaglio surface, otherwise, it will reduce the seal of adsorption and affect the wearing experience. Therefore, the basic orientation principle of the base is that support cannot be added on the intaglio surface, and the convenience of post-processing must also be considered. Since denture bases generally need to be worn for a long time, the remaining support points on the model need to be polished smooth after printing to improve wearing comfort. However, the polishing process still requires manual processing, so the support points should be minimized during orientation to reduce the workload of trimming and polishing. We suggest using the orientation and support addition method recommended by Rick Ferguson, an expert in the field of dentistry, to place the base model vertically.
 
-<ImageContainer
+<BlogImageContainer
 	src={
 		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-vertical-placement-of-base-plate.gif"
 	}
+	style={{ width: "540px" }}
 	figcaption="The vertical placement of the base plate"
 />
 
 Although the vertical placement method takes a long time to print, it has very few support points. After printing, only a small amount of polishing is required, which can greatly reduce labor costs. However, this placement method is a little bit difficult, and the user needs to judge where needs to be supported. It is more suitable for users with certain 3D printing skills. For novice users, it is recommended to place the adsorption side upward, which can add support automaticly, less difficult to operate.
 
-<ImageContainer
+<BlogImageContainer
 	src={
 		"/images/docs/en-US/learning/orientation-strategies-for-dental-items/image-of-placing-the-adsorption-surface-upward.png"
 	}
+	style={{ width: "540px" }}
 	figcaption="Placing the adsorption surface upward"
 />
