@@ -21,6 +21,10 @@
 					"label": "安装"
 				},
 				{
+					"pageId": "account-and-license",
+					"label": "账号和密钥"
+				},
+				{
 					"pageId": "quick-start",
 					"label": "快速入门"
 				},

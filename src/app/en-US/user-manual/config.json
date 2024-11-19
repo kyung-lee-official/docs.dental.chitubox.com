@@ -21,6 +21,10 @@
 					"label": "Installation"
 				},
 				{
+					"pageId": "account-and-license",
+					"label": "Account and License"
+				},
+				{
 					"pageId": "quick-start",
 					"label": "Quick Start"
 				},

@@ -1,0 +1,104 @@
+import { SystemRequirements } from "@/docComponents/systemRequirements/SystemRequirements";
+
+export const metadata = {
+	title: "账号和密钥",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"CHITUBOX Dental 中的账号和密钥管理。",
+	other:{
+		pageId: "/zh-CN/user-manual/v1.x.x/account-and-license",
+	},
+	openGraph: {
+		images: ["/logo.png"],
+	},
+};
+
+
+# 账号和密钥
+
+## 注册账号
+
+如果您还未注册 CHITUBOX 账号，请点击<Link href="https://cc.chitubox.com/register">此处</Link>注册。
+
+## 密钥
+
+一个账号可以拥有多个密钥，当您购买密钥时，密钥会自动和您的账号绑定。密钥和账号之间不可解绑。
+
+个人版密钥支持在 2 台计算机上使用 , 您可以随时登录用户中心解绑已绑定的计算机。
+
+<Admonition type="danger" title="危险">
+	请勿将您的密钥告诉任何人，获取密钥后应尽快绑定账号。
+</Admonition>
+
+<Admonition type="note" title="注意">
+	CHITUBOX Dental 使用在线鉴权，请确保您的计算机已经连接网络。
+</Admonition>
+
+### 激活和绑定密钥
+
+1. 当 CHITUBOX Dental 首次启动时，登录窗口会弹出。
+
+    <ImageContainer
+    	src={
+    		"/images/docs/en-US/user-manual/1.x.x/CHITUBOX-Dental-License01.png"
+    	}
+    />
+
+1. 输入您的密钥：
+
+    <ImageContainer
+    	src={
+    		"/images/docs/zh-CN/user-manual/1.x.x/CHITUBOX-Dental-License05.png"
+    	}
+    />
+
+    点击**确认授权**，将激活密钥并且将其绑定到您的计算机。密钥的有效期从激活日开始计算。
+
+    如果您在 CHITUBOX 官网<Link href="https://cc.chitubox.com/login">登录</Link>您的账号，在 **我的产品** > **我的密钥** 下面应该可以看到您刚刚绑定的密钥。
+
+    <ImageContainer
+    	src={
+    		"/images/docs/zh-CN/user-manual/1.x.x/CHITUBOX-Dental-License06.png"
+    	}
+    />
+
+### 将密钥和设备解绑
+
+如果您想要将 CHITUBOX Dental 迁移到您的新计算机，您需要先将密钥从旧计算机上解绑。
+
+在网页端<Link href="https://cc.chitubox.com/login">登录您的 CHITUBOX 账号</Link>。
+
+点击 **我的产品** > **我的密钥**
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/CHITUBOX-Dental-License06.png"
+	}
+/>
+
+点击 **已绑 PC 管理** > **解绑**
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/CHITUBOX-Dental-License07.png"
+	}
+/>
+
+您的密钥将从旧计算机上解绑，然后您就可以重新在您的新计算机上激活您的密钥。
+
+您也可以直接在 CHITUBOX Dental 客户端内进行计算机解绑操作。
+
+<Entry mainMenu={["设置/帮助", "授权许可", "解绑授权"]} />
+
+<MaskedImage
+	src={
+		"/images/docs/zh-CN/user-manual/1.x.x/CHITUBOX-Dental-License08.png"
+	}
+	width={571}
+	height={406}
+	vWidth={121}
+	vHeight={28}
+	vX={435}
+	vY={240}
+	rx={5}
+/>
