@@ -8,7 +8,7 @@ export const metadata = {
 		pageId: "/en-US/learning/automatic-process",
 	},
 	openGraph: {
-		images: ["/images/docs/en-US/learning/automatic-process/cover.png"],
+		images: ["/images/docs/en-US/learning/automatic-process/cover.jpg"],
 	},
 };
 
@@ -22,7 +22,7 @@ When using the software for the first time, you need to select the printer and a
 
 <BlogImageContainer
 	src={
-		"/images/docs/en-US/learning/automatic-process/filling.png"
+		"/images/docs/en-US/learning/automatic-process/configure-the-automatic-process.png"
 	}
 	style={{ width: "540px" }}
 	figcaption="Configure the Automatic Process"
@@ -32,34 +32,28 @@ After completing the settings and entering the operation interface, you only nee
 
 <BlogImageContainer
 	src={
-		"/images/docs/en-US/learning/automatic-process/hollow-with-filling.png"
+		"/images/docs/en-US/learning/automatic-process/the-automatic-process.gif"
 	}
 	style={{ width: "360px" }}
 	figcaption="The Automatic Process"
 />
 
-The filling functions of these two paths are suitable for processing dental models.
-
-The separate filling function is suitable for models that have been hollowed out when imported. When the model is flattened on the platform to form a closed cavity, it can be filled to enhance the model structure or remedy some printing problems caused during the hollowing-out phase. One thing to note is that the hollowed-out model needs to be detected with the closed cavity then it can be filled, so the model must be flattened on the platform to be successfully filled.
+If you want to modify the settings, he can click the arrow next to the project name in the lower left corner to enter the settings page from the "Settings" option. After completing the adjustment, click "Apply" and return to the preparation interface.
 
 <BlogImageContainer
 	src={
-		"/images/docs/en-US/learning/automatic-process/seperate-filling-function.png"
+		"/images/docs/en-US/learning/automatic-process/modify-configurations.png"
 	}
 	style={{ width: "540px" }}
-	figcaption="The separate filling function"
+	figcaption="Modify configurations"
 />
 
-The function of filling while hollowing is suitable for solid models. These two procedures are done in one step, simplifying the operation, ensuring the stability of the model structure, and reducing material consumption.
+If you need to deal with different applications frequently, you can create different configurations in advance, and the configurations will be automatically saved in the software, and you can directly select the corresponding application scenario to process the model the next time you open the software. In order to facilitate the distinction, you can modify the configuration's name, so that it can be distinct quickly and applied to the automatic process of the corresponding scenario, which can greatly improve the work efficiency and convenience.
 
 <BlogImageContainer
 	src={
-		"/images/docs/en-US/learning/automatic-process/filling-without-hollowing-function.png"
+		"/images/docs/en-US/learning/automatic-process/create-a-standby-for-different-applications.png"
 	}
 	style={{ width: "540px" }}
-	figcaption="The filling while hollowing function"
+	figcaption="Create a standby for different applications"
 />
-
-In real scenarios, the models imported may be solid or hollow, depending on whether the dental model designer considers the printing scenario when designing the model. The most common design is the solid type, which CHITUBOX Dental is well-suited to handle. Since most dental model designers are not clear about the requirements of the printing process, the hollow dental models they design may have islands, or the wall thickness may not match the characteristics of the resin materials used in dental clinics or labs, resulting in printing failure. Therefore, at the beginning of the CHITUBOX Dental development, the adverse factors brought by the model design to printing were taken into account, which prompted the creation of the filling function.
-
-In summary, when using CHITUBOX Dental to print models, it is recommended that dental model designers do not hollow out or drill holes. On the one hand, this allows dental model designers to fully devote themselves to the design of treatment plans without having to consider the printing scenario too much, on the other hand, it can also increase the freedom of processing with slicer software in dental clinics or labs. Using solid models, combined with the efficient processing of CHITUBOX Dental, can improve overall work efficiency.

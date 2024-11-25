@@ -19,6 +19,10 @@
 				{
 					"pageId": "filling-and-filling-while-hollowing",
 					"label": "Filling and Filling While Hollowing"
+				},
+				{
+					"pageId": "automatic-process",
+					"label": "Automatic Process"
 				}
 			]
 		}

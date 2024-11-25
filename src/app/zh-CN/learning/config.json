@@ -19,6 +19,10 @@
 				{
 					"pageId": "filling-and-filling-while-hollowing",
 					"label": "“填充”与“镂空并填充”"
+				},
+				{
+					"pageId": "automatic-process",
+					"label": "自动化流程"
 				}
 			]
 		}
