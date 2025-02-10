@@ -1,10 +1,10 @@
 import "../globals.css";
+import { Metadata } from "next";
 import { NextIntlClientProvider, useMessages } from "next-intl";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { UrlHashPilot } from "@/components/urlHashPilot/UrlHashPilot";
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/footer/Footer";
-import { Metadata } from "next";
 import KatexHtmlSanitizer from "@/components/katexHtmlSanitizer/KatexHtmlSanitizer";
 import { locales } from "@/utils/types";
 import { DynamicDocsSidebar } from "@/components/docsSidebar/DynamicDocsSidebar";
@@ -45,7 +45,7 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	unstable_setRequestLocale("en-US");
+	setRequestLocale("en-US");
 
 	const messages = useMessages();
 

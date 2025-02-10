@@ -64,8 +64,8 @@ export default async function LocaleLayout({
 			<body className="font-[NotoSansCJKsc-Regular]">
 				<UrlHashPilot />
 				<div id="root-portal"></div>
-				<Header />
 				<NextIntlClientProvider messages={messages}>
+					<Header />
 					{children}
 				</NextIntlClientProvider>
 				<Footer />

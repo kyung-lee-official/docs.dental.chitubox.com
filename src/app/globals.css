@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer components {
 	.scrollbar::-webkit-scrollbar {
 		@apply sm:w-2;
