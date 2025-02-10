@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { DocsMenu } from "../docsMenu/DocsMenu";
 import { useMediaQuery } from "react-responsive";

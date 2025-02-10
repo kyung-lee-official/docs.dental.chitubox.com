@@ -5,27 +5,11 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { UrlHashPilot } from "@/components/urlHashPilot/UrlHashPilot";
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/footer/Footer";
-import dynamic from "next/dynamic";
 import KatexHtmlSanitizer from "@/components/katexHtmlSanitizer/KatexHtmlSanitizer";
 import { locales } from "@/utils/types";
-
-const DynamicDocsSidebar = dynamic(
-	() => import("@/components/docsSidebar/DocsSidebar"),
-	{
-		ssr: false,
-	}
-);
-
-const DynamicVersionTag = dynamic(
-	() => import("@/components/versionTag/VersionTag"),
-	{
-		ssr: false,
-	}
-);
-
-const DynamicToc = dynamic(() => import("@/components/toc/Toc"), {
-	ssr: false,
-});
+import { DynamicDocsSidebar } from "@/components/docsSidebar/DynamicDocsSidebar";
+import { DynamicVersionTag } from "@/components/versionTag/version-tag/DynamicVersionTag";
+import { DynamicToc } from "@/components/toc/DynamicToc";
 
 /* https://nextjs.org/docs/app/api-reference/functions/generate-static-params */
 export function generateStaticParams() {

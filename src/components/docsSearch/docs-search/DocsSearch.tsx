@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { GoSearch } from "../icons/Icons";
+import { GoSearch } from "../../icons/Icons";
 import { FlattenPage, MediaQuery } from "@/utils/types";
 import { getFlattenToc } from "@/utils/data";
 import { useMediaQuery } from "react-responsive";

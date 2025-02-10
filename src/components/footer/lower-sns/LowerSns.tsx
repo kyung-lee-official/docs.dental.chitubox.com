@@ -1,6 +1,9 @@
-"use client";
-
-import { DiscordIcon, FacebookIcon, InstagramIcon, TwitterXIcon } from "../icons/Sns";
+import {
+	DiscordIcon,
+	FacebookIcon,
+	InstagramIcon,
+	TwitterXIcon,
+} from "../../icons/Sns";
 import { useMediaQuery } from "react-responsive";
 import { MediaQuery } from "@/utils/types";
 

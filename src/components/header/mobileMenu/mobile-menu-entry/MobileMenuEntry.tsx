@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { CloseOutlineIcon, MenuIcon } from "../../icons/Icons";
+import { CloseOutlineIcon, MenuIcon } from "../../../icons/Icons";
 import { useMediaQuery } from "react-responsive";
 import { MediaQuery } from "@/utils/types";
-import MobileMenuModal from "./MobileMenuModal";
+import MobileMenuModal from "../MobileMenuModal";
 
 export const MobileMenuEntry = () => {
 	const [showMenu, setShowMenu] = useState<boolean>(false);

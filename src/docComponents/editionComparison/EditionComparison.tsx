@@ -1,5 +1,6 @@
 import { Locale } from "@/utils/types";
 import { Check, Dash, Upgrade } from "./Icons";
+import { JSX } from "react";
 
 const data: {
 	locale: Locale;

@@ -3,41 +3,11 @@ import dynamic from "next/dynamic";
 import { Logo } from "../icons/Icons";
 import ThemeSwitch from "../icons/ThemeSwitch";
 import { useTranslations } from "next-intl";
-
-const DynamicFieldTitles = dynamic(
-	() => import("@/components/header/FieldTitles"),
-	{
-		ssr: false,
-	}
-);
-
-const DynamicDocsSearch = dynamic(
-	() => import("@/components/docsSearch/DocsSearch"),
-	{
-		ssr: false,
-	}
-);
-
-const DynamicVersionDropdown = dynamic(
-	() => import("@/components/versionDropdown/VersionDropdown"),
-	{
-		ssr: false,
-	}
-);
-
-const DynamicLanguageMenu = dynamic(
-	() => import("@/components/languageMenu/LanguageMenu"),
-	{
-		ssr: false,
-	}
-);
-
-const DynamicMobileMenuEntry = dynamic(
-	() => import("@/components/header/mobileMenu/MobileMenuEntry"),
-	{
-		ssr: false,
-	}
-);
+import { DynamicFieldTitles } from "./field-titles/DynamicFieldTitles";
+import { DynamicDocsSearch } from "../docsSearch/docs-search/DynamicDocsSearch";
+import { DynamicVersionDropdown } from "../versionDropdown/DynamicVersionDropdown";
+import { DynamicLanguageMenu } from "../languageMenu/DynamicLanguageMenu";
+import { DynamicMobileMenuEntry } from "./mobileMenu/mobile-menu-entry/DynamicMobileMenuEntry";
 
 export const Navigator = (props: any) => {
 	const t = useTranslations();

@@ -1,25 +1,17 @@
 import { useTranslations } from "next-intl";
 import { Year } from "./Year";
-import dynamic from "next/dynamic";
 import Link from "next/link";
-
-const DynamicFooterTop = dynamic(() => import("./FooterTop"), {
-	ssr: false,
-});
-
-const DynamicFooterLogoLg = dynamic(() => import("./FooterLogoLg"), {
-	ssr: false,
-});
-
-const DynamicLowerSns = dynamic(() => import("./LowerSns"), {
-	ssr: false,
-});
+import { DynamicFooterTop } from "./footer-top/DynamicFooterTop";
+import { DynamicFooterLogoLg } from "./footer-logo-lg/DynamicFooterLogoLg";
+import { DynamicLowerSns } from "./lower-sns/DynamicLowerSns";
 
 const FooterCol = (props: any) => {
 	const { title, children } = props;
 	return (
 		<div className="flex flex-col min-w-32 gap-4">
-			<div className="text-neutral-600 dark:text-neutral-100">{title}</div>
+			<div className="text-neutral-600 dark:text-neutral-100">
+				{title}
+			</div>
 			<div className="flex flex-col gap-3">{children}</div>
 		</div>
 	);
@@ -28,7 +20,10 @@ const FooterCol = (props: any) => {
 const Flink = (props: any) => {
 	const { href, children } = props;
 	return (
-		<Link href={href} className="hover:text-neutral-800 dark:hover:text-white duration-200">
+		<Link
+			href={href}
+			className="hover:text-neutral-800 dark:hover:text-white duration-200"
+		>
 			{children}
 		</Link>
 	);

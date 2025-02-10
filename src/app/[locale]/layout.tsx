@@ -1,20 +1,25 @@
 import type { Metadata } from "next";
 import "../globals.css";
 import { notFound, useParams } from "next/navigation";
-import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
+import {
+	getMessages,
+	getTranslations,
+	setRequestLocale,
+} from "next-intl/server";
 import { UrlHashPilot } from "@/components/urlHashPilot/UrlHashPilot";
 import { Header } from "@/components/header/Header";
 import { Footer } from "@/components/footer/Footer";
 import { locales, Locale } from "@/utils/types";
+import { routing } from "@/i18n/routing";
+import { NextIntlClientProvider } from "next-intl";
 
 /* https://nextjs.org/docs/app/api-reference/functions/generate-static-params */
 export function generateStaticParams() {
 	return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-	params: { locale },
-}: any): Promise<Metadata> {
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+	const { locale } = await params;
 	const t = await getTranslations({ locale });
 	return {
 		metadataBase: new URL("https://docs.dental.chitubox.com"),
@@ -36,17 +41,23 @@ export async function generateMetadata({
 	};
 }
 
-export default async function RootLayout({
+export default async function LocaleLayout({
 	children,
-	params: { locale },
+	params,
 }: {
 	children: React.ReactNode;
-	params: { locale: Locale };
+	params: Promise<{ locale: Locale }>;
 }) {
 	/* Validate that the incoming `locale` parameter is valid */
-	if (!locales.includes(locale)) notFound();
+	const { locale } = await params;
+	if (!routing.locales.includes(locale)) {
+		notFound();
+	}
 
-	unstable_setRequestLocale(locale);
+	/**
+	 * Providing all messages to the client side is the easiest way to get started
+	 */
+	const messages = await getMessages();
 
 	return (
 		<html lang={locale}>
@@ -54,7 +65,9 @@ export default async function RootLayout({
 				<UrlHashPilot />
 				<div id="root-portal"></div>
 				<Header />
-				{children}
+				<NextIntlClientProvider messages={messages}>
+					{children}
+				</NextIntlClientProvider>
 				<Footer />
 			</body>
 		</html>

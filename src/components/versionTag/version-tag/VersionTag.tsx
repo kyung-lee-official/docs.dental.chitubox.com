@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { MediaQuery } from "@/utils/types";
 import { useMediaQuery } from "react-responsive";
 import { useRef, useState } from "react";
-import { VersionDialog } from "./VersionDialog";
+import { VersionDialog } from "../VersionDialog";
 import { usePageContext } from "@/utils/hooks";
 
 const VersionTag = () => {

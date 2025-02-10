@@ -1,8 +1,6 @@
-"use client";
-
 import { MediaQuery } from "@/utils/types";
 import { useMediaQuery } from "react-responsive";
-import FooterLogo from "./FooterLogo";
+import FooterLogo from "../FooterLogo";
 
 const FooterLogoLg = ({ size, fill }: any) => {
 	const isLg = useMediaQuery({ query: MediaQuery.lg });

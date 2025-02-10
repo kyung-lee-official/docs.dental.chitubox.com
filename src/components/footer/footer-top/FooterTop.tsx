@@ -1,15 +1,13 @@
-"use client";
-
 import { MediaQuery } from "@/utils/types";
 import { useMediaQuery } from "react-responsive";
-import FooterLogo from "./FooterLogo";
+import FooterLogo from "../FooterLogo";
 import {
 	DiscordIcon,
 	FacebookIcon,
 	TwitterXIcon,
 	InstagramIcon,
 	YoutubeIcon,
-} from "../icons/Sns";
+} from "../../icons/Sns";
 
 const FooterTop = () => {
 	const isLg = useMediaQuery({ query: MediaQuery.lg });

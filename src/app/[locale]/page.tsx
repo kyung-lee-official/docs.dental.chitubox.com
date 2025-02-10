@@ -1,14 +1,11 @@
 import { Link, redirect } from "@/navigation";
 import { Locale } from "@/utils/types";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
-function Page(props: { params: { locale: Locale } }) {
-	const {
-		params: { locale },
-	} = props;
-
-	unstable_setRequestLocale(locale);
-
+async function Page(props: { params: Promise<{ locale: Locale }> }) {
+	const { params } = props;
+	const { locale } = await params;
+	setRequestLocale(locale);
 	redirect("/user-manual/latest/basic-vs-dental");
 
 	// return (

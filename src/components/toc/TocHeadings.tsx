@@ -85,7 +85,7 @@ function Content(props: { toc: any; headerHeight: any }) {
 		[h2H3Toc]
 	);
 
-	const observerRef = useRef<IntersectionObserver>();
+	const observerRef = useRef<IntersectionObserver>(undefined);
 	useEffect(() => {
 		observerRef.current = new IntersectionObserver(callback, options);
 		return () => observerRef.current?.disconnect();

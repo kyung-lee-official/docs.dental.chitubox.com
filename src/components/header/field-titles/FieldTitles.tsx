@@ -1,5 +1,3 @@
-"use client";
-
 import { MediaQuery } from "@/utils/types";
 import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
