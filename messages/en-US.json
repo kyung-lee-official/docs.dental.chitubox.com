@@ -1,8 +1,8 @@
 {
-	"title": "CHITUBOX Dental Docs",
-	"description": "CHITUBOX Dental Docs",
+	"title": "CHITUBOX Dental Learn",
+	"description": "CHITUBOX Dental Learn",
 	"header": {
-		"title": "CHITUBOX Dental Docs",
+		"title": "CHITUBOX Dental Learn",
 		"placeholder": "Placeholder",
 		"about": "About",
 		"languages": "Languages",
@@ -16,6 +16,9 @@
 		"notLatest": "This is an older version of the documentation."
 	},
 	"pages": {
+		"tutorials": {
+			"title": "Tutorials"
+		},
 		"learning": {
 			"title": "Learning",
 			"search-placeholder": "Search Learning"
@@ -95,7 +98,6 @@
 		"chituboxBasicDoc": "CHITUBOX Basic",
 		"chituboxProDoc": "CHITUBOX Pro",
 		"chituboxDentalDoc": "CHITUBOX Dental",
-		"faqDoc": "FAQ",
 		"chituboxDocsLink": "https://manual.chitubox.com/",
 		"community": "Community",
 		"facebook": "Facebook",

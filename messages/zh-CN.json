@@ -1,8 +1,8 @@
 {
-	"title": "CHITUBOX Dental 文档",
-	"description": "CHITUBOX Dental 文档",
+	"title": "CHITUBOX Dental 学习中心",
+	"description": "CHITUBOX Dental 学习中心",
 	"header": {
-		"title": "CHITUBOX 文档",
+		"title": "CHITUBOX 学习中心",
 		"placeholder": "占位",
 		"about": "关于",
 		"languages": "语言",
@@ -16,6 +16,9 @@
 		"notLatest": "您正在阅读的不是最新版本的文档。"
 	},
 	"pages": {
+		"tutorials": {
+			"title": "教程"
+		},
 		"learning": {
 			"title": "学习中心",
 			"search-placeholder": "搜索学习中心"
@@ -96,7 +99,6 @@
 		"chituboxBasicDoc": "CHITUBOX Basic",
 		"chituboxProDoc": "CHITUBOX Pro",
 		"chituboxDentalDoc": "CHITUBOX Dental",
-		"faqDoc": "常见问题",
 		"community": "社区",
 		"facebook": "脸书",
 		"facebookLink": "https://www.facebook.com/profile.php?id=61558975455282",
