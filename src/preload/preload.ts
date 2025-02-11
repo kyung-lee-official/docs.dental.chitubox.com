@@ -17,7 +17,7 @@ import {
 	Locale,
 } from "../utils/types";
 import util from "util";
-import { VFile } from "@mdx-js/mdx/lib/compile";
+import { VFile } from "vfile";
 
 console.time("preload");
 
@@ -27,6 +27,7 @@ const rootItems = await readdir(absRootPath);
 const absLocalePaths: string[] = [];
 
 for (const item of rootItems) {
+	/* read all items in root directory, and filter out locale directories */
 	const absItemPath = path.resolve(absRootPath, item);
 	const absItemPathStat = lstatSync(absItemPath);
 	if (locales.includes(item as Locale) && absItemPathStat.isDirectory()) {
@@ -46,6 +47,7 @@ for (const absLocalePath of absLocalePaths) {
 	}
 	docsContext.push({ locale: locale, localizedFields: [] });
 	let itemsInLocaleDir = await readdir(absLocalePath);
+	/* read doc field folders, this is not ordered */
 	const fieldDirs = itemsInLocaleDir.filter((item) => {
 		const absItemPath = path.resolve(absLocalePath, item);
 		const absPathState = lstatSync(absItemPath);
@@ -56,13 +58,14 @@ for (const absLocalePath of absLocalePaths) {
 		}
 	});
 
-	/* Get ordered doc field list from /locale/config.json */
+	/* get manually ordered doc field list from /locale/config.json */
 	const orderedFieldIdList: string[] = JSON.parse(
 		await readFile(path.resolve(absLocalePath, "config.json"), "utf-8")
 	);
 
 	/* Find the ordered fields */
 	const orderedFields: Field[] = [];
+	/* compare orderedFieldIdList with fieldDirs to ensure only existing fields are pushed */
 	for (const fieldId of orderedFieldIdList) {
 		for (const fieldDir of fieldDirs) {
 			if (fieldDir === fieldId) {
@@ -71,6 +74,7 @@ for (const absLocalePath of absLocalePaths) {
 					fieldId: fieldId,
 					fieldName: "",
 					isVersioned: false,
+					/* set 'book' type as default */
 					type: "book",
 					homeUrl: "",
 					versions: [],
