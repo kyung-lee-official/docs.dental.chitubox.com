@@ -7,7 +7,12 @@
 		{
 			"versionCode": null,
 			"isLatest": false,
-			"category": []
+			"category": [
+				{
+					"pageId": "how-to-choose-a-dental-printer",
+					"label": "How to choose a dental printer"
+				}
+			]
 		}
 	]
 }
