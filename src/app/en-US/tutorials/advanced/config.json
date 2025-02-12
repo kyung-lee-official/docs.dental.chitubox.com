@@ -1,0 +1,13 @@
+{
+	"fieldName": "Advanced",
+	"isVersioned": false,
+	"type": "blog",
+	"homeUrl": "/en-US/tutorials/advanced",
+	"versions": [
+		{
+			"versionCode": null,
+			"isLatest": false,
+			"category": []
+		}
+	]
+}

@@ -84,6 +84,13 @@ type NonVersionedFlattenPage = {
 export type FlattenPage = (VersionedFlattenPage | NonVersionedFlattenPage) &
 	PageContext;
 
+export type LocaleConfig = {
+	fields: {
+		fieldId: string;
+		relativeConfigPath: string;
+	}[];
+};
+
 export type FieldConfig = {
 	fieldName: string;
 	homeUrl: string;

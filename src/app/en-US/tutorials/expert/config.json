@@ -1,0 +1,13 @@
+{
+	"fieldName": "Expert",
+	"isVersioned": false,
+	"type": "blog",
+	"homeUrl": "/en-US/tutorials/expert",
+	"versions": [
+		{
+			"versionCode": null,
+			"isLatest": false,
+			"category": []
+		}
+	]
+}

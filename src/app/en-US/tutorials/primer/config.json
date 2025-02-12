@@ -1,0 +1,13 @@
+{
+	"fieldName": "Primer",
+	"isVersioned": false,
+	"type": "blog",
+	"homeUrl": "/en-US/tutorials/primer",
+	"versions": [
+		{
+			"versionCode": null,
+			"isLatest": false,
+			"category": []
+		}
+	]
+}
