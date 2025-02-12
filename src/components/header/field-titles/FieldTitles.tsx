@@ -35,11 +35,11 @@ const FieldTitles = () => {
 				className="flex gap-10
 				cursor-default"
 			>
-				{fields.map((field) => {
+				{fields.map((field, i) => {
 					return (
 						<Link
 							href={field.url}
-							key={field.url}
+							key={i}
 							className={`text-xl ${
 								pathname.startsWith(
 									`/${locale}/${field.fieldId}`
