@@ -12,7 +12,7 @@ const Hero = () => {
 		/>
 	) : (
 		<img
-			src="/images/pages/en-US/tutorials/hero-v.jpg"
+			src="/images/pages/en-US/tutorials/hero-m.jpg"
 			alt=""
 			className="rounded-lg"
 		/>
