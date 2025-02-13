@@ -42,7 +42,7 @@ const Content = () => {
 	const locale = useLocale();
 
 	return (
-		<div className="flex flex-col max-w-[1200px] min-h-screen p-10 mx-auto gap-16">
+		<div className="flex flex-col max-w-[1200px] min-h-screen p-10 mx-auto gap-8 lg:gap-16">
 			<DynamicHero />
 			<div
 				className="grid justify-items-stretch gap-8 mx-auto
