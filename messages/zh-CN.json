@@ -17,11 +17,29 @@
 	},
 	"pages": {
 		"tutorials": {
-			"title": "教程"
+			"title": "教程",
+			"primer": "初级",
+			"primer-subtitle": "学习 CHITUBOX Dental 的基础知识",
+			"primer-link": "/zh-CN/tutorials/primer",
+			"advanced": "高级",
+			"advanced-subtitle": "学习 CHITUBOX Dental 的高级技术",
+			"advanced-link": "/zh-CN/tutorials/advanced",
+			"expert": "专家",
+			"expert-subtitle": "学习 CHITUBOX Dental 的专家技术",
+			"expert-link": "/zh-CN/tutorials/expert"
 		},
 		"learning": {
 			"title": "学习中心",
 			"search-placeholder": "搜索学习中心"
+		},
+		"primer": {
+			"title": "初级"
+		},
+		"advanced": {
+			"title": "高级"
+		},
+		"expert": {
+			"title": "专家"
 		}
 	},
 	"footer": {

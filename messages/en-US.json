@@ -17,11 +17,29 @@
 	},
 	"pages": {
 		"tutorials": {
-			"title": "Tutorials"
+			"title": "Tutorials",
+			"primer": "Primer",
+			"primer-subtitle": "Learn the basics of CHITUBOX Dental",
+			"primer-link": "/en-US/tutorials/primer",
+			"advanced": "Advanced",
+			"advanced-subtitle": "Learn advanced techniques for CHITUBOX Dental",
+			"advanced-link": "/en-US/tutorials/advanced",
+			"expert": "Expert",
+			"expert-subtitle": "Learn expert techniques for CHITUBOX Dental",
+			"expert-link": "/en-US/tutorials/expert"
 		},
 		"learning": {
 			"title": "Learning",
 			"search-placeholder": "Search Learning"
+		},
+		"primer": {
+			"title": "Primer"
+		},
+		"advanced": {
+			"title": "Advanced"
+		},
+		"expert": {
+			"title": "Expert"
 		}
 	},
 	"footer": {

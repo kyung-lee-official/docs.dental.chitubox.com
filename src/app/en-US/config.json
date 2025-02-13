@@ -13,8 +13,12 @@
 			"relativeConfigPath": "tutorials/advanced"
 		},
 		{
-			"fieldId": "learning",
-			"relativeConfigPath": "learning"
+			"fieldId": "expert",
+			"relativeConfigPath": "tutorials/expert"
+		},
+		{
+			"fieldId": "comparison",
+			"relativeConfigPath": "tutorials/comparison"
 		}
 	]
 }

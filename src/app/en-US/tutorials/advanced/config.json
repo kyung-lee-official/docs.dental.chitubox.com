@@ -7,7 +7,24 @@
 		{
 			"versionCode": null,
 			"isLatest": false,
-			"category": []
+			"category": [
+				{
+					"pageId": "parameter-configuration",
+					"label": "Parameter Configuration"
+				},
+				{
+					"pageId": "orientation-strategies-for-dental-items",
+					"label": "Orientation Strategies for Dental Items"
+				},
+				{
+					"pageId": "filling-and-filling-while-hollowing",
+					"label": "Filling and Filling While Hollowing"
+				},
+				{
+					"pageId": "automatic-process",
+					"label": "Automatic Process"
+				}
+			]
 		}
 	]
 }

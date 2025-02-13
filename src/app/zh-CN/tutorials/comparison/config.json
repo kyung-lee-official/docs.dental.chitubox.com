@@ -1,0 +1,26 @@
+{
+	"fieldName": "Comparison",
+	"isVersioned": false,
+	"type": "blog",
+	"homeUrl": "/en-US/tutorials/comparison",
+	"versions": [
+		{
+			"versionCode": null,
+			"isLatest": false,
+			"category": [
+				{
+					"pageId": "basic-and-dental-features-list",
+					"label": "Basic & Dental Features List"
+				},
+				{
+					"pageId": "basic-vs-dental-which-is-better-for-you",
+					"label": "Basic vs Dental: which is better for you?"
+				},
+				{
+					"pageId": "pro-vs-dental-comparison-of-two-outstanding-3d-slicers",
+					"label": "Pro vs Dental: Comparison of Two Outstanding 3D Slicers"
+				}
+			]
+		}
+	]
+}

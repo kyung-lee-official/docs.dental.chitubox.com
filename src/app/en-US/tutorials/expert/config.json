@@ -7,7 +7,12 @@
 		{
 			"versionCode": null,
 			"isLatest": false,
-			"category": []
+			"category": [
+				{
+					"pageId": "parameter-configuration",
+					"label": "Parameter Configuration"
+				}
+			]
 		}
 	]
 }

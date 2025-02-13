@@ -11,12 +11,12 @@ import { useLocale, useTranslations } from "next-intl";
 import DocsSearch from "@/components/blogDocs/docsSearch/DocsSearch";
 
 const Content = () => {
-	const t = useTranslations("pages.learning");
+	const t = useTranslations("pages.primer");
 
 	const locale = useLocale();
 
 	const pages = (flattenContext as FlattenPage[]).filter(
-		(page) => page.fieldId === "learning" && page.locale === locale
+		(page) => page.fieldId === "primer" && page.locale === locale
 	);
 
 	const availableTags = useMemo(() => {
@@ -37,7 +37,7 @@ const Content = () => {
 	);
 	const [currentPage, setCurrentPage] = useState<number>(1);
 	const [currentPageContent, setCurrentPageContent] = useState<FlattenPage[]>(
-		pagedSearchResult[currentPage - 1]
+		pagedSearchResult[currentPage - 1] || []
 	);
 
 	useEffect(() => {
@@ -85,7 +85,9 @@ const Content = () => {
 	}, [searchResult]);
 
 	useEffect(() => {
-		setCurrentPageContent(pagedSearchResult[currentPage - 1]);
+		pagedSearchResult.length > 0
+			? setCurrentPageContent(pagedSearchResult[currentPage - 1])
+			: setCurrentPageContent([]);
 	}, [currentPage]);
 
 	return (
@@ -96,10 +98,10 @@ const Content = () => {
 			>
 				{t("title")}
 			</div>
-			<DocsSearch
+			{/* <DocsSearch
 				setSearchTerm={setSearchTerm}
 				placeholder={t("search-placeholder")}
-			/>
+			/> */}
 			{/* <TagFilter
 				availableTags={availableTags}
 				selectedTags={selectedTags}
