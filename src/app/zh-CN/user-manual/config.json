@@ -2,16 +2,12 @@
 	"fieldName": "用户手册",
 	"isVersioned": true,
 	"type": "book",
-	"homeUrl": "/zh-CN/user-manual/latest/basic-vs-dental",
+	"homeUrl": "/zh-CN/user-manual/latest/introduction",
 	"versions": [
 		{
 			"versionCode": "1.0.3",
 			"isLatest": true,
 			"category": [
-				{
-					"pageId": "basic-vs-dental",
-					"label": "Basic vs Dental"
-				},
 				{
 					"pageId": "introduction",
 					"label": "介绍"

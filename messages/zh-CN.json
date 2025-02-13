@@ -3,6 +3,12 @@
 	"description": "CHITUBOX Dental 学习中心",
 	"header": {
 		"title": "CHITUBOX 学习中心",
+		"items": {
+			"tutorials": "教程",
+			"tutorials-link": "/zh-CN/tutorials",
+			"user-manual": "用户手册",
+			"user-manual-link": "/zh-CN/user-manual/latest/introduction"
+		},
 		"placeholder": "占位",
 		"about": "关于",
 		"languages": "语言",
@@ -26,7 +32,10 @@
 			"advanced-link": "/zh-CN/tutorials/advanced",
 			"expert": "专家",
 			"expert-subtitle": "学习 CHITUBOX Dental 的专家技术",
-			"expert-link": "/zh-CN/tutorials/expert"
+			"expert-link": "/zh-CN/tutorials/expert",
+			"comparison": "对比",
+			"comparison-subtitle": "对比 CHITUBOX Dental 和其他软件",
+			"comparison-link": "/zh-CN/tutorials/comparison"
 		},
 		"learning": {
 			"title": "学习中心",
@@ -40,6 +49,9 @@
 		},
 		"expert": {
 			"title": "专家"
+		},
+		"comparison": {
+			"title": "对比"
 		}
 	},
 	"footer": {

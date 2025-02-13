@@ -2,6 +2,9 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const DynamicHero = dynamic(() => import("./Hero"), { ssr: false });
 
 const Card = (props: { href: string; title: string; description: string }) => {
 	const { href, title, description } = props;
@@ -40,11 +43,7 @@ const Content = () => {
 
 	return (
 		<div className="flex flex-col max-w-[1200px] min-h-screen p-10 mx-auto gap-16">
-			<img
-				src="/images/pages/en-US/tutorials/hero.jpg"
-				alt=""
-				className="rounded-lg"
-			/>
+			<DynamicHero />
 			<div
 				className="grid justify-items-stretch gap-8 mx-auto
 				grid-cols-1 max-w-[340px]
@@ -65,6 +64,11 @@ const Content = () => {
 					href={t("expert-link")}
 					title={t("expert")}
 					description={t("expert-subtitle")}
+				/>
+				<Card
+					href={t("comparison-link")}
+					title={t("comparison")}
+					description={t("comparison-subtitle")}
 				/>
 			</div>
 		</div>

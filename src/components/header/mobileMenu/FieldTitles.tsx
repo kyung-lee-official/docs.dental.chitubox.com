@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { usePageContext } from "@/utils/hooks";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import docsContext from "@/preload/docsContext.json";
 import { DocsContext } from "@/utils/types";
 import { Block } from "./Block";
@@ -10,6 +10,8 @@ import { usePathname } from "next/navigation";
 
 export const FieldTitles = () => {
 	const locale = useLocale();
+	const t = useTranslations();
+
 	const pathname = usePathname();
 	const [showMenu, setShowMenu] = useState<boolean>(false);
 	let activeField: string;
@@ -54,7 +56,34 @@ export const FieldTitles = () => {
 					className="flex flex-col pl-3
 					border-t-[1px] border-solid border-neutral-200 dark:border-neutral-700"
 				>
-					{fields.map((field, i: number) => {
+					<div className="flex flex-col">
+						<Link
+							href={t("header.items.tutorials-link")}
+							className={`py-2 ${
+								(pathname.includes("/tutorials/") ||
+									pathname.includes("/tutorials")) &&
+								"text-blue-500 dark:text-sky-400"
+							}`}
+						>
+							{t("header.items.tutorials")}
+						</Link>
+					</div>
+					<hr className="border-neutral-500/60" />
+					<div className="flex flex-col">
+						<Link
+							href={t("header.items.user-manual-link")}
+							className={`py-2 ${
+								pathname.includes("/user-manual/") &&
+								"text-blue-500 dark:text-sky-400"
+							}`}
+						>
+							{t("header.items.user-manual")}
+						</Link>
+						{/* {i !== fields.length - 1 && (
+							<hr className="dark:border-neutral-700" />
+						)} */}
+					</div>
+					{/* {fields.map((field, i: number) => {
 						return (
 							<div key={field.url} className="flex flex-col">
 								<Link
@@ -72,7 +101,7 @@ export const FieldTitles = () => {
 								)}
 							</div>
 						);
-					})}
+					})} */}
 				</div>
 			)}
 		</Block>

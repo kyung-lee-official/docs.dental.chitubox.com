@@ -15,6 +15,10 @@
 		{
 			"fieldId": "expert",
 			"relativeConfigPath": "tutorials/expert"
+		},
+		{
+			"fieldId": "comparison",
+			"relativeConfigPath": "tutorials/comparison"
 		}
 	]
 }

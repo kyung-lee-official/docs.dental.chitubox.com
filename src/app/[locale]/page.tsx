@@ -6,7 +6,7 @@ async function Page(props: { params: Promise<{ locale: Locale }> }) {
 	const { params } = props;
 	const { locale } = await params;
 	setRequestLocale(locale);
-	redirect("/user-manual/latest/basic-vs-dental");
+	redirect("/tutorials");
 
 	// return (
 	// 	<main

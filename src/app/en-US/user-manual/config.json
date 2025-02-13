@@ -2,16 +2,12 @@
 	"fieldName": "User Manual",
 	"isVersioned": true,
 	"type": "book",
-	"homeUrl": "/en-US/user-manual/latest/basic-vs-dental",
+	"homeUrl": "/en-US/user-manual/latest/introduction",
 	"versions": [
 		{
 			"versionCode": "1.0.3",
 			"isLatest": true,
 			"category": [
-				{
-					"pageId": "basic-vs-dental",
-					"label": "Basic vs Dental"
-				},
 				{
 					"pageId": "introduction",
 					"label": "Introduction"

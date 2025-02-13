@@ -3,6 +3,12 @@
 	"description": "CHITUBOX Dental Learn",
 	"header": {
 		"title": "CHITUBOX Dental Learn",
+		"items": {
+			"tutorials": "Tutorials",
+			"tutorials-link": "/en-US/tutorials",
+			"user-manual": "User Manual",
+			"user-manual-link": "/en-US/user-manual/latest/introduction"
+		},
 		"placeholder": "Placeholder",
 		"about": "About",
 		"languages": "Languages",
@@ -26,7 +32,10 @@
 			"advanced-link": "/en-US/tutorials/advanced",
 			"expert": "Expert",
 			"expert-subtitle": "Learn expert techniques for CHITUBOX Dental",
-			"expert-link": "/en-US/tutorials/expert"
+			"expert-link": "/en-US/tutorials/expert",
+			"comparison": "Comparison",
+			"comparison-subtitle": "Compare CHITUBOX Dental with other software",
+			"comparison-link": "/en-US/tutorials/comparison"
 		},
 		"learning": {
 			"title": "Learning",
@@ -40,6 +49,9 @@
 		},
 		"expert": {
 			"title": "Expert"
+		},
+		"comparison": {
+			"title": "Comparison"
 		}
 	},
 	"footer": {
