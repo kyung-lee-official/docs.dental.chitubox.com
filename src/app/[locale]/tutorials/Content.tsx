@@ -12,7 +12,7 @@ const Card = (props: { href: string; title: string; description: string }) => {
 		<Link
 			href={href}
 			className="flex flex-col items-start p-6 gap-4
-			bg-neutral-100/60 dark:bg-neutral-800/60
+			bg-neutral-100/70 dark:bg-neutral-800/60
 			rounded-xl hover:shadow duration-200"
 		>
 			<div className="flex items-center gap-4">
