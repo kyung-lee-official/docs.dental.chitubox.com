@@ -7,7 +7,21 @@
 		{
 			"versionCode": null,
 			"isLatest": false,
-			"category": []
+			"category": [
+				{
+					"pageId": "how-does-3d-printing-technology-help-dentistry",
+					"label": "How does 3D Printing Technology Help Dentistry"
+				},
+				{
+					"pageId": "how-to-choose-a-dental-printer",
+					"label": "How to choose a dental printer"
+				},
+				{
+					"pageId": "printer-platform-solid-vs-perforated",
+					"label": "Printer platform solid vs perforated"
+				}
+			]
 		}
 	]
+	
 }

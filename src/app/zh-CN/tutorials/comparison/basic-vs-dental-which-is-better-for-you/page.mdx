@@ -4,7 +4,7 @@ export const metadata = {
 	description:
 		"CHITUBOX Basic and CHITUBOX Dental are two different editions of CHITUBOX. This section will introduce the differences between the two versions.",
 	other: {
-		pageId: "/en-US/user-manual/v1.x.x/dental-vs-basic",
+		pageId: "/zh-CN/user-manual/v1.x.x/dental-vs-basic",
 	},
 	openGraph: {
 		images: ["/logo.png"],
@@ -14,4 +14,137 @@ export const metadata = {
 # Basic vs Dental：哪个更适合你
 
 在当今快速发展的数字化齿科行业中，拥有高效的3D打印工具对于保持领先地位至关重要，而切片前的处理是3D打印中重要的环节之一，选择一个合适的切片软件成为每个用户无法避开的课题。CHITUBOX Basic作为业内家喻户晓的切片软件，多年来一直活跃在各行各业中，成为市场渗透率最高的通用版软件。然而随着行业发展，我们深知通用型软件无法满足具体行业的独特需求，于是针对特定行业的新玩家出现了，那就是为齿科行业设计的CHITUBOX Dental。
+
 CHITUBOX Dental提供了针对性的强大功能和流畅便捷的切片体验，使得它越来越受齿科人士的欢迎和喜爱，但Basic依然还是许多齿科人士的选择，也有不少用户在面对这两个选项时难以抉择。所以，本文将深入分析Basic和Dental的功能差异，以及比较成本，为用户选择最适合自己的软件提供信息参考。
+
+## 功能
+软件的功能无疑是用户最为关心的部分。Basic和Dental都能完成齿科模型的预处理和切片，但两者的操作体验和结果区别较大。以实心正畸牙模为例，最佳的处理结果是镂空模型且无需添加支撑。以该处理结果为目的，两个软件都会经过定向、镂空（并填充）、打孔、排版的环节。下面，我们将会分别在两个软件中使用同一套模型进行处理以展示区别。
+
+首先，CHITUBOX Dental可以一键执行全流程，而Basic则需要手动逐步操作。
+ 
+### 定向
+
+对于正畸模型的定向，专业人士是建议将模型贴底放平，以避免在牙齿区域添加支撑而影响模型的精确度。Dental内置了多种模型的定向算法，在应用设置中选择正畸模型，定向时牙模就会直接贴底摆放；而Basic没有相应的规则，所以自动定向的结果比较随机，可以通过“按面放平”功能手动贴底放置。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-orientation.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/basic-vs-dental-which-is-better-for-you/basic-automatic-orientation-and-flatten-by-face.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+### 镂空和填充
+
+镂空模型可以节省树脂，但镂空后会出现悬空点；且模型整体强度下降，在打印完成后容易变形甚至破裂，适当地填充内部结构可以有效改善或规避这两个问题。
+Basic 和 Dental 的镂空功能中都整合了填充功能，可以同时完成两个步骤，操作方便的同时还为用户节省了时间。区别是，Dental 运用了更先进的算法，镂空后的模型内部更平滑，可以避免牙花等凹凸处镂空后内部出现许多悬垂点，而Basic的镂空功能不会对狭小的地方进行平滑处理；再者，Dental的填充结构有三种：立体结构、蜂窝结构及网格结构，而Basic仅能填充网格结构。
+
+相比 Basic 软件，Dental 软件的填充算法还有独特的设计。蜂窝结构和网格结构中会生成连通孔和穹顶结构。连通孔能在打印过程中方便树脂回流到料槽内，能减少模型内部树脂的残留，简化后处理流程。镂空后模型内部的悬垂点区域会自动生成穹顶结构，消除悬垂点，避免了在模型内部再添加支撑。
+
+另外，Dental 还可以实现仅填充底部的方式，需要在镂空时选择”底部贯穿“模式，再选择填充结构，最后选中”仅填充底层“。这种填充方式不仅节省树脂，而且增加了模型与平台的附着力，使模型在打印时不易掉落，同时也减少了添加支撑的步骤，后处理流程也更简易。
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/basic-vs-dental-which-is-better-for-you/dental-hollow-out-and-fill-with-hive-structure.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/basic-vs-dental-which-is-better-for-you/basic-hollow-out-and-fill-with-grid-structure.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+### 打孔
+
+打印过程中，平台上下拉动容易造成模型内外气压不一致，影响模型成品精度。为了消除这种负压效应，需要对模型进行打孔。Dental的打孔功能可以实现自动化的批量打孔，操作上更便捷，学习成本也更低，而且可以在模型边缘打出半孔，最大程度消除负压效应；而Basic没有自动打孔及批量打孔的功能，打孔位置及数量需要用户根据一定的知识和经验来判断，而且 Basic 的打孔功能也无法在模型边缘打出半孔，只能在距离平台一定高度的位置上打出完成的圆孔。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-drilling.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/basic-vs-dental-which-is-better-for-you/basic-manual-drilling.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+### 排版
+
+Basic 和 Dental 都有自动排版的功能，但算法有些差异。Basic 对于模型大小的识别方式是模型最小外框矩形体，而 Dental 是识别模型在打印平台上的投影轮廓，所以 Dental 可以实现更加紧凑的排版方式，即在同样大小的平台上，Dental 可以放下更多模型。
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-layout.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/basic-vs-dental-which-is-better-for-you/basic-automatic-layout.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+### 支撑
+
+在支撑方面，Basic 和 Dental 都可以自定义参数，但 Dental 的支撑算法在种植体引导板这类模型上有所优化。自动添加支撑时可以设置避开圆孔结构，避免支撑干扰圆孔的精度，影响引导板与种植体配件的就位。
+
+
+### 其他功能
+
+另外 Dental 中还会有一些适配齿科行业需求的功能，如添加标签、添加加强筋、切割底部以及更快的切片速度等等。总的来说，Basic 能达到成功打印齿科模型的最低功能要求，作为一款通用型软件，在应用到齿科场景时需要更复杂的操作，上手难度取决于用户的打印熟练度和技巧掌握程度，处理牙科模型时需要依靠丰富的打印经验来进行操作。而Dental作为专业的齿科切片软件，专注于效率和易用性，可以很好地降低牙科人士的学习成本，快速实现成功打印，并且模型的处理效果更佳，同时也简化了后处理流程。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-process.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+想了解更多Basic和Dental的功能差异，请查看此 [链接](https://manual.dental.chitubox.com/zh-CN/user-manual/latest/basic-vs-dental)。
+
+## 成本
+
+Basic 作为一款免费软件，用户下载后即可使用所有的功能，而 Dental 提供一系列的订阅计划，包括月度、年度和三年，定价分别为￥174.9、￥1599、￥3489。但除了直接的金钱成本，我们还需要关注隐形成本。通过功能的对比，我们可以发现 Basic 对于齿科用户，尤其是进入数字化齿科领域时间较短的用户，在操作体验上相对 Dental 要付出更多时间和精力去学习和实践，而我们希望用户能够把更多的精力投入到治疗方案设计上，减少在生产制造上耗费的时间，这也是 Dental 产品设计的初衷，让用户可以真正享受技术带来的工作简化和效率提升。
+
+ 
+## 结论
+
+通过功能和成本的对比，可以看出两个软件的差异。CHITUBOX Basic 提供了清晰的界面和基本功能，非常适合预算有限的 3D 打印用户，需要掌握一定的参数知识，以及熟悉3D打印的流程和操作，可以玩转有限的功能。而CHITUBOX Dental的特色工具和自动功能满足了牙科3D 打印场景的独特需求，一键流程对用户的操作经验和技巧也没有过多要求，是初级打印用户及效率优先的用户的不二选择。
+ 
+“我发现自动排版、自动支撑和自动填充很有用，因为使用 exocad 制作的模型没有蜂窝等填充物；排版和支撑的放置位置也很合理，并且打印后去除支撑不会留下痕迹。”——Dental Office, Japan
+
+"很多功能和自动选项都很好，我正在使用好几台打印机，可以找到许多适配的参数选项，总的来说这实在太棒了！“——SK Dental lab, UK
+
+“分别试用了基础版和齿科版本后，我们发现齿科版本更适合我们使用，而且订阅的邮件也有持续的干货输出。”——DS Dental, USA
+ 
+就如同许多用户的反馈，CHITUBOX Dental 是数字化齿科的一个优秀切片工具。如果你正在纠结切片软件的选择，不妨直接下载体验一下吧！
+
+
+** 立即下载 **
+[下载链接](https://dental.chitubox.com/zh-Hans/download)

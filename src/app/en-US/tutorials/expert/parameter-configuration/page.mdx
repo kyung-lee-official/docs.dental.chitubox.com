@@ -22,10 +22,12 @@ There are three methods to configure parameters: Firstly, using presetting param
 
 CHITUBOX Dental has a large number of printer and material parameters presetted. You can select the machine you are using in the printer list, choose the material below, and then apply directly. If you want to fine-tune the presetting parameters, you can click the "Advanced" button after selecting the printer and material.
 
-<ImageContainer
+<BlogImageContainer
 	src={
 		"/images/docs/en-US/advanced/parameter-configuration/use-preset-parameters.png"
 	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
 />
 
 ## Import Printing Profiles
@@ -34,10 +36,12 @@ CHITUBOX Dental has a separate profile format with a file suffix of ".cfgd". In 
 
 Parameters from CHITUBOX Basic can also be imported into CHITUBOX Dental. You can export the profile to ".cfgx" format in Basic 2.0 and above version, then manually change the file suffix to ".cfgd", and then import it into CHITUBOX Dental. If you are using the Pro 1.x version, which only can export the ".cfg" format, you need to export the profile first, then import it into Basic 2.0 and above version for format conversion, and change the exported ".cfgx" to ".cfgd" manually. The current operation is cumbersome, but in the near future, CHITUBOX Dental will support the import of both ".cfg" and ".cfgx" formats.
 
-<ImageContainer
+<BlogImageContainer
 	src={
 		"/images/docs/en-US/advanced/parameter-configuration/import-profiles.gif"
 	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
 />
 
 In addition, there is no "material" item in the CHITUBOX Basic‘s printing profiles, so when importing the Basic profile to Dental, they will be uniformly placed under the "Default" material option. If you want to manage the profiles visually, you can manually classify the profiles. Select any profile in the "Advanced Configuration" screen using Ctrl + C to copy, and then use Ctrl + V to paste under any other material to classify.
@@ -46,16 +50,20 @@ In addition, there is no "material" item in the CHITUBOX Basic‘s printing prof
 
 If the printer or material is not found in the drop-down menu of the "Add Configuration", you can manually set parameters. Click "Add Configuration" - "Custom" - "Add a machine", and then set parameters manually.
 
-<ImageContainer
+<BlogImageContainer
 	src={
 		"/images/docs/en-US/advanced/parameter-configuration/set-parameters.gif"
 	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
 />
 
 Finally, in order to avoid losing parameters in some extreme situations, it is recommended you export a backup of the parameters. In CHITUBOX Dental, for easy management, the printing profile is classified with the printer. When exported, all material profiles under the target printer will be exported at once, and the export format is ".cfgd".
 
-<ImageContainer
+<BlogImageContainer
 	src={
 		"/images/docs/en-US/advanced/parameter-configuration/export-parameter.png"
 	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
 />

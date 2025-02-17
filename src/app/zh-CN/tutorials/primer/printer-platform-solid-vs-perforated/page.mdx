@@ -1,0 +1,69 @@
+export const metadata = {
+	title: "实心平台 VS 打孔平台",
+	authors: [{ name: "CHITUBOX Team" }],
+	description: "",
+	keywords: [],
+	other: {
+		pageId: "/zh-CN/tutorials/primer",
+	},
+	openGraph: {
+		images: ["/images/docs/en-US/tutorials/primer/cover.jpg"],
+	},
+};
+
+# 实心平台VS打孔平台
+
+大家好，上一期我们聊了《齿科行业如何选择打印机》，结论是大多数牙科场景都推荐使用上拉式打印机。但上拉式的打印机除了光学结构的区别外，在平台类型上也有差异，有的是实心平台，有的是打孔平台。本期就来讲一讲这两种平台的优势和劣势。
+
+## 运作差异
+
+绝大多数上拉式打印机都是先将所需的树脂材料添加到料槽中，在打印的过程中平台下落至料槽底部进行曝光，曝光完成后平台粘连着已经固化的树脂进行抬升；在抬升的过程中，树脂会自然回流至液面水平，然后平台再下降进行下一层固化。在整个过程中，平台抬升时首先要突破离形膜的粘连，然后克服上拉过程中产生的负压。具体来说，在平台抬升的过程中，平台原来所处的位置就会形成一个负压区域，这个负压区域会阻止平台的抬升，同时会吸引其他区域的树脂来补充这个负压区域以平衡压强。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/primer/printer-platform-solid-vs-perforated/resin-flow-diagram.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+如果是实心平台，树脂只能从平台四周流入这个负压区域，流动会比较受限。如果平台抬升的速度过快，树脂的粘稠度又比较高，那么抬升所需要的力就非常大。如果是打孔平台，树脂回流的通道就非常多。除了平台四周，平台上的每一个孔都是树脂的回流通道，上拉所需要的力就小了很多。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/primer/printer-platform-solid-vs-perforated/perforated-platform-left-&-solid-platform-right.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+## 优劣势对比
+
+在实际运作过程中，实心平台对打印操作有一定要求。 以典型的牙模打印场景为例，当我们用实体平台打印镂空的牙模时，在平台抬升过程中树脂液面会与模型镂空区域形成一个封闭空间，压强会同时对模型内部和外部产生影响。如果模型壁厚比较薄，产生的负压在极限情况下会使模型变形，对模型精度产生影响，或者造成模型掉板。
+
+所以一般情况下，我们使用实心平台打印镂空模型时，需要在模型贴近平台的位置上进行打孔，确保树脂可以顺畅流动。如果使用打孔平台打印，因平台本身就有孔洞，能保证树脂的流动，所以一般不用进行打孔处理。为了应对这种情况，我们在CHITUBOX Dental中开发了自动打孔的功能，可以快速的在模型与平台接触的位置打孔。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/primer/printer-platform-solid-vs-perforated/drain-holes-in-the-model.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+当然打孔平台也存在一定的局限性，首先就是模型底部平整度的问题。在打印前几层时，因为曝光时间偏长，树脂会内嵌在平台的孔洞中，导致打印出来的模型底部平整度不好；其次就是小模型排版的问题，比如基牙模，在排版时如果将模型排在了孔洞处，底层就无法附着在平台上，会导致打印失败。且取模的时候难以避免模型的碎渣嵌着在孔洞里，会增加平台的清理难度。实心平台则没有以上困扰。为了应对这种情况，在CHITUBOX Dental设计之初，我们就和打印机厂家合作，将平台模型实时渲染出来。用户在打孔平台上排版时，可以非常直观地看到平台上的孔洞，以便调整模型位置。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/primer/printer-platform-solid-vs-perforated/rendering-of-the-perforated-platform-model.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+以上就是打孔平台及实心平台的优势和劣势，总体来看打孔平台的优势较大，而打孔平台的成本一般也会高于实心平台。一般来说，幅面比较大的打印机必须用打孔平台，否则离型力太大，树脂流动太剧烈，打印的稳定性会大大降低。对于小幅面的打印机，平台是否打孔不是特别重要，除非使用的树脂材料粘度非常高。如果打印机幅面小于8寸，且使用的树脂粘稠度不高，建议选择实心平台；如果使用的树脂粘稠度非常高，那就建议使用打孔平台。
+

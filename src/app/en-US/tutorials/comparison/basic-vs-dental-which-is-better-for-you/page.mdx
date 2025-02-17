@@ -14,4 +14,135 @@ export const metadata = {
 # Basic vs Dental: which is better for you?
 
 With the rapid development in digital dentistry, having efficient 3D printing tools is essential to staying ahead, and pre-slicing processing is one of the important steps in 3D printing. Choosing a suitable slicer software has become a topic that every user cannot avoid. CHITUBOX Basic, as a household slicer software in the 3D printing industry, has been active in various industries for many years and has become the universal software with the highest market share. However, with the development of the industry, we are well aware that universal software cannot meet the unique needs of specific industries, so a new player targeting specific industries has emerged, that is CHITUBOX Dental, which is designed specifically for dentistry.
+
 CHITUBOX Dental provides targeted powerful functions and a smooth and convenient preparation experience, making it more and more popular and loved by dentists, but Basic is still the choice of many dentists, and many users have difficulty choosing between these two options. Therefore, this article will deeply analyze the functional differences between Basic and Dental, as well as compare costs, to provide information reference for users to choose the software that best suits them.
+
+## Features
+
+The function of the software is undoubtedly the part that users care about most. Both Basic and Dental can complete the preparatin and slicing of dental models, but the operation experience and results of the two are quite different. Taking the solid orthodontic dental model as an example, the best processing result is a hollow model without adding support. With this goal, both software will go through the steps of orientation, hollowing (and filling), drilling, and layout. Now, we will prepare the same models in the two software to show the difference.
+
+First of all, CHITUBOX Dental can complete the whole process with one click, while Basic needs to be operated manually step by step.
+ 
+### Orientation
+
+For the orientation of orthodontic models, professionals recommend that the model be placed flat against the platform to avoid adding support in the tooth area and affecting the accuracy of the model. Dental has built-in multiple orientation algorithms for different types of models. When you select the application as "Orthodontic Model", the dental model will be placed directly against the bottom during orientation. Basic does not have these rules, so the results of automatic orientation are random. You can manually lay it down through the "Flatten on Platform" function.
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-orientation.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Orientaion"
+/>
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/basic-automatic-orientation-and-flatten-by-face.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Orientaion and Flatten by Face"
+/>
+
+### Hollowing and filling
+
+Hollowing out a model can save resin, but overhanging points will appear after hollowing out and the overall strength of the model decreases, and it is easy to distort or even break after printing. Proper filling of the internal can effectively alleviate or avoid these two problems.
+
+Both Basic and Dental integrate the filling function in the hollowing sector, which can complete two steps at the same time, making the operation convenient and saving time for users. The difference is that Dental uses a more advanced algorithm, and the inner surface of the hollowed-out model is smoother, which can avoid many overhanging points beneath the occlusal area, while the hollowing function of Basic will not smooth the narrow places. Furthermore, Dental has three types of filling structures: scaffold, hive, and grid, while Basic can only fill the grid structure.
+
+Compared with Basic software, Dental software has unique designs for the filling algorithm. Through holes and dome structures will be generated in the hive structure and grid structure. The through holes can facilitate the backflow of resin to the material tank during printing, reduce the residual resin inside the model, and simplify the post-processing. After hollowing out, dome structure will be automatically generate at the overhanging area inside the model, eliminating the overhanging point and avoiding adding supports inside the model.
+
+In addition, Dental can also fill only the bottom. You need to select the "bottom through" mode in the "Hollow Out" sector, then select the filling structure, and finally select "fixed height filling". This filling method not only saves resin, but also increases the adhesion between the model and the platform, making the model less likely to fall off during printing, but also reduces the steps of adding supports, and simplify the post-processing.
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/dental-hollow-out-and-fill-with-hive-structure.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="Fill with Hive Structure"
+/>
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/basic-hollow-out-and-fill-with-grid-structure.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+### Drilling
+
+During the printing process, the up and down movement of the platform can easily cause inconsistent air pressure inside and outside the model, affecting the accuracy of the model. In order to eliminate this phenomenon, the model needs to be drilled. Dental's drilling function can realize automatic batch drilling, which is convenient to operate and has a lower learning cost. It can also drill half holes on the edge of the model to eliminate the pressure effect to the greatest extent. Basic does not have the functions of automatic drilling and batch drilling. The users need certain knowledge and experience to judge the drilling position and quantity. In addition, Basic's drilling function cannot make half hole on the edge of the model, and can only make completed round holes at a certain height from the platform.
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-drilling.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/basic-manual-drilling.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+### Layout
+
+Both Basic and Dental have automatic layout functions, but the algorithms are somewhat different. Basic recognizes the model by the minimum bounding box of the model, while Dental recognizes the projection outline of the model on the printing platform, so Dental can achieve a more compact layout, that is, on a platform of the same size, Dental can put more models.
+
+<BlogImageContainer
+	src={
+    		"public/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-layout.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/basic-automatic-layout.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+### Support
+
+In terms of support, Basic and Dental can customize parameters, but Dental's support algorithm is optimized for implant guides. When automatically adding support, you can set it to avoid the circular hole structure to prevent the support from interfering with the accuracy of the circular hole and affecting the adaptation between the guide and implant mountings.
+
+
+### Other functions
+
+In addition, Dental also has some functions that adapt to the needs of the dental industry, such as tagging, bridge generator, cutting, etc. In general, Basic can meet the minimum requirements for successfully printing dental models. As a universal software, it requires more complex operations when applied to dental scenarios, which means the user needs more printing experience when preparing dental models. As professional dental slicer software, Dental focuses on efficiency and ease of use. It can greatly reduce the learning cost of dentists, quickly achieve successful printing, and the model preparation effect is better, while also simplifying the post-processing.
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-process.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+Click [here](https://manual.dental.chitubox.com/en-US/user-manual/latest/basic-vs-dental) to learn more about the differences between Basic and Dental.
+
+## Cost
+
+Basic is free software; users can use all functions after downloading it. Dental provides a series of subscription plans, including monthly, yearly, and 3-year plans, priced at $24.99, $229 and $499 respectively. But in addition to the monetary cost, we also need to pay attention to the invisible costs. Through the comparison of functions, we can find that Basic requires more time and energy for dental users to operate and practice, especially those who have entered the field of digital dentistry for a short time. We hope to help the user enhance efficiency and save time for other important work. This is also the original intention of the Dental product design, which is to allow users to truly enjoy the work simplification and efficiency improvement brought by technology.
+ 
+## Conclusion
+
+By comparing the functions and costs, we can see the difference between the two software. CHITUBOX Basic provides a clear interface and basic functions, which are very suitable for 3D printing users with limited budgets. They need to master certain parameter knowledge and be familiar with the process and operation of 3D printing. CHITUBOX Dental's special tools and automatic functions meet the unique needs of dental 3D printing scenarios, and the one-click process does not require too much user experience and skills. It is the best choice for dental professionals who prioritize efficiency.
+ 
+"I find auto-nesting, auto-support, and auto-fill useful because models made with Exocad don't have fillers like honeycombs; The placement of the layout and supports is also reasonable, and removing the supports after printing leaves no traces. ”——Dental Office, Japan
+
+"A lot of features and automatic options are good, I'm using several printers and I can find a lot of parameter options to work with, and overall it's been fantastic!" ——SK Dental Lab, UK
+
+"After trying the basic version and the dental version respectively, we found that the dental version is more suitable for us, and the newsletters have a continuous output." ——DS Dental, USA
+ 
+Just like the feedback from many users, CHITUBOX Dental is an excellent slicing tool for digital dentistry, if you are struggling with the choice of slicing software, why not download and try it out? 
+
+** Download Now **
+[Download](https://dental.chitubox.com/en/download)

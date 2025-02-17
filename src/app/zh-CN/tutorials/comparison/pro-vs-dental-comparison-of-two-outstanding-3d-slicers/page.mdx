@@ -15,3 +15,146 @@ export const metadata = {
 
 在增材制造技术日益成熟的今日，3D 打印技术逐渐渗透到各行各业中，众多出色的软硬件新品层出不穷。而随着 3D 打印技术在齿科相关应用的普及和深化，用户对于相关软件的需求也逐渐增加。CHITUBOX 系列软件不仅为一般打印需求提供了免费版本的 CHITUBOX Basic 切片软件，更为追求更高精度的用户研发了 Pro 版本的高级切片软件，而在 2024 年 7 月，我们上线了一款针对齿科应用的专业切片软件——CHITUBOX Dental。前面我们已经分析过 [Basic 版本与 Dental 版本的区别](https://dental.chitubox.com/zh-Hans/article/dental/news/Education/vsbasic) ，那么，Pro 版本和 Dental 版本软件在定位和功能上又有什么差异呢？这篇文章将告诉你，哪个软件更适合你。
 
+
+## 产品定位
+
+Pro 版本在推出伊始即旨在满足深度用户更多关于打印精度和模型处理的需求，而这类需求主要集中在潮玩手办类的模型中，由于模型复杂程度高，对软件功能的要求也随之提高。2024年10月上线的 Pro 2.0 更是比旧版本有了重大提升。除了更现代化的交互界面，更优秀的内核算法，还推出了一系列新功能，使得光固化打印深度用户的体验更加流畅和高效。
+
+与 CHITUBOX Pro 丰富的功能模块不同，CHITUBOX Dental 在设计之初考虑的就是齿科行业定制程度较深的独特性。齿科从业人员一直以传统的手工制作模式生产义齿及相关产品，对于电脑操作较为陌生，且有些生产工序仍然需要手工完成，3D打印技术在其中只是替代一部分工序。鉴于齿科终端用户对于3D打印技术可能没有深度接触的特性，CHITUBOX Dental 更加聚焦于功能的实用和界面的简洁，并因此开发了自动化处理流程这一一键操作即可完成模型准备的功能，旨在给齿科从业人员带来极简的操作体验，降低齿科用户的学习成本。
+ 
+
+ 
+## UI界面
+
+单从界面上看，CHITUBOX Dental 的整体界面更加简洁，其功能模块集中于操作区域的左侧，基于行业习惯精简和优化了齿科模型处理所需的功能和设置，并且在操作区域右侧直接展示当前项目中的模型文件和打印相关参数，用户可以直观看到自己正在处理的模型属于哪个案例。在 CHITUBOX Dental 中，用户不需要深入理解和学习各个功能模块背后的操作逻辑和背景知识，只需将精力集中在操作区域的模型处理。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/pro-vs-dental-comparison-of-two-outstanding-3d-slicers/interface-of-chitubox-dental.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+CHITUBOX Pro 的操作界面有许多细分功能，设置多且复杂。其中作为软件亮点的支撑功能的设置也比 Dental 版本丰富许多，专业用户可自主进行设置，对于资深3D打印用户来说是实现高精度打印的实用工具，但对于初学者来说是学习成本较高的软件。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/pro-vs-dental-comparison-of-two-outstanding-3d-slicers/interface-of-chitubox-pro.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>>
+
+## 功能
+
+### 软件配置
+
+新版本的 CHITUBOX Pro 2.0 链接了树脂材料库，让用户可以直接使用材料厂家官方提供的经过测试的材料参数，降低用户的打印失败率和操作成本。目前 CHITUBOX 官方也正在进一步加强和材料厂商的合作，以期为用户提供更丰富的材料库资源。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/pro-vs-dental-comparison-of-two-outstanding-3d-slicers/access-to-the-resin-profiles-library-in-the-chitubox-pro.giff"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+CHITUBOX Dental 目前的版本虽还未能与树脂材料库连接，但软件已内置了齿科常用打印机的打印参数，用户亦不需要做复杂的打印测试，只要基于官方的材料参数，即可直接开始打印。另外，为了产出更适配齿科产品的处理效果，Dental 软件在打印机添加和设置流程中加入了选择齿科应用的步骤，支持包括牙模、种植导板、临时牙冠在内等十几种常用的齿科打印目标，每一种应用都配置了对应的算法以更好地处理模型。这些配置使齿科专业人员能轻松得到理想的打印效果而无须花费大量时间精细调整。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/pro-vs-dental-comparison-of-two-outstanding-3d-slicers/dental-applications-configuration-in-the-chitubox-dental.giff"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+### 模型处理
+
+** CHITUBOX Pro **
+
+CHITUBOX Pro 为手办模型处理内置了各种强大和灵活的功能，以帮助用户针对各种复杂的模型达成不同的打印策略。
+
+自动布局允许用户设置不同的模型间距和排布方法，应用在所有模型或者当前选择模型上。复制功能支持用户批量增加模型，新增的模型会以阵列方式整齐排列，用户无需再次排版。镂空功能支持三种不同的填充模式，并且可以自定义镂空精度和填充密度。打孔功能具备了详细的孔洞尺寸设置。针对模型本身，用户可以使用布尔功能对不同的模型进行合并、相切或只保留相交区域，也可使用切割功能对模型基于平面进行分割。分析测量模块下则提供了不同的工具，以帮助用户在模型准备阶段捕捉各种精确的距离和尺寸，完成对模型的精确缩放和定位。
+
+Pro 2.0 在功能上有了重大突破，新增了两大功能—— ChituAction 和魔法支撑。
+
+ChituAction 与 Dental 的一键流程一样，用户可以对简单的模型进行自动化处理，还可以根据需求调整自动化流程的步骤。但对于较复杂的模型，还需用户逐步精细处理。
+魔法支撑可以帮助需要精细支撑设置的用户快速完成支撑步骤。用户在处理复杂的模型时，往往需要结合几种不同的支撑形态。魔法支撑允许用户通过自定义的设置，一键执行多个支撑步骤，自动添加不同类型的支撑。用户还可以增加支撑文件，根据以往的经验对所需的支撑步骤进行个性化设置，这样即可以大大减少了用户用于支撑步骤的时间和精力，提高效率和打印的成功率，还可以尽可能减少支撑对于模型表面的影响。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/pro-vs-dental-comparison-of-two-outstanding-3d-slicers/magic-support-in-the-chitubox-pro.gif"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+这一系列的功能使得Pro版本在面对复杂程度高的模型时游刃有余，但对齿科从业人员来说，过多的设置按钮会增加理解和使用难度，不利于快速生产。
+
+ 
+** CHITUBOX Dental **
+
+对于 CHITUBOX Dental，最大的亮点就是其“一键处理”功能。在完成机器和材料的设置后，用户可以直接使用操作区域上方的自动化流程，完成所有预处理步骤。与 Pro 版本的 ChituAction 不同的是，Dental版本的一键处理功能会针对不同的齿科应用采取对应的算法，依据模型的几何特征完成自动定向、排版、镂空、打孔和加支撑等工序，以获得更符合齿科打印需求的切片文件。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/pro-vs-dental-comparison-of-two-outstanding-3d-slicers/one-click-process-in-the-chitubox-dental.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+以齿科打印频率较高的牙模为例。
+
+CHITUBOX Dental 的定向功能会自动将牙模处理成贴底摆放的方式，保证较高打印成功率的同时避免支撑影响牙模表面的形态。
+
+CHITUBOX Dental 的镂空功能采用了独特的算法，依据牙模轮廓镂空后会在镂空区域形成光滑的内壁，尽量减少悬垂点的生成。在这一步骤中，用户可以设置镂空并填充，模型会根据所择的填充类型和参数在镂空之后自动实现内部填充，节省操作时间。
+
+镂空设置和填充设置中都有一个独特的功能——仅填充底部。该功能可以最大限度地节约树脂和保证模型与平台附着力。CHITUBOX Dental 的填充功能还有两个独特的设计——连通孔和穹顶结构。连通孔对于打印过程中树脂流回料槽和消除负压作用至关重要，用户可以设置参数以调整连通孔的大小及间隔距离。由于后牙的颌面结构凹凸不平，这些位置在镂空后很容易存在悬垂区域，穹顶结构正是为了解决这一问题而设计。后牙颌面区域在填充的过程中会自动在悬垂区域生成穹顶结构，节约了用于内部支撑的树脂材料以及提高打印成功率。
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/pro-vs-dental-comparison-of-two-outstanding-3d-slicers/through-holes-and-dome-structure-in-the-chitubox-dental-1.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/comparison/pro-vs-dental-comparison-of-two-outstanding-3d-slicers/through-holes-and-dome-structure-in-the-chitubox-dental-2.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+CHITUBOX Dental 的打孔功能不仅支持批量打孔，还可以在贴近打印平台的模型底部生成半孔，使贴底打印的模型避免因负压作用而影响模型精度。
+
+以上的穹顶结构、半孔结构都使模型可以进行无支撑打印，节省了树脂材料和打印时间。若用户希望加支撑，CHITUBOX Dental 也继承了 Pro 版本的多类型支撑，让用户可以自主选择所需的支撑大小辅助打印。
+
+最后 Dental 版本的排版功能能对牙模进行嵌套排版，最大程度提高打印平台的空间利用率，节约用户大批量打印的操作成本。
+
+以上功能全部包含在自动化流程里。通过提前设置相关参数，用户可以一键完成模型准备。当用户选择其他齿科应用时，软件将会调用相应的算法，最终产出适合该应用的处理结果。
+
+另外，CHITUBOX Dental 还提供了添加标签、加强筋、切割等基础功能。帮助用户标记模型、减缓模型的形变或断裂、以及获得合适高度的模型。
+
+## 结论
+
+CHITUBOX Pro 和 CHITUBOX Dental 作为两款独立的付费光固化打印切片软件，针对不同的用户群体和需求，从界面设计到功能上都有着自己的特色。
+
+Pro针对资深打印用户，提供了更多的可修改参数和选项，用户可通过这些设定，在一定程度上实现对模型的个性化修改，并提升复杂模型的打印效果。
+
+Dental 则适配齿科专业人员，简洁的界面和实用的功能最大程度节约了用户的操作和学习成本，通过匹配齿科应用和强大的针对性算法，用户可以高效稳定地实现打印操作，让齿科加工厂加快生产进度，让牙医可以更好地把精力投入到治疗方案的设计上。
+
+
+** 立即下载 **
+[下载链接](https://dental.chitubox.com/zh-Hans/download)

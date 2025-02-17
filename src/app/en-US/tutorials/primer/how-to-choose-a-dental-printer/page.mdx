@@ -24,6 +24,16 @@ Light-curing 3D printing technology is collectively called SLA (Stereo Lithograp
 Based on the principles of SLA, the first SLA 3D printer debuted in 1988.
 The 3D printer uses a galvanometer system to control a UV beam to scan the surface of the photopolymer, hardening the resin, and then stack it layer by layer to form a complete print. Before printing, the model needs to be sliced layer by layer, and each layer is irradiated according to a specific path by the laser beam. After curing the first layer, the build platform lowers to create room for the next layer, and then the sweeper moves across the resin surface to ensure even distribution, followed by repeating the curing and lowering process until the print is finished.
 
+
+ <BlogImageContainer
+	src={
+    		"/images/docs/en-US/primer/how-to-choose-a-dental-printer/the-structure-of-sink-style-sla-printer.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
+
+
 SLA achieves high-accuracy printing. But the higher the accuracy, the slower the speed. Increasing the speed means increasing the power and frequency of the laser to ensure that the resin absorbs enough energy, avoiding insufficient reaction. Besides, the galvanometer method is not suitable for large 3D printers, because, with the increase of the beam inclination, the light dot presented on the resin surface will become larger and elliptical, the energy density will be reduced, and the printing accuracy will greatly decrease. Therefore, it is necessary to have independent X-axis and Y-axis motions to ensure the consistency of the light dot during the printing process. But the new problem coming with is the accuracy decrease of vibration during motion. In short, the increase of the irradiating speed is limited.
 
 So what else can you do to increase printing speed?
@@ -32,9 +42,24 @@ Traditional SLA technology is thought of as dot exposure, so it is necessary to 
 
 The lift-style printer optical machine is mounted below the resin vat, which uses a release film that is translucent and does not adhere to the print easily. When curing, the platform falls to the bottom of the vat keeping a space of one layer, then the light source is emitted through the release film to cure the resin. Because of the low adhesion of the release film and the high adhesion of the metal build platform, the hardened resin will be glued on the platform, and then stacked layer by layer. This lift-style structure does not require too high the horizontality of the printer's placement, but the verticality of the optical machine and the vat bottom and platform is very important, and the manufacturer needs to control the deviation within a small range when assembling. In addition, the lift-style printer must glue the model to the platform to ensure the success of printing, so the first few layers of printing must be over-cured, so that they can be tightly bonded to the platform. Secondly, this kind of printer can not print too large and too heavy models, avoiding the falling of the model.
 
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/primer/how-to-choose-a-dental-printer/the-structure-of-lift-style-dlp-printer.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
 Due to high stability and durability, DLP printers have been widely used in all walks of life. In addition to ultra-large format industrial printers still use traditional SLA technology, small format high-frequency industrial printers always use DLP technology. Why the emphasis on industrial production scenarios? The main reason is the expensive component. The price of core optical machines has remained high because of limited options.
 
 This situation lasted until around 2017. Due to the popularity of smartphones, the resolution of LCD screens is getting higher and higher, and some people have a whim, is it possible to replace the projector in a DLP printer with the LCD screen and combine it with UV light? Based on this idea, a lift-style 3D printer using the LCD screen of a mobile phone appeared. The first generation of printers used color screens, which had poor light transmittance, low durability, poor light uniformity, and poor stability, but the price was cheap. It was at this time that the CHITU team saw the potential of LCD development and made the world's first offline control scheme based on Single-Chip Microcomputer, as well as the supporting CHITUBOX slicing software. Subsequently, the LCD technology was getting more popular and the LCD printer market has started explosive growth. With the development of screen technology, printers are becoming more and more stable, from color screens to monochrome special screens, with resolutions ranging from 1080p to 2k, and even the highest 16k nowadays, with higher and higher accuracy. Although there is still a gap between the stability of LCD and DLP printers, due to the low price and high accuracy, LCD printers are widely applied in model figures, dentistry, jewelry, and other industries.
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/primer/how-to-choose-a-dental-printer/the-structure-of-lcd-printer.png"
+	}
+	style={{ width: "360px" }}
+	figcaption="The Automatic Process"
+/>
 
 ## How to choose the suitable printer
 
