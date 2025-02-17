@@ -25,7 +25,7 @@ export const metadata = {
     		"/images/docs/zh-CN/primer/printer-platform-solid-vs-perforated/resin-flow-diagram.png"
 	}
 	style={{ width: "360px" }}
-	figcaption="The Automatic Process"
+	figcaption="负压效应示意"
 />
 
 如果是实心平台，树脂只能从平台四周流入这个负压区域，流动会比较受限。如果平台抬升的速度过快，树脂的粘稠度又比较高，那么抬升所需要的力就非常大。如果是打孔平台，树脂回流的通道就非常多。除了平台四周，平台上的每一个孔都是树脂的回流通道，上拉所需要的力就小了很多。
@@ -36,7 +36,7 @@ export const metadata = {
     		"/images/docs/zh-CN/primer/printer-platform-solid-vs-perforated/perforated-platform-left-&-solid-platform-right.png"
 	}
 	style={{ width: "360px" }}
-	figcaption="The Automatic Process"
+	figcaption="打孔平台（左）&实心平台（右）"
 />
 
 ## 优劣势对比
@@ -51,7 +51,7 @@ export const metadata = {
     		"/images/docs/zh-CN/primer/printer-platform-solid-vs-perforated/drain-holes-in-the-model.gif"
 	}
 	style={{ width: "360px" }}
-	figcaption="The Automatic Process"
+	figcaption="对模型进行打孔"
 />
 
 当然打孔平台也存在一定的局限性，首先就是模型底部平整度的问题。在打印前几层时，因为曝光时间偏长，树脂会内嵌在平台的孔洞中，导致打印出来的模型底部平整度不好；其次就是小模型排版的问题，比如基牙模，在排版时如果将模型排在了孔洞处，底层就无法附着在平台上，会导致打印失败。且取模的时候难以避免模型的碎渣嵌着在孔洞里，会增加平台的清理难度。实心平台则没有以上困扰。为了应对这种情况，在CHITUBOX Dental设计之初，我们就和打印机厂家合作，将平台模型实时渲染出来。用户在打孔平台上排版时，可以非常直观地看到平台上的孔洞，以便调整模型位置。
@@ -62,7 +62,7 @@ export const metadata = {
     		"/images/docs/zh-CN/primer/printer-platform-solid-vs-perforated/rendering-of-the-perforated-platform-model.png"
 	}
 	style={{ width: "360px" }}
-	figcaption="The Automatic Process"
+	figcaption="打孔平台模型渲染"
 />
 
 以上就是打孔平台及实心平台的优势和劣势，总体来看打孔平台的优势较大，而打孔平台的成本一般也会高于实心平台。一般来说，幅面比较大的打印机必须用打孔平台，否则离型力太大，树脂流动太剧烈，打印的稳定性会大大降低。对于小幅面的打印机，平台是否打孔不是特别重要，除非使用的树脂材料粘度非常高。如果打印机幅面小于8寸，且使用的树脂粘稠度不高，建议选择实心平台；如果使用的树脂粘稠度非常高，那就建议使用打孔平台。
