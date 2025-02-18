@@ -25,16 +25,16 @@
 		"tutorials": {
 			"title": "Tutorials",
 			"primer": "Primer",
-			"primer-subtitle": "Learn the basics of CHITUBOX Dental",
+			"primer-subtitle": "Introduction of Dental 3D printing and how to use CHITUBOX Dental.",
 			"primer-link": "/en-US/tutorials/primer",
 			"advanced": "Advanced",
-			"advanced-subtitle": "Learn advanced techniques for CHITUBOX Dental",
+			"advanced-subtitle": "Explanation of CHITUBOX Dental's features and the printing steps for different dental models.",
 			"advanced-link": "/en-US/tutorials/advanced",
 			"expert": "Expert",
-			"expert-subtitle": "Learn expert techniques for CHITUBOX Dental",
+			"expert-subtitle": "Provide highly professional 3D printing tips to help users complete printing with higher precision and less material.",
 			"expert-link": "/en-US/tutorials/expert",
 			"comparison": "Comparison",
-			"comparison-subtitle": "Compare CHITUBOX Dental with other software",
+			"comparison-subtitle": "Analysis of difference among CHITUBOX series slicer software.",
 			"comparison-link": "/en-US/tutorials/comparison"
 		},
 		"learning": {
