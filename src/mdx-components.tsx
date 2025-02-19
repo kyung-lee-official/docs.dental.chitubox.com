@@ -6,6 +6,7 @@ import { ResponsiveTable } from "./components/responsiveTable/ResponsiveTable";
 import { ImageContainer } from "./components/imageContainer/ImageContainer";
 import { Admonition } from "./components/admonition/Admonition";
 import { BlogImageContainer } from "./components/imageContainer/BlogImageContainer";
+import { ImageComparison } from "./components/imageComparison/ImageComparison";
 
 const HeadingAnchor = (props: any) => {
 	const { ...rest } = props;
@@ -157,6 +158,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
 		Admonition: Admonition,
 		ImageContainer: ImageContainer,
+		ImageComparison: ImageComparison,
 		BlogImageContainer: BlogImageContainer,
 
 		...components,
