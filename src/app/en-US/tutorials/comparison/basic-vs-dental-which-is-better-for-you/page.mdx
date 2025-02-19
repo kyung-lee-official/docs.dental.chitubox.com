@@ -50,60 +50,45 @@ Compared with Basic software, Dental software has unique designs for the filling
 
 In addition, Dental can also fill only the bottom. You need to select the "bottom through" mode in the "Hollow Out" sector, then select the filling structure, and finally select "fixed height filling". This filling method not only saves resin, but also increases the adhesion between the model and the platform, making the model less likely to fall off during printing, but also reduces the steps of adding supports, and simplify the post-processing.
 
-<BlogImageContainer
-	src={
+<ImageComparison
+	img1Src={
 		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/dental-hollow-out-and-fill-with-hive-structure.gif"
 	}
-	style={{ width: "360px" }}
-	figcaption="Dental-Hollow out and fill with hive structure"
-/>
-
-<BlogImageContainer
-	src={
+	figcaption1={"Dental-Hollow out and fill with hive structure"}
+	img2Src={
 		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/basic-hollow-out-and-fill-with-grid-structure.gif"
 	}
-	style={{ width: "360px" }}
-	figcaption="Basic-Hollow out and fill with grid structure"
+	figcaption2={"Basic-Hollow out and fill with grid structure"}
 />
 
 ### Drilling
 
 During the printing process, the up and down movement of the platform can easily cause inconsistent air pressure inside and outside the model, affecting the accuracy of the model. In order to eliminate this phenomenon, the model needs to be drilled. Dental's drilling function can realize automatic batch drilling, which is convenient to operate and has a lower learning cost. It can also drill half holes on the edge of the model to eliminate the pressure effect to the greatest extent. Basic does not have the functions of automatic drilling and batch drilling. The users need certain knowledge and experience to judge the drilling position and quantity. In addition, Basic's drilling function cannot make half hole on the edge of the model, and can only make completed round holes at a certain height from the platform.
 
-<BlogImageContainer
-	src={
+<ImageComparison
+	img1Src={
 		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-drilling.gif"
 	}
-	style={{ width: "360px" }}
-	figcaption="Dental-Automatic drilling"
-/>
-
-<BlogImageContainer
-	src={
+	figcaption1={"Dental-Automatic drilling"}
+	img2Src={
 		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/basic-manual-drilling.gif"
 	}
-	style={{ width: "360px" }}
-	figcaption="Basic-Manual drilling"
+	figcaption2={"Basic-Manual drilling"}
 />
 
 ### Layout
 
 Both Basic and Dental have automatic layout functions, but the algorithms are somewhat different. Basic recognizes the model by the minimum bounding box of the model, while Dental recognizes the projection outline of the model on the printing platform, so Dental can achieve a more compact layout, that is, on a platform of the same size, Dental can put more models.
 
-<BlogImageContainer
-	src={
-		"public/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-layout.gif"
+<ImageComparison
+	img1Src={
+		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/dental-automatic-layout.gif"
 	}
-	style={{ width: "360px" }}
-	figcaption="Dental-Automatic layout"
-/>
-
-<BlogImageContainer
-	src={
+	figcaption1={"Dental-Automatic layout"}
+	img2Src={
 		"/images/docs/en-US/comparison/basic-vs-dental-which-is-better-for-you/basic-automatic-layout.gif"
 	}
-	style={{ width: "360px" }}
-	figcaption="Basic-Automatic layout"
+	figcaption2={"Basic-Automatic layout"}
 />
 
 ### Support
