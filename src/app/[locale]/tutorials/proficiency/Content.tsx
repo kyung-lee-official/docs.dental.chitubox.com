@@ -11,12 +11,12 @@ import { useLocale, useTranslations } from "next-intl";
 import DocsSearch from "@/components/blogDocs/docsSearch/DocsSearch";
 
 const Content = () => {
-	const t = useTranslations("pages.expert");
+	const t = useTranslations("pages.proficiency");
 
 	const locale = useLocale();
 
 	const pages = (flattenContext as FlattenPage[]).filter(
-		(page) => page.fieldId === "expert" && page.locale === locale
+		(page) => page.fieldId === "proficiency" && page.locale === locale
 	);
 
 	const availableTags = useMemo(() => {

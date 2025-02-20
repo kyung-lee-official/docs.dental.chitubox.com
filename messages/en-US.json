@@ -30,9 +30,9 @@
 			"intermediate": "Intermediate",
 			"intermediate-subtitle": "Explanation of CHITUBOX Dental's features and the printing steps for different dental models.",
 			"intermediate-link": "/en-US/tutorials/intermediate",
-			"expert": "Expert",
-			"expert-subtitle": "Provide highly professional 3D printing tips to help users complete printing with higher precision and less material.",
-			"expert-link": "/en-US/tutorials/expert",
+			"proficiency": "Proficiency",
+			"proficiency-subtitle": "Provide highly professional 3D printing tips to help users complete printing with higher precision and less material.",
+			"proficiency-link": "/en-US/tutorials/proficiency",
 			"comparison": "Comparison",
 			"comparison-subtitle": "Analysis of difference among CHITUBOX series slicer software.",
 			"comparison-link": "/en-US/tutorials/comparison"
@@ -47,8 +47,8 @@
 		"intermediate": {
 			"title": "Intermediate"
 		},
-		"expert": {
-			"title": "Expert"
+		"proficiency": {
+			"title": "Proficiency"
 		},
 		"comparison": {
 			"title": "Comparison"

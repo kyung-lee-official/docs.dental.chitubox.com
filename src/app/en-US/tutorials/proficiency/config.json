@@ -1,8 +1,8 @@
 {
-	"fieldName": "Expert",
+	"fieldName": "Proficiency",
 	"isVersioned": false,
 	"type": "blog",
-	"homeUrl": "/en-US/tutorials/expert",
+	"homeUrl": "/en-US/tutorials/proficiency",
 	"versions": [
 		{
 			"versionCode": null,
