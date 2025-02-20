@@ -9,8 +9,8 @@
 			"relativeConfigPath": "tutorials/primer"
 		},
 		{
-			"fieldId": "advanced",
-			"relativeConfigPath": "tutorials/advanced"
+			"fieldId": "intermediate",
+			"relativeConfigPath": "tutorials/intermediate"
 		},
 		{
 			"fieldId": "expert",

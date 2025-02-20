@@ -56,9 +56,9 @@ const Content = () => {
 					description={t("primer-subtitle")}
 				/>
 				<Card
-					href={t("advanced-link")}
-					title={t("advanced")}
-					description={t("advanced-subtitle")}
+					href={t("intermediate-link")}
+					title={t("intermediate")}
+					description={t("intermediate-subtitle")}
 				/>
 				{/* <Card
 					href={t("expert-link")}

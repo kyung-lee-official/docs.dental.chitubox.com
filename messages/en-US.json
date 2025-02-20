@@ -27,9 +27,9 @@
 			"primer": "Primer",
 			"primer-subtitle": "Introduction of Dental 3D printing and how to use CHITUBOX Dental.",
 			"primer-link": "/en-US/tutorials/primer",
-			"advanced": "Advanced",
-			"advanced-subtitle": "Explanation of CHITUBOX Dental's features and the printing steps for different dental models.",
-			"advanced-link": "/en-US/tutorials/advanced",
+			"intermediate": "Intermediate",
+			"intermediate-subtitle": "Explanation of CHITUBOX Dental's features and the printing steps for different dental models.",
+			"intermediate-link": "/en-US/tutorials/intermediate",
 			"expert": "Expert",
 			"expert-subtitle": "Provide highly professional 3D printing tips to help users complete printing with higher precision and less material.",
 			"expert-link": "/en-US/tutorials/expert",
@@ -44,8 +44,8 @@
 		"primer": {
 			"title": "Primer"
 		},
-		"advanced": {
-			"title": "Advanced"
+		"intermediate": {
+			"title": "Intermediate"
 		},
 		"expert": {
 			"title": "Expert"

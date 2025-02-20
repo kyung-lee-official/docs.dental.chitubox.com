@@ -27,9 +27,9 @@
 			"primer": "初级",
 			"primer-subtitle": "介绍齿科3D打印和 CHITUBOX Dental 的基础操作。",
 			"primer-link": "/zh-CN/tutorials/primer",
-			"advanced": "高级",
-			"advanced-subtitle": "详解 CHITUBOX Dental 的各个功能，以及不同齿科模型的打印步骤和注意事项。",
-			"advanced-link": "/zh-CN/tutorials/advanced",
+			"intermediate": "高级",
+			"intermediate-subtitle": "详解 CHITUBOX Dental 的各个功能，以及不同齿科模型的打印步骤和注意事项。",
+			"intermediate-link": "/zh-CN/tutorials/intermediate",
 			"expert": "专家",
 			"expert-subtitle": "提供更专业的3D打印知识，帮助用户完成精度更高、更省材料的打印。",
 			"expert-link": "/zh-CN/tutorials/expert",
@@ -44,7 +44,7 @@
 		"primer": {
 			"title": "初级"
 		},
-		"advanced": {
+		"intermediate": {
 			"title": "高级"
 		},
 		"expert": {

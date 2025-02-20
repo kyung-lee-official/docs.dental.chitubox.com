@@ -1,8 +1,8 @@
 {
-	"fieldName": "Advanced",
+	"fieldName": "Intermediate",
 	"isVersioned": false,
 	"type": "blog",
-	"homeUrl": "/en-US/tutorials/advanced",
+	"homeUrl": "/en-US/tutorials/intermediate",
 	"versions": [
 		{
 			"versionCode": null,

@@ -23,13 +23,13 @@ This structure allows field directories to be nested within a deeper directory h
 			"relativeConfigPath": "tutorials/primer"
 		}
 		{
-			"fieldId": "advanced",
-			"relativeConfigPath": "tutorials/advanced"
+			"fieldId": "intermediate",
+			"relativeConfigPath": "tutorials/intermediate"
 		}
 	]
 }
 ```
 
-You can place MDX files in `src/app/en-US/tutorials/primer` and `src/app/en-US/tutorials/advanced`, the directory `tutorials` will not be treated as a field directory, but the `primer` and `advanced` directory will be.
+You can place MDX files in `src/app/en-US/tutorials/primer` and `src/app/en-US/tutorials/intermediate`, the directory `tutorials` will not be treated as a field directory, but the `primer` and `intermediate` directory will be.
 
 Each field directory must contain a `config.json` which defines field properties (see `src/utils/types.ts` for details).
