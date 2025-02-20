@@ -1,0 +1,60 @@
+export const metadata = {
+	title: "参数配置",
+	authors: [{ name: "CHITUBOX Team" }],
+	description: "本教程将指导您完成 CHITUBOX Dental 的参数配置。",
+	keywords: [],
+	other: {
+		pageId: "/zh-CN/learning/parameter-configuration",
+	},
+	openGraph: {
+		images: [
+			"/images/docs/zh-CN/learning/parameter-configuration/cover.jpg",
+		],
+	},
+};
+
+# 参数配置
+
+参数配置一共有 3 种路径： ① 使用内置参数； ② 导入参数包； ③ 自定义参数； 你可以根据实际需求场景选择适合的方式。
+
+## 使用内置参数
+
+CHITUBOX Dental 中内置了大量打印机及材料参数配置，你可以在打印机列表中找到对应的机器，选择材料后直接应用即可。若是想对内置的参数进行微调，选择打印机及材料后，可在“高级设置”中对参数进行修改。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/learning/parameter-configuration/use-preset-parameters.png"
+	}
+/>
+
+## 导入参数包
+
+CHITUBOX Dental 有单独的参数包格式，文件后缀为.cfgd。为了方便用户使用，在整个软件里面只有一个导入的入口，导入时会自动识别参数包所对应的机器型号。如果软件内置的数据中没有该机器，则不允许导入；如果软件中存在对应的机器，则参数包会被导入至目标机器。导入时，材料名称和配置名称若与现有的数据相同则会覆盖原数据，若不同则会新增数据。在目前的版本中，暂不支持将参数包导入至自定义机器中，在未来的版本中将会逐步支持；若有该需求，可先参考自定义参数的路径进行配置。
+
+CHITUBOX Basic 中的参数也可以导入到 Dental 版本中。可以先在 Basic 2.0 及以上版本中将参数导出为.cfgx 格式，然后手动修改文件后缀为.cfgd，再导入到 CHITUBOX Dental 中。如果使用的是 Pro 1.x 版本，由于不能导出.cfgx 格式，需要先将参数包导出后，再导入到 Basic 2.0 及以上版本中进行格式转换，再将导出的.cfgx 文件修改后缀后导入 Dental 版本中。目前的操作比较繁琐，但在不久之后的版本中，CHITUBOX Dental 就可以支持.cfg 和.cfgx 格式的导入。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/learning/parameter-configuration/import-profiles.gif"
+	}
+/>
+
+另外，在 CHITUBOX Basic 的参数结构中并没有“材料”，所以导入 Basic 的参数包时会将所导入的参数统一放在"Default"材料下。如果希望参数看起来直观一些，可以手动将参数按材料分类。在高级设置界面选择任意一个配置使用 Ctrl+C 复制，然后使用 Ctrl+V 粘贴到任意一个材料下面进行分类。
+
+## 自定义参数
+
+如果在软件内置的数据中没有找到对应的打印机或材料，可以在“自定义”中手动添加配置参数。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/learning/parameter-configuration/set-parameters.gif"
+	}
+/>
+
+最后，为了避免在一些极端情况下参数丢失，建议你将已经匹配好的参数导出备份。在 CHITUBOX Dental 中为了方便管理，参数包是以机器为单位，导出时会一次性导出目标机器适配的所有材料参数。
+
+<ImageContainer
+	src={
+		"/images/docs/zh-CN/learning/parameter-configuration/export-parameter.png"
+	}
+/>
