@@ -3,6 +3,7 @@ import { DocsMenu } from "../docsMenu/DocsMenu";
 import { useMediaQuery } from "react-responsive";
 import { MediaQuery } from "@/utils/types";
 import { usePageContext } from "@/utils/hooks";
+import { BlogMenu } from "../blogDocs/blogMenu/BlogMenu";
 
 const DocsSidebar = () => {
 	const [headerHeight, setHeaderHeight] = useState("0px");
@@ -24,7 +25,9 @@ const DocsSidebar = () => {
 
 	if (!pageCtx) return null;
 	const { type } = pageCtx;
-	if (type === "blog") return null;
+	if (type === "blog") {
+		return <BlogMenu />;
+	}
 
 	if (isLg) {
 		return (
