@@ -25,8 +25,13 @@ const DocsSidebar = () => {
 
 	if (!pageCtx) return null;
 	const { type } = pageCtx;
+
 	if (type === "blog") {
-		return <BlogMenu />;
+		if (isLg) {
+			return <BlogMenu />;
+		} else {
+			return null;
+		}
 	}
 
 	if (isLg) {
