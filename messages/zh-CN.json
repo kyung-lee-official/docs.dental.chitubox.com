@@ -35,7 +35,8 @@
 			"proficiency-link": "/zh-CN/tutorials/proficiency",
 			"comparison": "产品对比篇",
 			"comparison-subtitle": "分析 CHITUBOX 系列软件之间的差异。",
-			"comparison-link": "/zh-CN/tutorials/comparison"
+			"comparison-link": "/zh-CN/tutorials/comparison",
+			"readMore": "阅读更多"
 		},
 		"learning": {
 			"title": "学习中心",

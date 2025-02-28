@@ -102,7 +102,7 @@ const DocsCard = (props: any) => {
 	const { url, title, description, ogImage } = props;
 	return (
 		<a
-			className="flex flex-col w-full min-w-[340px] h-64 p-2 gap-4
+			className="flex flex-col w-full min-w-[340px] h-64 p-2 gap-2
 			bg-neutral-100 dark:bg-white/20
 			overflow-hidden rounded-xl hover:shadow transition-all duration-200 cursor-pointer"
 			href={url}
@@ -111,8 +111,7 @@ const DocsCard = (props: any) => {
 			<Thumbnail ogImage={ogImage} />
 			<div
 				className="px-1
-				font-semibold text-neutral-500 dark:text-neutral-50
-				overflow-hidden whitespace-nowrap text-ellipsis"
+				font-semibold text-neutral-500 dark:text-neutral-50"
 			>
 				{title}
 			</div>

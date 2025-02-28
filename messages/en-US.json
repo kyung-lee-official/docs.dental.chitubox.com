@@ -35,7 +35,8 @@
 			"proficiency-link": "/en-US/tutorials/proficiency",
 			"comparison": "Comparison",
 			"comparison-subtitle": "Analysis of difference among CHITUBOX series slicer software.",
-			"comparison-link": "/en-US/tutorials/comparison"
+			"comparison-link": "/en-US/tutorials/comparison",
+			"readMore": "Read More"
 		},
 		"learning": {
 			"title": "Learning",
