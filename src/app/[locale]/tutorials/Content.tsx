@@ -1,40 +1,10 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
-import Link from "next/link";
 import dynamic from "next/dynamic";
+import { Card } from "./card/Card";
 
 const DynamicHero = dynamic(() => import("./Hero"), { ssr: false });
-
-const Card = (props: { href: string; title: string; description: string }) => {
-	const { href, title, description } = props;
-	return (
-		<Link
-			href={href}
-			className="flex flex-col items-start p-6 gap-4
-			bg-neutral-100/70 dark:bg-neutral-800/60
-			rounded-xl hover:shadow duration-200"
-		>
-			<div className="flex items-center gap-4">
-				<div
-					className="w-2 h-10
-					bg-[#0C88E0]
-					rounded-full"
-				></div>
-				<div
-					className="flex justify-start items-center w-full
-					text-lg font-bold
-					text-neutral-600 hover:text-neutral-900
-					dark:text-neutral-200 dark:hover:text-neutral-50
-					duration-200"
-				>
-					{title}
-				</div>
-			</div>
-			<div className="text-neutral-400/80">{description}</div>
-		</Link>
-	);
-};
 
 const Content = () => {
 	const t = useTranslations("pages.tutorials");
@@ -54,21 +24,29 @@ const Content = () => {
 					href={t("primer-link")}
 					title={t("primer")}
 					description={t("primer-subtitle")}
+					fieldName={t("primer")}
+					readMore={t("readMore")}
 				/>
 				<Card
 					href={t("intermediate-link")}
 					title={t("intermediate")}
 					description={t("intermediate-subtitle")}
+					fieldName={t("intermediate")}
+					readMore={t("readMore")}
 				/>
 				{/* <Card
 					href={t("proficiency-link")}
 					title={t("proficiency")}
 					description={t("proficiency-subtitle")}
+					fieldName={t("proficiency")}
+					readMore={t("readMore")}
 				/> */}
 				<Card
 					href={t("comparison-link")}
 					title={t("comparison")}
 					description={t("comparison-subtitle")}
+					fieldName={t("comparison")}
+					readMore={t("readMore")}
 				/>
 			</div>
 		</div>
