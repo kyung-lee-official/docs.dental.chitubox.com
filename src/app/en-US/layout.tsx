@@ -51,7 +51,7 @@ export default function RootLayout({
 
 	return (
 		<html lang="en-US">
-			<body className="font-[NotoSansCJKsc-Regular]">
+			<body className="font-[HarmonyOS_Sans_SC_Regular]">
 				<KatexHtmlSanitizer />
 				<UrlHashPilot />
 				<NextIntlClientProvider locale={"en-US"} messages={messages}>

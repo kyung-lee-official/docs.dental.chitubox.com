@@ -61,7 +61,7 @@ export default async function LocaleLayout({
 
 	return (
 		<html lang={locale}>
-			<body className="font-[NotoSansCJKsc-Regular]">
+			<body className="font-[HarmonyOS_Sans_SC_Regular]">
 				<UrlHashPilot />
 				<div id="root-portal"></div>
 				<NextIntlClientProvider messages={messages}>
