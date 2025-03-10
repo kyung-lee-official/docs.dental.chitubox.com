@@ -21,7 +21,7 @@ export const DocsMenu = () => {
 	if (category) {
 		return (
 			<ul
-				className="flex flex-col p-4 gap-2
+				className="flex flex-col p-4 gap-2 
 				list-none"
 			>
 				{category.catWithoutToc.map((item, i: number) => {

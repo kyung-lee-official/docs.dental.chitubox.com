@@ -2,18 +2,13 @@ import docsContext from "@/preload/docsContext.json";
 import { DocsContext } from "@/utils/types";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export const BlogMenu = () => {
 	const locale = useLocale();
 	const [headerHeight, setHeaderHeight] = useState("0px");
 	const t = useTranslations();
-	const localeCtx = (docsContext as DocsContext).find((localeCtx) => {
-		return localeCtx.locale === locale;
-	});
-
-	if (!localeCtx) return null;
-	const localizedFields = localeCtx.localizedFields;
 
 	useEffect(() => {
 		const header = document.getElementById("header");
@@ -26,43 +21,70 @@ export const BlogMenu = () => {
 		return () => resizeObserver.disconnect(); /* clean up */
 	}, []);
 
+	const localeCtx = (docsContext as DocsContext).find((localeCtx) => {
+		return localeCtx.locale === locale;
+	});
+	if (!localeCtx) return null;
+	const localizedFields = localeCtx.localizedFields;
+
 	return (
 		<div
 			className="sticky
-            flex flex-col h-fit p-10 mx-auto gap-10
-            text-xl
-            bg-black/5
-            rounded-xl"
+            flex flex-col w-80 h-fit mx-auto gap-12 pt-12 pb-12 pl-10 pr-10
+            bg-gray-200
+            rounded-[16px]"
 			style={{
 				top: `calc(70px + ${headerHeight})`,
 			}}
 		>
-			<Link href={`/${locale}/tutorials`} className="underline">
-				{t("pages.tutorials.title")}
-			</Link>
-			{localizedFields.map((field, i) => {
-				if (field.fieldName === "User Manual") return null;
-				return (
-					<div key={i} className="flex items-center gap-3">
-						<div
-							className="w-1 h-8
+			<div className="flex flex-col gap-8">
+				<div className="w-60 h-[33px]">
+					<Link
+						href={`/${locale}/tutorials`}
+						className="text-[28px] font-bold text-gray-950"
+					>
+						{t("pages.tutorials.title")}
+					</Link>
+				</div>
+				<div className="flex flex-col gap-6">
+					{localizedFields.map((field, i) => {
+						const pathName = usePathname();
+						const isActive = pathName.includes(
+							field.fieldName.toLowerCase().replace(/\s+/g, "-")
+						);
+						if (field.fieldName === "User Manual") {
+							return null;
+						}
+						return (
+							<div
+								key={i}
+								className={`flex items-center gap-6 p-2.5 h-13 w-60 rounded-sm
+						 ${isActive ? "bg-gray-300" : "hover:bg-gray-200"}`}
+							>
+								<div
+									className="w-1 h-8
                             bg-sky-600
-                            rounded-full"
-						></div>
-						<Link href={field.homeUrl} className="text-sm">{field.fieldName}</Link>
-					</div>
-				);
-			})}
+                            rounded-sm"
+								></div>
+								<Link href={field.homeUrl} className="text-2xl">
+									{field.fieldName}
+								</Link>
+							</div>
+						);
+					})}
+				</div>
+			</div>
 			{localizedFields.map((field, i) => {
 				if (field.fieldName === "User Manual") {
 					return (
-						<Link
-							key={i}
-							href={field.homeUrl}
-							className="underline"
-						>
-							{field.fieldName}
-						</Link>
+						<div className="" key={i}>
+							<Link
+								href={field.homeUrl}
+								className="text-[28px] font-bold text-gray-950"
+							>
+								{field.fieldName}
+							</Link>
+						</div>
 					);
 				}
 			})}

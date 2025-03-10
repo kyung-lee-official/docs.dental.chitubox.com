@@ -106,13 +106,14 @@ function Content(props: { toc: any; headerHeight: any }) {
 	const t = useTranslations();
 
 	return (
-		<div className="flex flex-col gap-4">
+		<div className="flex flex-col gap-4 border-l border-gray-300">
 			{h2H3Toc && (
 				<div
-					className="flex justify-center items-center max-w-max h-8 px-8 mx-auto
-                    text-sm
-					border-[1px] border-neutral-200 dark:border-neutral-800
-                    rounded-full select-none"
+					// className="flex justify-center items-center max-w-max h-8 px-8 mx-auto
+                    // text-sm
+					// border-[1px] border-neutral-200 dark:border-neutral-800
+                    // rounded-full select-none"
+					className="text-[28px]"
 				>
 					{t("docContent.onThisPage")}
 				</div>
