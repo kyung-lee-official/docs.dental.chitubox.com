@@ -9,7 +9,7 @@ import {
 } from "../icons/Sns";
 import Link from "next/link";
 
-import Data from "./website-en.json";
+import { useTranslations } from "next-intl";
 
 const A = (props: any) => {
 	const { href, children, title } = props;
@@ -26,47 +26,40 @@ const A = (props: any) => {
 };
 
 export const Sns = () => {
+	const t = useTranslations();
 
-
-	if (Data) {
-		return (
-			<div className="flex flex-col justify-start items-start h-[130px] gap-[15px]">
-				<div>{Data?.layout.newFooter.socialMedia}</div>
-				<div className="grid grid-cols-3 items-center w-[172px] gap-y-[33px] gap-x-[41px]">
-					<A
-						href="https://www.facebook.com/chitubox/"
-						title="Facebook"
-					>
-						<FacebookIcon size={30} />
-					</A>
-					<A href="https://discord.gg/E45UFqGPZh" title="Discord">
-						<DiscordIcon size={30} />
-					</A>
-					<A
-						href="https://www.youtube.com/channel/UC6mxsxtv6XwDEAq5vzQOXEw"
-						title="YouTube"
-					>
-						<YouTubeIcon size={30} />
-					</A>
-					<A href="https://twitter.com/chitubox" title="X">
-						<TwitterXIcon size={30} />
-					</A>
-					<A
-						href="https://www.instagram.com/chitubox_official/"
-						title="Instagram"
-					>
-						<InstagramIcon size={30} />
-					</A>
-					<A
-						href="https://www.facebook.com/groups/104983723495672/"
-						title="Facebook Group"
-					>
-						<GroupIcon size={30} />
-					</A>
-				</div>
+	return (
+		<div className="flex flex-col justify-start items-start gap-[14px] mb-[56px]">
+			<div className="text-[#E2E2E2] text-[14px]">{t("footer.socialMedia")}</div>
+			<div className="flex items-center gap-x-[20px]">
+				<A href="https://www.facebook.com/chitubox/" title="Facebook">
+					<FacebookIcon size={30} />
+				</A>
+				<A href="https://discord.gg/E45UFqGPZh" title="Discord">
+					<DiscordIcon size={30} />
+				</A>
+				<A
+					href="https://www.youtube.com/channel/UC6mxsxtv6XwDEAq5vzQOXEw"
+					title="YouTube"
+				>
+					<YouTubeIcon size={30} />
+				</A>
+				<A href="https://twitter.com/chitubox" title="X">
+					<TwitterXIcon size={30} />
+				</A>
+				<A
+					href="https://www.instagram.com/chitubox_official/"
+					title="Instagram"
+				>
+					<InstagramIcon size={30} />
+				</A>
+				<A
+					href="https://www.facebook.com/groups/104983723495672/"
+					title="Facebook Group"
+				>
+					<GroupIcon size={30} />
+				</A>
 			</div>
-		);
-	} else {
-		return null;
-	}
+		</div>
+	);
 };

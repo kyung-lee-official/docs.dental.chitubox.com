@@ -90,7 +90,7 @@
 					"i18nUri": false
 				},
 				{
-					"row": "Chitu Systems",
+					"row": "ChituSystems",
 					"url": "https://www.chitusystems.com/",
 					"i18nUri": false
 				}
@@ -118,7 +118,7 @@
 				"link": "https://www.chitubox.com/en/article/law/legal"
 			},
 			"rights": {
-				"title": "All Rights Reserved"
+				"title": "All Rights Reserved. "
 			}
 		},
 		"payment": {
@@ -152,7 +152,9 @@
 		"chituSystems": "Chitu Systems Store",
 		"chituSystemsLink": "https://www.chitusystems.com/",
 		"copyright": "©",
-		"companyName": "CHITUBOX"
+		"companyName": "CHITUBOX",
+		"subDesc": "Sign up for the latest CHITUBOX news, offers and 3D printing tips",
+		"socialMedia": "Social Media"
 	},
 	"home": {
 		"readTheDocs": "Read the Docs"

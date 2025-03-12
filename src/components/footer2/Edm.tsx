@@ -15,7 +15,7 @@ import {
 } from "firebase/auth";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { subscribeEdm } from "@/utils/api";
-import Data from "./website-en.json";
+import { useTranslations } from "next-intl";
 
 const Google = ({ size, fill }: any) => {
 	return (
@@ -33,8 +33,6 @@ const Google = ({ size, fill }: any) => {
 	);
 };
 
-
-
 interface IFormInput {
 	email: string;
 }
@@ -44,8 +42,6 @@ const schema = z.object({
 });
 
 export const Edm = () => {
-
-
 	const [isEdmSubsribed, setIsEdmSubsribed] = useState<boolean>(false);
 	const [isEdmSubsribedWithGoogle, setIsEdmSubsribedWithGoogle] =
 		useState<boolean>(false);
@@ -61,7 +57,7 @@ export const Edm = () => {
 	const subscribeEdmMutation = useMutation<any, AxiosError<any>, IFormInput>({
 		mutationFn: async (data: IFormInput) => {
 			const { email } = data;
-			return subscribeEdm(email,"en");
+			return subscribeEdm(email, "en");
 		},
 		onSuccess: (data) => {
 			if (data.success) {
@@ -89,10 +85,12 @@ export const Edm = () => {
 		return app;
 	}, []);
 
+	const t = useTranslations();
+
 	return (
-		<div className="flex-[0_1_420px] flex flex-col gap-[22px]">
+		<div className="flex flex flex-col gap-[22px]">
 			<div className="flex flex-col gap-[10px]">
-				<div>{Data?.layout.newFooter.subDesc}</div>
+				<div className="text-[#E2E2E2] text-[14px]">{t("footer.subDesc")}</div>
 				<form
 					className="flex justify-start items-center
 					text-gray-400"
@@ -147,7 +145,7 @@ export const Edm = () => {
 			</div>
 			<div
 				className="flex justify-between items-center gap-4
-				2xl:w-[420px]"
+				2xl:w-[420px] hidden"
 			>
 				<button
 					disabled={isEdmSubsribedWithGoogle}

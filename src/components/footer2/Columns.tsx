@@ -8,86 +8,41 @@ const A = (props: { href: string; children: ReactNode }) => {
 	const { href, children } = props;
 	return (
 		<Link href={processHref(href)}>
-			<div className="text-sm text-neutral-500 hover:text-white text-nowrap">
+			<div className="w-1/7 p-4 text-[#E2E2E2] text-[14px] hover:text-[#0284C7] ">
 				{children}
 			</div>
 		</Link>
 	);
 };
 
-const Col = (props: any) => {
-	const { title, children } = props;
-	return (
-		<div className="flex flex-col w-fit gap-6">
-			<div className="text-white font-bold">{title}</div>
-			<div className="flex flex-col gap-4">{children}</div>
-		</div>
-	);
-};
-
 function Columns() {
 	const t = useTranslations();
-	const leftSection = t("footer.leftSection", { returnObjects: true });
-	if (leftSection) {
-		return (
-			<div
-				className="xl:flex xl:justify-between xl:items-start
-				grid [grid-template-columns:repeat(auto-fill,minmax(180px,1fr))] gap-4
-				w-full"
-			>
-				{software && (
-					<Col title={leftSection.title}>
-						{software.menuList.map((item: any, index: number) => (
-							<A key={index} href={item.url}>
-								{item.row}
-							</A>
-						))}
-					</Col>
-				)}
-				{/* {address && (
-					<div className="flex flex-col max-w-80 gap-6">
-						<div className="text-white font-bold">
-							{address.title}
-						</div>
-						<div className="flex flex-col gap-4">
-							{address.row1 && (
-								<div className="text-neutral-500">
-									{address.row1}
-								</div>
-							)}
-							{address.row2 && (
-								<div className="text-neutral-500">
-									{address.row2}
-								</div>
-							)}
-							{address.row3 && (
-								<div className="text-neutral-500">
-									{address.row3}
-								</div>
-							)}
-							{address.row4 && (
-								<div className="text-neutral-500">
-									{address.row4}
-								</div>
-							)}
-							{address.phoneTitle && (
-								<div className="text-neutral-500">
-									{address.phoneTitle} {address.phoneNumber}
-								</div>
-							)}
-							{address.email && (
-								<div className="text-neutral-500">
-									{address.email} {address.emailNumber}
-								</div>
-							)}
-						</div>
-					</div>
-				)} */}
-			</div>
-		);
-	} else {
-		return null;
-	}
+
+	return (
+		<div className="flex flex-wrap gap-4 mt-[60px] mb-[94px] whitespace-nowrap">
+			<A href={t("footer.leftSection.menuList.0.url")}>
+				{t("footer.leftSection.menuList.0.row")}
+			</A>
+			<A href={t("footer.leftSection.menuList.1.url")}>
+				{t("footer.leftSection.menuList.1.row")}
+			</A>
+			<A href={t("footer.leftSection.menuList.2.url")}>
+				{t("footer.leftSection.menuList.2.row")}
+			</A>
+			<A href={t("footer.leftSection.menuList.3.url")}>
+				{t("footer.leftSection.menuList.3.row")}
+			</A>
+			<A href={t("footer.leftSection.menuList.4.url")}>
+				{t("footer.leftSection.menuList.4.row")}
+			</A>
+			<A href={t("footer.leftSection.menuList.5.url")}>
+				{t("footer.leftSection.menuList.5.row")}
+			</A>
+			<A href={t("footer.leftSection.menuList.6.url")}>
+				{t("footer.leftSection.menuList.6.row")}
+			</A>
+		</div>
+	);
 }
 
 export default Columns;
