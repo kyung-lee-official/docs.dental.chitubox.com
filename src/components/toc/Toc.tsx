@@ -23,11 +23,11 @@ const Toc = () => {
 
 	if (isLg) {
 		return (
-			<div className="flex-[0_0_350px]">
+			<div className="flex-[0_0_350px] mx-auto">
 				<div
-					className={`sticky flex flex-col p-4 gap-4`}
+					className={`sticky flex flex-col gap-4`}
 					style={{
-						top: headerHeight,
+						top: `calc(100px + ${headerHeight})`,
 					}}
 				>
 					<TocHeadings headerHeight={headerHeight} />

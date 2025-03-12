@@ -26,22 +26,23 @@ export const BlogMenu = () => {
 	});
 	if (!localeCtx) return null;
 	const localizedFields = localeCtx.localizedFields;
-
+	console.log("localizedFields: ", localizedFields);
+	
 	return (
 		<div
 			className="sticky
-            flex flex-col w-80 h-fit mx-auto gap-12 pt-12 pb-12 pl-10 pr-10
-            bg-gray-200
+            flex flex-col w-80 h-fit mx-auto gap-12 pt-12 pb-12 pl-10 pr-10 
+            bg-[#E5E7EB] dark:bg-[#0F172A]
             rounded-[16px]"
 			style={{
-				top: `calc(70px + ${headerHeight})`,
+				top: `calc(100px + ${headerHeight})`,
 			}}
 		>
 			<div className="flex flex-col gap-8">
 				<div className="w-60 h-[33px]">
 					<Link
 						href={`/${locale}/tutorials`}
-						className="text-[28px] font-bold text-gray-950"
+						className="text-[28px] font-bold text-[#030712] dark:text-[#E2E8F0]"
 					>
 						{t("pages.tutorials.title")}
 					</Link>
@@ -50,23 +51,23 @@ export const BlogMenu = () => {
 					{localizedFields.map((field, i) => {
 						const pathName = usePathname();
 						const isActive = pathName.includes(
-							field.fieldName.toLowerCase().replace(/\s+/g, "-")
+							field.fieldId.toLowerCase().replace(/\s+/g, "-")
 						);
-						if (field.fieldName === "User Manual") {
+						if (field.fieldId === "user-manual") {
 							return null;
 						}
 						return (
 							<div
 								key={i}
 								className={`flex items-center gap-6 p-2.5 h-13 w-60 rounded-sm
-						 ${isActive ? "bg-gray-300" : "hover:bg-gray-200"}`}
+						 ${isActive ? "bg-[#D1D5DB] dark:bg-[#1e293b]" : "hover:bg-[#DADDE3] dark:hover:bg-[#161f33]"}`}
 							>
 								<div
 									className="w-1 h-8
                             bg-sky-600
                             rounded-sm"
 								></div>
-								<Link href={field.homeUrl} className="text-2xl">
+								<Link href={field.homeUrl} className="text-2xl text-[#030712] dark:text-[#E2E8F0]">
 									{field.fieldName}
 								</Link>
 							</div>
@@ -75,12 +76,12 @@ export const BlogMenu = () => {
 				</div>
 			</div>
 			{localizedFields.map((field, i) => {
-				if (field.fieldName === "User Manual") {
+				if (field.fieldId === "user-manual") {
 					return (
 						<div className="" key={i}>
 							<Link
 								href={field.homeUrl}
-								className="text-[28px] font-bold text-gray-950"
+								className="text-[28px] font-bold text-[#030712] dark:text-[#E2E8F0]"
 							>
 								{field.fieldName}
 							</Link>

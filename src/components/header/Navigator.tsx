@@ -20,7 +20,8 @@ export const Navigator = (props: any) => {
 			bg-white dark:bg-black
 			border-b-[1px] border-solid border-neutral-200 dark:border-neutral-800`}
 		>
-			<Link href="/" className="flex items-center gap-4">
+			<Link href="/" className="flex items-center gap-4
+			outline-none">
 				<Logo size={40} />
 				<div className="text-xl">{t("title")}</div>
 			</Link>

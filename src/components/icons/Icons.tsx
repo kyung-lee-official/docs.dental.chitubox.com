@@ -445,3 +445,4 @@ export const ImageIcon = ({ size, fill }: any) => {
 		</svg>
 	);
 };
+
