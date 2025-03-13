@@ -13,9 +13,9 @@ import {
 	GoogleAuthProvider,
 	FacebookAuthProvider,
 } from "firebase/auth";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import { subscribeEdm } from "@/utils/api";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const Google = ({ size, fill }: any) => {
 	return (
@@ -42,6 +42,8 @@ const schema = z.object({
 });
 
 export const Edm = () => {
+	const locale = useLocale();
+	const language = locale === "zh-CN" ? "zh-Hans" : "en";
 	const [isEdmSubsribed, setIsEdmSubsribed] = useState<boolean>(false);
 	const [isEdmSubsribedWithGoogle, setIsEdmSubsribedWithGoogle] =
 		useState<boolean>(false);
@@ -49,15 +51,20 @@ export const Edm = () => {
 		useState<boolean>(false);
 	const [isFocused, setIsFocused] = useState<boolean>(false);
 
-	const { register, handleSubmit, formState } = useForm<IFormInput>({
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isValid },
+		trigger, 
+	} = useForm<IFormInput>({
 		mode: "onChange",
-		resolver: zodResolver<any>(schema),
+		resolver: zodResolver(schema),
 	});
 
 	const subscribeEdmMutation = useMutation<any, AxiosError<any>, IFormInput>({
 		mutationFn: async (data: IFormInput) => {
 			const { email } = data;
-			return subscribeEdm(email, "en");
+			return subscribeEdm(email, language);
 		},
 		onSuccess: (data) => {
 			if (data.success) {
@@ -65,6 +72,15 @@ export const Edm = () => {
 			}
 		},
 	});
+
+	// 提交前的验证函数
+	const validateBeforeSubmit = async (e: React.FormEvent) => {
+		e.preventDefault(); // 阻止默认提交行为
+		const isEmailValid = await trigger("email"); // 手动触发 email 字段的验证
+		if (isEmailValid) {
+			handleSubmit(onSubmit)(); // 如果验证通过，调用提交函数
+		}
+	};
 
 	const onSubmit: SubmitHandler<IFormInput> = async (data: IFormInput) => {
 		subscribeEdmMutation.reset();
@@ -90,72 +106,68 @@ export const Edm = () => {
 	return (
 		<div className="flex flex flex-col gap-[22px]">
 			<div className="flex flex-col gap-[10px]">
-				<div className="text-[#E2E2E2] text-[14px]">{t("footer.subDesc")}</div>
+				<div className="text-[#E2E2E2] text-[14px]">
+					{t("footer.subDesc")}
+				</div>
 				<form
-					className="flex justify-start items-center
-					text-gray-400"
-					onSubmit={handleSubmit(onSubmit)}
+					className="flex justify-start items-center text-gray-400"
+					onSubmit={validateBeforeSubmit} // 使用自定义的提交函数
 				>
 					<input
 						type="text"
 						disabled={isEdmSubsribed}
 						className={`w-full 2xl:w-[320px] h-[40px] p-2
-						${
-							isEdmSubsribed
-								? "cursor-not-allowed"
-								: formState.isValid
-								? "text-gray-300 duration-300"
-								: "text-red-600 duration-300"
-						}
-						bg-white/5
-						rounded-l outline-none`}
+							${
+								isEdmSubsribed
+									? "cursor-not-allowed"
+									: isFocused
+									? "text-gray-300 duration-300"
+									: errors.email
+									? "text-red-600 duration-300"
+									: "text-gray-300 duration-300"
+							}
+							bg-white/5 rounded-l outline-none`}
 						placeholder={isFocused ? undefined : "Email"}
 						{...register("email")}
 						onFocus={() => setIsFocused(true)}
-						onBlur={() => setIsFocused(false)}
+						onBlur={async () => {
+							setIsFocused(false);
+							await trigger("email"); // 手动触发 email 字段的验证
+						}}
 					/>
 					<button
 						type="submit"
 						className={
 							isEdmSubsribed
 								? `flex justify-center items-center w-[100px] h-[40px] p-2
-								text-white
-								bg-green-500 rounded-r cursor-default duration-300`
+									text-white bg-green-500 rounded-r cursor-default duration-300`
 								: subscribeEdmMutation.isPending
 								? `flex justify-center items-center w-[100px] h-[40px] p-2
-								text-gray-400
-								bg-[hsl(201,100%,30%)] rounded-r cursor-wait duration-300`
-								: formState.isValid
+									text-gray-400 bg-[hsl(201,100%,30%)] rounded-r cursor-wait duration-300`
+								: isValid
 								? `flex justify-center items-center w-[100px] h-[40px] p-2
-								text-white
-								bg-[#0086cc] hover:bg-[#0086ee] rounded-r duration-300`
+									text-white bg-[#0086cc] hover:bg-[#0086ee] rounded-r duration-300`
 								: `flex justify-center items-center w-[100px] h-[40px] p-2
-								text-gray-400
-								bg-white/10 rounded-r cursor-not-allowed duration-300`
+									text-gray-400 bg-white/10 rounded-r cursor-not-allowed duration-300`
 						}
 						disabled={
-							!formState.isValid ||
-							subscribeEdmMutation.isPending ||
-							isEdmSubsribed
+							!isValid || subscribeEdmMutation.isPending || isEdmSubsribed
 						}
 					>
-						{isEdmSubsribed ? "Subscribed!" : "Subscribe"}
+						{isEdmSubsribed ? t("footer.subscribed") : t("footer.subscribe")}
 					</button>
 				</form>
 			</div>
-			<div
-				className="flex justify-between items-center gap-4
-				2xl:w-[420px] hidden"
-			>
+			<div className="flex justify-between items-center gap-4 2xl:w-[420px]">
 				<button
 					disabled={isEdmSubsribedWithGoogle}
 					className={`flex-[0_1_200px] flex justify-center items-center h-10 gap-[10px]
-					text-base
-					${isEdmSubsribedWithGoogle ? "text-white/40" : "text-white/80"} ${
+						text-base
+						${isEdmSubsribedWithGoogle ? "text-white/40" : "text-white/80"} ${
 						!isEdmSubsribedWithGoogle && "hover:text-white"
 					}
-					bg-white/5 hover:bg-white/10
-					rounded duration-200 ${isEdmSubsribedWithGoogle && "cursor-not-allowed"}`}
+						bg-white/5 hover:bg-white/10
+						rounded duration-200 ${isEdmSubsribedWithGoogle && "cursor-not-allowed"}`}
 					title="Google"
 					onClick={() => {
 						const auth = getAuth(app);
@@ -168,26 +180,17 @@ export const Edm = () => {
 									});
 								setIsEdmSubsribed(true);
 								setIsEdmSubsribedWithGoogle(true);
-								/* This gives you a Google Access Token. You can use it to access the Google API. */
 								const credential =
-									GoogleAuthProvider.credentialFromResult(
-										result
-									);
+									GoogleAuthProvider.credentialFromResult(result);
 								const token = credential?.accessToken;
-								/* The signed-in user info. */
 								const user = result.user;
 							})
 							.catch((error) => {
-								/* Handle Errors here. */
 								const errorCode = error.code;
 								const errorMessage = error.message;
-								/* The email of the user's account used. */
 								const email = error.email;
-								/* The AuthCredential type that was used. */
 								const credential =
-									GoogleAuthProvider.credentialFromError(
-										error
-									);
+									GoogleAuthProvider.credentialFromError(error);
 							});
 					}}
 				>
@@ -197,12 +200,12 @@ export const Edm = () => {
 				<button
 					disabled={isEdmSubsribedWithFacebook}
 					className={`flex-[0_1_200px] flex justify-center items-center h-10 gap-[10px]
-					text-base
-					${isEdmSubsribedWithFacebook ? "text-white/40" : "text-white/80"} ${
+						text-base
+						${isEdmSubsribedWithFacebook ? "text-white/40" : "text-white/80"} ${
 						!isEdmSubsribedWithFacebook && "hover:text-white"
 					}
-					bg-white/5 hover:bg-white/10
-					rounded duration-200 ${isEdmSubsribedWithFacebook && "cursor-not-allowed"}`}
+						bg-white/5 hover:bg-white/10
+						rounded duration-200 ${isEdmSubsribedWithFacebook && "cursor-not-allowed"}`}
 					title="Facebook"
 					onClick={() => {
 						const auth = getAuth(app);
@@ -215,26 +218,17 @@ export const Edm = () => {
 									});
 								setIsEdmSubsribed(true);
 								setIsEdmSubsribedWithFacebook(true);
-								/* This gives you a Facebook Access Token. You can use it to access the Facebook API. */
 								const credential =
-									FacebookAuthProvider.credentialFromResult(
-										result
-									);
+									FacebookAuthProvider.credentialFromResult(result);
 								const accessToken = credential?.accessToken;
-								/* The signed-in user info. */
 								const user = result.user;
 							})
 							.catch((error) => {
-								/* Handle Errors here. */
 								const errorCode = error.code;
 								const errorMessage = error.message;
-								/* The email of the user's account used. */
 								const email = error.email;
-								/* The AuthCredential type that was used. */
 								const credential =
-									FacebookAuthProvider.credentialFromError(
-										error
-									);
+									FacebookAuthProvider.credentialFromError(error);
 							});
 					}}
 				>

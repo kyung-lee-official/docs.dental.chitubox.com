@@ -26,12 +26,12 @@ export const BlogMenu = () => {
 	});
 	if (!localeCtx) return null;
 	const localizedFields = localeCtx.localizedFields;
-	console.log("localizedFields: ", localizedFields);
+
 	
 	return (
 		<div
 			className="sticky
-            flex flex-col w-80 h-fit mx-auto gap-12 pt-12 pb-12 pl-10 pr-10 
+            flex flex-col w-80 h-fit mx-auto gap-12 pt-12 pb-12 pl-10 pr-10 mb-24
             bg-[#E5E7EB] dark:bg-[#0F172A]
             rounded-[16px]"
 			style={{

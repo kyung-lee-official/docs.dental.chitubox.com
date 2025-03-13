@@ -6,9 +6,10 @@ import Columns from "./Columns";
 import { QueryClientProvider } from "@tanstack/react-query";
 import Footnote from "./footnote/Footnote";
 import queryClient from "@/utils/tanstack-query";
-import Copyright from "./footnote/CopyRight";
+
 import Address from "./Address";
 import Legal from "./footnote/Legal";
+import Copyright from "./footnote/Copyright";
 
 export const LogoWithText = ({ size, fill }: any) => {
 	return (

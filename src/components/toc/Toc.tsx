@@ -23,7 +23,7 @@ const Toc = () => {
 
 	if (isLg) {
 		return (
-			<div className="flex-[0_0_350px] mx-auto">
+			<div className="flex-[0_0_350px] mx-auto mb-24">
 				<div
 					className={`sticky flex flex-col gap-4`}
 					style={{

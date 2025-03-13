@@ -4,7 +4,7 @@ import { NextIntlClientProvider, useMessages } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { UrlHashPilot } from "@/components/urlHashPilot/UrlHashPilot";
 import { Header } from "@/components/header/Header";
-import { Footer } from "@/components/footer/Footer";
+import { Footer } from "@/components/footer2/Footer";
 import KatexHtmlSanitizer from "@/components/katexHtmlSanitizer/KatexHtmlSanitizer";
 import { locales } from "@/utils/types";
 import { DynamicDocsSidebar } from "@/components/docsSidebar/DynamicDocsSidebar";
@@ -60,10 +60,10 @@ export default function RootLayout({
 					<main
 						className="flex min-h-svh
 						text-neutral-900 dark:text-neutral-200
-						dark:bg-black"
+						dark:bg-black" 
 					>
 						<DynamicDocsSidebar />
-						<div className="flex flex-col w-full min-w-0 max-w-[900px] p-4 mx-auto">
+						<div className="flex flex-col w-full min-w-0 max-w-[900px] p-4 mx-auto mb-24">
 							<DynamicVersionTag />
 							{children}
 						</div>

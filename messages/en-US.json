@@ -154,7 +154,9 @@
 		"copyright": "©",
 		"companyName": "CHITUBOX",
 		"subDesc": "Sign up for the latest CHITUBOX news, offers and 3D printing tips",
-		"socialMedia": "Social Media"
+		"socialMedia": "Social Media",
+		"subscribe": "Subscribe",
+		"subscribed": "Subscribed!"
 	},
 	"home": {
 		"readTheDocs": "Read the Docs"
