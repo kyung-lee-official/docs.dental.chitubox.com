@@ -25,13 +25,11 @@ export const metadata = {
 基于SLA的技术原理，1988年出现了第一台SLA 3D打印机。
 这台3D打印机采用振镜系统控制紫外光束照射光敏树脂液面的位置，使之固化成特定的形状，然后通过树脂逐层堆叠形成完整的打印件。打印前需要将模型处理成一层一层的切片，然后打印机对每一层切片按照光斑的大小进行路径规划，然后控制紫外光束沿着规划好的路径进行扫描，扫描完一层后，控制平台下沉，给下一层固化留出空间并等待液面流平，再进行第二层扫描，以此类推，最终形成一个完整的打印件。
 
-
-
 <BlogImageContainer
 	src={
-    		"/images/docs/zh-CN/primer/how-to-choose-a-dental-printer/the-structure-of-sink-style-sla-printer.png"
+    		"/images/docs/zh-CN/primer/how-to-choose-a-dental-printer/the-structure-of-lcd-printer.png"
 	}
-	style={{ width: "360px" }}
+	style={{ width: "600px" }}
 	figcaption="下沉式SLA打印机结构"
 />
 
@@ -49,7 +47,7 @@ export const metadata = {
 	src={
     		"/images/docs/zh-CN/primer/how-to-choose-a-dental-printer/the-structure-of-lift-style-dlp-printer.png"
 	}
-	style={{ width: "360px" }}
+	style={{ width: "600px" }}
 	figcaption="上拉式DLP打印机结构"
 />
 
@@ -60,9 +58,9 @@ export const metadata = {
 
 <BlogImageContainer
 	src={
-    		"/images/docs/zh-CN/primer/how-to-choose-a-dental-printer/the-structure-of-lcd-printer.png"
+    		"/images/docs/zh-CN/primer/how-to-choose-a-dental-printer/the-structure-of-sink-style-sla-printer.png"
 	}
-	style={{ width: "360px" }}
+	style={{ width: "600px" }}
 	figcaption="LCD打印机结构"
 />
 
@@ -78,4 +76,5 @@ export const metadata = {
 在目前的市场中还有不少齿科专用打印机，打印机厂家为了保证用户使用简便，提前对其做了很多内置参数优化的工作。这类打印机不仅有较高的精度，还可以结合厂家推荐的材料直接使用。缺点是可选的材料并不多，且材料价格中包含了很多服务成本，通常来说价格会比较贵。另外厂家为了减少售后，绝大多数都关闭了参数调整的窗口，如果打印参数出现了问题，就必须找售后协助解决。所以，如果您预算充足，期望购买了打印机后可以开箱即用，那么推荐使用齿科专用机。这些专用机有DLP类型的，也有LCD类型的，从精度上来讲差别不大，甚至LCD的会更好一些，主要差异在于耐用性。
 
 另外就是常规的消费类打印机，更多是应用在手办模型行业，但为了追求经济效益，齿科行业使用消费类的LCD打印机的情况也十分普遍。这类打印机价格相对便宜，但是需要自行适配和调整材料的参数，上手成本比较高。优势是可选材料非常广泛，材料成本也比较低。从机器本身的质量上来说，2024年消费类的旗舰机器不会比齿科专用机器差。如果您对切片软件参数比较了解，并且不愿意受打印机厂家限制，想要自由选择材料，同时想以更低的成本入手，您可以尝试使用消费类的LCD打印机。
+
 
