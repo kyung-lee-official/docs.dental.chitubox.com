@@ -42,7 +42,7 @@ const FieldTitles = () => {
 					className={`text-xl ${
 						(pathname.includes("/tutorials/") ||
 							pathname.includes("/tutorials")) &&
-						"text-blue-500 dark:text-sky-400"
+						"text-[#0284C7]"
 					}`}
 				>
 					{t("header.items.tutorials")}
@@ -51,7 +51,7 @@ const FieldTitles = () => {
 					href={t("header.items.user-manual-link")}
 					className={`text-xl ${
 						pathname.includes("/user-manual/") &&
-						"text-blue-500 dark:text-sky-400"
+						"text-[#0284C7]"
 					}`}
 				>
 					{t("header.items.user-manual")}

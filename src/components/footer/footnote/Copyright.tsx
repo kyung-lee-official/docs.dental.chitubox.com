@@ -1,22 +1,19 @@
 import Link from "next/link";
-import Year from "../Year";
-
 import { useTranslations } from "next-intl";
 import { useMediaQuery } from "react-responsive";
 import { MediaQuery } from "@/utils/types";
+import { DynamicYear } from "../DynamicYear/DynamicYear";
 
 function Copyright() {
 	const t = useTranslations();
 
 	const isXl = useMediaQuery({ query: MediaQuery.xl });
 
-	const privacyAndSecurity = t("footer.legal.privacy-policy.title");
-	const legalNotice = t("footer.legal.legal-notice.title");
 	if (isXl) {
 		return (
 			<>
 				<span className="text-[#737373] h-fit">
-					Copyright © <Year /> CHITUBOX.{" "}
+					Copyright © <DynamicYear /> CHITUBOX.{" "}
 					{t("footer.legal.rights.title")}
 					<Link
 						href="https://beian.miit.gov.cn/"
@@ -32,7 +29,7 @@ function Copyright() {
 		return (
 			<div className="flex flex-wrap">
 				<span className="text-[#737373]">
-					Copyright © <Year /> CHITUBOX.{" "}
+					Copyright © <DynamicYear /> CHITUBOX.{" "}
 					{t("footer.legal.rights.title")}
 					<Link
 						href="https://beian.miit.gov.cn/"

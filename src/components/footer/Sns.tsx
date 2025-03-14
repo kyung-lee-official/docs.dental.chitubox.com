@@ -30,7 +30,9 @@ export const Sns = () => {
 
 	return (
 		<div className="flex flex-col justify-start items-start gap-[14px] mb-[56px]">
-			<div className="text-[#E2E2E2] text-[14px]">{t("footer.socialMedia")}</div>
+			<div className="text-[#E2E2E2] text-[14px]">
+				{t("footer.socialMedia")}
+			</div>
 			<div className="flex items-center gap-x-[20px]">
 				<A href="https://www.facebook.com/chitubox/" title="Facebook">
 					<FacebookIcon size={30} />

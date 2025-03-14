@@ -31,7 +31,7 @@ export const BlogMenu = () => {
 	return (
 		<div
 			className="sticky
-            flex flex-col w-80 h-fit mx-auto gap-12 pt-12 pb-12 pl-10 pr-10 mb-24
+            flex flex-col w-80 h-fit gap-12 pt-12 pb-12 pl-10 pr-10 mb-24 ml-[90px] mx-auto
             bg-[#E5E7EB] dark:bg-[#0F172A]
             rounded-[16px]"
 			style={{
@@ -64,7 +64,7 @@ export const BlogMenu = () => {
 							>
 								<div
 									className="w-1 h-8
-                            bg-sky-600
+                            bg-[#0284C7]
                             rounded-sm"
 								></div>
 								<Link href={field.homeUrl} className="text-2xl text-[#030712] dark:text-[#E2E8F0]">

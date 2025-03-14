@@ -11,21 +11,22 @@ function Legal() {
 
 	const privacyAndSecurity = t("footer.legal.privacy-policy.title");
 	const legalNotice = t("footer.legal.legal-notice.title");
+
 	if (isXl) {
 		return (
 			<>
 				<div
 					className="flex items-end gap-16
-						text-[#9E9E9E] text-[14px]"
+					text-[#9E9E9E] text-[14px]"
 				>
 					<Link
-						href="https://www.chitubox.com/en/article/law/privacy"
+						href={t("footer.legal.privacy-policy.link")}
 						className="hover:text-[#0284C7] text-nowrap"
 					>
 						{privacyAndSecurity}
 					</Link>
 					<Link
-						href="https://www.chitubox.com/en/article/law/legal"
+						href={t("footer.legal.legal-notice.link")}
 						className="hover:text-[#0284C7] text-nowrap"
 					>
 						{legalNotice}
@@ -38,16 +39,16 @@ function Legal() {
 			<div className="flex-1 flex justify-between items-end flex-wrap">
 				<div
 					className="flex items-end gap-16
-						text-[#9E9E9E] text-[14px]"
+					text-[#9E9E9E] text-[14px]"
 				>
 					<Link
-						href="https://www.chitubox.com/en/article/law/privacy"
+						href={t("footer.legal.privacy-policy.link")}
 						className="hover:text-[#0284C7] text-nowrap"
 					>
 						{privacyAndSecurity}
 					</Link>
 					<Link
-						href="https://www.chitubox.com/en/article/law/legal"
+						href={t("footer.legal.legal-notice.link")}
 						className="hover:text-[#0284C7] text-nowrap"
 					>
 						{legalNotice}

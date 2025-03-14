@@ -61,38 +61,31 @@
 			"menuList": [
 				{
 					"row": "申请试用",
-					"url": "https://dental.chitubox.com/zh-Hans/apply",
-					"i18nUri": true
+					"url": "https://dental.chitubox.com/zh-Hans/apply"
 				},
 				{
 					"row": "企业合作",
-					"url": "https://dental.chitubox.com/zh-Hans/interact",
-					"i18nUri": true
+					"url": "https://dental.chitubox.com/zh-Hans/interact"
 				},
 				{
 					"row": "个人中心",
-					"url": "https://usercenter.chitubox.com/personal-center/profile?entry=dental",
-					"i18nUri": true
+					"url": "https://usercenter.chitubox.com/personal-center/profile?entry=dental"
 				},
 				{
 					"row": "密钥管理",
-					"url": "https://usercenter.chitubox.com/personal-center/license?entry=dental",
-					"i18nUri": true
+					"url": "https://usercenter.chitubox.com/personal-center/license?entry=dental"
 				},
 				{
 					"row": "CBD-Tech",
-					"url": "https://www.cbd-3d.com",
-					"i18nUri": false
+					"url": "https://www.cbd-3d.com"
 				},
 				{
 					"row": "CHITUBOX",
-					"url": "https://www.chitubox.com/zh-Hans/index",
-					"i18nUri": false
+					"url": "https://www.chitubox.com/zh-Hans/index"
 				},
 				{
 					"row": "ChituSystems",
-					"url": "https://www.chitusystems.com/",
-					"i18nUri": false
+					"url": "https://www.chitusystems.com/"
 				}
 			]
 		},

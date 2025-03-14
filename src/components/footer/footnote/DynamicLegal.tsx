@@ -2,6 +2,6 @@
 
 import dynamic from "next/dynamic";
 
-export const DynamicLowerSns = dynamic(() => import("./LowerSns"), {
+export const DynamicLegal = dynamic(() => import("./Legal"), {
 	ssr: false,
 });

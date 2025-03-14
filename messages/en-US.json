@@ -61,38 +61,31 @@
 			"menuList": [
 				{
 					"row": "Free Trial",
-					"url": "https://dental.chitubox.com/en/apply",
-					"i18nUri": true
+					"url": "https://dental.chitubox.com/en/apply"
 				},
 				{
 					"row": "Partnership",
-					"url": "https://dental.chitubox.com/en/interact",
-					"i18nUri": true
+					"url": "https://dental.chitubox.com/en/interact"
 				},
 				{
 					"row": "Center",
-					"url": "https://usercenter.chitubox.com/personal-center/profile?entry=dental",
-					"i18nUri": true
+					"url": "https://usercenter.chitubox.com/personal-center/profile?entry=dental"
 				},
 				{
 					"row": "License",
-					"url": "https://usercenter.chitubox.com/personal-center/license?entry=dental",
-					"i18nUri": true
+					"url": "https://usercenter.chitubox.com/personal-center/license?entry=dental"
 				},
 				{
 					"row": "CBD-Tech",
-					"url": "https://www.cbd-3d.com",
-					"i18nUri": false
+					"url": "https://www.cbd-3d.com"
 				},
 				{
 					"row": "CHITUBOX",
-					"url": "https://www.chitubox.com/en/index",
-					"i18nUri": false
+					"url": "https://www.chitubox.com/en/index"
 				},
 				{
 					"row": "ChituSystems",
-					"url": "https://www.chitusystems.com/",
-					"i18nUri": false
+					"url": "https://www.chitusystems.com/"
 				}
 			]
 		},

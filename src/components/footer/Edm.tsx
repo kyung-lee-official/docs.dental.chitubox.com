@@ -55,7 +55,7 @@ export const Edm = () => {
 		register,
 		handleSubmit,
 		formState: { errors, isValid },
-		trigger, 
+		trigger,
 	} = useForm<IFormInput>({
 		mode: "onChange",
 		resolver: zodResolver(schema),
@@ -151,10 +151,14 @@ export const Edm = () => {
 									text-gray-400 bg-white/10 rounded-r cursor-not-allowed duration-300`
 						}
 						disabled={
-							!isValid || subscribeEdmMutation.isPending || isEdmSubsribed
+							!isValid ||
+							subscribeEdmMutation.isPending ||
+							isEdmSubsribed
 						}
 					>
-						{isEdmSubsribed ? t("footer.subscribed") : t("footer.subscribe")}
+						{isEdmSubsribed
+							? t("footer.subscribed")
+							: t("footer.subscribe")}
 					</button>
 				</form>
 			</div>
@@ -181,7 +185,9 @@ export const Edm = () => {
 								setIsEdmSubsribed(true);
 								setIsEdmSubsribedWithGoogle(true);
 								const credential =
-									GoogleAuthProvider.credentialFromResult(result);
+									GoogleAuthProvider.credentialFromResult(
+										result
+									);
 								const token = credential?.accessToken;
 								const user = result.user;
 							})
@@ -190,7 +196,9 @@ export const Edm = () => {
 								const errorMessage = error.message;
 								const email = error.email;
 								const credential =
-									GoogleAuthProvider.credentialFromError(error);
+									GoogleAuthProvider.credentialFromError(
+										error
+									);
 							});
 					}}
 				>
@@ -219,7 +227,9 @@ export const Edm = () => {
 								setIsEdmSubsribed(true);
 								setIsEdmSubsribedWithFacebook(true);
 								const credential =
-									FacebookAuthProvider.credentialFromResult(result);
+									FacebookAuthProvider.credentialFromResult(
+										result
+									);
 								const accessToken = credential?.accessToken;
 								const user = result.user;
 							})
@@ -228,7 +238,9 @@ export const Edm = () => {
 								const errorMessage = error.message;
 								const email = error.email;
 								const credential =
-									FacebookAuthProvider.credentialFromError(error);
+									FacebookAuthProvider.credentialFromError(
+										error
+									);
 							});
 					}}
 				>
