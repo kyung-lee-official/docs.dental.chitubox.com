@@ -9,6 +9,7 @@ export const BlogMenu = () => {
 	const locale = useLocale();
 	const [headerHeight, setHeaderHeight] = useState("0px");
 	const t = useTranslations();
+	const pathName = usePathname();
 
 	useEffect(() => {
 		const header = document.getElementById("header");
@@ -49,7 +50,7 @@ export const BlogMenu = () => {
 				</div>
 				<div className="flex flex-col gap-6">
 					{localizedFields.map((field, i) => {
-						const pathName = usePathname();
+						
 						const isActive = pathName.includes(
 							field.fieldId.toLowerCase().replace(/\s+/g, "-")
 						);
