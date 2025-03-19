@@ -56,62 +56,49 @@
 		}
 	},
 	"footer": {
-		"software": {
-			"title": "Software",
-			"chitubox-pro": {
-				"title": "CHITUBOX Pro",
-				"link": "https://www.chitubox.com/en/page/chitubox-pro"
-			},
-			"chitubox-basic": {
-				"title": "CHITUBOX Basic",
-				"link": "https://www.chitubox.com/en/download/chitubox-free"
-			},
-			"chitubox-dental": {
-				"title": "CHITUBOX Dental",
-				"link": "https://dental.chitubox.com/en"
-			},
-			"chitubox-manager": {
-				"title": "ChituManager",
-				"link": "https://www.chitubox.com/en/page/chitubox-manager"
-			}
+		"leftSection": {
+			"title": "left",
+			"menuList": [
+				{
+					"row": "Free Trial",
+					"url": "https://dental.chitubox.com/en/apply"
+				},
+				{
+					"row": "Partnership",
+					"url": "https://dental.chitubox.com/en/interact"
+				},
+				{
+					"row": "Center",
+					"url": "https://usercenter.chitubox.com/personal-center/profile?entry=dental"
+				},
+				{
+					"row": "License",
+					"url": "https://usercenter.chitubox.com/personal-center/license?entry=dental"
+				},
+				{
+					"row": "CBD-Tech",
+					"url": "https://www.cbd-3d.com"
+				},
+				{
+					"row": "CHITUBOX",
+					"url": "https://www.chitubox.com/en/index"
+				},
+				{
+					"row": "ChituSystems",
+					"url": "https://www.chitusystems.com/"
+				}
+			]
 		},
-		"customer": {
-			"title": "Customer",
-			"refer-and-get": {
-				"title": "Refer abd Get",
-				"link": "https://cc.chitubox.com/customer/marketing-share"
-			},
-			"education-price": {
-				"title": "Education Price",
-				"link": "https://www.chitubox.com/en/article/law/marketing/education-price"
-			},
-			"affiliate-program": {
-				"title": "Affiliate Program",
-				"link": "https://www.chitusystems.com/affiliate/"
-			}
-		},
-		"company": {
-			"title": "Company",
-			"about-us": {
-				"title": "About Us",
-				"link": "https://www.chitubox.com/en/page/about"
-			},
-			"chitu-systems": {
-				"title": "Chitu Systems",
-				"link": "https://www.chitusystems.com/"
-			},
-			"contact": {
-				"title": "Contact",
-				"link": "https://www.chitubox.com/en/support/support-center"
-			},
-			"partners": {
-				"title": "Partners",
-				"link": "https://www.chitubox.com/en/page/partner"
-			},
-			"cbd-tech": {
-				"title": "CBD Tech",
-				"link": "https://www.cbd-3d.com/"
-			}
+		"address": {
+			"title": "Address:",
+			"row1": "3rd Floor，Block 2,Zhongcheng Future Industrial Park",
+			"row2": "Hangcheng Avenue,Baoan District",
+			"row3": "Shenzhen,China 518128",
+			"row4": "",
+			"phoneTitle": "Phone：",
+			"phoneNumber": "+86 0755-23103569",
+			"email": "Email：",
+			"emailNumber": "sales@cbd-3d.com"
 		},
 		"legal": {
 			"title": "Legal",
@@ -122,6 +109,15 @@
 			"legal-notice": {
 				"title": "Legal Notice",
 				"link": "https://www.chitubox.com/en/article/law/legal"
+			},
+			"rights": {
+				"title": "All Rights Reserved. "
+			}
+		},
+		"payment": {
+			"weAccept": {
+				"title": "We Accept",
+				"imgList": "https://fis.cbd-3d.com/chitubox/chitubox/public/cms/csv/AMEX.svg,https://fis.cbd-3d.com/chitubox/chitubox/public/cms/csv/Visa.svg,https://fis.cbd-3d.com/chitubox/chitubox/public/cms/csv/Maestro.svg,https://fis.cbd-3d.com//chitubox/chitubox/public/cms/csv/Mastercard.svg,https://fis.cbd-3d.com//chitubox/chitubox/public/cms/csv/unionpay.svg,https://fis.cbd-3d.com//chitubox/chitubox/public/cms/csv/paypal.svg,"
 			}
 		},
 		"relevantDocs": "Docs",
@@ -149,7 +145,11 @@
 		"chituSystems": "Chitu Systems Store",
 		"chituSystemsLink": "https://www.chitusystems.com/",
 		"copyright": "©",
-		"companyName": "CHITUBOX"
+		"companyName": "CHITUBOX",
+		"subDesc": "Sign up for the latest CHITUBOX news, offers and 3D printing tips",
+		"socialMedia": "Social Media",
+		"subscribe": "Subscribe",
+		"subscribed": "Subscribed!"
 	},
 	"home": {
 		"readTheDocs": "Read the Docs"

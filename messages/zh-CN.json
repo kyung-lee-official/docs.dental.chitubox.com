@@ -56,65 +56,52 @@
 		}
 	},
 	"footer": {
-		"software": {
-			"title": "软件",
-			"chitubox-pro": {
-				"title": "CHITUBOX Pro",
-				"link": "https://www.chitubox.com/zh-Hans/page/chitubox-pro"
-			},
-			"chitubox-basic": {
-				"title": "CHITUBOX Basic",
-				"link": "https://www.chitubox.com/zh-Hans/download/chitubox-free"
-			},
-			"chitubox-dental": {
-				"title": "CHITUBOX Dental",
-				"link": "https://dental.chitubox.com/zh-Hans"
-			},
-			"chitubox-manager": {
-				"title": "ChituManager",
-				"link": "https://www.chitubox.com/zh-Hans/page/chitubox-manager"
-			}
+		"leftSection": {
+			"title": "left",
+			"menuList": [
+				{
+					"row": "申请试用",
+					"url": "https://dental.chitubox.com/zh-Hans/apply"
+				},
+				{
+					"row": "企业合作",
+					"url": "https://dental.chitubox.com/zh-Hans/interact"
+				},
+				{
+					"row": "个人中心",
+					"url": "https://usercenter.chitubox.com/personal-center/profile?entry=dental"
+				},
+				{
+					"row": "密钥管理",
+					"url": "https://usercenter.chitubox.com/personal-center/license?entry=dental"
+				},
+				{
+					"row": "CBD-Tech",
+					"url": "https://www.cbd-3d.com"
+				},
+				{
+					"row": "CHITUBOX",
+					"url": "https://www.chitubox.com/zh-Hans/index"
+				},
+				{
+					"row": "ChituSystems",
+					"url": "https://www.chitusystems.com/"
+				}
+			]
 		},
-		"customer": {
-			"title": "用户",
-			"refer-and-get": {
-				"title": "推荐有礼",
-				"link": "https://cc.chitubox.com/customer/marketing-share"
-			},
-			"education-price": {
-				"title": "教育专享",
-				"link": "https://www.chitubox.com/zh-Hans/article/law/marketing/education-price"
-			},
-			"affiliate-program": {
-				"title": "营销联盟",
-				"link": "https://www.chitusystems.com/affiliate/"
-			}
-		},
-		"company": {
-			"title": "公司",
-			"about-us": {
-				"title": "关于我们",
-				"link": "https://www.chitubox.com/zh-Hans/page/about"
-			},
-			"chitu-systems": {
-				"title": "Chitu Systems",
-				"link": "https://www.chitusystems.com/"
-			},
-			"contact": {
-				"title": "联系我们",
-				"link": "https://www.chitubox.com/zh-Hans/support/support-center"
-			},
-			"partners": {
-				"title": "合作伙伴",
-				"link": "https://www.chitubox.com/zh-Hans/page/partner"
-			},
-			"cbd-tech": {
-				"title": "CBD Tech",
-				"link": "https://www.cbd-3d.com/"
-			}
+		"address": {
+			"title": "Address:",
+			"row1": "深圳市宝安区航城街道三围社区 航城智谷中城未来产业园2栋3层",
+			"row2": "",
+			"row3": "",
+			"row4": "",
+			"phoneTitle": "电话: ",
+			"phoneNumber": "+86 0755-23103569",
+			"email": "邮箱: ",
+			"emailNumber": "sales@cbd-3d.com"
 		},
 		"legal": {
-			"title": "法规政策",
+			"title": "Legal",
 			"privacy-policy": {
 				"title": "隐私政策",
 				"link": "https://www.chitubox.com/zh-Hans/article/law/privacy"
@@ -122,6 +109,15 @@
 			"legal-notice": {
 				"title": "法律声明",
 				"link": "https://www.chitubox.com/zh-Hans/article/law/legal"
+			},
+			"rights": {
+				"title": "保留所有权利. "
+			}
+		},
+		"payment": {
+			"weAccept": {
+				"title": "我们接受",
+				"imgList": "https://fis.cbd-3d.com/chitubox/chitubox/public/cms/csv/AMEX.svg,https://fis.cbd-3d.com/chitubox/chitubox/public/cms/csv/Visa.svg,https://fis.cbd-3d.com/chitubox/chitubox/public/cms/csv/Maestro.svg,https://fis.cbd-3d.com//chitubox/chitubox/public/cms/csv/Mastercard.svg,https://fis.cbd-3d.com//chitubox/chitubox/public/cms/csv/unionpay.svg,https://fis.cbd-3d.com//chitubox/chitubox/public/cms/csv/paypal.svg,"
 			}
 		},
 		"relevantDocs": "相关文档",
@@ -147,7 +143,11 @@
 		"supportEmail": "技术支持邮箱",
 		"supportEmailLink": "mailto://support@chitubox.com",
 		"copyright": "©",
-		"companyName": "CHITUBOX"
+		"companyName": "CHITUBOX",
+		"subDesc": "订阅最新的CHITUBOX资讯，优惠和3D打印知识",
+		"socialMedia": "社交媒体",
+		"subscribe": "订阅",
+		"subscribed": "已订阅!"
 	},
 	"home": {
 		"readTheDocs": "阅读文档"

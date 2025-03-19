@@ -2,10 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-export const Year = () => {
+function Year() {
 	const [fullYear, setDate] = useState(new Date().getFullYear());
+
 	useEffect(() => {
 		setDate(new Date().getFullYear());
 	}, []);
-	return <span>{fullYear}</span>;
-};
+
+	return fullYear;
+}
+
+export default Year;

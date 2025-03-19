@@ -51,19 +51,19 @@ export default function RootLayout({
 
 	return (
 		<html lang="en-US">
-			<body className="font-[NotoSansCJKsc-Regular]">
+			<body className="font-[HarmonyOS_Sans_SC_Regular]">
 				<KatexHtmlSanitizer />
 				<UrlHashPilot />
 				<NextIntlClientProvider locale={"en-US"} messages={messages}>
 					<div id="root-portal"></div>
 					<Header />
 					<main
-						className="flex min-h-svh
+						className="flex min-h-svh 
 						text-neutral-900 dark:text-neutral-200
-						dark:bg-black"
+						bg-[#F3F4F6] dark:bg-[#030712]"
 					>
 						<DynamicDocsSidebar />
-						<div className="flex flex-col w-full min-w-0 max-w-[900px] p-4 mx-auto">
+						<div className="flex flex-col w-full min-w-0 max-w-[900px] p-4 mx-auto mb-24">
 							<DynamicVersionTag />
 							{children}
 						</div>

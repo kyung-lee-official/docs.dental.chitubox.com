@@ -8,8 +8,8 @@ const TocHeading = (props: any) => {
 	const { isActive, depth, children } = props;
 	return (
 		<div
-			className={`my-4 ${depth === 3 && "ml-6"}
-            ${isActive && "text-blue-500 dark:text-sky-400"}`}
+			className={`py-[10px] ${depth === 3 ? "px-6 py-[10px] text-[14px]" : "text-[24px] mt-4"} 
+            ${isActive && "text-[#0284C7] dark:text-sky-400"}`}
 		>
 			{children}
 		</div>
@@ -106,13 +106,13 @@ function Content(props: { toc: any; headerHeight: any }) {
 	const t = useTranslations();
 
 	return (
-		<div className="flex flex-col gap-4">
+		<div
+			className="flex flex-col px-10 gap-4 border-l border-gray-300 dark:border-[#1F2937]"
+		>
 			{h2H3Toc && (
 				<div
-					className="flex justify-center items-center max-w-max h-8 px-8 mx-auto
-                    text-sm
-					border-[1px] border-neutral-200 dark:border-neutral-800
-                    rounded-full select-none"
+					className="h-8 
+					text-[28px] font-bold select-none"
 				>
 					{t("docContent.onThisPage")}
 				</div>

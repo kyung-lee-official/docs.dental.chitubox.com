@@ -22,7 +22,11 @@ const HeadingAnchor = (props: any) => {
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
 	const h1 = (props: any) => (
-		<h1 {...props} className="text-5xl font-bold mb-10" />
+		<h1
+			{...props}
+			className="mb-14 mt-25
+			text-[56px] font-bold text-gray-950 dark:text-[#E2E8F0]"
+		/>
 	);
 
 	const h2 = (props: any) => {
@@ -31,7 +35,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 			<h2
 				id={id}
 				className={`flex justify-start items-center gap-4 my-8
-                text-4xl
+                text-[28px] font-bold
+				text-gray-950 dark:text-[#E2E8F0]
 				scroll-mt-20`}
 			>
 				<div>{children}</div>
@@ -46,7 +51,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 			<h3
 				id={id}
 				className={`flex justify-start items-center gap-4 my-6
-                text-3xl
+                text-[24px] dark:text-[#E2E8F0] font-bold
 				scroll-mt-20`}
 			>
 				<div>{children}</div>
@@ -60,7 +65,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 			<h4
 				id={children[0].props.href.slice(1)}
 				className={`flex justify-start items-center gap-4 my-6
-                font-bold text-2xl
+                font-bold text-[18px] dark:text-[#E2E8F0]
 				scroll-mt-20`}
 			>
 				{children[1]}
@@ -74,7 +79,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 			<h5
 				id={children[0].props.href.slice(1)}
 				className={`flex justify-start items-center gap-4 my-6
-                font-bold text-xl
+                font-bold text-[16px] dark:text-[#E2E8F0]
 				scroll-mt-20`}
 			>
 				{children[1]}
@@ -88,7 +93,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 			<h6
 				id={children[0].props.href.slice(1)}
 				className={`flex justify-start items-center gap-4 my-4
-                font-bold text-lg
+                font-bold text-[14px] dark:text-[#E2E8F0]
 				scroll-mt-20`}
 			>
 				{children[1]}
@@ -97,7 +102,20 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 		);
 	};
 
-	const p = (props: any) => <p {...props} className="my-4" />;
+	const p = (props: any) => (
+		<p {...props} className="my-4
+					text-[14px] text-[#4B5563] dark:text-[#CBD5E2] " />
+	);
+
+	const a = (props: any) => (
+		<a
+			{...props}
+			className="my-4 underline 
+			text-[14px]
+			text-sky-500
+			"
+		/>
+	);
 
 	const ul = ({ children }: any) => {
 		return (
@@ -140,6 +158,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 		h5: h5,
 		h6: h6,
 		p: p,
+		a: a,
 		ul: ul,
 		ol: ol,
 		table: ResponsiveTable,
