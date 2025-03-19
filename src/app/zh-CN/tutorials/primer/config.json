@@ -16,6 +16,11 @@
 					"pageId": "how-to-choose-a-dental-printer",
 					"label": "齿科行业如何选择打印机"
 				}
+				,
+				{
+					"pageId": "printer-platform-solid-vs-perforated",
+					"label": "实心平台 VS 打孔平台"
+				}
 
 			]
 		}
