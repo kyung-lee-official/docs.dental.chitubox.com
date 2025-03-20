@@ -51,9 +51,8 @@ export const Footer = () => {
 	return (
 		<footer className="bg-[#101720]">
 			<QueryClientProvider client={queryClient}>
-				{/* 使用 Grid 布局 */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4 sm:p-8">
-					{/* 第一列：Logo 和标题 */}
+					{/* logo and title */}
 					<div className="flex flex-col sm:ml-[160px] sm:my-[56px]">
 						<div className="flex gap-5 items-center">
 							<LogoWithText />
@@ -67,13 +66,13 @@ export const Footer = () => {
 						</div>
 					</div>
 
-					{/* 第二列：地址和法律信息 */}
+					{/* address and legel */}
 					<div className="flex flex-col gap-[28px] sm:ml-[110px] sm:mt-[154px] mt-8">
 						<Address />
 						<DynamicLegal />
 					</div>
 
-					{/* 第三列：社交媒体、EDM 和脚注 */}
+					{/* social media, EDM, footnote */}
 					<div className="flex flex-col sm:my-[56px] mt-8">
 						<Sns />
 						<Edm />

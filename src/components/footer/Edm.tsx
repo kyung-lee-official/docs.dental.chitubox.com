@@ -73,12 +73,12 @@ export const Edm = () => {
 		},
 	});
 
-	// 提交前的验证函数
+	
 	const validateBeforeSubmit = async (e: React.FormEvent) => {
-		e.preventDefault(); // 阻止默认提交行为
-		const isEmailValid = await trigger("email"); // 手动触发 email 字段的验证
+		e.preventDefault();
+		const isEmailValid = await trigger("email"); 
 		if (isEmailValid) {
-			handleSubmit(onSubmit)(); // 如果验证通过，调用提交函数
+			handleSubmit(onSubmit)(); 
 		}
 	};
 
@@ -111,7 +111,7 @@ export const Edm = () => {
 				</div>
 				<form
 					className="flex justify-start items-center text-gray-400"
-					onSubmit={validateBeforeSubmit} // 使用自定义的提交函数
+					onSubmit={validateBeforeSubmit} 
 				>
 					<input
 						type="text"
@@ -132,7 +132,7 @@ export const Edm = () => {
 						onFocus={() => setIsFocused(true)}
 						onBlur={async () => {
 							setIsFocused(false);
-							await trigger("email"); // 手动触发 email 字段的验证
+							await trigger("email"); 
 						}}
 					/>
 					<button
