@@ -57,6 +57,10 @@
 							"label": "Preview"
 						}
 					]
+				},
+				{
+					"pageId": "developer-reference",
+					"label": "Developer Reference"
 				}
 			]
 		}

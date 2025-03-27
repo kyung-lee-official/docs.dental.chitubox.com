@@ -1,0 +1,33 @@
+import {
+	ChituboxMenu,
+	ChituboxAddMachine,
+	ChituboxSupport,
+	ChituboxFileConfig,
+} from "@/components/icons/Icons";
+
+export const metadata = {
+	title: "开发者参考文档",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"本节提供了如何通过命令行调用 CHITUBOX Dental 处理网格文件的信息。",
+	other: {
+		pageId: "/zh-CN/user-manual/v1.x.x/developer-reference",
+	},
+	openGraph: {
+		images: ["/images/docs/og_logo.png"],
+	},
+};
+
+# 开发者参考文档
+
+## 通过命令行调用 CHITUBOX Dental 并加载指定的网格文件
+
+### Windows
+
+`executable file [file ...]`
+
+例子：
+
+```bash
+'C:\Program Files\CHITUBOX Dental' 'C:\Users\user\Documents\3D Models\test1.stl' 'C:\Users\user\Documents\3D Models\test2.stl'
+```
