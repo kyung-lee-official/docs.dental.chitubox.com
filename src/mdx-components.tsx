@@ -103,8 +103,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 	};
 
 	const p = (props: any) => (
-		<p {...props} className="my-4
-					text-[14px] text-[#4B5563] dark:text-[#CBD5E2] " />
+		<p
+			{...props}
+			className="my-4
+					text-[14px] text-[#4B5563] dark:text-[#CBD5E2] "
+		/>
 	);
 
 	const a = (props: any) => (
@@ -141,10 +144,37 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 		);
 	};
 
-	const InlineCode = (props: any) => {
+	const pre = (props: any) => {
 		const { children } = props;
 		return (
-			<code className="px-1 border-2 rounded border-gray-400">
+			<pre
+				className="relative p-4 my-2
+				text-gray-100
+				bg-gray-900 rounded-lg overflow-x-auto"
+				{...props}
+			>
+				{children}
+			</pre>
+		);
+	};
+
+	const code = ({ children, className, ...props }: any) => {
+		const isInline = !className?.includes("language-");
+		if (isInline) {
+			return (
+				<code
+					className="px-1.5 py-0.5 my-1
+					text-gray-200 text-sm
+					bg-gray-800
+					rounded-md"
+					{...props}
+				>
+					{children}
+				</code>
+			);
+		}
+		return (
+			<code className={className} {...props}>
 				{children}
 			</code>
 		);
@@ -162,9 +192,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 		ul: ul,
 		ol: ol,
 		table: ResponsiveTable,
-		code: ({ children }: any) => {
-			return <InlineCode>{children}</InlineCode>;
-		},
+		pre: pre,
+		code: code,
 
 		Link: (props) => {
 			const { href, children } = props;
