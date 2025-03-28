@@ -18,8 +18,12 @@
 				}
 				,
 				{
-					"pageId": "printer-platform-solid-vs-perforated",
-					"label": "实心平台 VS 打孔平台"
+					"pageId": "what-is-the-difference-perforated-vs-solid-platforms",
+					"label": "3D打印机的实心平台和打孔平台有哪些差异"
+				},
+				{
+					"pageId": "what-to-do-before-model-preparation-in-chitubox-dental",
+					"label": "使用CHITUBOX Dental处理模型前要进行哪些设置"
 				}
 
 			]

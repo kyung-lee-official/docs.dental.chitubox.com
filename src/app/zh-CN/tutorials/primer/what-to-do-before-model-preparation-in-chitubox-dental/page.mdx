@@ -1,0 +1,90 @@
+export const metadata = {
+	title: "使用CHITUBOX Dental处理模型前要进行哪些设置",
+	authors: [{ name: "CHITUBOX Team" }],
+	description: "",
+	keywords: [],
+	other: {
+		pageId: "/zh-CN/tutorials/primer",
+	},
+	openGraph: {
+		images: ["/images/docs/zh-CN/primer/what-to-do-before-model-preparation-in-chitubox-dental/cover.jpg"],
+	},
+};
+
+# 使用CHITUBOX Dental处理模型前要进行哪些设置
+
+在齿科数字化生产流程中，牙医会先使用扫描仪获取患者的牙齿数字模型，然后在设计软件中进行模型调整和治疗方案规划，或者传输到齿科加工厂让专业技工处理，最后通过3D打印将特定的模型打印出来。但是设计软件中导出的模型文件无法直接被打印机识别，还需要在切片软件中进行格式转换和切片准备，以便得到更好的打印效果。CHITUBOX Dental正是完成这一步骤的切片软件。在完成软件的下载和激活之后，用户就可以开始进行模型的打印预处理。本文将详细介绍处理模型之前所需要的准备操作。
+
+
+## 基础设置
+
+在开始处理模型前，我们需要进行基础设置，即选择打印机、模型类型（即应用）、树脂材料和打印文件。
+
+
+### 选择打印机
+
+不同打印机的打印平台不同，平台形状大小影响模型的排版和定向，所以选择的机器要确保与实际所用的打印机一致。机器列表的第一行允许用户自定义打印机。如果您所使用的打印机不在机器列表中，则可以通过“自定义”功能添加打印机。
+
+### 选择应用
+
+完成机器选择后，务必选择对应的模型类型，即应用。CHITUBOX Dental针对不同的应用配置了不同的处理算法，算法直接影响模型的处理结果，错误的应用可能导致模型预处理错误或缺失，所以每次处理模型前都需要重点核对，确保应用与实际打印的模型类型一致。所选应用会显示在软件处理界面底部的标签中。
+
+### 选择材料及配置文件
+
+CHITUBOX Dental中在对应打印机下配置了大量参数文件，用户可以根据所用材料直接选用。不同的材料有着不同的性质和参数设置，选择对应的材料可以保证更好的打印效果。若用户想使用自己定义的参数，也可通过自行导入参数来实现，具体的操作步骤可查看后续文章。
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/primer/what-to-do-before-model-preparation-in-chitubox-dental/basic-configuration-before-preparing-models.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="处理模型前的基础设置"
+/>
+
+## 高级设置
+
+完成打印机及材料选择后，可以点击右下角“高级设置”，根据自身的需求进一步修改打印参数。具体的打印参数的说明可查看 <Link href="https://manual.dental.chitubox.com/en-US/user-manual/latest/ui-and-features/configure-print-parameters"><u>《切片参数设置》</u></Link>。对于一般用户而言，直接选择参数文件即可满足打印需求，操作也更简单。“高级设置”主要是开放给3D打印的专业用户使用，这些用户非常熟悉3D打印的参数设置，熟知各项参数对打印效果的影响，可以自行调整参数来实现特定效果或者满足特别的打印需求。“高级设置”主要是为这部分用户提供操作的灵活性。
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/primer/what-to-do-before-model-preparation-in-chitubox-dental/advanced-parameters-of-material-printing-and-slicing(1).png"
+	}
+	style={{ width: "600px" }}
+	figcaption="关于材料、打印、切片设置的高级参数"
+/>
+
+## 自动化流程设置
+
+CHITUBOX Dental 的自动化处理流程即一键处理功能，可以有效提升处理模型的效率。用户可通过勾选配置页面左下角的 “启用自动处理流程” 选项启用自动化流程。软件内针对不同的齿科应用设置了不同的处理流程，例如正畸牙模预设的环节包括定向、镂空、打孔、排版，而种植导板默认的环节为定向、支撑、排版。
+
+若是预设的流程与用户需求不符，用户可在选择应用后，点击页面底部中间的“设置“进行步骤调整。例如正畸牙模应用，如果导入的是空心模型，就可以选择不再进行自动镂空。部分流程右侧还有可编辑按钮，用户可根据需要自行调整，但一般情况下直接使用预设的参数即可。
+
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/primer/what-to-do-before-model-preparation-in-chitubox-dental/button-to-enable-automated-processing.png"
+	}
+	style={{ width: "600px" }}
+	figcaption=" “自动化处理”功能的开启位置"
+/>
+
+## 导入模型
+
+完成基础设置及按需调整其他设置后，点击“应用”就可以返回模型的处理界面。界面中心的平台即为所选打印机的打印平台，处理的所有模型必须安排在打印平台内，超出平台的部分将会打印失败。
+
+CHITUBOX Dental 提供多种方式加载模型文件。可以通过界面左上角的“文件”菜单栏中的“导入模型”选项加载模型；也可以在界面右侧的文件列表区域内双击空白区域加载模型文件；亦可以在主界面点击鼠标右键，然后选择 “导入模型”；或者直接用快捷键“Ctrl+O”，也可以导入模型 。
+
+<BlogImageContainer
+	src={
+    		"/images/docs/zh-CN/primer/what-to-do-before-model-preparation-in-chitubox-dental/multiple-ways-for-importing-files.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="多种导入文件的方式"
+/>
+
+导入模型后，按住鼠标右键可以自由旋转平台，以便查看模型的各个角度；按住鼠标滚轮可以拖动平台，让模型处理区域处于最合适的位置。接下来就可以开始进行模型的切片处理了，从定向到排版，不同的模型在各个环节中有不同的注意事项，我们会在后续的教程中逐一进行讲解。
+
+CHITUBOX Dental不仅提高了打印效率，还为齿科专业人士提供了前所未有的便利和精准度。无论是经验丰富的牙科医生还是初入行业的新人，CHITUBOX Dental都能满足您的需求，让3D打印变得简单而高效。
+
+

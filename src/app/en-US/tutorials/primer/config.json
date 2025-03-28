@@ -18,8 +18,12 @@
 				}
 				,
 				{
-					"pageId": "printer-platform-solid-vs-perforated",
-					"label": "Printer Platform-Solid VS Perforated"
+					"pageId": "what-is-the-difference-perforated-vs-solid-platforms",
+					"label": "What is the Difference: Perforated vs Solid Platforms"
+				},
+				{
+					"pageId": "what-to-do-before-model-preparation-in-chitubox-dental",
+					"label": "What to Do Before Model Preparation in CHITUBOX Denta"
 				}
 			]
 		}

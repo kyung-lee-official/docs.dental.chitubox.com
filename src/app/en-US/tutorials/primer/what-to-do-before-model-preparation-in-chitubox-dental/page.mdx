@@ -1,0 +1,89 @@
+export const metadata = {
+	title: "What to Do Before Model Preparation in CHITUBOX Dental",
+	authors: [{ name: "CHITUBOX Team" }],
+	description: "",
+	keywords: [],
+	other: {
+		pageId: "/en-US/tutorials/primer",
+	},
+	openGraph: {
+		images: ["/images/docs/en-US/primer/what-to-do-before-model-preparation-in-chitubox-dental/cover.jpg"],
+	},
+};
+
+# What to Do Before Model Preparation in CHITUBOX Dental?
+
+In the digital dental production process, dentists will use scanners to obtain digital models of patients' teeth, then adjust the models and plan treatment schemes in design software, or send the scanning files to dental labs for professional technicians to process, and finally print out models or products via 3D printers. However, the model files exported from design software can't be directly recognized by printers. They need to be converted and sliced in slicing software to achieve better printing results. CHITUBOX Dental is the professional slicing software that completes this step. After downloading and activating the software, users can start preparing models for printing. This article elaborates on the previous settings before preparing the model.
+
+
+## Adding Configuration
+
+At the beginning of using CHITUBOX Dental, we need to perform basic configuration for the printer, model type (i.e., application), resin material, and printing profile.
+
+
+### Selecting the Printer
+
+Different printers have different print platforms. The platform's shape and size affect the model's layout and orientation so the selected machine must match the actual printer used. The first line of the machine list allows users to customize printers. If your printer isn't on the list, you can add it via the "Custom" function.
+
+### Selecting the Application
+
+After selecting the machine, you need to choose the corresponding model type, i.e., the application. CHITUBOX Dental has different processing algorithms for different applications. These algorithms directly impact the model preparation results. Incorrect applications may cause preparation errors or omissions. So, always verify that the application matches the actual model type before processing. The selected application is displayed as a label at the bottom of the software interface.
+
+### Selecting the Material and Profile
+
+CHITUBOX Dental is built with numerous printing profiles under the corresponding printer. Users can directly choose based on the material used. Different materials have distinct properties and parameter settings. Selecting the right material ensures better printing results. If you want to use custom profiles, you can import them. We will release an article to guide users in importing profiles subsequently.
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/primer/what-to-do-before-model-preparation-in-chitubox-dental/basic-configuration-before-preparing-models.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Basic configuration before preparing models"
+/>
+
+## Advanced Settings
+
+After selecting the above options, click "Advanced" at the bottom right to modify print parameters according to your needs. For detailed parameter explanations, you can refer to  <Link href="https://manual.dental.chitubox.com/en-US/user-manual/latest/ui-and-features/configure-print-parameters">*Configure Print Parameters*</Link>. For general users, using the parameter profiles directly can suffice for printing needs and is simpler. "Advanced" settings are mainly for professional 3D printing users who are well-versed in parameter settings and their impact on print results. They can adjust parameters to achieve specific effects or meet special printing requirements.
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/primer/what-to-do-before-model-preparation-in-chitubox-dental/advanced-parameters-of-material-printing-and-slicing.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Advanced parameters of material, printing, and slicing"
+/>
+
+## Enable Automated Processing
+
+CHITUBOX Dental's automated processing workflow, i.e., one-click processing, can enhance model preparation efficiency. Users can enable it by checking the "Enable Automated Processing" option at the bottom left of the configuration page. The software has different processing workflows for various dental applications. For example, the orthodontic model preset the workflow as orientation, hollowing, drilling, and layout, while the surgical guide default is orientation, support, and layout.
+
+If the preset workflow doesn't suit your needs, you can adjust the steps by clicking the "Settings" in the middle bottom of the page. For instance, for the application of orthodontic models, if the imported model is hollow, you can skip automatic hollowing. Some workflows have editable buttons on the right. Users can adjust them as needed, but generally, the preset can satisfy printing needs.
+
+
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/primer/what-to-do-before-model-preparation-in-chitubox-dental/button-to-enable-automated-processing.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Button to enable automated processing"
+/>
+
+## Importing the Model
+
+After completing basic configurations and other adjustments, click "Apply" to return to the model processing interface. The platform in the center is the printer's platform. All models must be placed within it; otherwise, the extra part will be printed failed.
+
+CHITUBOX Dental offers multiple ways to import model files. You can use the "Import Model" option in the "File" menu at the top left, double-click the blank area in the file list on the right, right-click the main interface and select "Import Model", or use the shortcut "Ctrl+O".
+
+<BlogImageContainer
+	src={
+    		"/images/docs/en-US/primer/what-to-do-before-model-preparation-in-chitubox-dental/multiple-ways-for-importing-files.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Multiple ways for importing files"
+/>
+
+After importing the model, hold the right mouse button to freely rotate the platform for viewing the model from different angles. Hold the mouse wheel to drag the platform to any position you want. Then, you can start preparing the model. From the steps of orientation to layout, different models have different setting at each step, which we'll cover in subsequent tutorials. 
+
+CHITUBOX Dental not only improves printing efficiency but also offers unprecedented convenience and precision for dental professionals. Whether you're an experienced dentist or a newcomer, CHITUBOX Dental meets your needs, making 3D printing simple and efficient.
+
