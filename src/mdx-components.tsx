@@ -34,13 +34,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 		return (
 			<h2
 				id={id}
-				className={`flex justify-start items-center gap-4 my-8
-                text-[28px] font-bold
-				text-gray-950 dark:text-[#E2E8F0]
-				scroll-mt-20`}
+				className={`flex justify-start items-center gap-4 mt-16 mb-8
+						text-[28px] font-bold
+						text-gray-950 dark:text-[#E2E8F0]
+						scroll-mt-20`}
 			>
-				<div>{children}</div>
-				<HeadingAnchor href={`#${id}`} />
+				<Link href={`#${id}`}>{children[1]}</Link>
 			</h2>
 		);
 	};
@@ -51,11 +50,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 			<h3
 				id={id}
 				className={`flex justify-start items-center gap-4 my-6
-                text-[24px] dark:text-[#E2E8F0] font-bold
+                text-[22px] dark:text-[#E2E8F0] font-bold
 				scroll-mt-20`}
 			>
-				<div>{children}</div>
-				<HeadingAnchor href={`#${id}`} />
+				<Link href={`#${id}`}>{children[1]}</Link>
 			</h3>
 		);
 	};
@@ -105,8 +103,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 	const p = (props: any) => (
 		<p
 			{...props}
-			className="my-4
-					text-[14px] text-[#4B5563] dark:text-[#CBD5E2] "
+			className="mb-4
+					text-[16px] leading-6 text-[#4B5563] dark:text-[#94A3B8] "
 		/>
 	);
 

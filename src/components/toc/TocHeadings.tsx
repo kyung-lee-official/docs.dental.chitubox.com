@@ -8,7 +8,7 @@ const TocHeading = (props: any) => {
 	const { isActive, depth, children } = props;
 	return (
 		<div
-			className={`py-[10px] ${depth === 3 ? "px-6 py-[10px] text-[14px]" : "text-[24px] mt-4"} 
+			className={`py-[10px] ${depth === 3 ? "px-6 py-[10px] text-[14px]" : "text-[20px] mt-4"} 
             ${isActive && "text-[#0284C7] dark:text-sky-400"}`}
 		>
 			{children}
@@ -112,7 +112,7 @@ function Content(props: { toc: any; headerHeight: any }) {
 			{h2H3Toc && (
 				<div
 					className="h-8 
-					text-[28px] font-bold select-none"
+					text-[24px] font-bold select-none"
 				>
 					{t("docContent.onThisPage")}
 				</div>

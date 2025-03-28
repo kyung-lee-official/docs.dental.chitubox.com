@@ -60,7 +60,7 @@ export default function RootLayout({
 					<main
 						className="flex min-h-svh 
 						text-neutral-900 dark:text-neutral-200
-						bg-[#F3F4F6] dark:bg-[#030712]"
+						bg-[#F3F4F6] dark:bg-[#000000]"
 					>
 						<DynamicDocsSidebar />
 						<div className="flex flex-col w-full min-w-0 max-w-[900px] p-4 mx-auto mb-24">
