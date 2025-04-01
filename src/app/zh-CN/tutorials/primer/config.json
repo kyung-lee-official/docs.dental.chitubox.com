@@ -10,20 +10,20 @@
 			"category": [
 				{
 					"pageId": "how-does-3d-printing-technology-help-dentistry",
-					"label": "3D 打印技术如何助力齿科行业"
+					"label": "3D 打印技术如何助力齿科行业？"
 				},
 				{
 					"pageId": "how-to-choose-a-dental-printer",
-					"label": "齿科行业如何选择打印机"
+					"label": "齿科行业如何选择打印机？"
 				}
 				,
 				{
 					"pageId": "what-is-the-difference-perforated-vs-solid-platforms",
-					"label": "3D打印机的实心平台和打孔平台有哪些差异"
+					"label": "3D打印机的实心平台和打孔平台有哪些差异？"
 				},
 				{
 					"pageId": "what-to-do-before-model-preparation-in-chitubox-dental",
-					"label": "使用CHITUBOX Dental处理模型前要进行哪些设置"
+					"label": "使用CHITUBOX Dental处理模型前要进行哪些设置？"
 				}
 
 			]

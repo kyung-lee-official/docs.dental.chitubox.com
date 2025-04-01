@@ -8,21 +8,18 @@
 			"versionCode": null,
 			"isLatest": false,
 			"category": [
+				
 				{
-					"pageId": "parameter-configuration",
-					"label": "Parameter Configuration"
+					"pageId": "how-to-orientate-different-dental-items",
+					"label": "不同的齿科模型如何定向"
 				},
 				{
-					"pageId": "orientation-strategies-for-dental-items",
-					"label": "Orientation Strategies for Dental Items"
+					"pageId": "what-is-the-differences-between-filling-and-filling-while-hollowing",
+					"label": "“填充”与“镂空并填充”功能有哪些差异"
 				},
 				{
-					"pageId": "filling-and-filling-while-hollowing",
-					"label": "Filling and Filling While Hollowing"
-				},
-				{
-					"pageId": "automatic-process",
-					"label": "Automatic Process"
+					"pageId": "how-to-set-up-the-automated-process",
+					"label": "如何设置自动化流程"
 				}
 			]
 		}

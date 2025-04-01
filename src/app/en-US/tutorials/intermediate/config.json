@@ -9,20 +9,16 @@
 			"isLatest": false,
 			"category": [
 				{
-					"pageId": "parameter-configuration",
-					"label": "Parameter Configuration"
+					"pageId": "how-to-orientate-different-dental-items",
+					"label": "How to Orientate Different Dental Items?"
 				},
 				{
-					"pageId": "orientation-strategies-for-dental-items",
-					"label": "Orientation Strategies for Dental Items"
+					"pageId": "what-is-the-differences-between-filling-and-filling-while-hollowing",
+					"label": "What is the Differences between Filling and Filling While Hollowing?"
 				},
 				{
-					"pageId": "filling-and-filling-while-hollowing",
-					"label": "Filling and Filling While Hollowing"
-				},
-				{
-					"pageId": "automatic-process",
-					"label": "Automatic Process"
+					"pageId": "how-to-set-up-the-automated-process",
+					"label": "How to Set Up the Automated Process?"
 				}
 			]
 		}
