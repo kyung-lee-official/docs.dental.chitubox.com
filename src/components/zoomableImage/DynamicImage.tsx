@@ -5,7 +5,7 @@ interface DynamicImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 }
 
 const DynamicImage = forwardRef<HTMLImageElement, DynamicImageProps>(
-	(props, ref) => {
+	function DynamicImage(props, ref) {
 		return <img ref={ref} {...props} />;
 	}
 );
