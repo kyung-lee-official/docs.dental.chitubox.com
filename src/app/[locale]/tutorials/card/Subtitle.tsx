@@ -48,7 +48,7 @@ const Subtitle = (props: { fieldName: string; readMore: string }) => {
 		<div
 			className="flex flex-col w-full
 			min-h-fit
-			gap-2
+			gap-6
 			text-sm
 			text-neutral-500
 			dark:text-neutral-400"
@@ -59,7 +59,7 @@ const Subtitle = (props: { fieldName: string; readMore: string }) => {
 						key={item.url}
 						href={item.url}
 						className="hover:text-neutral-800
-						dark:hover:text-neutral-300
+						dark:hover:text-neutral-300 underline
 						duration-200"
 					>
 						{item.label}
