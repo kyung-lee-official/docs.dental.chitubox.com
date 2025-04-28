@@ -10,6 +10,10 @@
 			"category": [
 				
 				{
+					"pageId": "how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software",
+					"label": "如何解决软件内无适配打印机和配置文件的问题？"
+				},
+				{
 					"pageId": "how-to-orientate-different-dental-items",
 					"label": "不同的齿科模型如何定向？"
 				},
@@ -21,6 +25,7 @@
 					"pageId": "how-to-set-up-the-automated-process",
 					"label": "如何设置自动化流程？"
 				}
+
 			]
 		}
 	]

@@ -9,6 +9,10 @@
 			"isLatest": false,
 			"category": [
 				{
+					"pageId": "how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software",
+					"label": "How to Solve the Problem of No Compatible Printer/Profiles in the Software?"
+				},
+				{
 					"pageId": "how-to-orientate-different-dental-items",
 					"label": "How to Orientate Different Dental Items?"
 				},
@@ -20,6 +24,7 @@
 					"pageId": "how-to-set-up-the-automated-process",
 					"label": "How to Set Up the Automated Process?"
 				}
+
 			]
 		}
 	]

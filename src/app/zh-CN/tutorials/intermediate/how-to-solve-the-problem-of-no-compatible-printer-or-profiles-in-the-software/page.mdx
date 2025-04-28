@@ -1,0 +1,104 @@
+export const metadata = {
+	title: "如何解决软件内无适配打印机和配置文件的问题？",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"Automatic process is one of the key features in CHITUBOX Dental that can help streamline the workflow and improve the efficiency for dental professionals, and there are some details that need to be paid attention to when using it.",
+	keywords: [],
+	other: {
+		pageId: "/en-US/learning/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software",
+	},
+	openGraph: {
+		images: ["/images/docs/en-US/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/cover.png"],
+	},
+};
+
+# 如何解决软件内无适配打印机和配置文件的问题？
+
+在3D打印的切片过程中，软件需要根据用户选定的打印机及配置文件的参数来对模型进行切片，使切片文件能够适应打印机与树脂之间的特性从而成功打印，所以打印机和树脂材料之间的参数配置至关重要。尽管 CHITUBOX Dental 已经内置了大量常见的消费类打印机型号和配置文件，但仍然没有覆盖全部用户的需求。本篇将重点介绍在软件内没有适用的打印机及配置文件的情况下，用户如何手动添加机器和文件或调整相关设置，以顺利完成切片和打印。
+
+
+## 手动添加打印机
+
+当软件中没有用户使用的打印机型号时，用户可以通过自定义机器来新增打印机。目前 CHITUBOX Dental 支持多种切片格式，包括 .ctb, .cbddlp, .cws, .zip, .prz, .fdg, .qdx, .fhd, .wow, .slc以及 .svgx。只要所使用的打印机能识别以上任意一种切片格式，用户就可以在软件中新建打印机配置。
+点击软件左上角菜单栏中的“配置”，在机器列表中点击“自定义”-“添加机器”，并选择、填写相关的参数即可，如机器类型、切片格式、尺寸及分辨率等。一般机器的这些参数信息都可以在品牌官网的商品详情页或者打印机附带的说明书中找到。
+
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/the-operation-of-adding-a-printer.gif"
+	}
+	style={{ width: "600px" }}
+	figcaption="自定义打印机的操作"
+/>
+
+
+## 手动新增配置文件
+### 导入参数包
+
+如果用户有现成的配置文件，可以使用“设置/帮助”菜单栏下的“导入参数包”功能将现有的参数配置导入软件中。目前 CHITUBOX Dental 支持.cfg、.cfgx及.cfgd三种格式，可以兼容几乎所有的配置文件。
+
+文件导入时需要选择打印机，在该步骤中软件会自动识别并选中文件所对应的打印机型号，用户点击“应用”后文件就会保存在该打印机下的配置目录中；如果软件内没有该型号打印机，则需要用户自行选择打印机。该步骤使用户可以选择将配置文件保存在自己新建的打印机下。
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/selecting-a-printer-when-importing-profiles.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="“导入参数包”时需选择打印机"
+/>
+
+
+配置文件的来源非常广泛。CHITUBOX官网的<Link href="https://www.chitubox.com/zh-Hans/material/category">树脂材料库</Link>中收录了大量树脂品牌的参数文件，用户可以直接下载，然后导入切片软件中；一般树脂品牌的官网也会提供测试好的参数文件，用户可以自行下载或者联系品牌方获取；另外，社媒平台上有许多资深用户在3D打印或齿科3D打印的交流群内分享参数和打印经验，有兴趣的用户可以加入我们的QQ群组（870179662）共同探讨3D打印问题。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/profiles-in-the-resin-profiles-library-on-the-chitubox-official-website.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="在CHITUBOX 官网树脂材料库可下载配置文件"
+/>
+
+对于使用CHITUBOX Basic或Pro的用户，如果想迁移配置文件，可以直接将文件从Basic或Pro软件中导出到电脑，再导入CHIUTBOX Dental中。需要注意的是，在CHITUBOX Basic的配置中并没有“材料”这一分类，所以Basic的配置文件导入到Dental软件中时，文件被归类到对应打印机之后，会在材料分类下显示为"Default"。如果用户希望更好地管理文件，可以手动将配置文件重命名以作区分。
+
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/exporting-profiles-in-the-slicing-settings-of-chitubox-basic.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="在 CHITUBOX Basic 切片设置中导出配置文件"
+/>
+
+### 自定义参数
+
+尽管 CHITUBOX Dental 中未收录所有树脂品牌的参数文件，但软件中配置了一套默认的参数。为了避免用户误操作，这份默认的参数不允许被修改，但用户可以对其进行复制，然后再修改对应的材料、打印以及切片参数。在配置页面中选择打印机后，点击右下角的“高级设置”即可进入复制和修改参数页面。
+
+自定义参数的途径给3D打印经验非常丰富、具备较高打印技巧的专业用户提供了操作灵活性，但对于初学用户来说，软件默认的参数一般都可以满足需求。CHITUBOX Dental 为不同水平的用户都提供了可行的参数方案。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/advanced-page-in-configuration.gif"
+	}
+	style={{ width: "600px" }}
+	figcaption=" “配置”中的“高级设置”页面 "
+/>
+
+若是用户想要备份参数文件，可以在配置页面点击对应打印机型号右边的箭头图标，将文件导出备份，或者应用到别的软件里。要注意的是，导出的文件包是包含该打印机下的所有配置文件，并不是单一的某一份配置文件。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/exporting-parameter-profiles-from-chitubox-dental.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="在CHITUBOX Dental 中导出“配置文件”"
+/>
+
+
+根据以上操作方法，用户可以在 CHITUBOX Dental 中添加自己习惯使用的打印机型号及配置文件，以顺利处理模型及打印。若想要咨询参数、软件操作等技术问题，可以联系我们的技术团队 <span style={{ color: 'blue', fontStyle: 'italic', textDecoration: 'none' }}>*support@dental.chitubox.com*</span> 获取专业支持。
+
+

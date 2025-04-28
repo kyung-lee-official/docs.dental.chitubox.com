@@ -1,0 +1,97 @@
+export const metadata = {
+	title: "How to Solve the Problem of No Compatible Printer/Profiles in the Software?",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"Automatic process is one of the key features in CHITUBOX Dental that can help streamline the workflow and improve the efficiency for dental professionals, and there are some details that need to be paid attention to when using it.",
+	keywords: [],
+	other: {
+		pageId: "/en-US/learning/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software",
+	},
+	openGraph: {
+		images: ["/images/docs/en-US/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/cover.png"],
+	},
+};
+
+# How to Solve the Problem of No Compatible Printer/Profiles in the Software?
+
+During the slicing process of 3D printing, the software needs to slice the model based on the parameters of the profiles, so that the sliced file can match the characteristics of the printer and the resin to ensure successful printing. Therefore, the parameter configuration is crucial. Although CHITUBOX Dental has already built in a large number of common consumer printer models and parameter profiles, it still cannot cover the needs of all users. This article will focus on how users can add printers and profiles or adjust related settings when there is no suitable machine or configuration available in the software, in order to complete slicing and printing successfully.
+
+## Adding a Printer
+
+When the software does not have the printer model that the user is using, the user can add a new printer by creating a custom machine. Currently, CHITUBOX Dental supports a variety of slicing formats, including .ctb, .cbddlp, .cws, .zip, .prz, .fdg, .qdx, .fhd, .wow, .slc, and .svgx. As long as the printer supports any of these slicing formats, the user can create a new printer in the software.
+
+Click on the "Configuration" in the top-left menu bar, then click "Custom" - "Add a machine" on the printer list, and select or fill in the relevant parameters, such as machine type, slice format, size, and resolution, etc. Generally, these parameter details of a machine can be found on the product detail page of the brand's official website or in the printer's user manual.
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/the-operation-of-adding-a-printer.gif"
+	}
+	style={{ width: "600px" }}
+	figcaption="The operation of adding a printer"
+/>
+
+
+## Adding Profiles
+### Importing Profiles
+
+If the user has an existing profile, they can use the "Import Parameter Package" function under the "Settings/Help" menu to import the profile into the software. Currently, CHITUBOX Dental supports three formats: .cfg, .cfgx, and .cfgd, which are compatible with almost all configuration profiles.
+
+Users need to select a printer when importing a file. In this step, the software will automatically recognize and select the printer model corresponding to the file. After the user clicks "Apply," the file will be saved in the configuration directory under that printer. If the software does not have the printer model, the user needs to manually select a printer. This step allows the user to save the configuration file under the newly created printer.
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/selecting-a-printer-when-importing-profiles.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Selecting a printer when importing profiles"
+/>
+
+The sources of configuration files are very diverse. The <Link href="https://www.chitubox.com/en/material/category">Resin Profiles Library</Link>  on the CHITUBOX official website contains a large number of parameter profiles from various resin brands, which users can download directly and import into CHITUBOX Dental. Generally, the official websites of resin brands also provide tested parameter profiles, which users can download on their own or obtain by contacting the brand. In addition, many experienced users on social media platforms share parameters and printing experiences in 3D printing or dental 3D printing communities. If you are interested, welcome to join our <Link href="https://www.facebook.com/groups/972585841264475/">FB Group</Link> or <Link href="https://discord.gg/vNrd9QVa4f">Discord community</Link> to discuss 3D printing issues together.
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/profiles-in-the-resin-profiles-library-on-the-chitubox-official-website.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Profiles in the Resin Profiles Library on the CHITUBOX official website"
+/>
+
+For users of CHITUBOX Basic or Pro who want to migrate parameter profiles, they can directly export the profiles from the Basic or Pro software to the computer and then import them into CHITUBOX Dental. It should be noted that in the configuration of CHITUBOX Basic, there is no category for "Material". Therefore, when a profile from Basic is imported into Dental software, it will be stored under the corresponding printer and displayed as "Default" under the material category. If users want to manage the profiles better, they can manually rename them for distinction.
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/exporting-profiles-in-the-slicing-settings-of-chitubox-basic.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Exporting profiles in the slicing settings of CHITUBOX Basic"
+/>
+
+### Modifying Parameters
+Although CHITUBOX Dental does not include parameter profiles for all resin brands, the software is equipped with a set of default parameters. To prevent accidental operation by users, these default parameters are not allowed to be changed. However, users can copy them and then modify the corresponding parameters about material, printing, and slicing. After selecting a printer on the configuration page, users can click the "Advanced Settings" at the bottom right to enter the page for copying and modifying parameter profiles.
+
+The option to modify parameters provides operational flexibility for professional users with extensive 3D printing experience and high printing skills. However, for beginners, the default parameters of the software generally meet the needs. CHITUBOX Dental offers feasible parameter solutions for users of different levels.
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/advanced-page-in-configuration.gif"
+	}
+	style={{ width: "600px" }}
+	figcaption=" ''Advanced'' Page in ''Configuration'' "
+/>
+
+If users want to back up parameter profiles, they can click the arrow icon next to the printer model on the configuration page to export and back up the profiles, or apply them to other software. It should be noted that the exported file package contains all parameter profiles under that printer, not a single one.
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/intermediate/how-to-solve-the-problem-of-no-compatible-printer-or-profiles-in-the-software/exporting-parameter-profiles-from-chitubox-dental.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Exporting ''parameter profiles'' from CHITUBOX Dental"
+/>
+
+Following the above procedures, users can add their preferred printer models and parameter profiles in CHITUBOX Dental to process models and print smoothly. If you have any technical questions about parameters or software operations, you can contact our technical team at <span style={{ color: 'blue', fontStyle: 'italic', textDecoration: 'none' }}>*support@dental.chitubox.com*</span> for professinal support.
+
