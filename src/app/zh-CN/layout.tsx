@@ -51,7 +51,7 @@ export default function RootLayout({
 
 	return (
 		<html lang="zh-CN">
-			<body className="font-[HarmonyOS_Sans_SC_Regular]">
+			<body className="font-[HarmonyOS\_Sans\_SC\_Regular]">
 				<KatexHtmlSanitizer />
 				<UrlHashPilot />
 				<NextIntlClientProvider locale={"zh-CN"} messages={messages}>
