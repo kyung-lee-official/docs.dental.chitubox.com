@@ -183,9 +183,9 @@ export const Dropdown = <T,>(props: DropdownProps<T>) => {
 
 			{isOpen && (
 				<div
-					className="absolute z-10 w-full mt-1
-					bg-neutral-100
-					border border-neutral-200 rounded-md overflow-auto"
+					className="absolute z-10 w-full mt-1 p-2.5
+					bg-white
+					rounded-md shadow-lg overflow-auto"
 				>
 					{mode === "search" && (
 						<input
@@ -202,8 +202,9 @@ export const Dropdown = <T,>(props: DropdownProps<T>) => {
 							<div
 								key={i}
 								className="px-2 py-1
-								hover:bg-neutral-200
-								cursor-pointer"
+								hover:text-blue-500
+								hover:bg-neutral-100
+								rounded-md cursor-pointer"
 								onClick={() => handleSelect(option)}
 								onMouseEnter={() =>
 									setHover && setHover(option)
