@@ -33,11 +33,14 @@ export const Content = () => {
 		<div className="w-full">
 			<DynamicHero />
 			<div
-				className="flex justify-center p-20
+				className="flex justify-center p-10 lg:p-20
 				bg-[#F1F5F9]"
 			>
-				<div className="flex min-w-0 max-w-[1240px] gap-8">
-					<div className="flex-none w-[324px] space-y-9">
+				<div
+					className="grid grid-cols-1 justify-items-stretch gap-8
+					lg:flex lg:min-w-0 lg:max-w-[1240px] lg:gap-8"
+				>
+					<div className="flex-none lg:w-[324px] space-y-9">
 						<div
 							className="w-full p-10 space-y-8
 							bg-white

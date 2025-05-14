@@ -113,7 +113,7 @@ export const Form = () => {
 
 	return (
 		<div
-			className="flex-auto w-[884px] p-12 
+			className="flex-auto lg:w-[884px] p-12 
 			bg-white
 			rounded-[16px]"
 		>
@@ -194,7 +194,7 @@ export const Form = () => {
 						</div>
 						{(state.formType as FormType)?.key ===
 							"BUG_REPORTING" && (
-							<div className="grid grid-cols-2 gap-4">
+							<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 								<div className="space-y-1">
 									<div>OS</div>
 									<input
