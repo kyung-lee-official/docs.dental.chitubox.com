@@ -30,6 +30,17 @@ type DropdownProps = {
 		state: { selected: boolean | null; hovered: boolean }
 	) => ReactNode;
 	renderValue?: (option: DropdownOption) => ReactNode;
+	/* other styles */
+	controlClassName: string;
+	selectedItemClassName?: (option: DropdownOption) => string;
+	removeButtonClassName?: (option: DropdownOption) => string;
+	placeholderClassName?: string;
+	menuClassName?: string;
+	searchInputClassName?: string;
+	optionClassName?: (
+		option: DropdownOption,
+		state: { selected: boolean | null; hovered: boolean }
+	) => string;
 };
 
 export const Dropdown = (props: DropdownProps) => {
@@ -45,6 +56,13 @@ export const Dropdown = (props: DropdownProps) => {
 		getSearchString,
 		renderOption,
 		renderValue,
+		controlClassName = "",
+		selectedItemClassName = () => "",
+		removeButtonClassName = () => "",
+		placeholderClassName = "",
+		menuClassName = "",
+		searchInputClassName = "",
+		optionClassName = () => "",
 	} = props;
 
 	const [isOpen, setIsOpen] = useState(false);
@@ -107,27 +125,14 @@ export const Dropdown = (props: DropdownProps) => {
 			: selected && (selected as DropdownOption).id === option.id;
 
 	return (
-		<div
-			ref={dropdownRef}
-			className="relative w-full max-w-xs
-			text-sm"
-		>
+		<div ref={dropdownRef} className="relative w-full">
 			<div
-				className="flex items-center flex-wrap min-h-8 px-2 py-1 gap-2
-				bg-neutral-800
-				border-1 border-neutral-700 rounded-md cursor-pointer"
+				className={controlClassName}
 				onClick={() => setIsOpen(!isOpen)}
 			>
 				{multiple && Array.isArray(selected) && selected.length > 0 ? (
 					selected.map((item, i) => (
-						<div
-							key={i}
-							className="flex items-center h-fit px-1.5 py-0.5 gap-1
-							text-xs
-							text-white/60
-							bg-neutral-700
-							border-1 border-neutral-600 rounded"
-						>
+						<div key={i} className={selectedItemClassName(item)}>
 							<span>
 								{renderValue
 									? renderValue(item)
@@ -138,33 +143,29 @@ export const Dropdown = (props: DropdownProps) => {
 									e.stopPropagation();
 									handleRemove(item);
 								}}
-								className="text-white/60 hover:text-white/80
-								cursor-pointer"
+								className={removeButtonClassName(item)}
 							>
 								×
 							</button>
 						</div>
 					))
 				) : !multiple && selected ? (
-					<span className="text-white/60">
+					<span
+						className={selectedItemClassName(
+							selected as DropdownOption
+						)}
+					>
 						{renderValue
 							? renderValue(selected as DropdownOption)
 							: getLabel(selected as DropdownOption)}
 					</span>
 				) : (
-					<span className="text-neutral-400 truncate">
-						{placeholder}
-					</span>
+					<span className={placeholderClassName}>{placeholder}</span>
 				)}
 			</div>
 
 			{isOpen && (
-				<div
-					className="absolute z-10 w-full mt-1
-					text-white/60
-					bg-neutral-800
-					border border-neutral-700 rounded-md overflow-auto"
-				>
+				<div className={menuClassName}>
 					{mode === "search" && (
 						<input
 							type="text"
@@ -172,32 +173,38 @@ export const Dropdown = (props: DropdownProps) => {
 							onChange={(e) => setSearchTerm(e.target.value)}
 							onClick={(e) => e.stopPropagation()}
 							placeholder="Search..."
-							className="w-full p-2 border-b border-neutral-700 outline-none"
+							className={searchInputClassName}
 						/>
 					)}
-					{filteredOptions.map((option) => {
-						const selected = isSelected(option);
-						const hovered = hoveredId === option.id;
-						return (
-							<div
-								key={option.id}
-								className={`px-2 py-1 cursor-pointer ${
-									hovered ? "bg-neutral-700" : ""
-								}`}
-								onClick={() => handleSelect(option)}
-								onMouseEnter={() => {
-									setHoveredId(option.id);
-									setHover && setHover(option);
-								}}
-								onMouseLeave={() => {
-									setHoveredId(null);
-									setHover && setHover(null);
-								}}
-							>
-								{renderOption(option, { selected, hovered })}
-							</div>
-						);
-					})}
+					<div className="max-h-60 overflow-y-auto">
+						{filteredOptions.map((option) => {
+							const selected = isSelected(option);
+							const hovered = hoveredId === option.id;
+							return (
+								<div
+									key={option.id}
+									className={optionClassName(option, {
+										selected,
+										hovered,
+									})}
+									onClick={() => handleSelect(option)}
+									onMouseEnter={() => {
+										setHoveredId(option.id);
+										setHover && setHover(option);
+									}}
+									onMouseLeave={() => {
+										setHoveredId(null);
+										setHover && setHover(null);
+									}}
+								>
+									{renderOption(option, {
+										selected,
+										hovered,
+									})}
+								</div>
+							);
+						})}
+					</div>
 				</div>
 			)}
 		</div>
