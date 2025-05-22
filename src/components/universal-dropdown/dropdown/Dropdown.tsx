@@ -23,24 +23,30 @@ type DropdownProps = {
 		SetStateAction<DropdownOption | DropdownOption[] | null>
 	>;
 	multiple?: boolean;
-	getLabel: (option: DropdownOption) => string;
+
+	controlClassName: string;
+	placeholderClassName?: string;
+	/* label of selected option, string only */
+	getLabel: (option: DropdownOption) => string | ReactNode;
+	/* searchable string for each option, empty string if not provided */
 	getSearchString?: (option: DropdownOption) => string;
+	searchInputClassName?: string;
+	/* style of selected item in the input */
+	selectedItemClassName?: (option: DropdownOption) => string;
+	/* style of the remove button, usually the cross ❌, not whole selected item, multiple select only */
+	removeButtonClassName?: (option: DropdownOption) => string;
+
+	menuClassName?: string;
+	/* wrapper of renderOption, this layer is necessary to keep mouse events defined inside the Dropdown component */
+	optionWrapperClassName?: (
+		option: DropdownOption,
+		state: { selected: boolean | null; hovered: boolean }
+	) => string;
+	/* render option, usually for content styling */
 	renderOption: (
 		option: DropdownOption,
 		state: { selected: boolean | null; hovered: boolean }
 	) => ReactNode;
-	renderValue?: (option: DropdownOption) => ReactNode;
-	/* other styles */
-	controlClassName: string;
-	selectedItemClassName?: (option: DropdownOption) => string;
-	removeButtonClassName?: (option: DropdownOption) => string;
-	placeholderClassName?: string;
-	menuClassName?: string;
-	searchInputClassName?: string;
-	optionClassName?: (
-		option: DropdownOption,
-		state: { selected: boolean | null; hovered: boolean }
-	) => string;
 };
 
 export const Dropdown = (props: DropdownProps) => {
@@ -52,17 +58,16 @@ export const Dropdown = (props: DropdownProps) => {
 		setSelected,
 		setHover,
 		multiple = false,
+		controlClassName = "",
+		placeholderClassName = "",
 		getLabel,
 		getSearchString,
-		renderOption,
-		renderValue,
-		controlClassName = "",
+		searchInputClassName = "",
 		selectedItemClassName = () => "",
 		removeButtonClassName = () => "",
-		placeholderClassName = "",
 		menuClassName = "",
-		searchInputClassName = "",
-		optionClassName = () => "",
+		optionWrapperClassName = () => "",
+		renderOption,
 	} = props;
 
 	const [isOpen, setIsOpen] = useState(false);
@@ -113,9 +118,7 @@ export const Dropdown = (props: DropdownProps) => {
 
 	const filteredOptions = options.filter((option) => {
 		if (mode !== "search" || !searchTerm) return true;
-		const searchString = getSearchString
-			? getSearchString(option)
-			: getLabel(option);
+		const searchString = getSearchString ? getSearchString(option) : "";
 		return searchString.toLowerCase().includes(searchTerm.toLowerCase());
 	});
 
@@ -133,11 +136,7 @@ export const Dropdown = (props: DropdownProps) => {
 				{multiple && Array.isArray(selected) && selected.length > 0 ? (
 					selected.map((item, i) => (
 						<div key={i} className={selectedItemClassName(item)}>
-							<span>
-								{renderValue
-									? renderValue(item)
-									: getLabel(item)}
-							</span>
+							<span>{getLabel(item)}</span>
 							<button
 								onClick={(e) => {
 									e.stopPropagation();
@@ -155,9 +154,7 @@ export const Dropdown = (props: DropdownProps) => {
 							selected as DropdownOption
 						)}
 					>
-						{renderValue
-							? renderValue(selected as DropdownOption)
-							: getLabel(selected as DropdownOption)}
+						{getLabel(selected as DropdownOption)}
 					</span>
 				) : (
 					<span className={placeholderClassName}>{placeholder}</span>
@@ -183,7 +180,7 @@ export const Dropdown = (props: DropdownProps) => {
 							return (
 								<div
 									key={option.id}
-									className={optionClassName(option, {
+									className={optionWrapperClassName(option, {
 										selected,
 										hovered,
 									})}

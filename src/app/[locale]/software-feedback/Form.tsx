@@ -338,7 +338,7 @@ export const Form = () => {
 								bg-white
 								rounded-md shadow-lg overflow-auto"
 								searchInputClassName="w-full p-2 border-b border-neutral-200 outline-none"
-								optionClassName={(
+								optionWrapperClassName={(
 									option,
 									{ selected, hovered }
 								) => {
@@ -398,7 +398,7 @@ export const Form = () => {
 								bg-white
 								rounded-md shadow-lg overflow-auto"
 								searchInputClassName="w-full p-2 border-b border-neutral-200 outline-none"
-								optionClassName={(
+								optionWrapperClassName={(
 									option,
 									{ selected, hovered }
 								) => {
