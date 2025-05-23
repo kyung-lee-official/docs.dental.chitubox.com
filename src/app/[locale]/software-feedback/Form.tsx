@@ -6,10 +6,8 @@ import {
 } from "@/components/universal-dropdown/dropdown/Dropdown";
 import {
 	bugReportingSchemaLoose,
-	Country,
 	FormState,
 	FormStateLoose,
-	FormTypeLiteral,
 	formTypes,
 	formTypesEnUS,
 	formTypesZhCN,
@@ -19,10 +17,10 @@ import {
 	usageHelpSchemaLoose,
 } from "./form-options";
 import { useReducer } from "react";
-import { IntegerInput } from "@/components/input/integer-input/IntegerInput";
 import { z } from "zod";
 import { countries } from "./countries";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { IntegerInput } from "@/components/input/integer-input/IntegerInput";
 
 const initialState: FormStateLoose = {
 	name: "",
@@ -223,32 +221,30 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 
 export const Form = () => {
 	const locale = useLocale();
+	const t = useTranslations("pages.software-feedback");
 	let formTypeList;
-	let countryList: DropdownOption[];
+	let countryList;
 	switch (locale) {
 		case "en-US":
 			formTypeList = formTypesEnUS;
-			countryList = countries
-				.map((c) => ({
-					id: c.code,
-					value: c.name,
-				}));
+			countryList = countries.map((c) => ({
+				id: c.code,
+				value: c.name,
+			}));
 			break;
 		case "zh-CN":
 			formTypeList = formTypesZhCN;
-			countryList = countries
-				.map((c) => ({
-					id: c.code,
-					value: c.nameZhCn,
-				}));
+			countryList = countries.map((c) => ({
+				id: c.code,
+				value: c.nameZhCn,
+			}));
 			break;
 		default:
 			formTypeList = formTypesEnUS;
-			countryList = countries
-				.map((c) => ({
-					id: c.code,
-					value: c.name,
-				}));
+			countryList = countries.map((c) => ({
+				id: c.code,
+				value: c.name,
+			}));
 			break;
 	}
 
@@ -266,14 +262,13 @@ export const Form = () => {
 						className="flex justify-center w-full
 						text-3xl font-bold"
 					>
-						Submit a Ticket
+						{t("form-title")}
 					</h1>
 					<span
 						className="flex justify-center w-full
 						text-neutral-500 text-lg"
 					>
-						Please submit your ticket, and we will contact you as
-						soon as possible.
+						{t("form-subtitle")}
 					</span>
 				</div>
 				<form className="space-y-12">
@@ -281,20 +276,20 @@ export const Form = () => {
 						{/* name */}
 						<input
 							type="text"
-							placeholder="Name (required)"
+							placeholder={t("form-name-placeholder")}
 							className="block w-full h-12 px-4 py-1.5
 							bg-neutral-100 rounded-md outline-none"
 						/>
 						{/* email */}
 						<input
 							type="email"
-							placeholder="Email (required)"
+							placeholder={t("form-email-placeholder")}
 							className="block w-full h-12 px-4 py-1.5
 							bg-neutral-100 rounded-md outline-none"
 						/>
 						{/* region */}
 						<div className="space-y-1">
-							<div>Country/Region</div>
+							<div>{t("form-country-title")}</div>
 							<Dropdown
 								mode="search"
 								options={countryList}
@@ -305,16 +300,16 @@ export const Form = () => {
 										payload: value as DropdownOption,
 									})
 								}
-								placeholder="Please select your country or region"
+								placeholder={t("form-country-placeholder")}
 								getLabel={(option) => {
-									const country = countries.find(
-										(item) => item.code === option.id
+									const country = countryList.find(
+										(item) => item.id === option.id
 									);
-									return country?.name as string;
+									return country?.value as string;
 								}}
 								renderOption={(option, { selected }) => {
-									const country = countries.find(
-										(item) => item.code === option.id
+									const country = countryList.find(
+										(item) => item.id === option.id
 									);
 									return (
 										<div
@@ -323,7 +318,7 @@ export const Form = () => {
 											hover:bg-neutral-100
 											rounded-md cursor-pointer`}
 										>
-											<span>{country?.name}</span>
+											<span>{country?.value}</span>
 										</div>
 									);
 								}}
@@ -337,6 +332,13 @@ export const Form = () => {
 								menuClassName="absolute z-10 w-full mt-1 p-2.5
 								bg-white
 								rounded-md shadow-lg overflow-auto"
+								getSearchString={(opt) => {
+									const value = countryList.find((c) => {
+										return c.id === opt.id;
+									})!.value;
+									console.log(value);
+									return value;
+								}}
 								searchInputClassName="w-full p-2 border-b border-neutral-200 outline-none"
 								optionWrapperClassName={(
 									option,
@@ -351,7 +353,7 @@ export const Form = () => {
 						</div>
 						{/* type */}
 						<div className="space-y-1">
-							<div>What is your issue about?</div>
+							<div>{t("form-issue-type-title")}</div>
 							<Dropdown
 								mode="regular"
 								options={formTypes}
@@ -365,7 +367,7 @@ export const Form = () => {
 										payload: value as DropdownOption,
 									})
 								}
-								placeholder="Please select your feedback type (required)"
+								placeholder={t("form-issue-type-title")}
 								getLabel={(option) => {
 									const formType = formTypeList.find(
 										(item) => item.id === option.id
@@ -413,21 +415,25 @@ export const Form = () => {
 							?.id === "ORDER_AND_ACCOUNT_ISSUES" && (
 							<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 								<div className="space-y-1">
-									<div>Order Id</div>
+									<div>{t("form-order-id-title")}</div>
 									<input
 										type="text"
-										placeholder="Your CHITUBOX Order ID (optional)"
+										placeholder={t(
+											"form-order-id-placeholder"
+										)}
 										className="block w-full h-12 px-4 py-1.5
 										bg-neutral-100 rounded-md outline-none"
 									/>
 								</div>
 							</div>
 						)}
-						{/* {(state.formType as FormTypeOption)?.key ===
-							"BUG_REPORTING" && (
+						{(state.dedicatedFields?.formType as DropdownOption)
+							?.id === "BUG_REPORTING" && (
 							<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 								<div className="space-y-1">
-									<div>OS</div>
+									<div>
+										{t("form-operating-system-title")}
+									</div>
 									<input
 										type="text"
 										placeholder="e.g. Windows 11 Pro 23H2"
@@ -436,7 +442,9 @@ export const Form = () => {
 									/>
 								</div>
 								<div className="space-y-1">
-									<div>Software Version</div>
+									<div>
+										{t("form-software-version-title")}
+									</div>
 									<input
 										type="text"
 										placeholder="e.g. 1.0.0"
@@ -463,7 +471,9 @@ export const Form = () => {
 									/>
 								</div>
 								<div className="space-y-1">
-									<div>GPU Driver Version</div>
+									<div>
+										{t("form-gpu-driver-version-title")}
+									</div>
 									<input
 										type="text"
 										placeholder="e.g. 576.02"
@@ -472,30 +482,30 @@ export const Form = () => {
 									/>
 								</div>
 								<div className="space-y-1">
-									<div>RAM Volume</div>
+									<div>{t("from-ram-volume-title")}</div>
 									<IntegerInput
 										placeholder="e.g. 32"
 										unit="GB"
 									/>
 								</div>
 								<div className="space-y-1">
-									<div>Storage Volume</div>
+									<div>{t("form-storage-volume-title")}</div>
 									<IntegerInput
 										placeholder="e.g. 2048"
 										unit="GB"
 									/>
 								</div>
 							</div>
-						)} */}
+						)}
 						{/* description */}
 						<textarea
 							className="w-full h-40 px-4 py-1.5
 							bg-neutral-100 rounded-md outline-none"
-							placeholder="Please describe your issues in detail (required)"
+							placeholder={t("form-description-placeholder")}
 						></textarea>
 						{/* attachment */}
 						<div className="space-y-1">
-							<div>Attachment</div>
+							<div>{t("form-attachment-title")}</div>
 							<div
 								className="w-32 h-20
 								bg-neutral-100"
@@ -509,7 +519,7 @@ export const Form = () => {
 							bg-[#2B7FFF]/80
 							rounded-full"
 						>
-							Submit
+							{t("form-submit-button")}
 						</button>
 					</div>
 				</form>

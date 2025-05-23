@@ -53,6 +53,26 @@
 		},
 		"comparison": {
 			"title": "Comparison"
+		},
+		"software-feedback": {
+			"form-title": "Software Feedback",
+			"form-subtitle": "Please submit your ticket, and we will contact you as soon as possible.",
+			"form-name-placeholder": "Name (required)",
+			"form-email-placeholder": "Email (required)",
+			"form-country-title": "Country/Region",
+			"form-country-placeholder": "Please select your country/region",
+			"form-issue-type-title": "What is your issue about?",
+			"form-issue-type-placeholder": "Please select your feedback type",
+			"form-order-id-title": "Order ID",
+			"form-order-id-placeholder": "Please enter your CHITUBOX order ID",
+			"form-operating-system-title": "OS",
+			"form-software-version-title": "Software Version",
+			"form-gpu-driver-version-title": "GPU Driver Version",
+			"from-ram-volume-title": "RAM Volume",
+			"form-storage-volume-title": "Storage Volume",
+			"form-description-placeholder": "Please describe your issue in detail (required)",
+			"form-attachment-title": "Attachment",
+			"form-submit-button": "Submit"
 		}
 	},
 	"footer": {
