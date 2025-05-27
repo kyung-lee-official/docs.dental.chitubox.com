@@ -6,7 +6,7 @@ export const formTypes: DropdownOption[] = [
 	{ id: "BUG_REPORTING" },
 	{ id: "USAGE_HELP" },
 	{ id: "SUGGESTIONS" },
-	{ id: "OTHER" },
+	{ id: "OTHER_ISSUES" },
 ];
 
 export const formTypesEnUS = [
@@ -14,14 +14,14 @@ export const formTypesEnUS = [
 	{ id: "BUG_REPORTING", value: "Bug Reporting" },
 	{ id: "USAGE_HELP", value: "Usage Help" },
 	{ id: "SUGGESTIONS", value: "Suggestions" },
-	{ id: "OTHER", value: "Other" },
+	{ id: "OTHER_ISSUES", value: "Other" },
 ];
 export const formTypesZhCN = [
 	{ id: "ORDER_AND_ACCOUNT_ISSUES", value: "订单和账户问题" },
 	{ id: "BUG_REPORTING", value: "错误报告" },
 	{ id: "USAGE_HELP", value: "使用帮助" },
 	{ id: "SUGGESTIONS", value: "建议" },
-	{ id: "OTHER", value: "其他" },
+	{ id: "OTHER_ISSUES", value: "其他" },
 ];
 
 export const formTypeSchema = z.union([
@@ -29,7 +29,7 @@ export const formTypeSchema = z.union([
 	z.literal("BUG_REPORTING"),
 	z.literal("USAGE_HELP"),
 	z.literal("SUGGESTIONS"),
-	z.literal("OTHER"),
+	z.literal("OTHER_ISSUES"),
 ]);
 export type FormType = z.infer<typeof formTypeSchema>;
 
@@ -77,7 +77,7 @@ export const suggestionsSchema = z.object({
 });
 
 export const otherSchema = z.object({
-	formType: z.literal("OTHER"),
+	formType: z.literal("OTHER_ISSUES"),
 	description: z.string(),
 });
 
@@ -132,7 +132,7 @@ export const suggestionsSchemaLoose = z.object({
 });
 
 export const otherSchemaLoose = z.object({
-	formType: z.object({ id: z.literal("OTHER") }),
+	formType: z.object({ id: z.literal("OTHER_ISSUES") }),
 	description: z.string().nullable(),
 });
 

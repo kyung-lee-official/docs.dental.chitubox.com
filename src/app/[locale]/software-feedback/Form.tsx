@@ -116,9 +116,9 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 						description: "",
 					} as const;
 					break;
-				case "OTHER":
+				case "OTHER_ISSUES":
 					newDedicatedFields = {
-						formType: { id: "OTHER" },
+						formType: { id: "OTHER_ISSUES" },
 						description: "",
 					} as const;
 					break;
@@ -336,7 +336,6 @@ export const Form = () => {
 									const value = countryList.find((c) => {
 										return c.id === opt.id;
 									})!.value;
-									console.log(value);
 									return value;
 								}}
 								searchInputClassName="w-full p-2 border-b border-neutral-200 outline-none"
