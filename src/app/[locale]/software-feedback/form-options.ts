@@ -1,5 +1,6 @@
 import { DropdownOption } from "@/components/universal-dropdown/dropdown/Dropdown";
 import { z } from "zod";
+import { countryCodes } from "./countries";
 
 export const formTypes: DropdownOption[] = [
 	{ id: "ORDER_AND_ACCOUNT_ISSUES" },
@@ -43,7 +44,7 @@ export type Country = z.infer<typeof countrySchema>;
 const commonFields = {
 	name: z.string().min(1).max(50),
 	email: z.string().email(),
-	country: countrySchema,
+	country: z.enum(countryCodes),
 	attachments: z.array(z.string()),
 };
 
@@ -81,7 +82,7 @@ export const otherSchema = z.object({
 	description: z.string(),
 });
 
-const formSchema = z.object({
+export const formSchema = z.object({
 	...commonFields,
 	dedicatedFields: z.discriminatedUnion("formType", [
 		orderAndAccountIssuesSchema,
@@ -103,13 +104,13 @@ const commonFieldsLoose = {
 };
 
 export const orderAndAccountIssuesSchemaLoose = z.object({
-	formType: z.object({ id: z.literal("ORDER_AND_ACCOUNT_ISSUES") }),
+	formType: z.literal("ORDER_AND_ACCOUNT_ISSUES"),
 	orderId: z.string().min(1).nullable(),
 	description: z.string().nullable(),
 });
 
 export const bugReportingSchemaLoose = z.object({
-	formType: z.object({ id: z.literal("BUG_REPORTING") }),
+	formType: z.literal("BUG_REPORTING"),
 	os: z.string().nullable(),
 	softwareVersion: z.string().nullable(),
 	cpu: z.string().nullable(),
@@ -121,18 +122,18 @@ export const bugReportingSchemaLoose = z.object({
 });
 
 export const usageHelpSchemaLoose = z.object({
-	formType: z.object({ id: z.literal("USAGE_HELP") }),
+	formType: z.literal("USAGE_HELP"),
 	softwareVersion: z.string().nullable(),
 	description: z.string().nullable(),
 });
 
 export const suggestionsSchemaLoose = z.object({
-	formType: z.object({ id: z.literal("SUGGESTIONS") }),
+	formType: z.literal("SUGGESTIONS"),
 	description: z.string().nullable(),
 });
 
 export const otherSchemaLoose = z.object({
-	formType: z.object({ id: z.literal("OTHER_ISSUES") }),
+	formType: z.literal("OTHER_ISSUES"),
 	description: z.string().nullable(),
 });
 

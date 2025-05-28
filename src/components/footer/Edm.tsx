@@ -14,7 +14,7 @@ import {
 	FacebookAuthProvider,
 } from "firebase/auth";
 import { useMutation } from "@tanstack/react-query";
-import { subscribeEdm } from "@/utils/api";
+import { subscribeEdm } from "@/utils/api/edm";
 import { useLocale, useTranslations } from "next-intl";
 
 const Google = ({ size, fill }: any) => {
@@ -104,7 +104,7 @@ export const Edm = () => {
 	const t = useTranslations();
 
 	return (
-		<div className="flex flex flex-col gap-[22px]">
+		<div className="flex flex-col gap-[22px]">
 			<div className="flex flex-col gap-[10px]">
 				<div className="text-[#E2E2E2] text-[14px]">
 					{t("footer.subDesc")}

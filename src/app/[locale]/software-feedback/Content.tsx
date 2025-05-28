@@ -4,6 +4,8 @@ import { Link } from "@/navigation";
 import dynamic from "next/dynamic";
 import { ReactNode } from "react";
 import { Form } from "./Form";
+import { QueryClientProvider } from "@tanstack/react-query";
+import queryClient from "@/utils/tanstack-query";
 
 const DynamicHero = dynamic(() => import("./DynamicHero"), {
 	ssr: false,
@@ -30,66 +32,68 @@ const DocNavItem = (props: { children: ReactNode }) => {
 
 export const Content = () => {
 	return (
-		<div className="w-full">
-			<DynamicHero />
-			<div
-				className="flex justify-center p-10 lg:p-20
-				bg-[#F1F5F9]"
-			>
+		<QueryClientProvider client={queryClient}>
+			<div className="w-full">
+				<DynamicHero />
 				<div
-					className="grid grid-cols-1 justify-items-stretch gap-8
-					lg:flex lg:min-w-0 lg:max-w-[1240px] lg:gap-8"
+					className="flex justify-center p-10 lg:p-20
+					bg-[#F1F5F9]"
 				>
-					<div className="flex-none lg:w-[324px] space-y-9">
-						<div
-							className="w-full p-10 space-y-8
-							bg-white
-							rounded-[16px]"
-						>
-							<h2 className="text-2xl font-bold">
-								Document Guides
-							</h2>
-							<div className="flex flex-col gap-4">
-								<DocNavItem>Tutorials</DocNavItem>
-								<DocNavItem>User Manual</DocNavItem>
-							</div>
-						</div>
-						<div
-							className="w-full p-12 space-y-8
-							bg-white
-							rounded-[16px]"
-						>
-							<div className="space-y-4">
+					<div
+						className="grid grid-cols-1 justify-items-stretch gap-8
+						lg:flex lg:min-w-0 lg:max-w-[1240px] lg:gap-8"
+					>
+						<div className="flex-none lg:w-[324px] space-y-9">
+							<div
+								className="w-full p-10 space-y-8
+								bg-white
+								rounded-[16px]"
+							>
 								<h2 className="text-2xl font-bold">
-									Community Groups
+									Document Guides
 								</h2>
-								<div className="flex flex-col gap-2.5">
-									<Link href={""}>Facebook</Link>
-									<Link href={""}>Discord</Link>
+								<div className="flex flex-col gap-4">
+									<DocNavItem>Tutorials</DocNavItem>
+									<DocNavItem>User Manual</DocNavItem>
 								</div>
 							</div>
-							<div className="space-y-4">
-								<h2 className="text-2xl font-bold">
-									Support Email
-								</h2>
-								<div
-									className="flex flex-col gap-2.5
-									text-blue-500"
-								>
-									<Link
-										href={
-											"mailto://support@dental.chitubox.com"
-										}
+							<div
+								className="w-full p-12 space-y-8
+								bg-white
+								rounded-[16px]"
+							>
+								<div className="space-y-4">
+									<h2 className="text-2xl font-bold">
+										Community Groups
+									</h2>
+									<div className="flex flex-col gap-2.5">
+										<Link href={""}>Facebook</Link>
+										<Link href={""}>Discord</Link>
+									</div>
+								</div>
+								<div className="space-y-4">
+									<h2 className="text-2xl font-bold">
+										Support Email
+									</h2>
+									<div
+										className="flex flex-col gap-2.5
+										text-blue-500"
 									>
-										support@dental.chitubox.com
-									</Link>
+										<Link
+											href={
+												"mailto://support@dental.chitubox.com"
+											}
+										>
+											support@dental.chitubox.com
+										</Link>
+									</div>
 								</div>
 							</div>
 						</div>
+						<Form />
 					</div>
-					<Form />
 				</div>
 			</div>
-		</div>
+		</QueryClientProvider>
 	);
 };

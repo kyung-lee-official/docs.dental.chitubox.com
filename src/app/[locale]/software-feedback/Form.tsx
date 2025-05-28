@@ -6,6 +6,8 @@ import {
 } from "@/components/universal-dropdown/dropdown/Dropdown";
 import {
 	bugReportingSchemaLoose,
+	formSchema,
+	formSchemaLoose,
 	FormState,
 	FormStateLoose,
 	formTypes,
@@ -21,6 +23,8 @@ import { z } from "zod";
 import { countries } from "./countries";
 import { useLocale, useTranslations } from "next-intl";
 import { IntegerInput } from "@/components/input/integer-input/IntegerInput";
+import { useMutation } from "@tanstack/react-query";
+import { useForm } from "react-hook-form";
 
 const initialState: FormStateLoose = {
 	name: "",
@@ -85,14 +89,14 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 			switch (action.payload.id) {
 				case "ORDER_AND_ACCOUNT_ISSUES":
 					newDedicatedFields = {
-						formType: { id: "ORDER_AND_ACCOUNT_ISSUES" },
+						formType: "ORDER_AND_ACCOUNT_ISSUES",
 						orderId: "",
 						description: "",
 					} as const;
 					break;
 				case "BUG_REPORTING":
 					newDedicatedFields = {
-						formType: { id: "BUG_REPORTING" },
+						formType: "BUG_REPORTING",
 						os: null,
 						softwareVersion: "",
 						cpu: null,
@@ -105,25 +109,29 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 					break;
 				case "USAGE_HELP":
 					newDedicatedFields = {
-						formType: { id: "USAGE_HELP" },
+						formType: "USAGE_HELP",
 						softwareVersion: "",
 						description: "",
 					} as const;
 					break;
 				case "SUGGESTIONS":
 					newDedicatedFields = {
-						formType: { id: "SUGGESTIONS" },
+						formType: "SUGGESTIONS",
 						description: "",
 					} as const;
 					break;
 				case "OTHER_ISSUES":
 					newDedicatedFields = {
-						formType: { id: "OTHER_ISSUES" },
+						formType: "OTHER_ISSUES",
 						description: "",
 					} as const;
 					break;
 				default:
-					newDedicatedFields = state.dedicatedFields;
+					newDedicatedFields = {
+						formType: "OTHER_ISSUES",
+						description: "",
+					} as const;
+					break;
 			}
 			return {
 				...state,
@@ -131,8 +139,7 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 			};
 		case "ORDER_ID":
 			if (
-				state.dedicatedFields?.formType?.id ===
-				"ORDER_AND_ACCOUNT_ISSUES"
+				state.dedicatedFields?.formType === "ORDER_AND_ACCOUNT_ISSUES"
 			) {
 				return {
 					...state,
@@ -143,7 +150,7 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 				};
 			}
 		case "SET_COMPUTER_SPECS_OS":
-			if (state.dedicatedFields?.formType?.id === "BUG_REPORTING") {
+			if (state.dedicatedFields?.formType === "BUG_REPORTING") {
 				return {
 					...state,
 					dedicatedFields: {
@@ -153,7 +160,7 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 				};
 			}
 		case "SET_SOFTWARE_VERSION":
-			if (state.dedicatedFields?.formType?.id === "BUG_REPORTING") {
+			if (state.dedicatedFields?.formType === "BUG_REPORTING") {
 				return {
 					...state,
 					dedicatedFields: {
@@ -164,7 +171,7 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 			}
 
 		case "SET_COMPUTER_SPECS_CPU":
-			if (state.dedicatedFields?.formType?.id === "BUG_REPORTING") {
+			if (state.dedicatedFields?.formType === "BUG_REPORTING") {
 				return {
 					...state,
 					dedicatedFields: {
@@ -174,7 +181,7 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 				};
 			}
 		case "SET_COMPUTER_SPECS_GPU":
-			if (state.dedicatedFields?.formType?.id === "BUG_REPORTING") {
+			if (state.dedicatedFields?.formType === "BUG_REPORTING") {
 				return {
 					...state,
 					dedicatedFields: {
@@ -184,7 +191,7 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 				};
 			}
 		case "SET_COMPUTER_SPECS_GPU_DRIVER_VERSION":
-			if (state.dedicatedFields?.formType?.id === "BUG_REPORTING") {
+			if (state.dedicatedFields?.formType === "BUG_REPORTING") {
 				return {
 					...state,
 					dedicatedFields: {
@@ -195,7 +202,7 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 			}
 
 		case "SET_COMPUTER_SPECS_RAM_VOLUME":
-			if (state.dedicatedFields?.formType?.id === "BUG_REPORTING") {
+			if (state.dedicatedFields?.formType === "BUG_REPORTING") {
 				return {
 					...state,
 					dedicatedFields: {
@@ -205,7 +212,7 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 				};
 			}
 		case "SET_COMPUTER_SPECS_STORAGE_VOLUME":
-			if (state.dedicatedFields?.formType?.id === "BUG_REPORTING") {
+			if (state.dedicatedFields?.formType === "BUG_REPORTING") {
 				return {
 					...state,
 					dedicatedFields: {
@@ -214,6 +221,16 @@ const reducer = (state: FormStateLoose, action: Action): FormStateLoose => {
 					},
 				};
 			}
+		case "SET_DESCRIPTION":
+			return {
+				...state,
+				dedicatedFields: state.dedicatedFields
+					? {
+							...state.dedicatedFields,
+							description: action.payload as string,
+					  }
+					: null,
+			};
 		default:
 			return state;
 	}
@@ -250,6 +267,24 @@ export const Form = () => {
 
 	const [state, dispatch] = useReducer(reducer, initialState);
 
+	function validate(data: FormStateLoose) {
+		const result = formSchema.safeParse(data);
+		if (!result.success) {
+			console.error(result.error);
+			return false;
+		}
+		return true;
+	}
+
+	const mutation = useMutation({
+		mutationFn: async (data: FormState) => {
+			console.log(data);
+			// await dentalUserFeedback(data);
+		},
+		onSuccess: () => {},
+		onError: (error) => {},
+	});
+
 	return (
 		<div
 			className="flex-auto lg:w-[884px] p-12 
@@ -279,6 +314,12 @@ export const Form = () => {
 							placeholder={t("form-name-placeholder")}
 							className="block w-full h-12 px-4 py-1.5
 							bg-neutral-100 rounded-md outline-none"
+							onChange={(e) =>
+								dispatch({
+									type: "SET_NAME",
+									payload: e.target.value,
+								})
+							}
 						/>
 						{/* email */}
 						<input
@@ -286,6 +327,12 @@ export const Form = () => {
 							placeholder={t("form-email-placeholder")}
 							className="block w-full h-12 px-4 py-1.5
 							bg-neutral-100 rounded-md outline-none"
+							onChange={(e) =>
+								dispatch({
+									type: "SET_EMAIL",
+									payload: e.target.value,
+								})
+							}
 						/>
 						{/* region */}
 						<div className="space-y-1">
@@ -357,8 +404,9 @@ export const Form = () => {
 								mode="regular"
 								options={formTypes}
 								selected={
-									state.dedicatedFields
-										?.formType as DropdownOption
+									{
+										id: state.dedicatedFields?.formType,
+									} as DropdownOption
 								}
 								setSelected={(value) =>
 									dispatch({
@@ -410,8 +458,8 @@ export const Form = () => {
 								}}
 							/>
 						</div>
-						{(state.dedicatedFields?.formType as DropdownOption)
-							?.id === "ORDER_AND_ACCOUNT_ISSUES" && (
+						{state.dedicatedFields?.formType ===
+							"ORDER_AND_ACCOUNT_ISSUES" && (
 							<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 								<div className="space-y-1">
 									<div>{t("form-order-id-title")}</div>
@@ -422,12 +470,18 @@ export const Form = () => {
 										)}
 										className="block w-full h-12 px-4 py-1.5
 										bg-neutral-100 rounded-md outline-none"
+										onChange={(e) => {
+											dispatch({
+												type: "ORDER_ID",
+												payload: e.target.value,
+											});
+										}}
 									/>
 								</div>
 							</div>
 						)}
-						{(state.dedicatedFields?.formType as DropdownOption)
-							?.id === "BUG_REPORTING" && (
+						{state.dedicatedFields?.formType ===
+							"BUG_REPORTING" && (
 							<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 								<div className="space-y-1">
 									<div>
@@ -438,6 +492,12 @@ export const Form = () => {
 										placeholder="e.g. Windows 11 Pro 23H2"
 										className="block w-full h-12 px-4 py-1.5
 										bg-neutral-100 rounded-md outline-none"
+										onChange={(e) =>
+											dispatch({
+												type: "SET_COMPUTER_SPECS_OS",
+												payload: e.target.value,
+											})
+										}
 									/>
 								</div>
 								<div className="space-y-1">
@@ -449,6 +509,12 @@ export const Form = () => {
 										placeholder="e.g. 1.0.0"
 										className="block w-full h-12 px-4 py-1.5
 										bg-neutral-100 rounded-md outline-none"
+										onChange={(e) =>
+											dispatch({
+												type: "SET_SOFTWARE_VERSION",
+												payload: e.target.value,
+											})
+										}
 									/>
 								</div>
 								<div className="space-y-1">
@@ -458,6 +524,12 @@ export const Form = () => {
 										placeholder="e.g. Intel Core i7-12700K"
 										className="block w-full h-12 px-4 py-1.5
 										bg-neutral-100 rounded-md outline-none"
+										onChange={(e) =>
+											dispatch({
+												type: "SET_COMPUTER_SPECS_CPU",
+												payload: e.target.value,
+											})
+										}
 									/>
 								</div>
 								<div className="space-y-1">
@@ -467,6 +539,12 @@ export const Form = () => {
 										placeholder="e.g. NVIDIA GeForce RTX 3080"
 										className="block w-full h-12 px-4 py-1.5
 										bg-neutral-100 rounded-md outline-none"
+										onChange={(e) =>
+											dispatch({
+												type: "SET_COMPUTER_SPECS_GPU",
+												payload: e.target.value,
+											})
+										}
 									/>
 								</div>
 								<div className="space-y-1">
@@ -478,6 +556,12 @@ export const Form = () => {
 										placeholder="e.g. 576.02"
 										className="block w-full h-12 px-4 py-1.5
 										bg-neutral-100 rounded-md outline-none"
+										onChange={(e) =>
+											dispatch({
+												type: "SET_COMPUTER_SPECS_GPU_DRIVER_VERSION",
+												payload: e.target.value,
+											})
+										}
 									/>
 								</div>
 								<div className="space-y-1">
@@ -485,6 +569,12 @@ export const Form = () => {
 									<IntegerInput
 										placeholder="e.g. 32"
 										unit="GB"
+										onChange={(value) =>
+											dispatch({
+												type: "SET_COMPUTER_SPECS_RAM_VOLUME",
+												payload: value,
+											})
+										}
 									/>
 								</div>
 								<div className="space-y-1">
@@ -492,6 +582,12 @@ export const Form = () => {
 									<IntegerInput
 										placeholder="e.g. 2048"
 										unit="GB"
+										onChange={(value) =>
+											dispatch({
+												type: "SET_COMPUTER_SPECS_STORAGE_VOLUME",
+												payload: value,
+											})
+										}
 									/>
 								</div>
 							</div>
@@ -501,6 +597,12 @@ export const Form = () => {
 							className="w-full h-40 px-4 py-1.5
 							bg-neutral-100 rounded-md outline-none"
 							placeholder={t("form-description-placeholder")}
+							onChange={(e) => {
+								dispatch({
+									type: "SET_DESCRIPTION",
+									payload: e.target.value,
+								});
+							}}
 						></textarea>
 						{/* attachment */}
 						<div className="space-y-1">
@@ -517,6 +619,20 @@ export const Form = () => {
 							text-white/50
 							bg-[#2B7FFF]/80
 							rounded-full"
+							onClick={(e) => {
+								e.preventDefault();
+								const formState = {
+									...state,
+									country: state.country?.id,
+								};
+								/* validate formState */
+								const result = formSchema.safeParse(formState);
+								if (!result.success) {
+									console.error(result.error);
+									return;
+								}
+								mutation.mutate(formState as FormState);
+							}}
 						>
 							{t("form-submit-button")}
 						</button>
