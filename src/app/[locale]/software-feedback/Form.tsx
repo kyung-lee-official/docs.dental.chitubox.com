@@ -575,8 +575,6 @@ export const Form = () => {
 							rounded-full transition-colors duration-200 cursor-pointer`}
 							onClick={(e) => {
 								e.preventDefault();
-								console.log(values);
-								console.log(errors);
 								handleSubmit(onSubmit)();
 							}}
 						>
