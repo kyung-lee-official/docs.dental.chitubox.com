@@ -82,7 +82,7 @@ export const otherSchema = z.object({
 	description: z.string(),
 });
 
-export const formSchema = z.object({
+export const dtoSchema = z.object({
 	...commonFields,
 	dedicatedFields: z.discriminatedUnion("formType", [
 		orderAndAccountIssuesSchema,
@@ -92,61 +92,69 @@ export const formSchema = z.object({
 		otherSchema,
 	]),
 });
+export type CreateChituboxDentalUserFeedbackDto = z.infer<typeof dtoSchema>;
+export type FormTypeLiteral =
+	CreateChituboxDentalUserFeedbackDto["dedicatedFields"]["formType"];
 
-export type FormState = z.infer<typeof formSchema>;
-export type FormTypeLiteral = FormState["dedicatedFields"]["formType"];
-
-const commonFieldsLoose = {
-	name: z.string().min(1).max(50).nullable(),
-	email: z.string().email().nullable(),
-	country: z.object({ id: z.string(), value: z.string() }).nullable(),
+const commonFieldsForm = {
+	name: z.string().min(1).max(50),
+	email: z.string().email(),
+	country: z.object({ id: z.string(), value: z.string() }),
 	attachments: z.array(z.string()),
 };
 
 export const orderAndAccountIssuesSchemaLoose = z.object({
-	formType: z.literal("ORDER_AND_ACCOUNT_ISSUES"),
-	orderId: z.string().min(1).nullable(),
-	description: z.string().nullable(),
+	formType: z.object({
+		id: z.literal("ORDER_AND_ACCOUNT_ISSUES"),
+	}),
+	orderId: z.string().min(1),
+	description: z.string().min(3),
 });
 
 export const bugReportingSchemaLoose = z.object({
-	formType: z.literal("BUG_REPORTING"),
-	os: z.string().nullable(),
-	softwareVersion: z.string().nullable(),
-	cpu: z.string().nullable(),
-	gpu: z.string().nullable(),
-	gpuDriverVersion: z.string().nullable(),
-	ramVolume: z.number().nullable(),
-	storageVolume: z.number().nullable(),
-	description: z.string().nullable(),
+	formType: z.object({
+		id: z.literal("BUG_REPORTING"),
+	}),
+	os: z.string().min(3),
+	softwareVersion: z.string().min(3),
+	cpu: z.string().min(2),
+	gpu: z.string().min(3),
+	gpuDriverVersion: z.string().min(3),
+	ramVolume: z.number().min(1),
+	storageVolume: z.number().min(1),
+	description: z.string().min(3),
 });
 
 export const usageHelpSchemaLoose = z.object({
-	formType: z.literal("USAGE_HELP"),
-	softwareVersion: z.string().nullable(),
-	description: z.string().nullable(),
+	formType: z.object({
+		id: z.literal("USAGE_HELP"),
+	}),
+	softwareVersion: z.string().min(3),
+	description: z.string().min(3),
 });
 
 export const suggestionsSchemaLoose = z.object({
-	formType: z.literal("SUGGESTIONS"),
-	description: z.string().nullable(),
+	formType: z.object({
+		id: z.literal("SUGGESTIONS"),
+	}),
+	description: z.string().min(3),
 });
 
 export const otherSchemaLoose = z.object({
-	formType: z.literal("OTHER_ISSUES"),
-	description: z.string().nullable(),
+	formType: z.object({
+		id: z.literal("OTHER_ISSUES"),
+	}),
+	description: z.string().min(3),
 });
 
-export const formSchemaLoose = z.object({
-	...commonFieldsLoose,
-	dedicatedFields: z
-		.union([
-			orderAndAccountIssuesSchemaLoose,
-			bugReportingSchemaLoose,
-			usageHelpSchemaLoose,
-			suggestionsSchemaLoose,
-			otherSchemaLoose,
-		])
-		.nullable(),
+export const formSchema = z.object({
+	...commonFieldsForm,
+	dedicatedFields: z.union([
+		orderAndAccountIssuesSchemaLoose,
+		bugReportingSchemaLoose,
+		usageHelpSchemaLoose,
+		suggestionsSchemaLoose,
+		otherSchemaLoose,
+	]),
 });
-export type FormStateLoose = z.infer<typeof formSchemaLoose>;
+export type FormState = z.infer<typeof formSchema>;
