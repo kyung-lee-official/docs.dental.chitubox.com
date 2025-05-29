@@ -41,120 +41,137 @@ const countrySchema = z.object({
 });
 export type Country = z.infer<typeof countrySchema>;
 
-const commonFields = {
-	name: z.string().min(1).max(50),
-	email: z.string().email(),
-	country: z.enum(countryCodes),
-	attachments: z.array(z.string()),
-};
+const countryEnumSchema = z.enum(countryCodes);
+const countryObjectSchema = z.object({ id: z.string(), value: z.string() });
 
-export const orderAndAccountIssuesSchema = z.object({
-	formType: z.literal("ORDER_AND_ACCOUNT_ISSUES"),
-	orderId: z.string().min(1),
-	description: z.string(),
-});
+const nameSchema = z.string().min(1).max(50);
+const emailSchema = z.string().email();
+const attachmentsSchema = z.array(z.string());
 
-export const bugReportingSchema = z.object({
-	formType: z.literal("BUG_REPORTING"),
-	os: z.string(),
-	softwareVersion: z.string(),
-	cpu: z.string(),
-	gpu: z.string(),
-	gpuDriverVersion: z.string(),
-	ramVolume: z.number(),
-	storageVolume: z.number(),
-	description: z.string(),
-});
+function makeOrderAndAccountIssuesSchemas() {
+	return {
+		dto: z.object({
+			formType: z.literal("ORDER_AND_ACCOUNT_ISSUES"),
+			orderId: z.string().min(1),
+			description: z.string(),
+		}),
+		form: z.object({
+			formType: z.object({ id: z.literal("ORDER_AND_ACCOUNT_ISSUES") }),
+			orderId: z.string().min(1),
+			description: z.string().min(3),
+		}),
+	};
+}
+const orderAndAccountIssuesSchemas = makeOrderAndAccountIssuesSchemas();
 
-export const usageHelpSchema = z.object({
-	formType: z.literal("USAGE_HELP"),
-	softwareVersion: z.string(),
-	description: z.string(),
-});
+function makeBugReportingSchemas() {
+	return {
+		dto: z.object({
+			formType: z.literal("BUG_REPORTING"),
+			os: z.string().min(3),
+			softwareVersion: z.string().min(3),
+			cpu: z.string().min(2),
+			gpu: z.string().min(3),
+			gpuDriverVersion: z.string().min(3),
+			ramVolume: z.number().min(1),
+			storageVolume: z.number().min(1),
+			description: z.string().min(3),
+		}),
+		form: z.object({
+			formType: z.object({
+				id: z.literal("BUG_REPORTING"),
+			}),
+			os: z.string().min(3),
+			softwareVersion: z.string().min(3),
+			cpu: z.string().min(2),
+			gpu: z.string().min(3),
+			gpuDriverVersion: z.string().min(3),
+			ramVolume: z.number().min(1),
+			storageVolume: z.number().min(1),
+			description: z.string().min(3),
+		}),
+	};
+}
+const bugReportingSchemas = makeBugReportingSchemas();
 
-export const suggestionsSchema = z.object({
-	formType: z.literal("SUGGESTIONS"),
-	description: z.string(),
-});
+function makeUsageHelpSchemas() {
+	return {
+		dto: z.object({
+			formType: z.literal("USAGE_HELP"),
+			softwareVersion: z.string().min(3),
+			description: z.string().min(3),
+		}),
+		form: z.object({
+			formType: z.object({
+				id: z.literal("USAGE_HELP"),
+			}),
+			softwareVersion: z.string().min(3),
+			description: z.string().min(3),
+		}),
+	};
+}
+const usageHelpSchemas = makeUsageHelpSchemas();
 
-export const otherSchema = z.object({
-	formType: z.literal("OTHER_ISSUES"),
-	description: z.string(),
-});
+function makeSuggestionsSchemas() {
+	return {
+		dto: z.object({
+			formType: z.literal("SUGGESTIONS"),
+			description: z.string().min(3),
+		}),
+		form: z.object({
+			formType: z.object({
+				id: z.literal("SUGGESTIONS"),
+			}),
+			description: z.string().min(3),
+		}),
+	};
+}
+const suggestionsSchemas = makeSuggestionsSchemas();
+
+function makeOtherSchemas() {
+	return {
+		dto: z.object({
+			formType: z.literal("OTHER_ISSUES"),
+			description: z.string().min(3),
+		}),
+		form: z.object({
+			formType: z.object({
+				id: z.literal("OTHER_ISSUES"),
+			}),
+			description: z.string().min(3),
+		}),
+	};
+}
+const otherSchemas = makeOtherSchemas();
 
 export const dtoSchema = z.object({
-	...commonFields,
+	name: nameSchema,
+	email: emailSchema,
+	country: countryEnumSchema,
+	attachments: attachmentsSchema,
 	dedicatedFields: z.discriminatedUnion("formType", [
-		orderAndAccountIssuesSchema,
-		bugReportingSchema,
-		usageHelpSchema,
-		suggestionsSchema,
-		otherSchema,
+		orderAndAccountIssuesSchemas.dto,
+		bugReportingSchemas.dto,
+		usageHelpSchemas.dto,
+		suggestionsSchemas.dto,
+		otherSchemas.dto,
 	]),
 });
 export type CreateChituboxDentalUserFeedbackDto = z.infer<typeof dtoSchema>;
 export type FormTypeLiteral =
 	CreateChituboxDentalUserFeedbackDto["dedicatedFields"]["formType"];
 
-const commonFieldsForm = {
-	name: z.string().min(1).max(50),
-	email: z.string().email(),
-	country: z.object({ id: z.string(), value: z.string() }),
-	attachments: z.array(z.string()),
-};
-
-export const orderAndAccountIssuesSchemaLoose = z.object({
-	formType: z.object({
-		id: z.literal("ORDER_AND_ACCOUNT_ISSUES"),
-	}),
-	orderId: z.string().min(1),
-	description: z.string().min(3),
-});
-
-export const bugReportingSchemaLoose = z.object({
-	formType: z.object({
-		id: z.literal("BUG_REPORTING"),
-	}),
-	os: z.string().min(3),
-	softwareVersion: z.string().min(3),
-	cpu: z.string().min(2),
-	gpu: z.string().min(3),
-	gpuDriverVersion: z.string().min(3),
-	ramVolume: z.number().min(1),
-	storageVolume: z.number().min(1),
-	description: z.string().min(3),
-});
-
-export const usageHelpSchemaLoose = z.object({
-	formType: z.object({
-		id: z.literal("USAGE_HELP"),
-	}),
-	softwareVersion: z.string().min(3),
-	description: z.string().min(3),
-});
-
-export const suggestionsSchemaLoose = z.object({
-	formType: z.object({
-		id: z.literal("SUGGESTIONS"),
-	}),
-	description: z.string().min(3),
-});
-
-export const otherSchemaLoose = z.object({
-	formType: z.object({
-		id: z.literal("OTHER_ISSUES"),
-	}),
-	description: z.string().min(3),
-});
-
 export const formSchema = z.object({
-	...commonFieldsForm,
+	name: nameSchema,
+	email: emailSchema,
+	country: countryObjectSchema,
+	attachments: attachmentsSchema,
 	dedicatedFields: z.union([
-		orderAndAccountIssuesSchemaLoose,
-		bugReportingSchemaLoose,
-		usageHelpSchemaLoose,
-		suggestionsSchemaLoose,
-		otherSchemaLoose,
+		orderAndAccountIssuesSchemas.form,
+		bugReportingSchemas.form,
+		usageHelpSchemas.form,
+		suggestionsSchemas.form,
+		otherSchemas.form,
 	]),
 });
 export type FormState = z.infer<typeof formSchema>;
