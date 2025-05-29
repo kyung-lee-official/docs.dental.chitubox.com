@@ -15,6 +15,7 @@ import { IntegerInput } from "@/components/input/integer-input/IntegerInput";
 import { useMutation } from "@tanstack/react-query";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { dentalUserFeedback } from "@/utils/api/dental-user-feedback";
 
 export const Form = () => {
 	const locale = useLocale();
@@ -66,6 +67,9 @@ export const Form = () => {
 		 */
 		mode: "onSubmit",
 		resolver: zodResolver(formSchema),
+		defaultValues: {
+			attachments: [],
+		},
 	});
 	const values = watch();
 
@@ -78,15 +82,12 @@ export const Form = () => {
 				formType: values.dedicatedFields?.formType?.id,
 			},
 		};
-		console.log("formState", formState);
-		console.log("errors", errors);
 		mutation.mutate(formState as CreateChituboxDentalUserFeedbackDto);
 	}
 
 	const mutation = useMutation({
 		mutationFn: async (data: CreateChituboxDentalUserFeedbackDto) => {
-			console.log(data);
-			// await dentalUserFeedback(data);
+			await dentalUserFeedback(data);
 		},
 		onSuccess: () => {},
 		onError: (error) => {},
@@ -543,10 +544,27 @@ export const Form = () => {
 						{/* attachment */}
 						<div className="space-y-1">
 							<div>{t("form-attachment-title")}</div>
-							<div
-								className="w-32 h-20
-								bg-neutral-100"
-							></div>
+							<Controller
+								control={control}
+								name="attachments"
+								render={({ field }) => (
+									<input
+										type="file"
+										accept=".png,.jpg,.jpeg,.pdf"
+										className="block w-full h-12 px-4 py-1.5
+										bg-neutral-100 rounded-md outline-none"
+										onChange={(e) => {
+											if (e.target.files?.length) {
+												field.onChange(
+													Array.from(e.target.files)
+												);
+											} else {
+												field.onChange([]);
+											}
+										}}
+									/>
+								)}
+							/>
 						</div>
 					</div>
 					<div className="flex justify-center w-full">

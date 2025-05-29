@@ -41,3 +41,6 @@ next-env.d.ts
 /src/preload/docsContext.json
 /src/preload/flattenContext.json
 /src/preload/categoryUrlTable.json
+
+# ENV
+.env.local
