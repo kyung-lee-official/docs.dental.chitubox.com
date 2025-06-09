@@ -37,7 +37,7 @@ const enItems = [
 					</tr>
 					<tr>
 						<td>OS</td>
-						<td>Windows 7 (64-bit)</td>
+						<td>Windows 10 (64-bit)</td>
 						<td>Windows 10 or Windows 11</td>
 					</tr>
 					<tr>
@@ -166,7 +166,7 @@ const zhItems = [
 					</tr>
 					<tr>
 						<td>操作系统</td>
-						<td>Windows 7 (64-bit)</td>
+						<td>Windows 10 (64-bit)</td>
 						<td>Windows 10 或 Windows 11</td>
 					</tr>
 					<tr>
@@ -295,7 +295,7 @@ const zh_twItems = [
 					</tr>
 					<tr>
 						<td>操作系統</td>
-						<td>Windows 7 (64-bit)</td>
+						<td>Windows 10 (64-bit)</td>
 						<td>Windows 10 或 Windows 11</td>
 					</tr>
 					<tr>
