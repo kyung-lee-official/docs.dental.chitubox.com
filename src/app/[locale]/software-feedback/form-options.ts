@@ -47,6 +47,7 @@ const countryObjectSchema = z.object({ id: z.string(), value: z.string() });
 const nameSchema = z.string().min(1).max(50);
 const emailSchema = z.string().email();
 const attachmentsSchema = z.array(z.string());
+const attachmentsFileSchema = z.array(z.instanceof(File));
 
 function makeOrderAndAccountIssuesSchemas() {
 	return {
@@ -165,7 +166,7 @@ export const formSchema = z.object({
 	name: nameSchema,
 	email: emailSchema,
 	country: countryObjectSchema,
-	attachments: attachmentsSchema,
+	attachments: attachmentsFileSchema,
 	dedicatedFields: z.union([
 		orderAndAccountIssuesSchemas.form,
 		bugReportingSchemas.form,

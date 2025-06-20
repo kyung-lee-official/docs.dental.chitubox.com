@@ -84,7 +84,7 @@
 			"form-storage-volume-error": "Please enter your storage volume.",
 			"form-description-placeholder": "Please describe your issue in detail (required)",
 			"form-description-error": "Please describe your issue in detail.",
-			"form-attachment-title": "Attachment",
+			"form-attachment-title": "Attachments",
 			"form-submit-button": "Submit"
 		}
 	},

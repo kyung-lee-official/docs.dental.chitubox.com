@@ -16,6 +16,7 @@ import { useMutation } from "@tanstack/react-query";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { dentalUserFeedback } from "@/utils/api/dental-user-feedback";
+import { Attachments } from "./Attachments";
 
 export const Form = () => {
 	const locale = useLocale();
@@ -67,22 +68,21 @@ export const Form = () => {
 		 */
 		mode: "onSubmit",
 		resolver: zodResolver(formSchema),
-		defaultValues: {
-			attachments: [],
-		},
+		defaultValues: {},
 	});
 	const values = watch();
 
-	function onSubmit() {
-		const formState = {
+	async function onSubmit() {
+		const dto = {
 			...values,
 			country: values.country?.id,
+			attachments: [] as string[],
 			dedicatedFields: {
 				...values.dedicatedFields,
 				formType: values.dedicatedFields?.formType?.id,
 			},
 		};
-		mutation.mutate(formState as CreateChituboxDentalUserFeedbackDto);
+		mutation.mutate(dto as CreateChituboxDentalUserFeedbackDto);
 	}
 
 	const mutation = useMutation({
@@ -542,30 +542,18 @@ export const Form = () => {
 							)}
 						</div>
 						{/* attachment */}
-						<div className="space-y-1">
-							<div>{t("form-attachment-title")}</div>
-							<Controller
-								control={control}
-								name="attachments"
-								render={({ field }) => (
-									<input
-										type="file"
-										accept=".png,.jpg,.jpeg,.pdf"
-										className="block w-full h-12 px-4 py-1.5
-										bg-neutral-100 rounded-md outline-none"
-										onChange={(e) => {
-											if (e.target.files?.length) {
-												field.onChange(
-													Array.from(e.target.files)
-												);
-											} else {
-												field.onChange([]);
-											}
-										}}
+						<Controller
+							control={control}
+							name="attachments"
+							render={({ field, fieldState }) => {
+								return (
+									<Attachments
+										value={field.value}
+										onChange={field.onChange}
 									/>
-								)}
-							/>
-						</div>
+								);
+							}}
+						/>
 					</div>
 					<div className="flex justify-center w-full">
 						<button
