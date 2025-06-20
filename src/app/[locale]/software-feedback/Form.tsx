@@ -76,6 +76,10 @@ export const Form = () => {
 		const dto = {
 			...values,
 			country: values.country?.id,
+			/**
+			 * create record without attachments, attachments will be uploaded to OSS
+			 * and the URLs will be stored in the record.
+			 */
 			attachments: [] as string[],
 			dedicatedFields: {
 				...values.dedicatedFields,

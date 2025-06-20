@@ -43,4 +43,5 @@ next-env.d.ts
 /src/preload/categoryUrlTable.json
 
 # ENV
+.env
 .env.local
