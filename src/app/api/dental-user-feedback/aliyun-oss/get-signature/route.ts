@@ -4,11 +4,6 @@ export async function POST(request: Request) {
 	const body = await request.json();
 	const { fileName } = body;
 
-	// console.log(process.env.ALIYUN_OSS_ACCESS_KEY_ID);
-	// console.log(process.env.ALIYUN_OSS_ACCESS_SECRET);
-	// console.log(process.env.NEXT_PUBLIC_ALIYUN_OSS_REGION);
-	// console.log(process.env.NEXT_PUBLIC_ALIYUN_OSS_BUCKET);
-
 	const client = await new OSS({
 		accessKeyId: process.env.ALIYUN_OSS_ACCESS_KEY_ID,
 		accessKeySecret: process.env.ALIYUN_OSS_ACCESS_SECRET,
