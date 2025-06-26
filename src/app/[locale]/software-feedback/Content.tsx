@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 import { Form } from "./Form";
 import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "@/utils/tanstack-query";
+import { DiscordIcon, FacebookIcon } from "@/components/icons/Sns";
 
 const DynamicHero = dynamic(() => import("./DynamicHero"), {
 	ssr: false,
@@ -67,8 +68,24 @@ export const Content = () => {
 										Community Groups
 									</h2>
 									<div className="flex flex-col gap-2.5">
-										<Link href={""}>Facebook</Link>
-										<Link href={""}>Discord</Link>
+										<Link
+											href={
+												"https://www.facebook.com/chitubox"
+											}
+											className="flex items-center gap-2.5
+											text-blue-500"
+										>
+											<FacebookIcon size={24} /> Facebook
+										</Link>
+										<Link
+											href={
+												"https://discord.gg/E45UFqGPZh"
+											}
+											className="flex items-center gap-2.5
+											text-blue-500"
+										>
+											<DiscordIcon size={24} /> Discord
+										</Link>
 									</div>
 								</div>
 								<div className="space-y-4">
