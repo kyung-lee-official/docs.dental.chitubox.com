@@ -15,8 +15,9 @@ import { IntegerInput } from "@/components/input/integer-input/IntegerInput";
 import { useMutation } from "@tanstack/react-query";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { dentalUserFeedback } from "@/utils/api/dental-user-feedback";
+import { dentalUserFeedback } from "@/app/api/dental-user-feedback/dental-user-feedback";
 import { Attachments } from "./Attachments";
+import axios from "axios";
 
 export const Form = () => {
 	const locale = useLocale();
@@ -89,11 +90,46 @@ export const Form = () => {
 		mutation.mutate(dto as CreateChituboxDentalUserFeedbackDto);
 	}
 
+	async function onError(errors: any) {
+		console.error(errors);
+	}
+
+	async function uploadAttachments() {}
+
 	const mutation = useMutation({
 		mutationFn: async (data: CreateChituboxDentalUserFeedbackDto) => {
-			await dentalUserFeedback(data);
+			const feedback = await dentalUserFeedback(data);
+			if (!feedback.id) {
+				throw new Error(feedback.message);
+			}
+			const feedbackId = feedback.id;
+			/* upload attachments to OSS */
+			const attachments = values.attachments;
+			if (!attachments || attachments.length === 0) {
+				console.error("No files selected");
+				return;
+			}
+			for (const file of attachments) {
+				const res = await axios.post(
+					"/api/dental-user-feedback/aliyun-oss/get-signature",
+					{
+						fileName: `learn.dental.chitubox.com/user-feedback/attachments/${feedbackId}/${file.name}`,
+					},
+					{
+						headers: {
+							"Content-Type": "application/json",
+						},
+					}
+				);
+				const ossRes = await axios.put(res.data, file, {
+					headers: {
+						"Content-Type": "application/octet-stream",
+					},
+				});
+			}
+			return Array.from(attachments).map((file) => file.name);
 		},
-		onSuccess: () => {},
+		onSuccess: async () => {},
 		onError: (error) => {},
 	});
 
@@ -522,12 +558,6 @@ export const Form = () => {
 									)}
 							</div>
 						)}
-						{values.dedicatedFields?.formType?.id ===
-							"SUGGESTIONS" && (
-							<div className="space-y-1">
-								<div>{t("form-suggestions-title")}</div>
-							</div>
-						)}
 						{/* description */}
 						<div className="space-y-1">
 							<textarea
@@ -552,7 +582,7 @@ export const Form = () => {
 							render={({ field, fieldState }) => {
 								return (
 									<Attachments
-										value={field.value}
+										value={field.value ?? []}
 										onChange={field.onChange}
 									/>
 								);
@@ -567,7 +597,9 @@ export const Form = () => {
 							rounded-full transition-colors duration-200 cursor-pointer`}
 							onClick={(e) => {
 								e.preventDefault();
-								handleSubmit(onSubmit)();
+								console.log("before");
+								handleSubmit(onSubmit, onError)();
+								console.log("after");
 							}}
 						>
 							{t("form-submit-button")}
