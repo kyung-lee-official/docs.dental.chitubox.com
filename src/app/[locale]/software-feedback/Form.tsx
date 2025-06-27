@@ -176,9 +176,12 @@ export const Form = () => {
 							<div className="space-y-6">
 								<div className="space-y-1">
 									{/* name */}
+									<div>
+										{t("form-name-placeholder")}{" "}
+										<span className="text-red-500">*</span>
+									</div>
 									<input
 										type="text"
-										placeholder={t("form-name-placeholder")}
 										className="block w-full h-12 px-4 py-1.5
 										bg-neutral-100 rounded-md outline-none"
 										{...register("name")}
@@ -194,11 +197,12 @@ export const Form = () => {
 								</div>
 								<div className="space-y-1">
 									{/* email */}
+									<div>
+										{t("form-email-placeholder")}{" "}
+										<span className="text-red-500">*</span>
+									</div>
 									<input
 										type="email"
-										placeholder={t(
-											"form-email-placeholder"
-										)}
 										className="block w-full h-12 px-4 py-1.5
 										bg-neutral-100 rounded-md outline-none"
 										{...register("email")}
@@ -211,7 +215,10 @@ export const Form = () => {
 								</div>
 								<div className="space-y-1">
 									{/* country/region */}
-									<div>{t("form-country-title")}</div>
+									<div>
+										{t("form-country-title")}{" "}
+										<span className="text-red-500">*</span>
+									</div>
 									<Controller
 										control={control}
 										name="country"
@@ -220,13 +227,6 @@ export const Form = () => {
 												mode="search"
 												options={countryList}
 												selected={field.value}
-												// setSelected={(value) =>
-												// 	dispatch({
-												// 		type: "SET_COUNTRY",
-												// 		payload:
-												// 			value as DropdownOption,
-												// 	})
-												// }
 												setSelected={field.onChange}
 												placeholder={t(
 													"form-country-placeholder"
@@ -311,7 +311,10 @@ export const Form = () => {
 								</div>
 								{/* type */}
 								<div className="space-y-1">
-									<div>{t("form-issue-type-title")}</div>
+									<div>
+										{t("form-issue-type-title")}{" "}
+										<span className="text-red-500">*</span>
+									</div>
 									<Controller
 										control={control}
 										name="dedicatedFields.formType"
@@ -322,7 +325,7 @@ export const Form = () => {
 												selected={field.value as any}
 												setSelected={field.onChange}
 												placeholder={t(
-													"form-issue-type-title"
+													"form-issue-type-placeholder"
 												)}
 												getLabel={(option) => {
 													const formType =
@@ -647,6 +650,10 @@ export const Form = () => {
 								)}
 								{/* description */}
 								<div className="space-y-1">
+									<div>
+										{t("form-description-title")}{" "}
+										<span className="text-red-500">*</span>
+									</div>
 									<textarea
 										className="w-full h-40 px-4 py-1.5
 										bg-neutral-100 rounded-md outline-none"
