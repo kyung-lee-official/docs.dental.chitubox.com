@@ -1,6 +1,7 @@
 import { DropdownOption } from "@/components/universal-dropdown/dropdown/Dropdown";
 import { z } from "zod";
 import { countryCodes } from "./countries";
+import { useTranslations } from "next-intl";
 
 export const formTypes: DropdownOption[] = [
 	{ id: "ORDER_AND_ACCOUNT_ISSUES" },
@@ -12,14 +13,14 @@ export const formTypes: DropdownOption[] = [
 
 export const formTypesEnUS = [
 	{ id: "ORDER_AND_ACCOUNT_ISSUES", value: "Order and Account Issues" },
-	{ id: "BUG_REPORTING", value: "Bug Reporting" },
-	{ id: "USAGE_HELP", value: "Usage Help" },
+	{ id: "BUG_REPORTING", value: "Software Bug" },
+	{ id: "USAGE_HELP", value: "Software Help" },
 	{ id: "SUGGESTIONS", value: "Suggestions" },
 	{ id: "OTHER_ISSUES", value: "Other" },
 ];
 export const formTypesZhCN = [
 	{ id: "ORDER_AND_ACCOUNT_ISSUES", value: "订单和账户问题" },
-	{ id: "BUG_REPORTING", value: "错误报告" },
+	{ id: "BUG_REPORTING", value: "软件 Bug" },
 	{ id: "USAGE_HELP", value: "使用帮助" },
 	{ id: "SUGGESTIONS", value: "建议" },
 	{ id: "OTHER_ISSUES", value: "其他" },
@@ -53,12 +54,18 @@ function makeOrderAndAccountIssuesSchemas() {
 	return {
 		dto: z.object({
 			formType: z.literal("ORDER_AND_ACCOUNT_ISSUES"),
-			orderId: z.string().min(1),
+			orderId: z
+				.string()
+				.regex(/^\d{16}$/)
+				.optional(),
 			description: z.string(),
 		}),
 		form: z.object({
 			formType: z.object({ id: z.literal("ORDER_AND_ACCOUNT_ISSUES") }),
-			orderId: z.string().min(1),
+			orderId: z
+				.string()
+				.regex(/^\d{16}$/)
+				.optional(),
 			description: z.string().min(3),
 		}),
 	};

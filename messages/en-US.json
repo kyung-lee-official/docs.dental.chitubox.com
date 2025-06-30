@@ -55,6 +55,11 @@
 			"title": "Comparison"
 		},
 		"software-feedback": {
+			"documentation-guide": "Documentation Guide",
+			"tutorials": "Tutorials",
+			"user-manual": "User Manual",
+			"community-groups": "Community Groups",
+			"support-email": "Support Email",
 			"form-title": "Submit a Ticket",
 			"form-subtitle": "Please submit your ticket, and we will contact you as soon as possible.",
 			"form-name-placeholder": "Name",
@@ -69,7 +74,7 @@
 			"form-issue-type-error": "Please select your feedback type.",
 			"form-order-id-title": "Order ID",
 			"form-order-id-placeholder": "Please enter your CHITUBOX order ID",
-			"form-order-id-error": "Please enter your CHITUBOX order ID.",
+			"form-order-id-error": "Please enter a valid 16-digit order ID.",
 			"form-operating-system-title": "OS",
 			"form-operating-system-error": "Please enter your operating system.",
 			"form-software-version-title": "Software Version",

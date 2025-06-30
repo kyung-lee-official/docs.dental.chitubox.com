@@ -7,20 +7,22 @@ import { Form } from "./Form";
 import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "@/utils/tanstack-query";
 import { DiscordIcon, FacebookIcon } from "@/components/icons/Sns";
+import { useTranslations } from "next-intl";
 
 const DynamicHero = dynamic(() => import("./DynamicHero"), {
 	ssr: false,
 });
 
-const DocNavItem = (props: { children: ReactNode }) => {
-	const { children } = props;
+const DocNavItem = (props: { children: ReactNode; href: string }) => {
+	const { children, href } = props;
 	return (
 		<Link
-			href={""}
+			href={href}
+			target="_blank"
 			className="flex items-center p-2.5 gap-2.5
-			text-2xl
-			bg-[#DADDE3] hover:bg-[#E5E7EB]
-			rounded"
+			text-base
+			hover:bg-[#E5E7EB]
+			rounded duration-150"
 		>
 			<div
 				className="w-1 h-6
@@ -32,6 +34,8 @@ const DocNavItem = (props: { children: ReactNode }) => {
 };
 
 export const Content = () => {
+	const t = useTranslations("pages.software-feedback");
+
 	return (
 		<QueryClientProvider client={queryClient}>
 			<div className="w-full">
@@ -50,12 +54,16 @@ export const Content = () => {
 								bg-white
 								rounded-[16px]"
 							>
-								<h2 className="text-2xl font-bold">
-									Document Guides
+								<h2 className="text-[22px] font-bold">
+									{t("documentation-guide")}
 								</h2>
 								<div className="flex flex-col gap-4">
-									<DocNavItem>Tutorials</DocNavItem>
-									<DocNavItem>User Manual</DocNavItem>
+									<DocNavItem href="/tutorials">
+										{t("tutorials")}
+									</DocNavItem>
+									<DocNavItem href="/user-manual/latest/introduction">
+										{t("user-manual")}
+									</DocNavItem>
 								</div>
 							</div>
 							<div
@@ -64,15 +72,16 @@ export const Content = () => {
 								rounded-[16px]"
 							>
 								<div className="space-y-4">
-									<h2 className="text-2xl font-bold">
-										Community Groups
+									<h2 className="text-[22px] font-bold">
+										{t("community-groups")}
 									</h2>
 									<div className="flex flex-col gap-2.5">
 										<Link
 											href={
 												"https://www.facebook.com/chitubox"
 											}
-											className="flex items-center gap-2.5
+											target="_blank"
+											className="flex items-center h-11 gap-2.5
 											text-blue-500"
 										>
 											<FacebookIcon size={24} /> Facebook
@@ -81,7 +90,8 @@ export const Content = () => {
 											href={
 												"https://discord.gg/E45UFqGPZh"
 											}
-											className="flex items-center gap-2.5
+											target="_blank"
+											className="flex items-center h-11 gap-2.5
 											text-blue-500"
 										>
 											<DiscordIcon size={24} /> Discord
@@ -89,8 +99,8 @@ export const Content = () => {
 									</div>
 								</div>
 								<div className="space-y-4">
-									<h2 className="text-2xl font-bold">
-										Support Email
+									<h2 className="text-[22px] font-bold">
+										{t("support-email")}
 									</h2>
 									<div
 										className="flex flex-col gap-2.5

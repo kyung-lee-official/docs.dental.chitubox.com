@@ -92,7 +92,7 @@ export const Attachments = ({ value, onChange, error }: AttachmentsProps) => {
 						<button
 							type="button"
 							className="absolute top-1 right-1 p-0.5
-							text-white/80 hover:text-red-500
+							text-red-500
 							transition rounded-full cursor-pointer"
 							onClick={() => handleRemove(idx)}
 						>
