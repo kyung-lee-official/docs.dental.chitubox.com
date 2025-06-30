@@ -56,16 +56,16 @@ function makeOrderAndAccountIssuesSchemas() {
 			formType: z.literal("ORDER_AND_ACCOUNT_ISSUES"),
 			orderId: z
 				.string()
-				.regex(/^\d{16}$/)
-				.optional(),
+				.optional()
+				.refine((val) => !val || /^\d{16}$/.test(val)),
 			description: z.string(),
 		}),
 		form: z.object({
-			formType: z.object({ id: z.literal("ORDER_AND_ACCOUNT_ISSUES") }),
+			formType: z.literal("ORDER_AND_ACCOUNT_ISSUES"),
 			orderId: z
 				.string()
-				.regex(/^\d{16}$/)
-				.optional(),
+				.optional()
+				.refine((val) => !val || /^\d{16}$/.test(val)),
 			description: z.string().min(3),
 		}),
 	};
@@ -86,9 +86,7 @@ function makeBugReportingSchemas() {
 			description: z.string().min(3),
 		}),
 		form: z.object({
-			formType: z.object({
-				id: z.literal("BUG_REPORTING"),
-			}),
+			formType: z.literal("BUG_REPORTING"),
 			os: z.string().min(3),
 			softwareVersion: z.string().min(3),
 			cpu: z.string().min(2),
@@ -110,9 +108,7 @@ function makeUsageHelpSchemas() {
 			description: z.string().min(3),
 		}),
 		form: z.object({
-			formType: z.object({
-				id: z.literal("USAGE_HELP"),
-			}),
+			formType: z.literal("USAGE_HELP"),
 			softwareVersion: z.string().min(3),
 			description: z.string().min(3),
 		}),
@@ -127,9 +123,7 @@ function makeSuggestionsSchemas() {
 			description: z.string().min(3),
 		}),
 		form: z.object({
-			formType: z.object({
-				id: z.literal("SUGGESTIONS"),
-			}),
+			formType: z.literal("SUGGESTIONS"),
 			description: z.string().min(3),
 		}),
 	};
@@ -143,9 +137,7 @@ function makeOtherSchemas() {
 			description: z.string().min(3),
 		}),
 		form: z.object({
-			formType: z.object({
-				id: z.literal("OTHER_ISSUES"),
-			}),
+			formType: z.literal("OTHER_ISSUES"),
 			description: z.string().min(3),
 		}),
 	};
@@ -174,7 +166,7 @@ export const formSchema = z.object({
 	email: emailSchema,
 	country: countryObjectSchema,
 	attachments: attachmentsFileSchema,
-	dedicatedFields: z.union([
+	dedicatedFields: z.discriminatedUnion("formType", [
 		orderAndAccountIssuesSchemas.form,
 		bugReportingSchemas.form,
 		usageHelpSchemas.form,

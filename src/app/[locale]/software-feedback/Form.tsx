@@ -86,7 +86,7 @@ export const Form = () => {
 			attachments: [] as string[],
 			dedicatedFields: {
 				...values.dedicatedFields,
-				formType: values.dedicatedFields?.formType?.id,
+				formType: values.dedicatedFields?.formType,
 			},
 		};
 		mutation.mutate(dto as CreateChituboxDentalUserFeedbackDto);
@@ -118,7 +118,7 @@ export const Form = () => {
 			/* upload attachments to OSS */
 			const attachments = values.attachments;
 			if (!attachments || attachments.length === 0) {
-				console.error("No files selected");
+				console.warn("No files selected");
 				return;
 			}
 			for (const file of attachments) {
@@ -395,7 +395,7 @@ export const Form = () => {
 										</div>
 									)}
 								</div>
-								{values.dedicatedFields?.formType?.id ===
+								{values.dedicatedFields?.formType ===
 									"ORDER_AND_ACCOUNT_ISSUES" && (
 									<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 										<div className="space-y-1">
@@ -413,8 +413,8 @@ export const Form = () => {
 													"dedicatedFields.orderId"
 												)}
 											/>
-											{values.dedicatedFields?.formType
-												?.id ===
+											{values.dedicatedFields
+												?.formType ===
 												"ORDER_AND_ACCOUNT_ISSUES" &&
 												errors.dedicatedFields &&
 												"orderId" in
@@ -428,7 +428,7 @@ export const Form = () => {
 										</div>
 									</div>
 								)}
-								{values.dedicatedFields?.formType?.id ===
+								{values.dedicatedFields?.formType ===
 									"BUG_REPORTING" && (
 									<div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
 										<div className="space-y-1">
@@ -446,8 +446,9 @@ export const Form = () => {
 													"dedicatedFields.os"
 												)}
 											/>
-											{values.dedicatedFields?.formType
-												?.id === "BUG_REPORTING" &&
+											{values.dedicatedFields
+												?.formType ===
+												"BUG_REPORTING" &&
 												errors.dedicatedFields &&
 												"os" in
 													errors.dedicatedFields && (
@@ -473,8 +474,9 @@ export const Form = () => {
 													"dedicatedFields.softwareVersion"
 												)}
 											/>
-											{values.dedicatedFields?.formType
-												?.id === "BUG_REPORTING" &&
+											{values.dedicatedFields
+												?.formType ===
+												"BUG_REPORTING" &&
 												errors.dedicatedFields &&
 												"softwareVersion" in
 													errors.dedicatedFields && (
@@ -496,8 +498,9 @@ export const Form = () => {
 													"dedicatedFields.cpu"
 												)}
 											/>
-											{values.dedicatedFields?.formType
-												?.id === "BUG_REPORTING" &&
+											{values.dedicatedFields
+												?.formType ===
+												"BUG_REPORTING" &&
 												errors.dedicatedFields &&
 												"cpu" in
 													errors.dedicatedFields && (
@@ -517,8 +520,9 @@ export const Form = () => {
 													"dedicatedFields.gpu"
 												)}
 											/>
-											{values.dedicatedFields?.formType
-												?.id === "BUG_REPORTING" &&
+											{values.dedicatedFields
+												?.formType ===
+												"BUG_REPORTING" &&
 												errors.dedicatedFields &&
 												"gpu" in
 													errors.dedicatedFields && (
@@ -542,8 +546,9 @@ export const Form = () => {
 													"dedicatedFields.gpuDriverVersion"
 												)}
 											/>
-											{values.dedicatedFields?.formType
-												?.id === "BUG_REPORTING" &&
+											{values.dedicatedFields
+												?.formType ===
+												"BUG_REPORTING" &&
 												errors.dedicatedFields &&
 												"gpuDriverVersion" in
 													errors.dedicatedFields && (
@@ -574,8 +579,9 @@ export const Form = () => {
 													/>
 												)}
 											/>
-											{values.dedicatedFields?.formType
-												?.id === "BUG_REPORTING" &&
+											{values.dedicatedFields
+												?.formType ===
+												"BUG_REPORTING" &&
 												errors.dedicatedFields &&
 												"ramVolume" in
 													errors.dedicatedFields && (
@@ -606,8 +612,9 @@ export const Form = () => {
 													/>
 												)}
 											/>
-											{values.dedicatedFields?.formType
-												?.id === "BUG_REPORTING" &&
+											{values.dedicatedFields
+												?.formType ===
+												"BUG_REPORTING" &&
 												errors.dedicatedFields &&
 												"storageVolume" in
 													errors.dedicatedFields && (
@@ -620,7 +627,7 @@ export const Form = () => {
 										</div>
 									</div>
 								)}
-								{values.dedicatedFields?.formType?.id ===
+								{values.dedicatedFields?.formType ===
 									"USAGE_HELP" && (
 									<div className="space-y-1">
 										<div>
@@ -635,8 +642,8 @@ export const Form = () => {
 												"dedicatedFields.softwareVersion"
 											)}
 										/>
-										{values.dedicatedFields?.formType
-											?.id === "USAGE_HELP" &&
+										{values.dedicatedFields?.formType ===
+											"USAGE_HELP" &&
 											errors.dedicatedFields &&
 											"softwareVersion" in
 												errors.dedicatedFields && (
