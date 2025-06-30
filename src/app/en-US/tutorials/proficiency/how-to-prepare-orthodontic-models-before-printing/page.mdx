@@ -1,0 +1,150 @@
+export const metadata = {
+	title: "How to Prepare Orthodontic Models before Printing?",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"In the Primer tutorial, we have already provided a detailed introduction to the initial settings required after entering the software, including the selection of printers and materials, the setup of printing parameters, and the import of models.",
+	keywords: [],
+	other: {
+		pageId: "/en-US/tutorials/proficiency",
+	},
+	openGraph: {
+		images: [
+			"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/cover-prepare-orthodontic-models.png",
+		],
+	},
+};
+
+# How to Prepare Orthodontic Models before Printing? 
+
+In the Primer tutorial, "What to Do Before Model Preparation in CHITUBOX Dental?", we have already provided a detailed introduction to the initial settings required after entering the software, including the selection of printers and materials, the setup of printing parameters, and the import of models. This article will focus on the preparation skills for orthodontic models, including the notes involved in both the automatic process and manual process.
+
+
+## Automatic Process
+
+CHITUBOX Dental's automatic process feature has different default workflows for various model types. For orthodontic models, the default process includes orientation, hollowing, drilling, and layout. Users just need to import the model, click the "Automatic Process" button, wait for the model to be prepared, and then proceed to slicing.
+If users need to modify the default process, they can enter the configuration interface and click the "Settings" button to the right of "Enable Automated Process" at the bottom left to adjust the workflow and even the settings of specific steps. It is important to note that before making any changes, users must ensure that the application type in the configuration is "Orthodontic Model".
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/the-default-steps-of-the-automatic-process-for-orthodontic-models.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="The default steps of the Automatic Process for orthodontic models"
+/>
+
+## Manual Process
+While the automatic process offers an efficient and convenient solution for preparing orthodontic models, manual preparation of models remains a skill that professionals need to master. Now, we will detail each step of manually preparing orthodontic models to help you better grasp the notes involved in this process.
+
+## Orientation
+
+For the orientation of orthodontic models, we recommend placing the model lying down on the printing platform, with the base of the model in contact with the platform. This orientation not only minimizes the print height, reduces the number of slicing layers, and shortens the print time but also allows the model to be printed without supports, avoiding damage to the teeth and gums and eliminating the steps of adding and removing supports. This orientation method is particularly suitable for dental labs and clinics that prioritize efficient workflows.
+
+Therefore, the orientation method for orthodontic models in CHITUBOX Dental is to place them flat on the platform. Regardless of the model placement status when imported by the user, CHITUBOX Dental can automatically lay them down with a single click, saving users the time and effort required for adjustments.
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/use-chitubox-dental-to-orient-orthodontic-models.gif"
+	}
+	style={{ width: "600px" }}
+	figcaption="Use CHITUBOX Dental to orient orthodontic models"
+/>
+
+
+After the model is placed flat on the print bed, if there are areas that do not fully contact the platform, the "Cut" function can be used to remove a small portion of the base, ensuring a tight fit between the model's base and the platform, which facilitates the following step of drilling holes at the contact points between the model's base and the platform.
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/model-bottom-comparison-between-cutting-before-and-after.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Model bottom comparison between cutting before and after"
+/>
+
+## Hollowing 
+
+Hollowing the model can effectively reduce material waste. For dental labs that need to produce a large number of models, hollowing can save a certain amount of material costs. When hollowing models with CHITUBOX Dental, users can choose the "Bottom-Through" mode to maximize material savings and facilitate following drilling. Additionally, the hollowing algorithm of this software generates smooth hollow surfaces, significantly reducing the number of overhanging points.
+
+When using the Bottom-Through mode of the hollowing function, users should ensure that the model's base is fully in contact with or parallel to the printing platform to avoid hollowing failures due to recognition errors of the base
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/hollow-with-smooth-surface.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Hollow with smooth surface"
+/>
+
+For dental clinics with lower production volumes, efficiency is the primary consideration. Therefore, if the user designs solid models, we recommend printing them as solid to eliminate the hollowing step and the subsequent process of cleaning the internal resin, saving time and effort to quickly complete production.
+
+## Filling
+
+For orthodontic models that will be used to create invisible aligners and retainers using thermoforming vacuum pressing technology, model strength is crucial. A model that has been hollowed and then appropriately filled not only saves material compared to a solid model but also possesses a robust model strength.
+
+CHITUBOX Dental offers four filling structures: solid, hive, grid, and scaffold, which can quickly complete the filling operation of orthodontic models. For orthodontic models, we recommend using the hive or grid structure, as these two structures feature through holes and dome designs. The through holes can help quickly balance the internal and external pressures of the model during printing, reducing model oscillation during the lifting and lowering process, and also assist in the rapid return flow of resin to the vat, reducing material adhesion and subsequent curing time. The dome structure automatically generates in overhanging areas, eliminating overhanging points and the need for additional supports inside the model.
+
+The solid structure is designed for models that have already been hollowed. If users are not satisfied with the wall thickness of the model or if there are other filling flaws in the model, they can use CHITUBOX Dental to perform a solid fill and then hollow or proceed with other operations as needed.
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/the-four-types-of-filling-structures-in-chitubox-dental.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="The four types of filling structures in CHITUBOX Dental"
+/>
+
+CHITUBOX Dental also offers a more material-saving filling method. In the filling function panel, users can choose to fill only the bottom of the model. This function can increase the contact area between the model and the printing platform while keeping the inside of the model hollow, preventing the model from falling during printing. Experienced technicians can design a wall thickness that is sufficient to support the model's strength. On this basis, filling only the bottom of the model can enhance the connection between the model and the platform, improving the success rate of printing.
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/fixed-height-filling-feature-in-chitubox-dental.png"
+	}
+	style={{ width: "600px" }}
+	figcaption=" “Fixed height filling” feature in CHITUBOX Dental"
+/>
+
+## Drilling
+
+During the light-curing 3D printing process, enclosed cavities can easily cause pressure differences between the inside and outside of the model, leading to printing failures. Therefore, hollowed models need to be drilled to balance the internal and external pressures.
+
+The drilling function in CHITUBOX Dental can achieve batch drilling, which means drilling multiple holes in multiple models at the same time. It can also intelligently avoid the internal filling structure, accurately determine the best drilling position, and has developed a semi-hole design for teeth models placed flat on the base. Users only need to set the number of holes and the height of the hole position. Regarding these two parameters, it should be noted that the number of holes refers to the number of holes to be drilled in one model, not the total number of holes in all models; the height of the hole position refers to the distance from the center of the hole to the printing platform. Therefore, if users want to drill a semi-hole, this height should be set to 0mm; if they want to drill a complete circle, the hole height should be equal to the hole radius.
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/semi-holes-design-in-chitubox-dental.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Semi-holes design in CHITUBOX Dental"
+/>
+
+## Adding Bridge Generators
+
+Orthodontic models with complete dental arches have a high possibility of deformation after printing, especially the mandibular models. Therefore, if users need to keep the model stable in the long term, they can effectively control the deformation of the model after printing by adding bridge generators.
+
+This function in CHITUBOX Dental can adjust the shape and position of the ribs, allowing users to set them flexibly according to their needs.
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/two-types-of-bridge-generator.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Two types of bridge generator"
+/>
+
+## Layout
+
+Finally, make a layout for models. By applying the nested automatic layout of CHITUBOX Dental, a more compact layout of orthodontic models can be achieved, reducing the number of prints and overall printing time.
+
+<BlogImageContainer
+	src={
+		"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/arrange-orthodontic-models-in-chitubox-dental.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="Arrange orthodontic models in CHITUBOX Dental"
+/>
+
+After completing the above steps, it is necessary to carefully check whether all parts of the model are intact and whether the printer and material parameters are normal. After confirming, click "Slice" to enter the slicing preview interface, where you can view each layer of the model slice. Then click "Save File" to store the file locally or on a storage device, and then transfer it to the 3D printer to start printing. For machines that support network functions, users can also click "Send to Printer" to directly transfer the file to the machine and start printing.
+
+The above is the recommended method for preparing orthodontic models using CHITUBOX Dental. If you have different insights, please feel free to contact *marketing@dental.chitubox.com* to share your views.

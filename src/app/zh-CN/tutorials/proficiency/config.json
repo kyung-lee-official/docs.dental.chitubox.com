@@ -7,7 +7,12 @@
 		{
 			"versionCode": null,
 			"isLatest": false,
-			"category": []
+			"category": [
+				{
+					"pageId": "how-to-prepare-orthodontic-models-before-printing",
+					"label": "如何进行正畸牙模的打印预处理？"
+				}
+			]
 		}
 	]
 }

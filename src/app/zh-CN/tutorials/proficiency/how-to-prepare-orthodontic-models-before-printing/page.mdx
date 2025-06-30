@@ -1,0 +1,164 @@
+export const metadata = {
+	title: "如何进行正畸牙模的打印预处理？",
+	authors: [{ name: "CHITUBOX Team" }],
+	description:
+		"In the Primer tutorial, we have already provided a detailed introduction to the initial settings required after entering the software, including the selection of printers and materials, the setup of printing parameters, and the import of models.",
+	keywords: [],
+	other: {
+		pageId: "/zh-CN/tutorials/proficiency",
+	},
+	openGraph: {
+		images: [
+			"/images/docs/en-US/proficiency/how-to-prepare-orthodontic-models-before-printing/cover-prepare-orthodontic-models.png",
+		],
+	},
+};
+
+# 如何进行正畸牙模的打印预处理？ 
+
+在入门篇的《使用CHITUBOX Dental处理模型前要进行哪些设置？》教程中，我们已经详细介绍了进入软件后如何完成各项初始设置的内容，包括打印机和材料的选择、打印参数的设置以及模型的导入。本篇将介绍正畸牙模的打印预处理技巧，包括自动流程和手动处理两种方法分别涉及到的注意事项。
+
+
+
+## 自动处理
+
+CHITUBOX Dental 的自动处理功能针对不同模型类型有不同的默认流程。对于正畸牙模，该功能默认包含定向、镂空、打孔和排版的处理流程。用户只需要导入模型，然后点击“自动处理”按钮就可以等待模型处理完毕，最后点击切片即可。
+
+若用户需要对默认流程进行修改，可以进入配置页面，点击左下角“启动自动化流程”右侧的“设置”按钮修改流程甚至具体步骤的设置。须注意的是，修改之前需确保配置页面的应用类型为“正畸牙模”。
+
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/proficiency/how-to-prepare-orthodontic-models-before-printing/the-default-steps-of-the-automatic-process-for-orthodontic-models.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="正畸牙模的默认自动化步骤"
+/>
+
+## 手动处理
+
+在正畸牙模的打印预处理中，自动化流程提供了高效和便捷的解决方案，但手动处理模型仍然是专业人员需要掌握的技能。接下来，我们将详细介绍手动处理正畸牙模的每个步骤，帮助您更好地掌握正畸牙模打印切片前处理的细节和技巧。
+
+
+## 定向
+
+对于正畸牙模的定向方式，我们推荐将牙模平放在打印平台上的方式，即模型底面与平台贴合。这种方式不仅使得模型的打印高度最小，切片层数最少，打印时间也最短；而且底面与平台贴合可以使牙模不需要添加支撑进行打印，也就避免了牙面和牙龈部位被破坏的情况，以及节省了添加及拆除支撑的步骤，非常适合追求高效工作流的齿科加工厂和诊所。
+
+由此，CHITUBOX Dental 对于正畸牙模的定向方式就是贴底平放。不管用户导进去的模型是何种朝向和放置状态，CHITUBOX Dental 都可以将它们一键放平，省去用户手动调整的时间和精力。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/proficiency/how-to-prepare-orthodontic-models-before-printing/use-chitubox-dental-to-orient-orthodontic-models.gif"
+	}
+	style={{ width: "600px" }}
+	figcaption="用 CHITUBOX Dental 定向正畸牙模"
+/>
+
+
+模型平放于打印平台后，若有与平台不完全贴合的地方，可以使用“切割”功能削去一小部分底座，使模型底面与平台紧密贴合，方便后续在底部与平台接触的地方给模型打孔。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/proficiency/how-to-prepare-orthodontic-models-before-printing/model-bottom-comparison-between-cutting-before-and-after.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="切割前后模型底部对比"
+/>
+
+## 镂空
+
+模型镂空能有效减少材料浪费，对于需要大批量制作模型的加工厂来说，镂空能节省一定的材料成本。
+
+使用 CHITUBOX Dental 镂空模型，用户可以选择“底部贯穿”模式，最大程度节省材料，也方便后续模型打孔。此外，该软件的镂空算法会生成平滑的镂空面，大大减少悬空点的数量。
+
+用户在使用镂空功能的底部贯穿模式时需注意，要使模型的底面与打印平台完全贴合或平行，避免底面因识别错误而镂空失败。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/proficiency/how-to-prepare-orthodontic-models-before-printing/hollow-with-smooth-surface.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="用 CHITUBOX Dental 镂空后的光滑表面"
+/>
+
+对于产量不多的牙科诊所，高效是首要考虑因素，因此如果用户设计的型是实心模型，我们推荐直接实心打印，减少镂空步骤及后续清理内部树脂的工序，节省时间和精力以快速完成产品制作。
+
+
+## 填充
+
+对于需要用热塑真空压膜技术制作隐形牙套和保持器的正畸牙模来说，模型强度很重要。镂空后适当填充的模型，不仅比实心模型更节省材料，而且具备结实的模型强度。
+
+CHITUBOX Dental 的填充功能有四种填充结构，分别是实心结构、蜂窝结构、网格结构和立体框架，可快速完成正畸牙模的填充操作。对于正畸牙模，我们推荐使用蜂窝结构或者网格结构，因为这两种结构具有连通孔和穹顶结构的设计。连通孔可以在打印过程中帮助快速平衡模型内外压强，减少在抬升下降过程中模型的震荡，同时帮助树脂快速回流料槽，减少材料挂壁损耗以及后续固化的时间；而穹顶结构会自动生成于悬垂区域，消除悬垂点，使模型内部不需要额外添加支撑。
+
+实心结构是为了原本已经镂空的模型设计的，如果用户不满意该模型的壁厚或者该模型存在其他填充瑕疵，用户可以用 CHITUBOX Dental 进行实心填充然后再根据需求进行其他操作。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/proficiency/how-to-prepare-orthodontic-models-before-printing/the-four-types-of-filling-structures-in-chitubox-dental.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="CHITUBOX Dental 中的四种填充结构"
+/>
+
+CHITUBOX Dental 还有一种更加节省材料的填充方式，在填充功能的面板中，用户可以选择仅填充模型的底层。该功能可以在保持模型内部镂空的同时增加模型与打印平台的接触面积，以防打印过程中模型脱落。对于有经验的技师来说，可以设计足够支撑模型强度的壁厚，在此基础上，仅填充模型底部即可增强模型与平台之间的连接力，提高打印成功率。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/proficiency/how-to-prepare-orthodontic-models-before-printing/fixed-height-filling-feature-in-chitubox-dental.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="CHITUBOX Dental 中的“仅填充底层”功能"
+/>
+
+## 打孔
+
+光固化3D打印过程中，封闭式空腔容易造成模型内外压强差从而导致打印失败，所以镂空后的模型需要打孔以平衡模型内外压强。
+
+CHITUBOX Dental 的打孔功能可以实现批量打孔，即同时在多个模型上打多个孔，还能智能规避内部填充结构，精准确定最佳打孔位置，并且还为贴底打印的牙齿模型开发了半孔设计。用户只需要设置孔数量以及孔的位置高度。关于这两个参数需要注意的是，孔数量是指在一个模型上要打孔的数量，不是所有模型总共的孔数量；孔的位置高度是指孔的圆心到打印平台的距离，所以如果用户想打半孔，这个高度就需要设置为0mm，如果想打完整的圆，孔高度就需要等于孔半径。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/proficiency/how-to-prepare-orthodontic-models-before-printing/semi-holes-design-in-chitubox-dental.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="CHITUBOX Dental 中的半孔设计"
+/>
+
+## 添加加强筋
+
+有完整牙弓的正畸牙模后续发生形变的可能性很大，尤其是下颌模，所以如果用户需要使模型保持长期稳定，可通过添加加强筋来有效控制打印后模型的变形。
+CHITUBOX Dental 中的加强筋功能可以调整加强筋的形态和位置，使用户可以按照需求灵活设置。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/proficiency/how-to-prepare-orthodontic-models-before-printing/two-types-of-bridge-generator.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="两种加强筋形态"
+/>
+
+## 排版
+
+最后，应用 CHITUBOX Dental 的嵌套式自动排版，可实现正畸牙模更紧密的排版布局，减少打印次数和整体打印时间。
+
+
+<BlogImageContainer
+	src={
+		"/images/docs/zh-CN/proficiency/how-to-prepare-orthodontic-models-before-printing/arrange-orthodontic-models-in-chitubox-dental.png"
+	}
+	style={{ width: "600px" }}
+	figcaption="用 CHITUBOX Dental 对模型进行排版"
+/>
+
+在完成以上步骤后，需要再仔细检查模型各部位是否完好、打印机和材料等参数是否正常。确认预处理无误后，点击 “切片” 进入切片预览界面，可以查看每一层模型切片。再点击 “保存文件”，将文件存至本地或存储设备，再传输至3D打印机开始打印；对于支持网络功能的机器，用户也可以点击 “发送至打印机” 直接将文件传输至机器内并启动打印。
+
+以上就是我们推荐的使用 CHITUBOX Dental 处理正畸牙模的操作方法，如果你有不一样的见解，欢迎联系 *marketing@dental.chitubox.com* 分享你的看法。
+
