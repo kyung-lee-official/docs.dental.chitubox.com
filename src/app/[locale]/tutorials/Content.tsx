@@ -34,13 +34,13 @@ const Content = () => {
 					fieldName={t("intermediate")}
 					readMore={t("readMore")}
 				/>
-				{/* <Card
+				<Card
 					href={t("proficiency-link")}
 					title={t("proficiency")}
 					description={t("proficiency-subtitle")}
 					fieldName={t("proficiency")}
 					readMore={t("readMore")}
-				/> */}
+				/>
 				<Card
 					href={t("comparison-link")}
 					title={t("comparison")}
