@@ -82,7 +82,7 @@
 			"form-cpu-error": "Please enter your CPU model.",
 			"form-gpu-error": "Please enter your GPU model.",
 			"form-gpu-driver-version-title": "GPU Driver Version",
-			"form-gpu-driver-version-error": "Please enter your GPU driver version.",
+			"form-gpu-driver-version-error": "GPU driver version length must be at least 3 characters if provided.",
 			"form-ram-volume-title": "RAM Volume",
 			"form-ram-volume-error": "Please enter your RAM volume.",
 			"form-storage-volume-title": "Storage Volume",

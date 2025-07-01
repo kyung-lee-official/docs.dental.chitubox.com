@@ -92,8 +92,8 @@ export const Attachments = ({ value, onChange, error }: AttachmentsProps) => {
 						<button
 							type="button"
 							className="absolute top-1 right-1 p-0.5
-							text-red-500
-							transition rounded-full cursor-pointer"
+							text-[#EF5454]
+							rounded-full cursor-pointer duration-150 transition"
 							onClick={() => handleRemove(idx)}
 						>
 							<XCircleSolid size={15} />

@@ -436,7 +436,10 @@ export const Form = () => {
 											<div>
 												{t(
 													"form-operating-system-title"
-												)}
+												)}{" "}
+												<span className="text-red-500">
+													*
+												</span>
 											</div>
 											<input
 												type="text"
@@ -464,7 +467,10 @@ export const Form = () => {
 											<div>
 												{t(
 													"form-software-version-title"
-												)}
+												)}{" "}
+												<span className="text-red-500">
+													*
+												</span>
 											</div>
 											<input
 												type="text"
@@ -489,7 +495,12 @@ export const Form = () => {
 												)}
 										</div>
 										<div className="space-y-1">
-											<div>CPU</div>
+											<div>
+												CPU{" "}
+												<span className="text-red-500">
+													*
+												</span>
+											</div>
 											<input
 												type="text"
 												placeholder="e.g. Intel Core i7-12700K"
@@ -511,7 +522,12 @@ export const Form = () => {
 												)}
 										</div>
 										<div className="space-y-1">
-											<div>GPU</div>
+											<div>
+												GPU{" "}
+												<span className="text-red-500">
+													*
+												</span>
+											</div>
 											<input
 												type="text"
 												placeholder="e.g. NVIDIA GeForce RTX 3080"
@@ -562,7 +578,10 @@ export const Form = () => {
 										</div>
 										<div className="space-y-1">
 											<div>
-												{t("form-ram-volume-title")}
+												{t("form-ram-volume-title")}{" "}
+												<span className="text-red-500">
+													*
+												</span>
 											</div>
 											<Controller
 												control={control}
@@ -595,7 +614,10 @@ export const Form = () => {
 										</div>
 										<div className="space-y-1">
 											<div>
-												{t("form-storage-volume-title")}
+												{t("form-storage-volume-title")}{" "}
+												<span className="text-red-500">
+													*
+												</span>
 											</div>
 											<Controller
 												control={control}

@@ -78,7 +78,10 @@ function makeBugReportingSchemas() {
 			softwareVersion: z.string().min(3),
 			cpu: z.string().min(2),
 			gpu: z.string().min(3),
-			gpuDriverVersion: z.string().min(3),
+			gpuDriverVersion: z
+				.string()
+				.optional()
+				.refine((val) => !val || val.length >= 3),
 			ramVolume: z.number().min(1),
 			storageVolume: z.number().min(1),
 			description: z.string().min(3),
@@ -89,7 +92,10 @@ function makeBugReportingSchemas() {
 			softwareVersion: z.string().min(3),
 			cpu: z.string().min(2),
 			gpu: z.string().min(3),
-			gpuDriverVersion: z.string().min(3),
+			gpuDriverVersion: z
+				.string()
+				.optional()
+				.refine((val) => !val || val.length >= 3),
 			ramVolume: z.number().min(1),
 			storageVolume: z.number().min(1),
 			description: z.string().min(3),

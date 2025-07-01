@@ -82,7 +82,7 @@
 			"form-cpu-error": "请输入您的 CPU 型号。",
 			"form-gpu-error": "请输入您的 GPU 型号。",
 			"form-gpu-driver-version-title": "GPU 驱动版本",
-			"form-gpu-driver-version-error": "请输入您的 GPU 驱动版本。",
+			"form-gpu-driver-version-error": "GPU 驱动版本长度必须至少为 3 个字符（如果提供）。",
 			"form-ram-volume-title": "内存大小",
 			"form-ram-volume-error": "请输入您的内存大小。",
 			"form-storage-volume-title": "存储大小",
