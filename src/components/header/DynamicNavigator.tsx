@@ -2,7 +2,7 @@
 
 import { Logo } from "../icons/Icons";
 import ThemeSwitch from "../icons/ThemeSwitch";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { DynamicFieldTitles } from "./field-titles/DynamicFieldTitles";
 import { DynamicDocsSearch } from "../docsSearch/docs-search/DynamicDocsSearch";
 import { DynamicVersionDropdown } from "../versionDropdown/DynamicVersionDropdown";
@@ -13,6 +13,7 @@ import { Link, usePathname } from "@/navigation";
 const DynamicNavigator = () => {
 	const t = useTranslations();
 	const pathname = usePathname();
+	const locale = useLocale();
 
 	if (pathname === "/software-feedback") {
 		return (
@@ -26,7 +27,9 @@ const DynamicNavigator = () => {
 			>
 				<div className="flex items-center justify-between w-full max-w-[1240px] mx-auto">
 					<Link
-						href="/"
+						href={`https://dental.chitubox.com/${
+							locale === "en-US" ? "en" : "zh-Hans"
+						}`}
 						className="flex items-center gap-4
 						outline-none"
 					>
@@ -35,7 +38,12 @@ const DynamicNavigator = () => {
 					</Link>
 					<div className="flex-1" /> {/* Placeholder */}
 					<div className="flex items-center gap-16">
-						<Link href={"/"}>
+						<Link
+							href={`https://dental.chitubox.com/${
+								locale === "en-US" ? "en" : "zh-Hans"
+							}`}
+							target="_blank"
+						>
 							{t("pages.software-feedback.back-to-home")}
 						</Link>
 						<DynamicLanguageMenu />

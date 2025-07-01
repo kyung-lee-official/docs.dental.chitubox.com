@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { LanguageIcon } from "../icons/Icons";
+import { ChevronRightIcon, LanguageIcon } from "../icons/Icons";
 import { Link, usePathname } from "@/navigation";
 import { useMediaQuery } from "react-responsive";
 import { MediaQuery } from "@/utils/types";
@@ -41,11 +41,19 @@ const LanguageMenu = () => {
 					}}
 				>
 					<button
+						className="flex items-center gap-1"
 						onMouseEnter={() => {
 							setShowLanguageMenu(true);
 						}}
 					>
-						{locale === "en-US" ? "English" : "简体中文"}
+						{locale === "en-US" ? "English" : "简体中文"}{" "}
+						<div
+							className={`${
+								showLanguageMenu ? "rotate-90" : ""
+							} duration-150`}
+						>
+							<ChevronRightIcon size={16} />
+						</div>
 					</button>
 					{showLanguageMenu && (
 						<ul
