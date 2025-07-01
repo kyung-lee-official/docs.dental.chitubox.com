@@ -64,7 +64,7 @@
 			"form-subtitle": "请提交您的反馈，我们会尽快与您联系。",
 			"form-name-placeholder": "姓名",
 			"form-name-error": "请输入您的姓名。",
-			"form-email-placeholder": "Email",
+			"form-email-placeholder": "邮箱",
 			"form-email-error": "请输入您的电子邮箱。",
 			"form-country-title": "国家/地区",
 			"form-country-placeholder": "请选择一个选项",
@@ -95,7 +95,8 @@
 			"form-uploading-message": "表单上传中，请不要关闭此页面。",
 			"form-uploading-attachments-message": "附件上传中，请不要关闭此页面。",
 			"form-success-message": "您的反馈已提交，感谢您的支持！",
-			"form-error-message": "提交失败，请稍后再试。"
+			"form-error-message": "提交失败，请稍后再试。",
+			"back-to-home": "回到首页"
 		}
 	},
 	"footer": {

@@ -5,6 +5,7 @@ import { LanguageIcon } from "../icons/Icons";
 import { Link, usePathname } from "@/navigation";
 import { useMediaQuery } from "react-responsive";
 import { MediaQuery } from "@/utils/types";
+import { useLocale } from "next-intl";
 
 const Locale = (props: any) => {
 	const { children, href, locale } = props;
@@ -23,13 +24,14 @@ const Locale = (props: any) => {
 
 const LanguageMenu = () => {
 	const pathname = usePathname();
+	const locale = useLocale();
 	const [showLanguageMenu, setShowLanguageMenu] = useState<boolean>(false);
 
 	const isLg = useMediaQuery({ query: MediaQuery.lg });
 
 	if (isLg) {
 		return (
-			<div className="relative w-8 h-8">
+			<div className="relative w-18 h-6">
 				<div
 					className="absolute right-0
 					flex flex-col justify-start items-end gap-6
@@ -43,7 +45,7 @@ const LanguageMenu = () => {
 							setShowLanguageMenu(true);
 						}}
 					>
-						<LanguageIcon size={32} />
+						{locale === "en-US" ? "English" : "简体中文"}
 					</button>
 					{showLanguageMenu && (
 						<ul

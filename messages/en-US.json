@@ -95,7 +95,8 @@
 			"form-uploading-message": "Uploading form, please don't close this page.",
 			"form-uploading-attachments-message": "Uploading attachments, please don't close this page.",
 			"form-success-message": "Your feedback has been submitted successfully. Thank you for your support!",
-			"form-error-message": "Something went wrong. Please try again later."
+			"form-error-message": "Something went wrong. Please try again later.",
+			"back-to-home": "Back to home"
 		}
 	},
 	"footer": {

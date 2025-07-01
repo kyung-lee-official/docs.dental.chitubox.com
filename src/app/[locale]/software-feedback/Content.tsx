@@ -78,7 +78,7 @@ export const Content = () => {
 									<div className="flex flex-col gap-2.5">
 										<Link
 											href={
-												"https://www.facebook.com/chitubox"
+												"https://www.facebook.com/groups/972585841264475"
 											}
 											target="_blank"
 											className="flex items-center h-11 gap-2.5

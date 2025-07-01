@@ -654,7 +654,10 @@ export const Form = () => {
 									"USAGE_HELP" && (
 									<div className="space-y-1">
 										<div>
-											{t("form-software-version-title")}
+											{t("form-software-version-title")}{" "}
+											<span className="text-red-500">
+												*
+											</span>
 										</div>
 										<input
 											type="text"
