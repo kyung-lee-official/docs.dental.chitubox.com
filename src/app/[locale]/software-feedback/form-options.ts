@@ -1,14 +1,12 @@
-import { DropdownOption } from "@/components/universal-dropdown/dropdown/Dropdown";
 import { z } from "zod";
 import { countryCodes } from "./countries";
-import { useTranslations } from "next-intl";
 
-export const formTypes: DropdownOption[] = [
-	{ id: "ORDER_AND_ACCOUNT_ISSUES" },
-	{ id: "BUG_REPORTING" },
-	{ id: "USAGE_HELP" },
-	{ id: "SUGGESTIONS" },
-	{ id: "OTHER_ISSUES" },
+export const formTypes = [
+	"ORDER_AND_ACCOUNT_ISSUES",
+	"BUG_REPORTING",
+	"USAGE_HELP",
+	"SUGGESTIONS",
+	"OTHER_ISSUES",
 ];
 
 export const formTypesEnUS = [
@@ -164,7 +162,7 @@ export type FormTypeLiteral =
 export const formSchema = z.object({
 	name: nameSchema,
 	email: emailSchema,
-	country: countryObjectSchema,
+	country: countryEnumSchema,
 	attachments: attachmentsFileSchema,
 	dedicatedFields: z.discriminatedUnion("formType", [
 		orderAndAccountIssuesSchemas.form,

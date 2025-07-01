@@ -9,7 +9,7 @@ import {
 	formTypesEnUS,
 	formTypesZhCN,
 } from "./form-options";
-import { countries } from "./countries";
+import { countries, countryCodes } from "./countries";
 import { useLocale, useTranslations } from "next-intl";
 import { IntegerInput } from "@/components/input/integer-input/IntegerInput";
 import { useMutation } from "@tanstack/react-query";
@@ -78,7 +78,7 @@ export const Form = () => {
 	async function onSubmit() {
 		const dto = {
 			...values,
-			country: values.country?.id,
+			country: values.country,
 			/**
 			 * create record without attachments, attachments will be uploaded to OSS
 			 * and the URLs will be stored in the record.
@@ -225,7 +225,9 @@ export const Form = () => {
 										render={({ field }) => (
 											<Dropdown
 												mode="search"
-												options={countryList}
+												options={
+													countryCodes as unknown as string[]
+												}
 												selected={field.value}
 												setSelected={field.onChange}
 												placeholder={t(
@@ -236,7 +238,7 @@ export const Form = () => {
 														countryList.find(
 															(item) =>
 																item.id ===
-																option.id
+																option
 														);
 													return country?.value as string;
 												}}
@@ -248,7 +250,7 @@ export const Form = () => {
 														countryList.find(
 															(item) =>
 																item.id ===
-																option.id
+																option
 														);
 													return (
 														<div
@@ -280,8 +282,7 @@ export const Form = () => {
 														countryList.find(
 															(c) => {
 																return (
-																	c.id ===
-																	opt.id
+																	c.id === opt
 																);
 															}
 														)!.value;
@@ -332,7 +333,7 @@ export const Form = () => {
 														formTypeList.find(
 															(item) =>
 																item.id ===
-																option.id
+																option
 														);
 													return formType?.value as string;
 												}}
@@ -344,7 +345,7 @@ export const Form = () => {
 														formTypeList.find(
 															(item) =>
 																item.id ===
-																option.id
+																option
 														);
 													return (
 														<div
