@@ -91,6 +91,7 @@
 			"form-description-placeholder": "Please describe your issue in detail",
 			"form-description-error": "Please describe your issue in detail.",
 			"form-attachment-title": "Attachments",
+			"form-attachment-error": "Each attachment must be less than 200MB, if you want to upload larger files, please upload them to Google Drive or Dropbox and share the link in the message.",
 			"form-submit-button": "Submit",
 			"form-uploading-message": "Uploading form, please don't close this page.",
 			"form-uploading-attachments-message": "Uploading attachments, please don't close this page.",

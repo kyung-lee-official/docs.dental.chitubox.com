@@ -91,6 +91,7 @@
 			"form-description-placeholder": "请详细描述您的问题",
 			"form-description-error": "请输入您的问题描述。",
 			"form-attachment-title": "附件",
+			"form-attachment-error": "每个附件必须小于 200MB，如果您想上传更大的文件，请将其上传到 Google Drive 或 Dropbox，并在消息中分享链接。",
 			"form-submit-button": "提交",
 			"form-uploading-message": "表单上传中，请不要关闭此页面。",
 			"form-uploading-attachments-message": "附件上传中，请不要关闭此页面。",

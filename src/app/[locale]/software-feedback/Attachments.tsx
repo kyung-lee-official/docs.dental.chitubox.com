@@ -3,6 +3,9 @@ import { useTranslations } from "next-intl";
 import { XCircleSolid } from "./Icons";
 
 const forbiddenExt = [".exe", ".bat", ".cmd", ".sh", ".msi"];
+/* 200MB in bytes */
+const MAX_FILE_SIZE = 200 * 1024 * 1024;
+
 function isExecutable(file: File) {
 	return forbiddenExt.some((ext) => file.name.toLowerCase().endsWith(ext));
 }
@@ -11,6 +14,9 @@ function isImage(file: File) {
 }
 function isVideo(file: File) {
 	return file.type.startsWith("video/");
+}
+function isFileSizeValid(file: File) {
+	return file.size <= MAX_FILE_SIZE;
 }
 
 interface AttachmentsProps {
@@ -26,10 +32,22 @@ export const Attachments = ({ value, onChange, error }: AttachmentsProps) => {
 		url: string;
 		type: string;
 	} | null>(null);
+	const [fileSizeError, setFileSizeError] = useState<string | null>(null);
 
 	const handleAddFiles = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const selected = Array.from(e.target.files || []);
-		const filtered = selected.filter((f) => !isExecutable(f));
+		setFileSizeError(null);
+		/* check for file size violations */
+		const oversizedFiles = selected.filter((f) => !isFileSizeValid(f));
+		if (oversizedFiles.length > 0) {
+			setFileSizeError(t("form-attachment-error"));
+			e.target.value = "";
+			return;
+		}
+
+		const filtered = selected.filter(
+			(f) => !isExecutable(f) && isFileSizeValid(f)
+		);
 		const newFiles = [...(value ?? []), ...filtered].slice(0, 5);
 		onChange(newFiles);
 		e.target.value = "";
@@ -39,6 +57,8 @@ export const Attachments = ({ value, onChange, error }: AttachmentsProps) => {
 		const newFiles = value.slice();
 		newFiles.splice(idx, 1);
 		onChange(newFiles);
+		/* clear file size error when removing files */
+		setFileSizeError(null);
 	};
 
 	const files = value ?? [];
@@ -121,9 +141,9 @@ export const Attachments = ({ value, onChange, error }: AttachmentsProps) => {
 					</button>
 				)}
 			</div>
-			{error && (
+			{(error || fileSizeError) && (
 				<div className="pl-1.5 text-red-500 text-sm">
-					{t("form-attachment-error")}
+					{fileSizeError || t("form-attachment-error")}
 				</div>
 			)}
 			{preview && (
