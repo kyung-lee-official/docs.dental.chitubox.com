@@ -30,7 +30,7 @@
 			"intermediate": "进阶篇",
 			"intermediate-subtitle": "详解 CHITUBOX Dental 的各个功能，以及不同齿科模型的打印步骤和注意事项。",
 			"intermediate-link": "/zh-CN/tutorials/intermediate",
-			"proficiency": "专家",
+			"proficiency": "高级篇",
 			"proficiency-subtitle": "提供更专业的3D打印知识，帮助用户完成精度更高、更省材料的打印。",
 			"proficiency-link": "/zh-CN/tutorials/proficiency",
 			"comparison": "产品对比篇",
@@ -49,7 +49,7 @@
 			"title": "进阶篇"
 		},
 		"proficiency": {
-			"title": "专家"
+			"title": "高级篇"
 		},
 		"comparison": {
 			"title": "产品对比篇"
